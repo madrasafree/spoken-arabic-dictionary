@@ -294,12 +294,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li<%if cURL="games.mem.asp" then%> class="current"<%end if%>><a href="games.mem.asp">משחק זיכרון</a></li>
             <li class="hr"></li>
             <li<%if cURL="guide.asp" then%> class="current"<%end if%>><a href="guide.asp">מדריך שימוש <span style="font-size:80%;"></span></a></li>
-            <li<%if cURL="where2learn.asp" then%> class="current"<%end if%>><a href="where2learn.asp">איפה ללמוד</a></li>
-            <li<%if cURL="links.asp" then%> class="current"<%end if%>><a href="links.asp">קישורים</a></li>
+            <li<%if cURL="activity.asp" then%> class="current"<%end if%>><a href="activity.asp">פעילות קהילה</a></li>
+            <li<%if cURL="team.tasks.asp" then%> class="current"<%end if%>><a href="team.tasks.asp">דף משימות</a></li>
+            <li<%if cURL="test.asp" then%> class="current"<%end if%>><a href="test.asp">ארגז חול</a></li>
             <li class="hr"></li>
             <li<%if cURL="about.asp" then%> class="current"<%end if%>><a href="about.asp">אודות</a></li>
-            <li<%if cURL="about.asp" then%> class="current"<%end if%>><a href="activity.asp">פעולות אחרונות</a></li>
-            <li<%if cURL="team.asp" then%> class="current"<%end if%>><a href="contribute.asp">תמיכה בפרויקט <span style="color:#c34141;">♡</span></a></li>
         </ul>
         <span style="position:absolute; top:10px; left:0;" onclick="toggleMenu();"><a href="#">x</a></span>
     </div><%
