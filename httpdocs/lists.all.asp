@@ -17,17 +17,12 @@ nikud = "" %>
     <!--#include file="inc/header.asp"-->
     <style>
         h2 {margin: 0 4px 4px 0; font-size:1.2em; letter-spacing:0.1em; font-weight:100;}
-
         button {margin:4px; min-width:50px; border-radius:20px; border:0px; background:#bad7f3; color:#3e3e3e; padding:4px 10px; box-shadow:#00000047 1px 1px;}
         button:hover {box-shadow:#00000097 2px 2px;}
-
         .hidden {display:none;}
         .showMore {float:left;}
-
         .listsWrapper {display:flex; flex-wrap:wrap; max-width:1000px; margin:0 auto;justify-content:center;}
-
         .listsWrapper > div {display:flex; flex-wrap:wrap; justify-content:center; width:700px;}
-
         .lists {width:320px; margin:5px auto; background:#6ab4fb36; padding:5px;}
         
         .lists > div , .lists > a {display:flex; justify-content:space-between; position:relative; min-height:30px; margin-bottom:5px; padding:2px 10px; background:white; border-radius:0 10px 0 0;}
@@ -35,7 +30,6 @@ nikud = "" %>
         .lists > div > span {position:relative; top:15%;}
         .listName {font-size:1em; text-overflow:ellipsis; white-space:nowrap; overflow:hidden; padding-left:25px;}
         .listData {min-width:70px; font-size:0.75em; padding-top:3px; text-align:left;}
-
         .listsMine {background:#84d45c36;}
         .listsSaved {background:#84d45c36;}
         .listsNew {background:#fb936a36;}
@@ -44,7 +38,6 @@ nikud = "" %>
     </style>
     <script>
         $(document).ready(function(){
-
             // HIDES / UNHIDES
             $(".hidden").hide();
             $(".showMore").click(function(){
@@ -198,11 +191,9 @@ openDbLogger "arabicWords","O","lists.all.asp","multi. Break down","" %>
             res.close %>
         </div>
 
-</div><%
-
+    <%
 if session("userID")=1 then 
 dim i
-
 mySQL = "SELECT count(id) FROM lists"
 res.open mySQL, con %>
 
@@ -255,12 +246,10 @@ end if %>
         res.moveNext
     Loop
 res.close 
-
 endTime = timer()
 durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","lists.all.asp","single",durationMs,""
-
 %>
 </div>
 </div>
@@ -268,19 +257,15 @@ closeDbLogger "arabicWords","C","lists.all.asp","single",durationMs,""
 
 <script>
     var listStr,lists,listsFltr,domBuilder
-
     function filterLists(list){
         return list["listName"].toLowerCase().includes(listStr);
     }
-
     $.ajaxSetup({
         async: false
     });
-
     $.getJSON("lists.all.json.asp",function(data){
         lists = data;
     });
-
     $("#searchList").on("keyup",function(){
         listStr = $(this).val().toLowerCase();
         if (listStr.length > 0) { 
