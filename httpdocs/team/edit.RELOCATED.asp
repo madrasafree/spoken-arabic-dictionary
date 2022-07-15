@@ -339,7 +339,7 @@ closeDbLogger "arabicWords","C","team/edit.asp","lock",durationMs,""
                                     'response.write mySQL
 
                                     res3.open mySQL, con %>
-                                    <input type="text" DISABLED value="<%=res3("hebrewTranslation")%> - <%=res3("arabic")%> - <%=shadaAlt(res3("arabicWord"))%>" title="ID = <%=res3("id")%>">
+                                    <input type="text" DISABLED value="<%=res3("hebrewTranslation")%> - <%=res3("arabic")%> - <%=res3("arabicWord")%>" title="ID = <%=res3("id")%>">
                                     <br><%
                                     res3.close
                                     SELECT CASE res2("relationType")

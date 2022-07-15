@@ -336,7 +336,7 @@ else
                             </span>                    
                         </div>
                         <div class="arb"><%=res("arabic")%></div>
-                        <div class="arb"><%=shadaAlt(res("arabicWord"))%></div>
+                        <div class="arb"><%=res("arabicWord")%></div>
                         <div class="eng"><%=res("pronunciation")%></div>
                         <div class="attr">
                             <div class="pos"><%
@@ -453,7 +453,7 @@ else
                                     </span>                                              
                                 </div>
                                 <div class="arb"><%=res2("arabic")%></div>
-                                <div class="arb" style="font-size:1.6em;"><%=shadaAlt(res2("arabicWord"))%></div>
+                                <div class="arb" style="font-size:1.6em;"><%=res2("arabicWord")%></div>
                                 <div class="eng"><%=res2("pronunciation")%></div>
                             </div>
                         </fieldset><%
@@ -577,7 +577,7 @@ else
                                     End Select %>
                                 </div>
                                 <div class="arb"><%=res("arabic")%></div>
-                                <div class="arb" style="font-size:1.6em;"><%=shadaAlt(res("arabicWord"))%></div>
+                                <div class="arb" style="font-size:1.6em;"><%=res("arabicWord")%></div>
                                 <div class="eng"><%=res("pronunciation")%></div>
                             </div><%
                             countMe = countMe+1
@@ -619,7 +619,7 @@ if len(strClean)>0 AND inStr(strDisplay," ")>0 then
             <div class="result" onclick="location.href='sentence.asp?sID=<%=res("id")%>'">
                 <div class="heb"><%=res("hebrew")%></div>
                 <div class="arb"><%=res("arabic")%></div>
-                <div class="arb"><%=shadaAlt(res("arabicHeb"))%></div>
+                <div class="arb"><%=res("arabicHeb")%></div>
             </div><%
             res.moveNext
         loop

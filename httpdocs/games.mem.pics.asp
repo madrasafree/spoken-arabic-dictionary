@@ -16,8 +16,8 @@ res.open mySQL, con
 			session("msg") = "לא נמצאה רשימה עם המספר הסידורי המבוקש"
 			response.redirect "lists.all.asp"
 	end if
-	LName = shadaAlt(res("listName"))
-	LDesc = shadaAlt(res("listDesc"))
+	LName = res("listName")
+	LDesc = res("listDesc")
 res.close
 
 endTime = timer()
@@ -205,7 +205,7 @@ end if %>
 							<%=res("arabic")%>
 						</div>
 						<div class="arb">
-							<%=shadaAlt(res("arabicWord"))%>
+							<%=res("arabicWord")%>
 						</div>
 						<div class="eng" style="text-align:left;">
 							<%=res("pronunciation")%>

@@ -27,8 +27,8 @@ res.open mySQL, con
         session("msg") = "לא נמצאה רשימה עם המספר הסידורי המבוקש"
         response.redirect "lists.all.asp"
     end if
-    LName = shadaAlt(res("listName"))
-    lDesc = shadaAlt(res("listDesc"))
+    LName = res("listName")
+    lDesc = res("listDesc")
     lPrivacy = res("privacy")
     creatorID = res("creator")
     creationTimeUTC = res("creationTimeUTC")
@@ -375,7 +375,7 @@ else
                     End Select %>
                     </div>
                     <div class="arb"><%=res("arabic")%></div>
-                    <div class="arb"><%=shadaAlt(res("arabicWord"))%></div>
+                    <div class="arb"><%=res("arabicWord")%></div>
                     <div class="eng"><%=res("pronunciation")%></div>
                 </div><%
                 if (session("userID")=1 or session("userID")=73) and session("userID")=creatorID then %>
@@ -440,12 +440,12 @@ res.close %>
             res.open mySQL, con
                 Do until res.EOF 
                     If cint(LID) = res("id") then
-                        LName = shadaAlt(res("listName"))%>
+                        LName = res("listName")%>
                         <li id="current"><%
                     else %>
                         <li><%
                     End if%>
-                        <a href="lists.asp?id=<%=res("id")%>"><%=shadaAlt(res("listName"))%></a></li><%
+                        <a href="lists.asp?id=<%=res("id")%>"><%=res("listName")%></a></li><%
                     res.moveNext
                 Loop
             res.close
@@ -454,12 +454,12 @@ res.close %>
             res.open mySQL, con
                 Do until res.EOF 
                     If cint(LID) = res("id") then
-                        LName = shadaAlt(res("listName"))%>
+                        LName = res("listName")%>
                         <li id="current"><%
                     else %>
                         <li><%
                     End if%>
-                        <a href="lists.asp?id=<%=res("id")%>"><%=shadaAlt(res("listName"))%></a></li><%
+                        <a href="lists.asp?id=<%=res("id")%>"><%=res("listName")%></a></li><%
                     res.moveNext
                 Loop
             res.close
@@ -468,12 +468,12 @@ res.close %>
             res.open mySQL, con
                 Do until res.EOF 
                     If cint(LID) = res("id") then
-                        LName = shadaAlt(res("listName"))%>
+                        LName = res("listName")%>
                         <li id="current"><%
                     else %>
                         <li><%
                     End if%>
-                        <a href="lists.asp?id=<%=res("id")%>"><%=shadaAlt(res("listName"))%></a></li><%
+                        <a href="lists.asp?id=<%=res("id")%>"><%=res("listName")%></a></li><%
                     res.moveNext
                 Loop
             res.close 

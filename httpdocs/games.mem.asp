@@ -128,7 +128,7 @@
 					<%=res("arabic")%>
 				</div>
 				<div class="arb">
-					<%=shadaAlt(res("arabicWord"))%>
+					<%=res("arabicWord")%>
 				</div>
 	            <div class="eng" style="text-align:left;">
 					<%=res("pronunciation")%>

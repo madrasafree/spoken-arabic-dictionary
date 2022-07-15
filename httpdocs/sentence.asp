@@ -169,7 +169,7 @@ res.open mySQL, con
 		res2.close
 	%>
 	</div>
-	<div class="arb"><%=shadaAlt(res("arabicHeb"))%></div>
+	<div class="arb"><%=res("arabicHeb")%></div>
 	<div style="display:none;" class="arb arabicHeb"><%=res("arabicHeb")%></div>
 	<div class="heb" style="text-align:center;"><%=res("hebrew")%></div>
 </div><%

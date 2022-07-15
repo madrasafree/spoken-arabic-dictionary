@@ -307,7 +307,7 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
                     if len(arabic)>0 then %>
                         <div title="המילה בערבית"><%=arabic%></div><%
                     end if %>
-                    <span title="ערבית בתעתיק עברי"><%=shadaAlt(arabicWord)%></span>
+                    <span title="ערבית בתעתיק עברי"><%=arabicWord%></span>
                 </div>
                 <div title="ערבית בתעתיק לועזי" class="eng">
                     <%=pronunciation%>
@@ -379,7 +379,7 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
             <div class="table h2">
                 <h2>הערות</h2>
                 <div style="padding: 0 8px 9px 8px;">
-                    <%=shadaAlt(info)%>
+                    <%=info%>
                 </div>
             </div><%
         end if %>
@@ -512,7 +512,7 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
                                     end if
                                     if lastType<>12 then %>
                                         <legend>משמעויות נוספות בעברית למילה
-                                            <br/><%=shadaAlt(arabicWord)%>
+                                            <br/><%=arabicWord%>
                                         </legend><%
                                     end if
                                     lastType=12
@@ -625,7 +625,7 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
                                             <%=res2("arabic")%>
                                         </div>
                                         <div class="arb" style="margin-top:12px; font-size:1.6em;">
-                                            <%=shadaAlt(res2("arabicWord"))%>
+                                            <%=res2("arabicWord")%>
                                         </div>
                                         <div class="eng" style="padding:9px 0 0 0;">
                                             <%=res2("pronunciation")%>
@@ -664,7 +664,7 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
                 <ul><%
                 do until res.EOF %>
                     <li>
-                        <a href="lists.asp?id=<%=res("id")%>"><%=shadaAlt(res("listName"))%></a><%
+                        <a href="lists.asp?id=<%=res("id")%>"><%=res("listName")%></a><%
                         if res("creator")=session("userID") then %>
                         [[<a href="listsWord.remove.asp?wordID=<%=wordID%>&listID=<%=res("listID")%>">הסר</a>]]<%
                         end if
@@ -840,7 +840,7 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
                             res2.close
                         %>
                         </div>
-                        <div class="arb" style="padding-top:5px;"><%=shadaAlt(res("arabicHeb"))%></div><%
+                        <div class="arb" style="padding-top:5px;"><%=res("arabicHeb")%></div><%
                         if len(res("info"))>0 then %>
                         <div style="background:#ffffff96; border: 1px solid #aaa; text-align:center; margin:5px 10px;font-size:smaller; padding:4px;">
                             הערה: <%=res("info")%>
@@ -868,7 +868,7 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
             <div class="table h2">
                 <h2>משפטים לדוגמא - פורמט ישן</h2>
                 <div style="padding: 0 8px 9px 8px;">
-                    <%=shadaAlt(example)%>  
+                    <%=example%>  
                 </div>
             </div><%
         end if
@@ -954,7 +954,7 @@ if (session("role") > 6) and (needsEdit=true) then %>
                                 <%=res2("arabic")%>
                             </div>
                             <div class="arb" style="margin-top:12px; font-size:1.6em;">
-                                <%=shadaAlt(res2("arabicWord"))%>
+                                <%=res2("arabicWord")%>
                             </div>
                             <div class="eng" style="padding:9px 0 0 0;">
                                 <%=res2("pronunciation")%>

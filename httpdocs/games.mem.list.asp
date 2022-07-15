@@ -17,8 +17,8 @@ res.open mySQL, con
 			session("msg") = "לא נמצאה רשימה עם המספר הסידורי המבוקש"
 			response.redirect "lists.all.asp"
 	end if
-	LName = shadaAlt(res("listName"))
-	LDesc = shadaAlt(res("listDesc"))
+	LName = res("listName")
+	LDesc = res("listDesc")
 res.close
 
 endTime = timer()
@@ -144,7 +144,7 @@ openDbLogger "arabicWords","O","games.mem.list.asp","main",""
 			</div>
 			<div class="front">
 				<span class="arb" style="font-size:2em;  margin:0;"><%=res("arabic")%></span>
-				<span class="arb" style="font-size:2em; margin-top:-20px;"><%=shadaAlt(res("arabicWord"))%></span>
+				<span class="arb" style="font-size:2em; margin-top:-20px;"><%=res("arabicWord")%></span>
 				<span class="eng" style="vertical-align:bottom; text-align:center;"><%=res("pronunciation")%></span>
 			</div>
 		</div><%

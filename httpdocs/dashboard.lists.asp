@@ -139,7 +139,7 @@ end select %>
                     End Select %>
                 </div>
                 <div class="arb"><%=res("arabic")%></div>
-                <div class="arb" style="font-size:1.6em;"><%=shadaAlt(res("arabicWord"))%></div>
+                <div class="arb" style="font-size:1.6em;"><%=res("arabicWord")%></div>
                 <div class="eng" style="float:none;"><%=res("pronunciation")%></div>
             </div><%
             if quickOK=true and res("show")=true and session("role")>6 then%>

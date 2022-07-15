@@ -178,7 +178,7 @@ if userChoice=true then
                         End Select %>
                         </div>
                         <div class="arb"><%=res("arabic")%></div>
-                        <div class="arb"><%=shadaAlt(res("arabicWord"))%></div>
+                        <div class="arb"><%=res("arabicWord")%></div>
                         <div class="eng"><%=res("pronunciation")%></div>
                     </div><%
                     lastID = res("id")

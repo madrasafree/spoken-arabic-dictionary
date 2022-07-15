@@ -48,7 +48,7 @@ else
         iArb = res("arabic")
         if res("arabic") = Null then iArb = ""
         if res("id") <> CINT(wordID) then
-            data = data & psik & "{"&qq&"id"&qq&":"& CSTR(res("id")) &","&qq&"arabic"&qq&":"&qq& iArb &qq&","&qq&"hebrew"&qq&":"&qq & res("hebrewTranslation") & qq&","&qq&"taatik"&qq&":"&qq & shadaAlt(res("arabicWord")) & qq&"}"
+            data = data & psik & "{"&qq&"id"&qq&":"& CSTR(res("id")) &","&qq&"arabic"&qq&":"&qq& iArb &qq&","&qq&"hebrew"&qq&":"&qq & res("hebrewTranslation") & qq&","&qq&"taatik"&qq&":"&qq & res("arabicWord") & qq&"}"
             count = count + 1
             psik = ","
         end if
@@ -68,7 +68,7 @@ else
         iArb = res("arabic")
         if res("arabic") = Null then iArb = ""
         if res("id") <> CINT(wordID) then
-            data = data & psik & "{"&qq&"id"&qq&":"& CSTR(res("id")) &","&qq&"arabic"&qq&":"&qq& iArb &qq&","&qq&"hebrew"&qq&":"&qq & res("hebrewTranslation") & qq&","&qq&"taatik"&qq&":"&qq & shadaAlt(res("arabicWord")) & qq&"}"
+            data = data & psik & "{"&qq&"id"&qq&":"& CSTR(res("id")) &","&qq&"arabic"&qq&":"&qq& iArb &qq&","&qq&"hebrew"&qq&":"&qq & res("hebrewTranslation") & qq&","&qq&"taatik"&qq&":"&qq & res("arabicWord") & qq&"}"
             count = count + 1
             psik = ","
         end if

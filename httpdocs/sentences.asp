@@ -150,7 +150,7 @@
 						next
 					res2.close
 				%>
-				<rt><%=shadaAlt(res("arabicHeb"))%></rt></ruby></div>
+				<rt><%=res("arabicHeb")%></rt></ruby></div>
 			</div><%
 				if len(res("info"))>0 then %>
 				<div class="info flex-inner"><%=res("info")%></div><%

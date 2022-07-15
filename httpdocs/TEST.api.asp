@@ -205,7 +205,7 @@ else
                 response.write """wordId"":"& res("id") &","
                 response.write """hebrew"":"& res("hebrewTranslation")
                 response.write """arabic"":"& res("arabic")
-                response.write """taatikHeb"":"& shadaAlt(res("arabicWord"))
+                response.write """taatikHeb"":"& res("arabicWord")
                 response.write """taatikEng"":"& res("pronunciation")
                 response.write res("hebrewDef")
                 response.write res("mediaID")
@@ -252,7 +252,7 @@ else
                             response.write res2("mediaID")
                             response.write res2("status")
                             response.write res2("arabic")
-                            response.write shadaAlt(res2("arabicWord"))
+                            response.write res2("arabicWord")
                             response.write res2("pronunciation")
                             if ids = "" then ids = wordMain else ids = ids & "," & wordMain
                         res2.close
@@ -327,7 +327,7 @@ else
                             response.write res("mediaID")
                             response.write res("status")
                             response.write res("arabic")
-                            response.write shadaAlt(res("arabicWord"))
+                            response.write res("arabicWord")
                             response.write res("pronunciation")
                             countMe = countMe+1
                         end if
@@ -367,7 +367,7 @@ if len(strClean)>0 AND inStr(strDisplay," ")>0 then
             response.write res("id")
             response.write res("hebrew")
             response.write res("arabic")
-            response.write shadaAlt(res("arabicHeb"))
+            response.write res("arabicHeb")
             res.moveNext
         loop
     end if
