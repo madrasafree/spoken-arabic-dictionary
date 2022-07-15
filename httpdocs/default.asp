@@ -62,11 +62,11 @@
         .activityBox:nth-child(2) > div {border-top: 1px dotted #c267df70; border-bottom: 1px dotted #c267df70;}
         .activityBox div:last-child {text-align:left;}
         .activeUserImg {DISPLAY:NONE; background:white; width:30px; border-radius:30%; box-shadow:#2a3035 0px 0px 4px;}
-        #boxMenu {display:flex; justify-content:space-between; max-width:490px; margin:50px auto; text-align: center;}
+        #boxMenu {display:flex; justify-content:center; flex-wrap:wrap; max-width:490px; margin:50px auto; text-align: center;}
         #boxMenu > div {display: inline-block; margin-top:5px; opacity:.7;}
         #boxMenu > div:hover {opacity:1;}
         #boxMenu > div > a:hover {text-decoration:none;}
-        #boxMenu > div > a > div {display:flex;justify-content:center;align-items:center;width:64px;height:64px;color:black;}
+        #boxMenu > div > a > div {display:flex;justify-content:center;align-items:center;width:64px;height:64px;color:black;margin:2px}
         #boxMenu img {opacity: .7;}
         #boxMenu img:hover {opacity: 1;}
         #cnt2,#cnt3,#cnt4,#test5 {text-align:right; background:#fff5d7b8; padding-right:10px; border-right: 6px solid #8690ff; color:#8690ff; font-size:1em;}
