@@ -127,7 +127,9 @@
 
 /* language */
     @font-face {font-family:"keter"; src: url("../inc/fonts/KeterYG-Medium.ttf");}
+    @font-face {font-family:"abraham"; src: url("../inc/fonts/Abraham-Light.otf");}
 
+    .body       { font-family: 'Abraham', sans-serif;}
     .arb        { color:#2ead31; text-align:center; font-family: 'Alef', sans-serif; font-weight: 100; letter-spacing: 0; } /* default.asp */
     .heb        { color:#1988cc; }
     .eng        { color:#d17111; direction:ltr; text-align:left; text-transform: lowercase; }
