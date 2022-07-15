@@ -62,7 +62,7 @@
         .activityBox:nth-child(2) > div {border-top: 1px dotted #c267df70; border-bottom: 1px dotted #c267df70;}
         .activityBox div:last-child {text-align:left;}
         .activeUserImg {DISPLAY:NONE; background:white; width:30px; border-radius:30%; box-shadow:#2a3035 0px 0px 4px;}
-        #boxMenu {max-width:490px; margin:50px auto; text-align: center;}
+        #boxMenu {display:flex; justify-content:space-between; max-width:490px; margin:50px auto; text-align: center;}
         #boxMenu > div {display: inline-block; margin-top:5px; opacity:.7;}
         #boxMenu > div:hover {opacity:1;}
         #boxMenu > div > a:hover {text-decoration:none;}
