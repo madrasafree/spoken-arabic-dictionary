@@ -121,7 +121,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     height: 94%; 
     padding: 3px 6px; 
     border: 1px dotted gray; 
-    font-size:1.6em;
+    font-size:1.5em;
     margin:0 auto;
     background-image:url(img/site/search.png);
     background-repeat:no-repeat;

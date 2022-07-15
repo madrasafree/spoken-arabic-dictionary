@@ -47,19 +47,19 @@ nikud = "" %>
                     x = res2(0)
                     SELECT Case true
                         case x>=0 AND x<=10
-                        tagSize = "1em"
+                        tagSize = "0.8em"
                         case x>=11 AND x<=30
-                        tagSize = "1.2em"
+                        tagSize = "1em"
                         case x>=31 AND x<=70
-                        tagSize = "1.4em"
+                        tagSize = "1.3em"
                         case x>=71 AND x<=120
-                        tagSize = "1.6em"
+                        tagSize = "1.5em"
                         case x>=121 AND x<=180
-                        tagSize = "1.8em"
+                        tagSize = "1.7em"
                         case x>=180 AND x<=300
-                        tagSize = "2em"
+                        tagSize = "1.9em"
                         case else
-                        tagSize = "2.2em"
+                        tagSize = "2.4em"
                     END SELECT
                 res2.close %>
                 <li style="font-size:<%=tagSize%>;" title="ישנן <%=x%> מילים בנושא זה" style="font-size:<%=tagSize%>">
