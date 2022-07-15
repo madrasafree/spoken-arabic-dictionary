@@ -30,8 +30,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<link rel="stylesheet" href="css/di3aaye.css?v=2" />
 	<link rel="shortcut icon" href="img/site/favicon.ico" />
     <link rel="image_src" href="img/site/logo.jpg" />
-    <link href="https://fonts.googleapis.com/css?family=Alef"       rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Harmattan"  rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 

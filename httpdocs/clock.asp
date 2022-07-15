@@ -55,7 +55,6 @@
             background:#ffffff;
             border:2px solid gray;
             color:#2ead31;
-            font-family: keter;
             font-size: 2em;
             padding:5px 10px;
             width:fit-content; 
@@ -65,7 +64,6 @@
             width:99%; 
             padding:5px; 
             color:#2ead31;
-            font-family: keter;
             margin:20px auto;
             font-size: 1.4em;
             text-align:center; 

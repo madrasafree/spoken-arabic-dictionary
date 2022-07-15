@@ -27,7 +27,6 @@ psik = ""
         .starOn { color:#f5f029;}
 
         .eng {padding-left: 2px;}
-        .harm {font-size:1.6em; line-height:.8;}
         .heb {padding-bottom: 4px; padding-right: 2px;}
         .heb a:link,.heb a:visited {color:#1988cc !important;}
 
@@ -178,8 +177,8 @@ if userChoice=true then
                             <span style="background: #ff8d00; color: #ffffff; font-weight: bold; padding: 4px 10px; border-radius: 3px;">טרם נבדק</span><%
                         End Select %>
                         </div>
-                        <div class="arb harm"><%=res("arabic")%></div>
-                        <div class="arb keter"><%=shadaAlt(res("arabicWord"))%></div>
+                        <div class="arb"><%=res("arabic")%></div>
+                        <div class="arb"><%=shadaAlt(res("arabicWord"))%></div>
                         <div class="eng"><%=res("pronunciation")%></div>
                     </div><%
                     lastID = res("id")

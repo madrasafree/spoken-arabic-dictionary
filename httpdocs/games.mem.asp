@@ -124,10 +124,10 @@
 	Do until res.EOF %>
         <div class="pin">
             <div class="txtDiv" style="font-size:larger; line-height:1.2em;">
-				<div class="arb harm">
+				<div class="arb">
 					<%=res("arabic")%>
 				</div>
-				<div class="arb keter">
+				<div class="arb">
 					<%=shadaAlt(res("arabicWord"))%>
 				</div>
 	            <div class="eng" style="text-align:left;">

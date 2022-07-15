@@ -186,8 +186,8 @@
                                 <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct">
                             </span>                    
                         </div>
-                        <div class="arb harm">زان</div>
-                        <div class="arb keter">זַאן</div>
+                        <div class="arb">زان</div>
+                        <div class="arb">זַאן</div>
                         <div class="eng">
                             zaan
                         </div>

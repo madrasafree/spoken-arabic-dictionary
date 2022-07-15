@@ -31,7 +31,6 @@
         .eng {padding-left: 2px;}
         .exact {margin-bottom:10px;counter-increment: mega-step;}
         .exact::before {counter-increment: exactCount; content: counter(mega-step);display: block; padding: 5px 5px 3px 5px; background: #ffffff; width: 10%; text-align: center; border: 1px solid #a5d0f3; border-bottom: 0; margin-top:20px;}
-        .harm {font-size:1.6em; line-height:.8;}
         .heb {padding-bottom: 4px; padding-right: 2px;}
         .heb a:link,.heb a:visited {color:#1988cc !important;}
         .media {margin:0px auto 10px auto; text-align:center; max-width:700px;}
@@ -191,7 +190,7 @@ wordMain=0 %>
     <div class="search"><%
         if len(strInput)=0 then%>
             <div style="text-align:center; border:0; line-height:1.5; padding:4px;">
-                חפשו <span class="heb" style="font-size:larger;">מילה</span>, <span class="arb keter">כִּלְמֵה</span> <span class="or">או</span> <span class="arb harm">كلمة</span>
+                חפשו <span class="heb" style="font-size:larger;">מילה</span>, <span class="arb">כִּלְמֵה</span> <span class="or">או</span> <span class="arb">كلمة</span>
             </div><%
         end if %>
         <form action=defaultBetaRun.asp method="get">
@@ -336,8 +335,8 @@ else
                             End Select %>
                             </span>                    
                         </div>
-                        <div class="arb harm"><%=res("arabic")%></div>
-                        <div class="arb keter"><%=shadaAlt(res("arabicWord"))%></div>
+                        <div class="arb"><%=res("arabic")%></div>
+                        <div class="arb"><%=shadaAlt(res("arabicWord"))%></div>
                         <div class="eng"><%=res("pronunciation")%></div>
                         <div class="attr">
                             <div class="pos"><%
@@ -453,8 +452,8 @@ else
                                         End Select %>
                                     </span>                                              
                                 </div>
-                                <div class="arb harm"><%=res2("arabic")%></div>
-                                <div class="arb keter" style="font-size:1.6em;"><%=shadaAlt(res2("arabicWord"))%></div>
+                                <div class="arb"><%=res2("arabic")%></div>
+                                <div class="arb" style="font-size:1.6em;"><%=shadaAlt(res2("arabicWord"))%></div>
                                 <div class="eng"><%=res2("pronunciation")%></div>
                             </div>
                         </fieldset><%
@@ -577,8 +576,8 @@ else
                                             <mark>טרם נבדק</mark><%
                                     End Select %>
                                 </div>
-                                <div class="arb harm"><%=res("arabic")%></div>
-                                <div class="arb keter" style="font-size:1.6em;"><%=shadaAlt(res("arabicWord"))%></div>
+                                <div class="arb"><%=res("arabic")%></div>
+                                <div class="arb" style="font-size:1.6em;"><%=shadaAlt(res("arabicWord"))%></div>
                                 <div class="eng"><%=res("pronunciation")%></div>
                             </div><%
                             countMe = countMe+1
@@ -619,8 +618,8 @@ if len(strClean)>0 AND inStr(strDisplay," ")>0 then
         Do until res.EOF %>
             <div class="result" onclick="location.href='sentence.asp?sID=<%=res("id")%>'">
                 <div class="heb"><%=res("hebrew")%></div>
-                <div class="arb harm"><%=res("arabic")%></div>
-                <div class="arb keter"><%=shadaAlt(res("arabicHeb"))%></div>
+                <div class="arb"><%=res("arabic")%></div>
+                <div class="arb"><%=shadaAlt(res("arabicHeb"))%></div>
             </div><%
             res.moveNext
         loop

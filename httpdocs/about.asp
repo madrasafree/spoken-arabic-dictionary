@@ -202,27 +202,6 @@
                 </div>
             </li>
         </ul>
-        <li>גופנים</li>
-        <ul>
-            <li>
-                <label>Keter YG</label>
-                <div style="font-size:small;">
-                    עיצוב: דר. יורם גנת ז"ל
-                    <br>בשימוש תחת רישיון <a href="https://en.wikipedia.org/wiki/GPL_font_exception">GPL+FE</a>
-                </div>
-            </li>
-            <li>
-                <label>Alef / אָלֶף</label>
-                <div style="font-size:small;">
-                    עיצוב: מושון זר-אביב, <a href="https://hagilda.com/">הגילדה</a>
-                    <br>בשימוש תחת רישיון <a href="https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL">SIL Open Font License</a>
-                </div>
-            </li>
-            <li>
-                <label>Harmattan</label>
-                <div style="font-size:small;">בשימוש תחת רישיון <a href="https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL">SIL Open Font License</a></div>
-            </li>
-        </ul>
         <li>תמונות</li>
         <ul>
             <li><label>רונן רוטפרב</label>

@@ -52,8 +52,8 @@
 
 <section>
     <h2>
-        <span class="arb harm">أكمّ سؤال</span> .
-        <span class="arb keter">אַכַּם סֻאַאל</span> .
+        <span class="arb">أكمّ سؤال</span> .
+        <span class="arb">אַכַּם סֻאַאל</span> .
         <span class="heb">כמה שאלות</span>
     </h2>
     <p>אוסף של שאלות אקראיות וקלילות</p>
@@ -78,8 +78,8 @@
 
 <section>
     <h2>
-        <span class="arb harm">في أَيَّام الكورونا</span> .
-        <span class="arb keter">פי אַיַאם אלקורונא</span> .
+        <span class="arb">في أَيَّام الكورونا</span> .
+        <span class="arb">פי אַיַאם אלקורונא</span> .
         <span class="heb">ימי קורונה</span>
     </h2>
     <p>חברי המילון מספרים כיצד הם מעבירים את הזמן בימים טרופים אלה

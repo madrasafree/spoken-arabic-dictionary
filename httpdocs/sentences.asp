@@ -11,9 +11,6 @@
 		.arb {
 			font-size:initial;
 			}
-		.harm {
-			font-size:1.7em;
-			}
 		.heb {
 			font-size:initial;
 			}
@@ -27,9 +24,6 @@
 			margin:5px 15px 15px 15px;
 			padding:10px;
 			}
-		.keter {
-			font-size:1.1em;
-		}
 		.normal {
 			padding:0;
 		}
@@ -128,7 +122,7 @@
 				<div class="heb flex-inner">
 					<a href="sentence.asp?sID=<%=res("id")%>"><%=res("hebrew")%></a>
 				</div>
-				<div class="arb harm flex-inner"><ruby><%
+				<div class="arb flex-inner"><ruby><%
 					arabicFull = res("arabic")
 					words = split(arabicFull," ")
 					mySQL = "SELECT * FROM wordsSentences WHERE sentence ="&res("id")&" ORDER BY location"

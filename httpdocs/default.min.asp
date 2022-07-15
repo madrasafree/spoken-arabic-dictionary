@@ -160,7 +160,7 @@ wordMain=0 %>
                         End Select %>                 
                     <div class="heb"><%=res("hebrewTranslation")%>
                     </div>
-                    <div class="arb harm"><%=res("arabic")%></div>
+                    <div class="arb"><%=res("arabic")%></div>
                     <div class="arb"><%=Replace(res("arabicWord"),chrw(&H0651),chrw(&H0598))%></div>
                     <div class="eng" dir="ltr"><%=res("pronunciation")%></div>
                 </div>
@@ -222,7 +222,7 @@ countMe=0
                             End Select %>
                             <div class="heb"><%=res("hebrewTranslation")%>
                             </div>
-                            <div class="arb harm"><%=res("arabic")%></div>
+                            <div class="arb"><%=res("arabic")%></div>
                             <div class="arb"><%=Replace(res("arabicWord"),chrw(&H0651),chrw(&H0598))%></div>
                             <div class="eng" dir="ltr"><%=res("pronunciation")%></div>
                         </div><%

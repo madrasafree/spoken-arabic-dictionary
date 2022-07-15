@@ -28,7 +28,6 @@
             cursor:pointer;
             padding: 8px 6px 8px 0px;
             background: white;
-            font-family: 'Alef', sans-serif;
             border-bottom: 1px dashed #9fa1a2;
             }
 

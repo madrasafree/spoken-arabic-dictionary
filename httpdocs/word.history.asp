@@ -63,7 +63,6 @@ res.close
     <meta property="og:title" content="היסטורית עריכות מילה" />
     <meta property="og:type" content="website" />
     <link rel="stylesheet" href="team/inc/arabicTeam.css" />
-    <link href="https://fonts.googleapis.com/css?family=Harmattan" rel="stylesheet">
     <style>
         .backButton {
             background:white;

@@ -13,10 +13,6 @@
         text-transform: initial;
         float:none;
     }
-    .harm { 
-        border-top: 1px dotted gray;
-        padding-top: 3px;
-    }
     .heb {
         float:none;
     }
@@ -29,8 +25,8 @@
     $(function() {
         // add classes
         $('.subtitles > div:nth-child(4n)').addClass("eng");
-        $('.subtitles > div:nth-child(4n+1)').addClass("arb harm");
-        $('.subtitles > div:nth-child(4n+2)').addClass("arb keter");
+        $('.subtitles > div:nth-child(4n+1)').addClass("arb");
+        $('.subtitles > div:nth-child(4n+2)').addClass("arb");
         $('.subtitles > div:nth-child(4n+3)').addClass("heb");
 
         //Filter

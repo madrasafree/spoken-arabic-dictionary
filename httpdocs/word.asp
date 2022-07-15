@@ -126,7 +126,6 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
     <meta property="og:title" content="<%=hebTrans%> - איך אומרים בערבית" />
     <meta property="og:type" content="website" />
     <link rel="stylesheet" href="team/inc/arabicTeam.css" />
-    <link href="https://fonts.googleapis.com/css?family=Harmattan" rel="stylesheet">
 	<style>
         h1 {
             opacity: 0.6;
@@ -198,7 +197,6 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
         }
 
         .eng {padding-left: 2px;}
-        .harm {font-size:1.6em; line-height:.8;}
         .heb {padding-bottom: 4px; padding-right: 2px;}
         .heb a:link,.heb a:visited {color:#1988cc !important;}
 
@@ -307,9 +305,9 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
                 </div>
                 <div class="arb"><%
                     if len(arabic)>0 then %>
-                        <div title="המילה בערבית" class="harm"><%=arabic%></div><%
+                        <div title="המילה בערבית"><%=arabic%></div><%
                     end if %>
-                    <span title="ערבית בתעתיק עברי" class="keter"><%=shadaAlt(arabicWord)%></span>
+                    <span title="ערבית בתעתיק עברי"><%=shadaAlt(arabicWord)%></span>
                 </div>
                 <div title="ערבית בתעתיק לועזי" class="eng">
                     <%=pronunciation%>
@@ -623,10 +621,10 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
                                                 <span class="hebDef">(<%=res2("hebrewDef")%>)</span><%
                                             end if%>
                                         </div>
-                                        <div class="arb harm">
+                                        <div class="arb">
                                             <%=res2("arabic")%>
                                         </div>
-                                        <div class="arb keter" style="margin-top:12px; font-size:1.6em;">
+                                        <div class="arb" style="margin-top:12px; font-size:1.6em;">
                                             <%=shadaAlt(res2("arabicWord"))%>
                                         </div>
                                         <div class="eng" style="padding:9px 0 0 0;">
@@ -799,7 +797,7 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
                         <div class="heb" style="margin-bottom:10px;">
                             <a href="sentence.asp?sID=<%=res("id")%>"><%=trim(res("hebrew"))%></a>
                         </div>
-                        <div class="arb harm" style="padding:0;margin-bottom:10px;line-height:2;"><%
+                        <div class="arb" style="padding:0;margin-bottom:10px;line-height:2;"><%
                             arabicFull = res("arabic")
                             words = split(arabicFull," ")
                             mySQL = "SELECT * FROM wordsSentences WHERE sentence ="&res("id")&" ORDER BY location"
@@ -842,7 +840,7 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
                             res2.close
                         %>
                         </div>
-                        <div class="arb keter" style="padding-top:5px;"><%=shadaAlt(res("arabicHeb"))%></div><%
+                        <div class="arb" style="padding-top:5px;"><%=shadaAlt(res("arabicHeb"))%></div><%
                         if len(res("info"))>0 then %>
                         <div style="background:#ffffff96; border: 1px solid #aaa; text-align:center; margin:5px 10px;font-size:smaller; padding:4px;">
                             הערה: <%=res("info")%>
@@ -952,10 +950,10 @@ if (session("role") > 6) and (needsEdit=true) then %>
                                     <span style="font-size:small; float:left; background:gray; color:white; transform: rotate(-15deg);">ערך מוסתר</span><%
                                 end if%>
                             </div>
-                            <div class="arb harm">
+                            <div class="arb">
                                 <%=res2("arabic")%>
                             </div>
-                            <div class="arb keter" style="margin-top:12px; font-size:1.6em;">
+                            <div class="arb" style="margin-top:12px; font-size:1.6em;">
                                 <%=shadaAlt(res2("arabicWord"))%>
                             </div>
                             <div class="eng" style="padding:9px 0 0 0;">

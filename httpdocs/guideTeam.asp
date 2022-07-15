@@ -74,10 +74,10 @@ end function %>
             <li>התעתיק העברי הוא העתק של הכתיב הערבי וברוב המקרים הוא יהיה זהה אחד לאחד לכתיב הערבי.</li>
             <li>אותיות שיש להם יותר מדרך הגייה אחת - יכתבו תמיד באופן הבא (לפי האות המתאימה לכתיב בכתב הערבי ולא לפי ההגייה)
                 <ul>
-                    <li><span class="arb harm big">ث</span> תמיד תיכתב ת' - <span class="arb">תַ'לַאתֵ'ה</span></li>
-                    <li><span class="arb harm big">ذ</span> תמיד תיכתב ד' - <span class="arb">דַ'הַב</span></li>
-                    <li><span class="arb harm big">ظ</span> תמיד תיכתב ט' - <span class="arb">טֻ'הֻר</span></li>
-                    <li><span class="arb harm big">ق</span> תמיד תיכתב ק - <span class="arb">קַהְוֵה</span></li>
+                    <li><span class="arb big">ث</span> תמיד תיכתב ת' - <span class="arb">תַ'לַאתֵ'ה</span></li>
+                    <li><span class="arb big">ذ</span> תמיד תיכתב ד' - <span class="arb">דַ'הַב</span></li>
+                    <li><span class="arb big">ظ</span> תמיד תיכתב ט' - <span class="arb">טֻ'הֻר</span></li>
+                    <li><span class="arb big">ق</span> תמיד תיכתב ק - <span class="arb">קַהְוֵה</span></li>
                 </ul>
             </li>
             <li>הדגשה/הכפלת המילה מיושמת על ידי הוספת סימן השדה מעל האות. דוגמא - <span class="arb"><%=showShada("בִּדִّי")%></span></li>
@@ -99,9 +99,9 @@ end function %>
             <li>הכתיב הערבי של מילים במילון מייצג את הכתיב המקובל של המילים בכתיבה של ערבית מדוברת. לרוב הכתיב קרוב לכתיב המקובל גם בערבית הספרותית, אבל לא בכל המקרים.</li>
             <li>אותיות שיש להם יותר מדרך הגייה אחת - ייכתבו בכתב הערבי לפי האות השורשית הערבית המקורית, בתעתיק הלועזי תיכתב ההגייה (בלהג העירוני):
                 <ul>
-                    <li><span class="arb harm big">ث -  ثلاثة </span>נהגה <span class="eng">ta-laa-te</span>, <span class="arb harm big">حديث </span>נהגה <span class="eng">h'a-diis</span></li>
-                    <li><span class="arb harm big">ذ - ذهب</span> נהגה <span class="eng">da-hab</span>, <span class="arb harm big">تلميذ</span> נהגה <span class="eng">til-miiz</span></li>
-                    <li><span class="arb harm big">ظ - ظهر</span> נהגה <span class="eng">d'u-hur</span>, <span class="arb harm big">حافظ</span> נהגה <span class="eng">'h'aa-faz</span></li>
+                    <li><span class="arb big">ث -  ثلاثة </span>נהגה <span class="eng">ta-laa-te</span>, <span class="arb big">حديث </span>נהגה <span class="eng">h'a-diis</span></li>
+                    <li><span class="arb big">ذ - ذهب</span> נהגה <span class="eng">da-hab</span>, <span class="arb big">تلميذ</span> נהגה <span class="eng">til-miiz</span></li>
+                    <li><span class="arb big">ظ - ظهر</span> נהגה <span class="eng">d'u-hur</span>, <span class="arb big">حافظ</span> נהגה <span class="eng">'h'aa-faz</span></li>
                 </ul>
             </li>
         </ol>

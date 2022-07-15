@@ -44,7 +44,6 @@ res.close
 
 
         .eng {padding-left: 2px;}
-        .harm {font-size:1.6em; line-height:.8;}
         .heb {padding-bottom: 4px; padding-right: 2px;}
         .heb a:link,.heb a:visited {color:#1988cc !important;}
 
@@ -166,8 +165,8 @@ res.close
                         <span style="background: #ff8d00; color: #ffffff; font-weight: bold; padding: 4px 10px; border-radius: 3px;">טרם נבדק</span><%
                     End Select %>
                     </div>
-                    <div class="arb harm"><%=res("arabic")%></div>
-                    <div class="arb keter" style="font-size:1.6em"><%=shadaAlt(res("arabicWord"))%></div>
+                    <div class="arb"><%=res("arabic")%></div>
+                    <div class="arb" style="font-size:1.6em"><%=shadaAlt(res("arabicWord"))%></div>
                     <div class="eng"><%=res("pronunciation")%></div>
                 </div><%
                 countMe = countMe + 1

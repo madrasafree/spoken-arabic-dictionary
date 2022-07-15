@@ -143,8 +143,8 @@ openDbLogger "arabicWords","O","games.mem.list.asp","main",""
 				</span>
 			</div>
 			<div class="front">
-				<span class="arb harm" style="font-size:2em;  margin:0;"><%=res("arabic")%></span>
-				<span class="arb keter" style="font-size:2em; margin-top:-20px;"><%=shadaAlt(res("arabicWord"))%></span>
+				<span class="arb" style="font-size:2em;  margin:0;"><%=res("arabic")%></span>
+				<span class="arb" style="font-size:2em; margin-top:-20px;"><%=shadaAlt(res("arabicWord"))%></span>
 				<span class="eng" style="vertical-align:bottom; text-align:center;"><%=res("pronunciation")%></span>
 			</div>
 		</div><%

@@ -126,24 +126,19 @@
     #titleRight, #title, #titleLeft { text-align:right; display:table-cell; }
 
 /* language */
-    @font-face {font-family:"keter"; src: url("../inc/fonts/KeterYG-Medium.ttf");}
     @font-face {font-family:"abraham"; src: url("../inc/fonts/Abraham-Light.otf");}
 
-    .body       { font-family: 'Abraham', sans-serif;}
-    .arb        { color:#2ead31; text-align:center; font-family: 'Alef', sans-serif; font-weight: 100; letter-spacing: 0; } /* default.asp */
+    .body       { font-family: 'abraham', sans-serif;}
+    .arb        { color:#2ead31; text-align:center; font-weight: 100; letter-spacing: 0; } /* default.asp */
     .heb        { color:#1988cc; }
     .eng        { color:#d17111; direction:ltr; text-align:left; text-transform: lowercase; }
     .arabic     { font-size:150%; font-weight:bold; letter-spacing:2px; text-align:center; } /* word.asp */
     .arabic td	{ border-bottom:solid 1px #cddbea; } /* word.asp */
-    .harm /*arabic*/ { font-family:'Harmattan',sans-serif; letter-spacing: 0; font-weight: 100; margin-bottom:3px; }
-    .hebrew     { font-family: Narkisim,Serif; padding-right:4px; } /* word.asp */
+    .hebrew     { padding-right:4px; } /* word.asp */
     .hebrew td	{ border-bottom:solid 1px #cddbea; padding-right:4px; } /* word.asp */
-    .english    { font-family: Narkisim,Serif; padding-left:4px; } /* word.asp */
+    .english    { padding-left:4px; } /* word.asp */
     .english td	{ border-bottom:solid 1px #90beea; padding-left:4px; } /* word.asp */
     .tdEng		{ text-align:left; direction:ltr; } /* word.asp */
-    .keter     { font-family:"keter"; font-size:1.3em; } /* word.asp*/
-
-
 
     .img        { width:25px; opacity:0.7; float:left; }
     .label      { padding: 3px 6px; background: white; border: 1px solid #cddbea; }

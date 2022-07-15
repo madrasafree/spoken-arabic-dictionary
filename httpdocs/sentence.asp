@@ -26,7 +26,6 @@
 			color:red;
 			}
 		.arb {background:#4caf5010; padding:5px;}
-		.harm {margin-bottom:0; padding: 10px 4px 0px 4px}
 		.heb {font-size:1.4em; padding:12px 0 10px 0; border-top:2px dotted #bebebe;}
 
 		.notice {margin-top:40px; text-align:center; padding: 5px 0; font-size:small;}
@@ -126,7 +125,7 @@ res.open mySQL, con
 	</table>
 </div>
 <div class="sentence">
-	<div class="arb harm" style="font-size:2em;"><%
+	<div class="arb" style="font-size:2em;"><%
 		dim merge,spanPos
 		spanPos = "start"
 		arabicFull = res("arabic")
@@ -170,7 +169,7 @@ res.open mySQL, con
 		res2.close
 	%>
 	</div>
-	<div class="arb keter"><%=shadaAlt(res("arabicHeb"))%></div>
+	<div class="arb"><%=shadaAlt(res("arabicHeb"))%></div>
 	<div style="display:none;" class="arb arabicHeb"><%=res("arabicHeb")%></div>
 	<div class="heb" style="text-align:center;"><%=res("hebrew")%></div>
 </div><%

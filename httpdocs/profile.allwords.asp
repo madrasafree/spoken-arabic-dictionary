@@ -123,7 +123,7 @@ else%>
                         </span>
                     </span><%
                         if len(res("arabic"))>0 then %>
-                    <span class="arb harm" style="padding-top: 7px;">
+                    <span class="arb" style="padding-top: 7px;">
                         <%=res("arabic")%>
                     </span><%
                         end if %>
@@ -196,7 +196,7 @@ if (session("role") And 2)>0 then
                         </span>
                     </span><%
                         if len(res("arabic"))>0 then %>
-                    <span class="arb harm" style="padding-top: 7px;">
+                    <span class="arb" style="padding-top: 7px;">
                         <%=res("arabic")%>
                     </span><%
                         end if %>

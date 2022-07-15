@@ -264,7 +264,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div id="barSearchTeaser">
         <div style="text-align:center; border:0; line-height:1.5; padding:4px;">
-            חפשו <span class="heb" style="font-size:larger; float:none;">מילה</span>, <span class="arb keter">כִּלְמֵה</span> <span class="or">או</span> <span class="arb harm">كلمة</span>
+            חפשו <span class="heb" style="font-size:larger; float:none;">מילה</span>, <span class="arb">כִּלְמֵה</span> <span class="or">או</span> <span class="arb">كلمة</span>
         </div>
       </div>
     </div>
