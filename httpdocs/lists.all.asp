@@ -198,16 +198,8 @@ openDbLogger "arabicWords","O","lists.all.asp","multi. Break down","" %>
             res.close %>
         </div>
 
-<div style="min-width:320px; max-width:440px; margin:30px auto;">
-	<div style="font-size:small; text-align:center; margin-bottom:4px;"><a href="advertise.asp">- פרסומת -</a></div>
-
-        <!-- משבצת פירסום - אינדקס נושאים -->
-
-
 </div><%
 
-response.write "<h1>HELLO WORLD</h1>"
-response.write "<br>session userID = "&session("userID")
 if session("userID")=1 then 
 dim i
 

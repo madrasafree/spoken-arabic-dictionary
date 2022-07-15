@@ -54,21 +54,6 @@
     <div style="font-size:small; line-height:1.4em;">המילון שלנו מבוסס תוכן קהילתי (כמו ויקיפדיה),
         <br>כך שהמשתמשים עצמם מוסיפים את המילים למילון
     </div>
-    <br>
-    <div style="font-weight:bold;">
-        רוצים גם לקחת חלק?
-    </div>
-    <div style="font-size:small; line-height:1.4em;">
-        שלחו לנו מייל לכתובת
-        <br>arabic4hebs@gmail.com
-        <br>עם הפרטים הבאים:
-        <ul style="line-height:1.4em; margin:5px auto; text-align:right; max-width:350px;">
-            <li>שם מלא בעברית</li>
-            <li>שם משתמש - 6-8 תווים לועזיים/מספרים</li>
-            <li>מוזמנים (לא חובה) להוסיף כמה מילים על החיבור שלכם לערבית</li>
-            <li>מוזמנים (לא חובה) לצרף תמונת פרופיל</li>
-        </ul>
-    </div>
 </div>
 
 <div class="table divStats">
@@ -84,18 +69,6 @@
 
 
 <div class="table divStats">
-    <h3>מי מממן את הפרויקט?</h3>
-    <div style="font-size:small; line-height:1.4em;">
-        גם בפן הכלכלי המילון מסתמך על תמיכת הקהילה.
-        <br>ככל שהתמיכה תגדל, כך הפרויקט יוכל לפרוח מהר יותר
-        <br>
-        <br>אפשר לתמוך באמצעות <b><a href="https://www.patreon.com/arabic4hebs">דף ה-Patreon</a></b> של הפרויקט
-        <br>
-        <br>למידע נוסף בנושא המימון ודרכים נוספות לתמוך <b><a href="contribute.asp">לחצו כאן</a></b>
-    </div>
-</div>
-
-<div class="table divStats">
     <h3>מה אנחנו מתכננים לעתיד?</h3>
     <div style="font-size:small; line-height:1.4em;">
         יש לנו רשימה כל-כך ארוכה של משימות ורעיונות, שזה יהיה מטורף להציג אותה כאן. אז הכנו לכם <b><a href="team.tasks.asp">דף משימות</a></b> יעודי שבו תוכלו לצפות בכל מה שכרגע בטיפול, מתוכנן להמשך, מתוכנן לעתיד הרחוק ועד לרעיונות הכי פרועים שקיבלנו.
@@ -109,7 +82,7 @@
 <div class="table divStats">
     <h3>כמה אנשים משתמשים במילון?</h3>
     <div style="font-size:small; line-height:1.4em;">
-        ב-2019 נעשו 611,000 כניסות לאתר ומעל 3,000,000 צפיות בדפים השונים
+        ב-2021 נעשו 996,000 כניסות לאתר ומעל 4,800,000 צפיות בדפים השונים
         <br>
         <br>לעוד מספרים מעניינים, הכנסו לדף <b><a href="stats.asp" data-gtm="goToStats">הסטטיסטיקה</a></b> היעודי
     </div>

@@ -299,6 +299,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li<%if cURL="test.asp" then%> class="current"<%end if%>><a href="test.asp">ארגז חול</a></li>
             <li class="hr"></li>
             <li<%if cURL="about.asp" then%> class="current"<%end if%>><a href="about.asp">אודות</a></li>
+            <li<%if cURL="stats.asp" then%> class="current"<%end if%>><a href="stats.asp">סטטיסטיקה</a></li>
         </ul>
         <span style="position:absolute; top:10px; left:0;" onclick="toggleMenu();"><a href="#">x</a></span>
     </div><%

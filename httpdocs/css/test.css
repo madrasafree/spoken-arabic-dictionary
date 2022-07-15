@@ -1,7 +1,4 @@
 /* STYLESHEET FOR TESTING PAGES */
-body {
-    padding: 40px 0px 0px 0px; /* REMOVE BR FROM TOP.ASP, THEN REDUCE PADDING */
-}
 #bread {
     background: white;
     border: 1px solid gray;
@@ -10,7 +7,7 @@ body {
     padding: 4px 8px;
     position: sticky;
     top:41px;
-    z-index:999999;
+    z-index:2;
     }
 #container {
     margin:0 auto;

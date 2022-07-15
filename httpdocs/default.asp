@@ -704,6 +704,9 @@ end if %>
     <div>
         <a href="test.asp"><div data-gtm="tile_links" style="background-color:#677edf;">ארגז חול</div></a>
     </div>
+    <div>
+        <a href="stats.asp"><div data-gtm="tile_stats" style="background-color:#677edf;">סטטיסטיקה</div></a>
+    </div>
 </div>
 
 
