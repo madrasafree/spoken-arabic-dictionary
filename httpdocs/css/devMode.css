@@ -1,0 +1,35 @@
+/* Developer Mode stylesheet*/
+
+body {
+    background: #212020;
+    color: white;
+    }
+
+h2 {
+    margin:0;
+    padding:0 0 5px 0;
+    font-size:normal;
+    }
+
+#fix {
+    color:red;
+    border-bottom:1px solid gray;
+    padding:20px 40px 10px 40px;
+    background:white;
+    margin:0;
+    font-size:small;
+}
+
+#code {
+    text-align:left;
+    direction:ltr;
+    margin:20px;
+    line-height:1.5em;
+    font-size:large;
+    }
+
+.mySQL {
+    margin-top:20px;
+    padding:20px;
+    border:1px dashed gray;
+    }

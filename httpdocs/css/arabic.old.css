@@ -1,0 +1,91 @@
+body		{ background:#deefff; direction:rtl; color:gray; margin:0px; font-family:Arial,David,"Times new roman",serif;}
+/*table		{ background-color:#deefff; margin:0px auto; }*/
+.tableA		{ background-color:#e7f3ff;line-height:30px;border-bottom:0px; border-top:solid 1px #99ccff; width:100%; margin:0px auto; border-spacing: 0;}
+.tableA td	{ border-bottom:solid 1px #99e0ff; }
+.tableB		{ background-color:#e7f3ff;line-height:15px;border:solid 1px #99ccff;border-bottom:0px;width:300px; margin:0px auto;}
+.tableB td	{ border-bottom:solid 1px #99ccff; }
+.tableC		{ background-color:#e7f3ff;line-height:15px;border:solid 2px #99ccff;border-bottom:0px;}
+.tableC td	{ border-bottom:solid 2px #99ccff; }
+.tableH     { border:solid 2px black; width:300px; margin:0px auto; padding: 10px inherit; }
+.ta1        { background-color:#d4e7fb; width:60px; padding-right:4px;}
+.ta2        { font-size:150%; font-weight:bold; padding-right:8px; }
+.ta3        { background-color:#d4e7fb; padding-right:4px;}
+.ta4        { padding-right:8px; }
+.ta5        { background-color:#d4e7fb; width:80px; padding-right:4px;}
+.ta6        { font-size:150%; padding-right:8px; }
+
+/* מוסיף מילים - ירוק */
+.tableD		{ background-color:#fefefe;line-height:20px;border:solid 1px #88dd88;width:200px;}
+.tableD td	{ border-bottom:0px; }
+
+/* מפקח - אדום */
+.tableS		{ background-color:#ffffff;line-height:20px;border:solid 1px #dd8888;width:200px;} 
+.tableS td	{ border-bottom:0px; }
+
+/* לוג - אפור וקטן */
+.tableLog		{ line-height:12px;border:dotted 1px grey;font-size:80%;}
+.tableLog td	{ border-bottom:0px; }
+
+.tableU td  { border-bottom:solid 1px gray;}
+.nikud		{ font-family: Narkisim,Serif; font-size:150%;}
+.nikud td	{ border-bottom:solid 2px #99ccff; }
+.nikud2		{ font-family: Narkisim,Serif; font-size:150%;}
+.nikud2 td	{ border-bottom:solid 1px #99ccff; }
+.hebrew     { font-family: Narkisim,Serif; font-size:125%; color:gray; }
+.hebrew td	{ border-bottom:solid 1px #cddbea; }
+.arabic     { font-size:150%; font-weight:bold; letter-spacing:2px; }
+.arabic td	{ border-bottom:solid 1px #cddbea; text-align:center; }
+.english    { font-family: Narkisim,Serif; color:gray; }
+.english td	{ border-bottom:solid 1px #90beea; }
+.bg         { background-color:#e7f3ff; }
+.tdHeader	{ text-align: center; width:1024px; background-color:#d4eaff;}
+.big		{ font-size:x-large; }
+.trA		{ background-color:#e7f3ff; font-size:large; line-height:30px;}
+.trA td		{ border-bottom:solid 1px #90beea; border-top:solid 1px #90beea; }
+.trB		{ background-color:#bbeebb; }
+.trCount	{ background-color:#e7f3ff; font-size:large; text-align:right; line-height:30px;}
+.trCount td	{ border-bottom:solid 2px #b2d9ff;}
+.tdEng		{ text-align:left; direction:ltr;}
+a:link		{ color: gray; text-decoration: none }
+a:visited	{ color: gray; text-decoration: none }
+a:active,
+a:hover		{ color: black; text-decoration: none; }
+h3			{ margin: 1px;}
+
+/* by ID */
+#banner     { overflow:hidden; width:100%; min-width:320px; margin:0; padding-bottom:4px; background-color:#d4eaff;  }
+#title      { overflow:hidden; width:95%; margin:0px auto; text-align:center; float:right; }
+#logo       { overflow:hidden; width:40px; text-align:left; float:left; vertical-align:middle; margin-top:5px; margin-left:5px;}
+#new td     { text-align: right; vertical-align: top; }
+#Message    { color: Red; font-weight:bold;}
+/*
+colors: 
+
+#9da8b3 - gray
+#316394 - blue strongest
+#b2d9ff - blue strong
+#c5e2ff - blue light
+#d4eaff - blue lighter
+#deefff
+#e7f3ff	- blue lightest
+
+#336ea7 - blue - strong (like facebook)
+#86a4c0 - gray - strong
+#99ccff - blue sky
+#c6e3ff - gray - bright
+
+#4b5ea3 - blue - strong (like facebook)
+#b6b7bd - gray - strong
+#f1f4ff - gray blue - bright
+#f7f9ff - gray blue - very bright
+
+#bbddff - blue sky - bright
+
+#abcdef - blue sad
+*/
+
+/** Autosuggest: **/
+div.suggestions { border: 1px outset #666; background-color: #ddd; color: #222; position: absolute; height: auto; max-height: 200px;
+	overflow: scroll; overflow-x: hidden; overflow-y: scroll; -moz-box-sizing: border-box; box-sizing: border-box; }
+div.suggestions div { cursor: default; padding: 0px 3px; }
+div.suggestions div.current { background-color: #36c; color: white; }

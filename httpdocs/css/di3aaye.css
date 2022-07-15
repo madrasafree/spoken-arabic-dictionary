@@ -1,0 +1,174 @@
+/* STYLESHEET FOR ADS */
+
+.ads {
+    padding:10px;
+}
+.adsButtons > a {
+    border:0;
+    border-radius:5px;
+    margin-top:5px;
+    padding:6px 8px;
+}
+.ads p {
+    margin:0;
+    padding:2px 6px 6px 6px;
+}
+.ads img:hover {
+    opacity:0.5;
+}
+.ads table {
+    width:100%;
+}
+
+.adTitle {
+    font-size:large;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.adInfo {
+    font-style:normal;
+}
+
+.tdMargin {
+    min-width: 11px;
+}
+
+
+
+
+.ambatia {
+    background:white;
+    background: linear-gradient(180deg, rgb(95 208 134) 0%, rgb(218 245 225 / 0%) 100%);
+    color:black;
+    border:0px #1c8a43 solid;
+}
+.ambatia .adsButtons > a {
+    background:#1c8a43;
+    border-radius:5px;
+    color:white;
+    white-space: nowrap;
+}
+.ambatia .adsButtons > a:hover {
+    background:#166f36;
+    color:white;
+}
+.ambatia img {
+    max-width:130px;
+}
+.ambatia img:hover {
+    opacity:0.8;
+    box-shadow:#166f36 0px 0px 4px;
+}
+
+
+.tinau {
+    background:#193c36eb;
+    color:#bacab9;
+    border:0;
+}
+.tinau button {
+    background:#faf8e9;
+    border-radius:0;
+    color:#495256;
+    padding:4px 6px;
+}
+.tinau button:hover {
+    background:#ecba9f;
+    color:#495256;
+}
+.tinau img:hover {
+    opacity:0.8;
+    box-shadow:#ecba9f 0px 0px 4px;
+}
+
+
+.finjan {
+    background:#aaafff;
+    color:#555fff;
+    color:#aaafff;
+    color:#FFC555;
+    color:#111199;
+    border:0;
+}
+
+.finjan .adsButtons {
+    font-size:large;
+    line-height:2em;
+    margin-top:10px;
+    text-align:center;
+    width:100%;    
+}
+
+.finjan .adsButtons a {
+    background:#555fff;
+    border:solid #111199;
+    border-width: 0 1px 1px 0;
+    color:#FFC555;
+    padding: 8px 15px;
+}
+
+.finjan .adsButtons a:hover {
+    background:white;
+    color:#111199;
+}
+
+
+.lingolearn {
+    background-color:rgba(6, 110, 153, 0.7);
+    color:white;
+}
+
+.lingolearn .adTitle {
+    letter-spacing: 0.1em;
+}
+
+.lingolearn .adsButtons {
+    font-size:large;
+    line-height:2em;
+    margin-top:10px;
+    text-align:center;
+    width:100%;    
+}
+
+.lingolearn .adsButtons a {
+    background-color: rgb(246, 182, 74);
+    border:solid #066e99;
+    border-radius: 2px;
+    border-width: 0 2px 2px 0;
+    color:black;
+    padding: 8px 35px;
+}
+
+.lingolearn .adsButtons a:hover {
+    background-color: yellow;
+    border-width:1px 0 0 1px;
+    color:#066e99;
+}
+
+
+.ad_Safa1 {
+    background:#6ABBAC; /* blue - 2255BA,turkiz - 6ABBAC,red - FA4632,black - 282828 */
+    color:#282828;
+    padding:10px;
+}
+.ad_Safa1 button {
+    background:#2255BA;
+    border:0;
+    border-radius:5px;
+    color:white;
+    margin-top:5px;
+    padding:4px 6px;
+}
+.ad_Safa1 button:hover {
+    background:#FA4632;
+}
+.ad_Safa1 p {
+    background:white;
+    border-bottom:1px dotted gray;            
+    margin:0;
+    padding:2px 6px 6px 6px;
+}
+.ad_Safa1 img:hover {
+    opacity:0.5;
+}

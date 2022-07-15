@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.net>
+        <mailSettings>
+            <smtp from="your email address">
+                <network host="relay-hosting.secureserver.net" port="25" />
+            </smtp>
+        </mailSettings>
+    </system.net>
+    <system.web>
+        <httpRuntime maxQueryStringLength="2560" maxUrlLength="2560" />
+        <identity impersonate="true" />
+    </system.web>
+    <system.webServer>
+        <security>
+            <requestFiltering>
+                <requestLimits maxUrl="8192" maxQueryString="4096" />
+            </requestFiltering>
+        </security>
+    </system.webServer>
+</configuration>

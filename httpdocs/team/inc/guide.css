@@ -1,0 +1,18 @@
+﻿/* CSS FOR GUIDE.ASP (and new.asp ; edit.asp) */
+
+audio {max-width:100px; padding:0; vertical-align: middle;}
+.credit {font-size:.5em; text-align:left; direction: ltr; color:#eeeeee;}
+.space {margin-bottom:50px;}
+.space a:hover {text-decoration: underline;}
+label {display:block; font-size:small; color:gray;}
+.tableInfo {display:table; width:100%;border-collapse: collapse;}
+.tableInfo td {text-align:center; vertical-align:middle; border:1px solid gray; padding: 0 4px;}
+.tableInfo td:nth-child(1) {color:#2ead31; font-size:2em;}
+.tableInfo td:nth-child(2) {color:#1988cc; font-size:2em;}
+.tableInfo td:nth-child(3) {color:#d17111; font-size:1.5em;}
+.dotted td {border-top:1px dotted gray;}
+.player {direction:ltr; width:32px; overflow:hidden; border:0px solid #aaaaaa; border-radius: 6px; display: inline-block; background-color: #fafbfe; box-shadow:2px 2px 6px #aaaaaa; }
+
+@media (max-width: 400px) {
+    /* .player {width:42px; height:42px;} */
+}

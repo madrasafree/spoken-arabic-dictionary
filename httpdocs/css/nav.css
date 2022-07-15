@@ -1,0 +1,49 @@
+/* STYLESHEET FOR Nav */
+
+/* nav */
+.nav    { position:fixed; width:100%; margin: 0px auto; background:white; }
+.nav ul { margin: 0; padding: 0;  text-align:center;}
+.nav li { padding: 5px; list-style: none; display: inline-block; }
+.nav a  { padding: 3px 12px; text-decoration: none; color: #999; line-height: 100%; }
+.nav a:hover { color: #000; }
+.nav .current a { background:#999; color:#fff; border-radius:5px;}
+/* right nav */
+/*.nav.right ul {text-align: right;}*/
+/* center nav */
+/*.nav.center ul {text-align: center;}*/
+
+@media screen and (max-width: 600px) {
+	.nav { position: fixed; text-align:center; min-height:40px; }	
+	.nav ul { width: 90%; text-align:right; padding: 2px 0; position: absolute; border: solid 1px #aaa;
+		background: #fff url(http://www.elavon.com/images/icon-mobile-menu-on.svg) no-repeat 10px 11px; 
+		border-radius: 5px; box-shadow: 0 1px 2px rgba(0,0,0,.3); }
+	.nav li { display: none; /* hide all <li> items */ margin: 0; }
+	/*.nav .current { display: block;} */ /* show only current <li> item */ 
+	.nav a { display: block; padding: 5px 5px 5px 12px; text-align: right; }
+	.nav .current a { background: none; color: #666; }
+	/* on nav hover */
+	.nav ul:hover { background-image: none; }
+	.nav ul:hover li { display: block; margin: 0 0 5px; }
+	.nav ul:hover .current { background: url(http://dc1tv648rdvbu.cloudfront.net/bundles/aegaxs/images/icons/check_icon.png) no-repeat 10px 7px; }
+	/* right nav */
+	/*.nav.right ul { left: auto; right: 0; }*/
+	/* center nav */ 
+	/*.nav.center ul { left: 50%; margin-left: -90px; }*/
+}
+
+
+/* navNew */
+.navNew { display:none; position:fixed;  margin-right:60px; float:right; width:280px; background-color:#f2f8fe; top:52px; padding:10px 10px; box-shadow: 0 1px 2px rgba(0,0,0,.3); }
+.navNew ul  { margin: 0; padding: 0; }
+.navNew li  { padding: 5px; list-style:none; width:95%;}
+.navNew a { padding: 3px 12px; text-decoration:none; color:#999; }
+.navNew .current { background:rgba(212, 234, 255, 0.40); border-left:solid 2px #d4eaff; border-right:solid 4px #d4eaff; }
+.navNew .current a { color:#1988cc; border-radius:5px; font-weight:bold; }
+.navNew .hr { height:1px; background-color:rgba(0, 0, 0, 0.0); padding: 0; width:88%; margin-top:5px; }
+
+@media (max-width:980px) {
+    .navNew { margin-right:0px; }
+}
+@media (min-width:981px) and (max-width:1219px) {
+    .navNew { width:180px; margin-right:40px; }
+}

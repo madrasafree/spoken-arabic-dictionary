@@ -1,0 +1,48 @@
+.top {width:100%; border-bottom:gray 1px solid; padding:10px; position:fixed; top:0; background-color:white;}
+.top > span {padding:0px 20px 0px 0px}
+.view { margin:50px auto; width:800px; padding:0 30px; text-align:center;}
+
+
+/*OLD CSS*/
+
+body		{ background:#d4eaff; direction:rtl; color:gray; margin:0px; font-family:Arial,David,"Times new roman",serif;}
+table		{ background-color:#deefff; }
+.tableA		{ background-color:#e7f3ff;font-size:150%;line-height:30px;border-bottom:0px; border-top:solid 2px #99ccff;width:600px; text-align:right;}
+.tableA td	{ border-bottom:solid 1px #99ccff; }
+.tableB		{ background-color:#e7f3ff;line-height:15px;border:solid 1px #99ccff;border-bottom:0px;width:200px;}
+.tableB td	{ border-bottom:solid 1px #99ccff; }
+.tableC		{ background-color:#e7f3ff;line-height:15px;border:solid 2px #99ccff;border-bottom:0px;}
+.tableC td	{ border-bottom:solid 2px #99ccff; }
+
+/* מוסיף מילים - ירוק */
+.tableD		{ background-color:#fefefe;line-height:20px;border:solid 1px #88dd88;width:200px;}
+.tableD td	{ border-bottom:0px; }
+
+/* מפקח - אדום */
+.tableS		{ background-color:#ffffff;line-height:20px;border:solid 1px #dd8888;width:200px;} 
+.tableS td	{ border-bottom:0px; }
+
+/* לוג - אפור וקטן */
+.tableLog		{ line-height:12px;border:dotted 1px grey;font-size:80%;}
+.tableLog td	{ border-bottom:0px; }
+
+.tableU td  { border-bottom:solid 1px gray;}
+.nikud		{ font-family: Narkisim,Serif; font-size:150%;}
+.nikud td	{ border-bottom:solid 2px #99ccff; }
+.nikud2		{ font-family: Narkisim,Serif; font-size:150%;}
+.nikud2 td	{ border-bottom:solid 1px #99ccff; }
+.tdHeader	{ text-align: center; width:1024px; background-color:#d4eaff;}
+.big		{ font-size:x-large; }
+.trA		{ background-color:#e7f3ff; font-size:large; line-height:30px;}
+.trA td		{ border-bottom:solid 2px #b2d9ff; border-top:solid 2px #b2d9ff;}
+.trB		{ background-color:#bbeebb; }
+.trCount	{ background-color:#e7f3ff; font-size:large; text-align:right; line-height:30px;}
+.trCount td	{ border-bottom:solid 2px #b2d9ff;}
+.tdEng		{ text-align:left; direction:ltr;}
+a:link		{ color: gray; text-decoration: none }
+a:visited	{ color: gray; text-decoration: none }
+a:active,
+a:hover		{ color: black; text-decoration: none; }
+h3			{ margin: 1px;}
+#new td	{ text-align: right; vertical-align: top; }
+#Message    { color: Red; font-weight:bold;}

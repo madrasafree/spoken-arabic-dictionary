@@ -1,0 +1,121 @@
+﻿/* CSS FOR new.asp ; edit.asp */
+a:link, a:visited {color: #1988cc;}
+a:hover {text-decoration: underline;}
+h1 {font-size:x-large;}
+h2 {margin:0px 0px 15px 0px; font-size: 1.2em;}
+html {overflow-y:scroll;}
+form span {font-size:smaller;}
+
+/* loading animation START */
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #82b1de transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+/* loading animation END */
+  
+
+
+.newReldiv,.crntRelDiv {
+    background: #abcbe224;
+    border: 2px dashed #abcbe2;
+    margin-bottom: 10px;
+    padding: 5px;
+    position: relative;
+}
+.newRelInput::placeholder {
+    color: #bbb;
+    font-size: small;
+}
+.newRelSelect {
+    list-style-type: none;
+    padding:0;
+}
+.newRelSelect li {
+    padding: 10px;
+    background: white;
+    margin-bottom: 4px;
+}
+.newRelSelect li:hover {
+    background:#f6f7ce;
+    cursor:pointer;
+}
+.relRemove {
+    background: #ff6a6a;
+    color: white;
+    display: inline-block;
+    padding: 4px 8px;
+    position: absolute;
+    left: 4px;
+    top: 5px;
+}
+.relRemove:hover {
+    background: #d64444;
+    cursor:pointer;
+}
+
+.button {border: 1px solid #aaa; display: inline-block; padding: 3px 6px; border-radius: 3px; box-shadow: #ccc 2px 2px; background-color: white; cursor: pointer; margin: 4px 1px;}
+.info {background-color:#e2eefb; border-color:#9db8da; color:#6a88cc;}
+.admin{background-color:#fbe2e2; border-color:#da9d9d; color:#bf6969;}
+.box {border: 1px solid rgba(0, 0, 0, 0.2); padding: 10px; margin-bottom: 20px; background-color: rgba(231, 237, 253, 0.25);}
+textarea {width:98%; border:dotted 1px;}
+textarea::placeholder {font-weight:normal; font-size:small;}
+.boxSub {  padding:0; margin:0; border:0;}
+.boxes {width:100%; margin-bottom: 20px;}
+.boxes > div {display: block;min-width:200px;padding: 10px;background-color: rgba(231, 237, 253, 0.25); border: 1px solid rgba(0, 0, 0, 0.2);}
+.boxes > div:first-child {border-left: 1px solid rgba(0, 0, 0, 0.2);}
+.hebDef {line-height: .5; font-size:.5em;}
+.line {width: 100%;}
+.line > div {display:inline-block;}
+.line > input {width: 100%; border: 0; border-bottom: 1px solid; background: none;}
+
+#page {max-width: 600px; min-width: 320px; margin: 0 auto;}
+.tags > div {display: inline-block;padding:4px 8px; border: 1px dotted; margin-bottom:5px; background: white;}
+.trans {text-align: center; width:100%;}
+.trans td {border: 1px solid gray; padding: 3px;}
+.trans td:nth-child(2) {direction: rtl;}
+.trans td:nth-child(3) {direction: ltr;}
+.trans span {display: block; font-size: small;}
+.words {font-size:xx-large;border: solid 2px gray; padding: 0px 4px 10px 4px; background-color: white;}
+.words input::placeholder {color:#ccc;}
+
+#guide,#exactMore,#wordsRelations,#notes,#examples,#subjects,#guide,#nikud,#image,#video,#origin,#dialect,#attributes {background-color:rgba(212, 234, 255, 0.5);}
+
+@media (max-width:840px) {
+    textarea {width:95%; max-width: 300px;}
+    .box {border-width: 0; margin: 0 auto; padding:5px;}
+    .boxes {width:100%; min-width: 320px; margin: 0;}
+    .boxes > div {display: block; width: 95%; padding: 5px; border-width:1px; box-sizing: border-box; margin: 0 auto;}
+    /*.words {font-size:large;}*/
+    .words input {line-height: 1;}
+}
