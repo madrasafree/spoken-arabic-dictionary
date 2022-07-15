@@ -163,30 +163,6 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
             margin-top:15px;
         }
 
-        .ads {
-            margin:0px auto 10px auto;
-            max-width:480px;
-            box-sizing: border-box;
-        }
-
-        .googleAd {
-            margin:0px auto;
-            }
-
-        .adsButtons > a {
-            display:inline-block;
-            color:#2b4223;
-            padding:0 5px;
-            background:#5bb97a;
-            border:solid #4d863b;
-            border-width:0 1px 1px 0;
-        }
-
-        .adsButtons > a:hover {
-            background:#70d491;
-            text-decoration:none;
-        }
-
         legend {
             background: #8cc3fd36;
             border:1px dotted #bbb;
@@ -242,17 +218,7 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
 
         }
 
-        @media (max-width:500px) {
-            .googleAd {
-                font-size:small;
-                width:310px;
-                }
-
-            .adsButtons > a {
-                display:block;
-                margin-bottom:3px;
-            }
-        }        
+    
 
         @media (max-width:610px) {
             .eng,.heb {float:none;}
@@ -299,26 +265,6 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
 <body>
 <!--#include file="inc/top.asp"-->
 
-<!-- CUSTOM AD (ACTIVE) -->
-<div class="ads" style="border:0; background:none;">
-    <a href="advertise.asp" style="font-size:small;">פרסומת:</a>
-    <!--#include file="inc/ads/2021-07_002-milon.asp"-->
-</div>
-    
-<!-- AD BY GOOGLE (DISABLED) -->
-<!--div class="googleAd h2"-->
-    <!-- 'word.asp' ad -->
-    <!--script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-3338230826889333"
-        data-ad-slot="1634196786"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-</div-->
 
 <main class="flex-container">
     <section class="sctRight">

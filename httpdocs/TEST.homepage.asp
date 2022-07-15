@@ -152,7 +152,6 @@
         else %>
         <div class="homepage-item">
             <h2>פרסומת</h2>
-            <!--#include file="inc/ads/2021-07_002-milon.asp"-->
         </div><%
         end if %>
 

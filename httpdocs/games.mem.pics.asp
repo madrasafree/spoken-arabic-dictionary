@@ -249,17 +249,4 @@ end if %>
 </script>
 
 
-<hr/>
-
-
-<div style="min-width:320px; max-width:440px; margin:50px auto;">
-	<div style="font-size:small; text-align:center; margin-bottom:4px;"><a href="advertise.asp">- פרסומת -</a></div>
-
-	<!-- CUSTOM AD (ACTIVE)-->
-	<!--#include file="inc/ads/2021-07_002-milon.asp"-->
-
-</div>
-
-
-
 <!--#include file="inc/trailer.asp"-->

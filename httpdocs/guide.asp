@@ -28,21 +28,4 @@
 
 
 
-<!-- AD BY GOOGLE -->
-<!-- guide.asp -->
-<!--div style="min-width:320px; margin:50px auto;">
-    <div style="font-size:small; margin-right:10px;">פרסומת לכיסוי הוצאות האתר:</div>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-3338230826889333"
-        data-ad-slot="5570724052"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-</div-->
-
-
 <!--#include file="inc/trailer.asp"-->

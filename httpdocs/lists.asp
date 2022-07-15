@@ -491,28 +491,6 @@ closeDbLogger "arabicWords","C","lists.asp","main",durationMs,LID+" "+LName
 
 
 
-    <div style="min-width:320px; max-width:440px; margin:50px auto 30px auto; text-align:center;">
-        <div style="font-size:small; margin-bottom:4px;"><a href="advertise.asp">- פרסומת -</a></div>
-
-        <!-- CUSTOM AD (ACTIVE)-->
-        <!--#include file="inc/ads/2021-07_002-milon.asp"-->
-
-        <!-- AD BY GOOGLE (DISABLED) -->
-        <!-- lists.asp -->
-        <!--script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <ins class="adsbygoogle"
-            style="display:block"
-            data-ad-client="ca-pub-3338230826889333"
-            data-ad-slot="9019353786"
-            data-ad-format="auto"
-            data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script-->
-
-    </div>
-
-
 </div>
 
 <script>

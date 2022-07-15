@@ -23,20 +23,6 @@ End select
 <div class="table" style="text-align:center;">
     <b>דף זה עלול לעלות לאט</b>, מכיוון שהוא מכיל את כל המילים במילון
 </div>
-<br />
-
-<div style="min-width:320px; max-width:490px; margin:50px auto;">
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- all words (list.asp) -->
-    <!-- ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-3338230826889333"
-         data-ad-slot="5116712209"
-         data-ad-format="auto"></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script-->
-</div>
 
 <br>
 <div id="simpleList"><%
