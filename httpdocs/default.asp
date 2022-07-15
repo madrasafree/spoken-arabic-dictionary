@@ -66,7 +66,16 @@
         #boxMenu > div {display: inline-block; margin-top:5px; opacity:.7;}
         #boxMenu > div:hover {opacity:1;}
         #boxMenu > div > a:hover {text-decoration:none;}
-        #boxMenu > div > a > div {display:flex;justify-content:center;align-items:center;width:64px;height:64px;color:black;margin:2px}
+        #boxMenu > div > a > div {
+            background:lightgreen;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            width:144px;
+            height:42px;
+            color:black;
+            margin:2px;
+            }
         #boxMenu img {opacity: .7;}
         #boxMenu img:hover {opacity: 1;}
         #cnt2,#cnt3,#cnt4,#test5 {text-align:right; background:#fff5d7b8; padding-right:10px; border-right: 6px solid #8690ff; color:#8690ff; font-size:1em;}
@@ -684,28 +693,28 @@ end if %>
 <!-- TILE MENU-->
 <div id="boxMenu">
     <div id="communityTile">
-        <a href="activity.asp"><div data-gtm="tile_community" style="background-color:#c267df;">פעילות קהילה</div></a>
+        <a href="activity.asp"><div data-gtm="tile_community">פעילות קהילה</div></a>
     </div>
     <div id="tagsTile">
-        <a href="#"><div data-gtm="tile_labels" style="background-color:#dfb467;">רשימות נושאים</div></a>
+        <a href="#"><div data-gtm="tile_labels">רשימות נושאים</div></a>
     </div>
     <div>
-        <a href="lists.all.asp"><div data-gtm="tile_lists" style="background-color:#dedf67;">הרשימות שלכם</div></a>
+        <a href="lists.all.asp"><div data-gtm="tile_lists">הרשימות שלכם</div></a>
     </div>
     <div>
-        <a href="guide.asp"><div data-gtm="tile_guide" style="background-color:#75df67;">מדריך שימוש</div></a>
+        <a href="guide.asp"><div data-gtm="tile_guide">מדריך שימוש</div></a>
     </div>
     <div>
-        <a href="team.tasks.asp"><div data-gtm="tile_learn" style="background-color:#67bfdf;">דף משימות</div></a>
+        <a href="team.tasks.asp"><div data-gtm="tile_learn">דף משימות</div></a>
     </div>
     <div>
-        <a href="games.mem.asp"><div data-gtm="tile_games" style="background-color:#67a5df;">משחק זיכרון</div></a>
+        <a href="games.mem.asp"><div data-gtm="tile_games">משחק זיכרון</div></a>
     </div>
     <div>
-        <a href="test.asp"><div data-gtm="tile_links" style="background-color:#677edf;">ארגז חול</div></a>
+        <a href="test.asp"><div data-gtm="tile_links">ארגז חול</div></a>
     </div>
     <div>
-        <a href="stats.asp"><div data-gtm="tile_stats" style="background-color:#677edf;">סטטיסטיקה</div></a>
+        <a href="stats.asp"><div data-gtm="tile_stats">סטטיסטיקה</div></a>
     </div>
 </div>
 
