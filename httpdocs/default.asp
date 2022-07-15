@@ -696,13 +696,13 @@ end if %>
         <a href="guide.asp"><div data-gtm="tile_guide" style="background-color:#75df67;">מדריך שימוש</div></a>
     </div>
     <div>
-        <a href="where2learn.asp"><div data-gtm="tile_learn" style="background-color:#67bfdf;">איפה ללמוד</div></a>
+        <a href="team.tasks.asp"><div data-gtm="tile_learn" style="background-color:#67bfdf;">דף משימות</div></a>
     </div>
     <div>
         <a href="games.mem.asp"><div data-gtm="tile_games" style="background-color:#67a5df;">משחק זיכרון</div></a>
     </div>
     <div>
-        <a href="links.asp"><div data-gtm="tile_links" style="background-color:#677edf;">קישורים שונים</div></a>
+        <a href="test.asp"><div data-gtm="tile_links" style="background-color:#677edf;">ארגז חול</div></a>
     </div>
 </div>
 
