@@ -128,7 +128,7 @@
 /* language */
     @font-face {font-family:"abraham"; src: url("../inc/fonts/Abraham-Light.otf");}
 
-    .body       { font-family: 'abraham', sans-serif;}
+    body       { font-family: 'abraham', sans-serif;}
     .arb        { color:#2ead31; text-align:center; font-weight: 100; letter-spacing: 0; } /* default.asp */
     .heb        { color:#1988cc; }
     .eng        { color:#d17111; direction:ltr; text-align:left; text-transform: lowercase; }
