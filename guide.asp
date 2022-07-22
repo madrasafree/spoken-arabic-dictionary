@@ -17,12 +17,7 @@
     <!--#include file="team/guide.embed.asp"-->
 
     <div class="space" id="links"></div>
-    <h3>קישורים</h3>
-    <ul style="font-size:large;">
-        <li><a href="https://www.facebook.com/pg/Kilme.A.Word.A.Day/photos/?tab=album&album_id=1125779257484757" target="kilme">אלבום האותיות של כלמה/מילה אחת ביום</a>
-            <span style="display:block;font-size:initial;margin-bottom:5px;">כלמה ריכזו עבורכם אלבום עם הסברים מעניינים לגבי כל אות ואות בשפה הערבית.</span>
-        </li>
-    </ul>
+
 
 </div>
 

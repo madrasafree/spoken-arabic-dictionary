@@ -693,10 +693,6 @@ if len(strDisplay)>0 then %>
         הסבר על התעתיק
     </div>
 
-    <div class="notice feedback" onclick="location.href='https://docs.google.com/forms/d/e/1FAIpQLSdRbT5gLX_dde1lxAAVKDzLmnEQMeggHSyHLjjg2hj7P7ulcg/viewform?usp=sf_link'">
-        משוב על החיפוש החדש
-    </div>
-
     <hr/><%
 end if %>
 
