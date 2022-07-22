@@ -291,8 +291,8 @@
             if (pad(i,2)==mm) textBuild += " id='mmNow'";
             if (i % 5 == 0) textBuild += " class='mmFive'";
 
-            textBuild += "><span>" + hh + ":" + pad(i,2) + "</span><span data-arabic='الساعة ' data-taatik='אִ(ל)סֵאעַה '>"
-            textBuild += "אִ(ל)סֵאעַה </span><span data-arabic='";
+            textBuild += "><span>" + hh + ":" + pad(i,2) + "</span><span data-arabic='السّاعة ' data-taatik='אִ(ל)סֵّאעַה '>"
+            textBuild += "אִ(ל)סֵّאעַה </span><span data-arabic='";
 
             if (i==40 || i==45 || i==50 || i==55) {
                 textBuild += hhArabic(parseInt(hh)+1) + "' data-taatik='";
@@ -344,7 +344,7 @@
             case 03: case 15: return "תַלַאתֵה"; break;
             case 04: case 16: return 'אַרְבַּעַה'; break;
             case 05: case 17: return "חַ׳מְסַה"; break;
-            case 06: case 18: return 'סִתֵﬞה'; break;
+            case 06: case 18: return 'סִתֵّה'; break;
             case 07: case 19: return 'סַבְּעַה'; break;
             case 08: case 20: return 'תַמַאנְיֵה'; break;
             case 09: case 21: return 'תִסְעַה'; break;
@@ -356,13 +356,13 @@
 
     function mmTaatik(mm){
         switch (parseInt(mm)) {
-            case 00:    return " בִּ(אל)זַﬞבֵּט"; break;
+            case 00:    return " בִּ(אל)זַّבֵּט"; break;
             case 01:    return " וּדַקִיקַה"; break;
             case 02:    return " וּדַקִיקְתֵין"; break;
             case 03:    return " וּתַלַת"; break;
             case 04:    return " וּאַרְבַּע"; break;
             case 05:    return " וּחַ׳מְסֵה"; break;
-            case 06:    return " וּסִתﬞ"; break;
+            case 06:    return " וּסִתّ"; break;
             case 07:    return " וּסַבְּע"; break;
             case 08:    return " וּתַמַן"; break;
             case 09:    return " וּתִסְע"; break;
@@ -381,38 +381,38 @@
             case 22:    return " ותְנֵין וּעִשְרִין"; break;
             case 23:    return " וּתַלַאתֵה וּעִשְרִין"; break;
             case 24:    return " וּאַרְבַּעַה וּעִשְרִין"; break;
-            case 25:    return " וּנֻץﬞ אִלַﬞא חַ׳מְסֵה"; break;
-            case 26:    return " וּסִתֵﬞה וּעִשְרִין"; break;
+            case 25:    return " וּנֻץّ אִלַّא חַ׳מְסֵה"; break;
+            case 26:    return " וּסִתֵّה וּעִשְרִין"; break;
             case 27:    return " וּסַבְּעַה וּעִשְרִין"; break;
             case 28:    return " וּתַמַאנְיֵה וּעִשְרִין"; break;
             case 29:    return " וּתִסְעַה וּעִשְרִין"; break;
-            case 30:    return " וּנֻץﬞ"; break;
+            case 30:    return " וּנֻץّ"; break;
             case 31:    return " וּוַאחַד וּתַלַאתִין"; break;
             case 32:    return " ותְנֵין וּתַלַאתִין"; break;
             case 33:    return " וּתַלַאתֵה וּתַלַאתִין"; break;
             case 34:    return " וּאַרְבַּעַה וּתַלַאתִין"; break;
-            case 35:    return " וּנֻץﬞ וּחַ׳מְסֵה"; break;
-            case 36:    return " וּסִתֵﬞה וּתַלַאתִין"; break;
+            case 35:    return " וּנֻץّ וּחַ׳מְסֵה"; break;
+            case 36:    return " וּסִתֵّה וּתַלַאתִין"; break;
             case 37:    return " וּסַבְּעַה וּתַלַאתִין"; break;
             case 38:    return " וּתַמַאנְיֵה וּתַלַאתִין"; break;
             case 39:    return " וּתִסְעַה וּתַלַאתִין"; break;
-            case 40:    return " אִלַﬞא תֻלְת"; break;
+            case 40:    return " אִלַّא תֻלְת"; break;
             case 41:    return " וּוַאחַד וּאַרְבַּעִין"; break;
             case 42:    return " ותְנֵין וּאַרְבַּעִין"; break;
             case 43:    return " וּתַלַאתֵה וּאַרְבַּעִין"; break;
             case 44:    return " וּאַרְבַּעַה וּאַרְבַּעִין"; break;
-            case 45:    return " אִלַﬞא רֻבְּע"; break;
-            case 46:    return " וּסִתֵﬞה וּאַרְבַּעִין"; break;
+            case 45:    return " אִלַّא רֻבְּע"; break;
+            case 46:    return " וּסִתֵّה וּאַרְבַּעִין"; break;
             case 47:    return " וּסַבְּעַה וּאַרְבַּעִין"; break;
             case 48:    return " וּתַמַאנְיֵה וּאַרְבַּעִין"; break;
             case 49:    return " וּתִסְעַה וּאַרְבַּעִין"; break;
-            case 50:    return " אִלַﬞא עַשַרַה"; break;
+            case 50:    return " אִלַّא עַשַרַה"; break;
             case 51:    return " וּוַאחַד וּחַ׳מְסִין"; break;
             case 52:    return " ותְנֵין וּחַ׳מְסִין"; break;
             case 53:    return " וּתַלַאתֵה וּחַ׳מְסִין"; break;
             case 54:    return " וּאַרְבַּעַה וּחַ׳מְסִין"; break;
-            case 55:    return " אִלַﬞא חַ׳מְסֵה"; break;
-            case 56:    return " וּסִתֵﬞה וּחַ׳מְסִין"; break;
+            case 55:    return " אִלַّא חַ׳מְסֵה"; break;
+            case 56:    return " וּסִתֵّה וּחַ׳מְסִין"; break;
             case 57:    return " וּסַבְּעַה וּחַ׳מְסִין"; break;
             case 58:    return " וּתַמַאנְיֵה וּחַ׳מְסִין"; break;
             case 59:    return " וּתִסְעַה וּחַ׳מְסִין"; break;

@@ -34,7 +34,7 @@
         case 5:
         case 17: saa3a = "חַ'מְסַה"; break;
         case 6:
-        case 18: saa3a = 'סִתֵﬞה'; break;
+        case 18: saa3a = 'סִתֵّה'; break;
         case 7:
         case 19: saa3a = 'סַבְּעַה'; break;
         case 8:
@@ -50,13 +50,13 @@
     }
 
     switch (MM) {
-        case 0:     saa3a += " בִּ(אל)זַﬞבֵּט"; break;
+        case 0:     saa3a += " בִּ(אל)זַّבֵּט"; break;
         case 1:     saa3a += " וּדַקִיקַה"; break;
         case 2:     saa3a += " וּדַקִיקְתֵין"; break;
         case 3:     saa3a += " וּתַלַת"; break;
         case 4:     saa3a += " וּאַרְבַּע"; break;
         case 5:     saa3a += " וּחַ'מְסֵה"; break;
-        case 6:     saa3a += " וּסִתﬞ"; break;
+        case 6:     saa3a += " וּסִתّ"; break;
         case 7:     saa3a += " וּסַבְּע"; break;
         case 8:     saa3a += " וּתַמַן"; break;
         case 9:     saa3a += " וּתִסְע"; break;
@@ -75,18 +75,18 @@
         case 22:    saa3a += " ותְנֵין וּעִשְרִין";     break;
         case 23:    saa3a += " וּתַלַאתֵה וּעִשְרִין";     break;
         case 24:    saa3a += " וּאַרְבַּעַה וּעִשְרִין";     break;
-        case 25:    saa3a += " וּנֻץﬞ אִלַא חַ'מְסֵה";     break;
-        case 26:    saa3a += " וּסִתֵﬞה וּעִשְרִין";     break;
+        case 25:    saa3a += " וּנֻץّ אִלַא חַ'מְסֵה";     break;
+        case 26:    saa3a += " וּסִתֵّה וּעִשְרִין";     break;
         case 27:    saa3a += " וּסַבְּעַה וּעִשְרִין";     break;
         case 28:    saa3a += " וּתַמַאנְיֵה וּעִשְרִין";     break;
         case 29:    saa3a += " וּתִסְעַה וּעִשְרִין";     break;
-        case 30:    saa3a += " וּנֻץﬞ";     break;
+        case 30:    saa3a += " וּנֻץّ";     break;
         case 31:    saa3a += " וּוַאחַד וּתַלַאתִין";     break;
         case 32:    saa3a += " ותְנֵין וּתַלַאתִין";     break;
         case 33:    saa3a += " וּתַלַאתֵה וּתַלַאתִין";     break;
         case 34:    saa3a += " וּאַרְבַּעַה וּתַלַאתִין";     break;
-        case 35:    saa3a += " וּנֻץﬞ וּחַ'מְסֵה";     break;
-        case 36:    saa3a += " וּסִתֵﬞה וּתַלַאתִין";     break;
+        case 35:    saa3a += " וּנֻץّ וּחַ'מְסֵה";     break;
+        case 36:    saa3a += " וּסִתֵّה וּתַלַאתִין";     break;
         case 37:    saa3a += " וּסַבְּעַה וּתַלַאתִין";     break;
         case 38:    saa3a += " וּתַמַאנְיֵה וּתַלַאתִין";     break;
         case 39:    saa3a += " וּתִסְעַה וּתַלַאתִין";     break;
@@ -96,7 +96,7 @@
         case 43:    saa3a += " וּתַלַאתֵה וּאַרְבַּעִין";     break;
         case 44:    saa3a += " וּאַרְבַּעַה וּאַרְבַּעִין";     break;
         case 45:    saa3a += " אִלַא רבע";     break;
-        case 46:    saa3a += " וּסִתֵﬞה וּאַרְבַּעִין";     break;
+        case 46:    saa3a += " וּסִתֵّה וּאַרְבַּעִין";     break;
         case 47:    saa3a += " וּסַבְּעַה וּאַרְבַּעִין";     break;
         case 48:    saa3a += " וּתַמַאנְיֵה וּאַרְבַּעִין";     break;
         case 49:    saa3a += " וּתִסְעַה וּאַרְבַּעִין";     break;
@@ -106,7 +106,7 @@
         case 53:    saa3a += " וּתַלַאתֵה וּחַ'מְסִין";     break;
         case 54:    saa3a += " וּאַרְבַּעַה וּחַ'מְסִין";     break;
         case 55:    saa3a += " אִלַא חַ'מְסֵה";     break;
-        case 56:    saa3a += " וּסִתֵﬞה וּחַ'מְסִין";     break;
+        case 56:    saa3a += " וּסִתֵّה וּחַ'מְסִין";     break;
         case 57:    saa3a += " וּסַבְּעַה וּחַ'מְסִין";     break;
         case 58:    saa3a += " וּתַמַאנְיֵה וּחַ'מְסִין";     break;
         case 59:    saa3a += " וּתִסְעַה וּחַ'מְסִין";     break;
@@ -117,7 +117,7 @@
     if (MM % 5 == 0) daqiqa = ""
     if (MM == 1 || MM == 2) daqiqa = ""  
 
-    document.getElementById('taatiklock').innerHTML=" אִ(ל)סֵאעַה " +  saa3a + " " + daqiqa;
+    document.getElementById('taatiklock').innerHTML=" אִ(ל)סֵّאעַה " +  saa3a + " " + daqiqa;
 
 }
 
