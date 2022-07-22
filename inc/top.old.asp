@@ -60,11 +60,6 @@ q = trim(Request("searchString"))
     qDisplay = Replace(q,quotes,"&quot;") 'REPLACE QUOTE. FOR DISPLAY WITH HTML'
 %>
 
-<!-- Google Tag Manager (noscript) - MUST BE IMMEDIATLY AFTER BODY TAG-->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TD8T67L"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
 <div id="banner" style="z-index:3; text-align:center; min-width:320px;" title="מילון קהילתי מקוון וחינמי">
     <span style="position:fixed; top:5px; right:6px; ">
         <a id="toggleMenu" href="#" onclick="toggleMenu();">

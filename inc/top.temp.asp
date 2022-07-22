@@ -60,11 +60,6 @@ q = trim(Request("searchString"))
     qDisplay = Replace(q,quotes,"&quot;") 'REPLACE QUOTE. FOR DISPLAY WITH HTML'
 %>
 
-<!-- Google Tag Manager (noscript) - MUST BE IMMEDIATLY AFTER BODY TAG-->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TD8T67L"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
 <form id="bar-search-container" action="." autocomplete="off">
   <div id="bar" style="background-color: #f6f9fc; border-bottom:1px solid #cddbea; position:fixed; top:0; width:100%; z-index:3; display: grid; grid-template-columns: 40px 1fr 40px; grid-template-rows: repeat(2, 46px); grid-column-gap: 10px; grid-row-gap: 10px;">
 
