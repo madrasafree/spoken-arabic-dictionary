@@ -141,6 +141,23 @@
           background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
         }
 
+        #madrasa-welcome{
+            display:flex;
+            flex-wrap:wrap;
+        }
+        #madrasa-welcome .madrasa-welcome-text{
+            flex:2;
+            font-size:20px;
+            font-weight:800;
+        }
+         #madrasa-welcome .madrasa-welcome-img{
+            flex:1;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+
 
         @media (max-width:610px) {
             hr {margin:10px auto; }
@@ -687,7 +704,16 @@ end if %>
 
 
 
-
+<div id="madrasa-welcome">
+    <div class="madrasa-welcome-text">
+       <p>
+            ברוכים הבאים לדף הבית החדש של המילון החינמי והשיתופי לערבית מדוברת
+        </p>
+    </div>
+    <div class="madrasa-welcome-img">
+        <img src="/img/site/madrasa.png" alt="Madrasa's logo" width="120">
+    </div>
+</div>
 
 <!-- TILE MENU-->
 <div id="boxMenu">
