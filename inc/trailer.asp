@@ -13,22 +13,7 @@
     <table class="footer">
         <tr>
             <td>
-                <div id="inFooter" style="display:none;">
-					<br>
-					<a href="about.asp">אודות</a> |
-                    <a href="about.asp#thanks">תודות</a> |
-                    <a href="about.asp#copyrights">&copy; זכויות יוצרים</a>
-                    <br>
-                    <br>דיסקליימר: 
-					<b>זהו לא מילון רשמי.</b> את המילים מוסיפים ובודקים משתמשי המילון בעצמם
-                    <br>
-				</div>
-                <div style="padding:5px 8px; text-align:left;">
-                    <div style="display:inline-block; float:right;">
-                        <img src="img/site/info.png" style="width:24px;" onclick="toggleTable()" alt="סוג של דיסקליימר" title="סוג של דיסקליימר" />
-                    </div>
-
-                    <%
+                <div style="padding:5px 8px; text-align:left;"><%
                     if session("role")>2 then %>
                     <a href="profile.asp?id=<%=session("userID")%>">
                         <img id="avatar"
