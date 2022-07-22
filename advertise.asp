@@ -274,7 +274,7 @@
 	<div class="payment">
 		<ol style="padding:0px 35px 0px 15px; line-height:1.4em;">
 			<li>גלשו לדף היעודי באתר המילון, ובחרו משבצת ומועד.</li>
-			<li>שלחו מייל ל-<a href="mailto:arabic4hebs@gmail.com">arabic4hebs@gmail.com</a> עם בחירתכם.</li>
+			<li>שלחו מייל ל-<a href="mailto:yaniv@madrasafree.com">yaniv@madrasafree.com</a> עם בחירתכם.</li>
 			<li>במידה והמשבצת עדיין פנויה, היא תשורין ל-24 שעות אשר במהלכן יש לבצע את התשלום.</li>
 		</ol>
 	</div>

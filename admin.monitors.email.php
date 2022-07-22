@@ -8,7 +8,7 @@
 
 <?php
 $listsAvgVC = $_GET['listsAvgVC'];
-$userEmail = "arabic4hebs@gmail.com";
+$userEmail = "yaniv@madrasafree.com";
 
 $msg = "<html><body>";
 $msg .= "<div>MONITORS: ";

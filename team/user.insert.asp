@@ -47,7 +47,7 @@ Response.Write "<br/>opened DB"
 mySQL = "SELECT email FROM users WHERE email="&eMail
 res.open mySQL,con
 if not res.EOF then
-	session("msg")="כתובת המייל '"&eMail&"' כבר משויכת למשתמש במילון.<br/><a href='login.asp'>התחברו</a> או אם אינכם זוכרים את הסיסמא שלכם, שילחו אלינו מייל מהכתובת שציינתם ל-arabic4hebs@gmail.com"
+	session("msg")="כתובת המייל '"&eMail&"' כבר משויכת למשתמש במילון.<br/><a href='login.asp'>התחברו</a> או אם אינכם זוכרים את הסיסמא שלכם, שילחו אלינו מייל מהכתובת שציינתם ל-yaniv@madrasafree.com"
 	response.Redirect "joinus.asp?username="&username&"&fName="&fName&"&lName="&lName&"&gender="&gender&"&about="&about
 end if
 res.close

@@ -10,7 +10,7 @@
 $wordID = $_GET['wordID'];
 $arabic = $_GET['arabic'];
 $username = $_GET['username'];
-$userEmail = "arabic4hebs@gmail.com";
+$userEmail = "yaniv@madrasafree.com";
 
 $msg = "<!DOCTYPE html>";
 $msg .= "<html>";
@@ -35,7 +35,7 @@ $msg .= "<br/><br/>";
 $msg .= "<div><a href='https://www.facebook.com/spoken.arabic.dictionary'>דף הפייסבוק של המילון</a></div>";
 $msg .= "<div><a href='https://www.facebook.com/groups/1795781623996083'>קבוצת הפייסבוק של המילון</a></div>";
 $msg .= "<br/><br/>";
-$msg .= "<div>להערות לגבי מייל אוטומטי זה, אנא כיתבו לנו למייל arabic4hebs@gmail.com</div>";
+$msg .= "<div>להערות לגבי מייל אוטומטי זה, אנא כיתבו לנו למייל yaniv@madrasafree.com</div>";
 $msg .= "</div>";
 $msg .= "</div>";
 $msg .= "</body>";
@@ -51,13 +51,13 @@ $subject .= "ערכת מילה בהצלחה! ";
 $subject .= "- מס''ד $wordID ";
 
 $from_name = "שרת דואר - מילון ערבית מדוברת";
-//$from_mail = "arabic4hebs@gmail.com";
+//$from_mail = "yaniv@madrasafree.com";
 //$headers = "From: ".$from_name." <".$from_mail.">\r\n";
 //$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-$headers .= 'From: arabic4hebs <arabic4hebs@gmail.com>' . "\r\n" .
-    'Reply-To: arabic4hebs@gmail.com' . "\r\n" .
+$headers .= 'From: arabic4hebs <yaniv@madrasafree.com>' . "\r\n" .
+    'Reply-To: yaniv@madrasafree.com' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
 

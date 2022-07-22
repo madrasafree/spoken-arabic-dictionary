@@ -7,7 +7,7 @@
 	<meta charset='utf-8'>
 </head><%
 
-Response.Write "<br/>OOPS! There seems to be an error.<br/>Please notify site admin - arabic4hebs@gmail.com<br/><br/>"
+Response.Write "<br/>OOPS! There seems to be an error.<br/>Please notify site admin - yaniv@madrasafree.com<br/><br/>"
 If session("role") < 7 then
 	session("msg") = "אין לך הרשאה להשתמש באישור מהיר. לבירור, ניתן לפנות למנהלי האתר."
 	Response.Redirect "/dashboard.lists.asp?listID=1"

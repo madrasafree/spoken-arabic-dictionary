@@ -8,7 +8,7 @@ if debugMode then response.write "<b>Debug Mode - START</b><br>"
 
 if debugMode = false then 
     response.write "OOPS! Something went wrong..."
-    response.write "<br>It would be very helpful if you email us the content of this page to <br><b>arabic4hebs@gmail.com</b>"
+    response.write "<br>It would be very helpful if you email us the content of this page to <br><b>yaniv@madrasafree.com</b>"
     response.write "<br>SHUKRAN! <3"
     response.write "<br>"
     response.write "<br>ERROR ON listsToggle.asp"

@@ -9,7 +9,7 @@ Dim objNewMail
 
     'Your email information
     Set objNewMail = Server.CreateObject("CDO.Message")
-    objNewMail.From = "arabic4hebs@gmail.com"
+    objNewMail.From = "yaniv@madrasafree.com"
     objNewMail.To   = "kanija@gmail.com"
     objNewMail.Subject = "This is a test email"
     objNewMail.TextBody = "this is a test email"

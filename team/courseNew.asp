@@ -85,7 +85,7 @@ countme = 0
         else %>
             <div style="color:#cc5555;">
                 <div style="font-weight:bold;">אין לך הרשאה להוסיף קורסים באף בית ספר.</div>
-                על מנת לקבל הרשאה, יש לשלוח מייל למנהל האתר - arabic4hebs@gmail.com
+                על מנת לקבל הרשאה, יש לשלוח מייל למנהל האתר - yaniv@madrasafree.com
             </div><%
         end if
     else

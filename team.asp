@@ -40,7 +40,7 @@
 
 <div class="table divStats">
     מי שמעוניין לקחת חלק מוזמן לפנות במייל
-    <br /><img src="img/site/gmail.png" alt="arabic4hebs@gmail.com" />
+    <br /><img src="img/site/gmail.png" alt="yaniv@madrasafree.com" />
 </div>
 
 

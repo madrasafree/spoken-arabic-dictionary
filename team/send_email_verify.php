@@ -47,7 +47,7 @@ $msg .= "<br/><br/>";
 $msg .= "<div><a href='https://www.facebook.com/spoken.arabic.dictionary'>דף הפייסבוק של המילון</a></div>";
 $msg .= "<div><a href='https://www.facebook.com/groups/1795781623996083'>קבוצת המתנדבים בפייסבוק</a></div>";
 $msg .= "<br/><br/>";
-$msg .= "<div>להערות לגבי מייל אוטומטי זה, אנא כיתבו לנו למייל arabic4hebs@gmail.com</div>";
+$msg .= "<div>להערות לגבי מייל אוטומטי זה, אנא כיתבו לנו למייל yaniv@madrasafree.com</div>";
 $msg .= "</div>";
 $msg .= "</div>";
 $msg .= "</body>";
@@ -61,7 +61,7 @@ $msg = wordwrap($msg,70);
 
 $subject = "אשרו כתובת מייל כדי להוסיף מילים למילון";
 $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-$headers .= 'Cc: arabic4hebs@gmail.com' . "\r\n";
+$headers .= 'Cc: yaniv@madrasafree.com' . "\r\n";
 
 
 // send email
