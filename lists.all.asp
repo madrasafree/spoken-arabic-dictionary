@@ -192,7 +192,7 @@ openDbLogger "arabicWords","O","lists.all.asp","multi. Break down","" %>
         </div>
 
     <%
-if session("userID")=1 then 
+if session("userID")=1 or session("userID")=73 then 
 dim i
 mySQL = "SELECT count(id) FROM lists"
 res.open mySQL, con %>
