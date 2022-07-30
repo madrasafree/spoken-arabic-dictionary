@@ -84,9 +84,11 @@ if Len(Request("username"))>0 then
 	else
         if allowEdit = false then
             if request("username")<>"kanija" then
-                session("msg") = "מתבצעת כרגע עבודה על מסד הנתונים.<br>נסו להתחבר שוב עוד כרבע שעה."
-                if debugMode then response.end
-                response.redirect returnTo
+                if request("username")<>"yanivg" then
+                    session("msg") = "מתבצעת כרגע עבודה על מסד הנתונים.<br>נסו להתחבר שוב עוד כרבע שעה."
+                    if debugMode then response.end
+                    response.redirect returnTo
+                end if
             end if
         end if
         session("userID")=res("id")

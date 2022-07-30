@@ -52,15 +52,9 @@ closeDbLogger "arabicUsers","C","admin.asp","allowEdit",durationMs,""
 	<h2>תוכן מילון</h2>
 	<ul class="adminMenu">
 		<li><a href="admin.locked.asp">ערכים נעולים</li>
-		<li><a href="admin.mark4translate.asp">מילים לתרגום</a></li>
 		<li><a href="admin.wordsShort.asp">ניהול חיפושים קצרים</a></li>
 		<li><a href="admin.labelControl.asp">נושאים</a></li>
 		<li><a href="admin.lists.asp">רשימות אישיות</a></li>
-	</ul>
-	<h2>פורטל מידע</h2>
-	<ul class="adminMenu">
-		<li><a href="admin.schoolControl.asp">בתי ספר</a></li>
-		<li><a href="admin.courseControl.asp">קורסים - לא פעיל</a></li>
 	</ul>
 	<h2>אחרים</h2>
 	<ul class="adminMenu">
