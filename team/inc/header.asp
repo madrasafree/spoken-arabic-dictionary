@@ -21,4 +21,12 @@ Session("msg") = "" %>
   <link rel="image_src" href="<%=baseA%>img/site/logo.jpg" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-    <!-- Google Analytics was here -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3KCSSVHC9Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3KCSSVHC9Z');
+  </script>

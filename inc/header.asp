@@ -18,23 +18,16 @@ Session("msg") = "" %>
     <link rel="stylesheet" href="css/arabic_from500wide.css" media="(min-width:500px)" />
 	<link rel="stylesheet" href="css/arabic_upto499high.css" media="(max-height:499px)" />
     <link rel="stylesheet" href="css/arabic_from500high.css" media="(min-height:500px)" />
-	<link rel="stylesheet" href="css/di3aaye.css?v=2" />
 	<link rel="shortcut icon" href="img/site/favicon.ico" />
     <link rel="image_src" href="img/site/logo.jpg" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-    <!-- START : SHADA SOLUTION FOR ANDROID DEVICES -->
-    <script type="text/javascript">
-        function isAndroid () {
-            var ua = navigator.userAgent.toLowerCase();
-            return ua.indexOf("android") > -1;
-        }
-        function showShada(word) {
-            if(isAndroid) {
-                word.replace('\u0651','\uFB1E');
-            }
-            return word;
-        }        
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3KCSSVHC9Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3KCSSVHC9Z');
     </script>
-    <!-- END : SHADA SOLUTION FOR ANDROID DEVICES -->

@@ -15,4 +15,11 @@ Session("msg") = "" %>
 	<link rel="shortcut icon" href="img/site/favicon.ico" />
     <link rel="image_src" href="img/site/logo.jpg" />
 
-    <!-- Google Analytics and Facebook Pixel were here -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3KCSSVHC9Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3KCSSVHC9Z');
+    </script>
