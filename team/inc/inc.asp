@@ -55,7 +55,7 @@ sub OpenDB(db)
 	set res3 = Server.CreateObject("adodb.recordset")
 	set cmd = Server.CreateObject("adodb.command")
 	con.provider = "microsoft.jet.oledb.4.0"
-	con.Open Server.MapPath("App_Data/"&db&".mdb")
+	con.Open Server.MapPath("/App_Data/"&db&".mdb")
 end sub
 
 sub closeDB
