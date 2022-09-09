@@ -229,7 +229,9 @@ q = trim(Request("searchString"))
 </style>
 
 <div id="siteTitle">
+<a href=".">
   מילון ערבית מדוברת
+  </a>
 </div>
 <form id="bar-search-container" action="." autocomplete="off" onsumbit="loadAnim(e)">
   <div dir="rtl" id="bar">
@@ -242,8 +244,8 @@ q = trim(Request("searchString"))
         <input id="searchBoxTop" name="searchString" type="search" value="<%=server.HTMLEncode(trim(gereshFix(request("searchString"))))%>" />
       </div>
       <div id="bar-logo">
-        <a href="default.asp">
-          <img style="width:100%;" src="https://rothfarb.info/ronen/arabic/img/site/logo_small.png" alt="logo" />
+        <a href=".">
+          <img style="width:100%;" src="img/site/milon-logo.png" alt="logo" />
         </a>
       </div>
     </div>
@@ -282,19 +284,20 @@ q = trim(Request("searchString"))
         dim cURL
         cURL = mid(Request.ServerVariables("url"),22) %>
         <ul>
-            <li<%if cURL="default.asp" then%> class="current"<%end if%>><a href="default.asp">דף ראשי</a></li>
+            <li><a href="default.asp">דף הבית של המילון</a></li>
             <li class="hr"></li>
-            <li<%if left(cURL,5)="label" then%> class="current"<%end if%>><a href="labels.asp">רשימות נושאים<span style="font-size:80%;"></span></a></li>
-            <li<%if left(cURL,5)="lists" then%> class="current"<%end if%>><a href="lists.all.asp">רשימות אישיות</a></li>
-            <li<%if cURL="games.mem.asp" then%> class="current"<%end if%>><a href="games.mem.asp">משחק זיכרון</a></li>
+            <li><a href="labels.asp">רשימות נושאים<span style="font-size:80%;"></span></a></li>
+            <li><a href="lists.all.asp">רשימות אישיות</a></li>
+            <li><a href="games.mem.asp">משחק זיכרון</a></li>
+            <li><a href="guide.asp">מדריך שימוש <span style="font-size:80%;"></span></a></li>
+            <li style="display:none;"><a href="activity.asp">פעילות קהילה</a></li>
+            <li style="display:none;"><a href="team.tasks.asp">דף משימות</a></li>
+            <li style="display:none;"><a href="test.asp">ארגז חול</a></li>
+            <li><a href="about.asp">אודות המילון</a></li>
+            <li style="display:none;"><a href="stats.asp">סטטיסטיקה</a></li>
             <li class="hr"></li>
-            <li<%if cURL="guide.asp" then%> class="current"<%end if%>><a href="guide.asp">מדריך שימוש <span style="font-size:80%;"></span></a></li>
-            <li<%if cURL="activity.asp" then%> class="current"<%end if%>><a href="activity.asp">פעילות קהילה</a></li>
-            <li<%if cURL="team.tasks.asp" then%> class="current"<%end if%>><a href="team.tasks.asp">דף משימות</a></li>
-            <li<%if cURL="test.asp" then%> class="current"<%end if%>><a href="test.asp">ארגז חול</a></li>
-            <li class="hr"></li>
-            <li<%if cURL="about.asp" then%> class="current"<%end if%>><a href="about.asp">אודות</a></li>
-            <li<%if cURL="stats.asp" then%> class="current"<%end if%>><a href="stats.asp">סטטיסטיקה</a></li>
+            <li><a href="https://madrasafree.com">לאתר הבית של מדרסה</a></li>
+
         </ul>
         <span style="position:absolute; top:10px; left:0;" onclick="toggleMenu();"><a href="#">x</a></span>
     </div><%

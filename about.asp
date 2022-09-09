@@ -51,6 +51,7 @@
 
 <div class="table divStats" style="text-align:right;">
     <br>פרויקט 'מילון ערבית מדוברת' נוסד בשנת 2005 על ידי רונן רוטפרב ונוהל על ידו עד שעבר לידי עמותת 'מדרסה' בשנת 2022.
+    <br> <br>לפורטל ערבית מדוברת של רונן <a href="https://rothfarb.info/ronen/arabic/" style="text-decoration:underline;" target="_blank">לחצו כאן</a>
     <br>
     <br>תודה רבה לאנשים שתרמו, תמכו וסייעו לרונן בפרויקט בין השנים 2005 - 2022, ביניהם: 
 

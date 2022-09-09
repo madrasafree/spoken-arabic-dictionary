@@ -702,18 +702,20 @@ end if %>
 
 <div id="madrasa-welcome">
     <div class="madrasa-welcome-text">
-       <p>
-            ברוכים הבאים לדף הבית החדש של המילון החינמי והשיתופי לערבית מדוברת
+       <p style="text-align:justify;padding:0 20px;">
+            ברוכים הבאים לדף הבית החדש של המילון החינמי והשיתופי לערבית מדוברת של מדרסה
         </p>
     </div>
     <div class="madrasa-welcome-img">
-        <img src="/img/site/madrasa.png" alt="Madrasa's logo" width="120">
+        <a href="https://madrasafree.com" target="_blank">
+            <img src="/img/site/madrasa.png" alt="Madrasa's logo" width="120">
+        </a>
     </div>
 </div>
 
 <!-- TILE MENU-->
 <div id="boxMenu">
-    <div id="communityTile">
+    <div style="display:none;" id="communityTile">
         <a href="activity.asp"><div data-gtm="tile_community">פעילות קהילה</div></a>
     </div>
     <div id="tagsTile">
@@ -725,16 +727,16 @@ end if %>
     <div>
         <a href="guide.asp"><div data-gtm="tile_guide">מדריך שימוש</div></a>
     </div>
-    <div>
+    <div style="display:none;">
         <a href="team.tasks.asp"><div data-gtm="tile_learn">דף משימות</div></a>
     </div>
     <div>
         <a href="games.mem.asp"><div data-gtm="tile_games">משחק זיכרון</div></a>
     </div>
-    <div>
+    <div style="display:none;">
         <a href="test.asp"><div data-gtm="tile_links">ארגז חול</div></a>
     </div>
-    <div>
+    <div style="display:none;">
         <a href="stats.asp"><div data-gtm="tile_stats">סטטיסטיקה</div></a>
     </div>
 </div>
