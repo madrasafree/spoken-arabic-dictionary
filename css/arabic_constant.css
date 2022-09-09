@@ -81,7 +81,7 @@
     #searchRight    { text-align:right; font-size:80%; padding:0px 22px 10px 0px; }
     /*#searchTop input  { background-image: url(img/site/search.png); background-position:0px 0px; background-repeat:no-repeat; background-size:24px;}*/
     #showTime {
-        font-size: medium;
+        font-size: 20px;
         margin: 40px auto 0 auto;
         width: fit-content;
         text-align: center;
@@ -92,7 +92,7 @@
 
     #showTime #clock {
         display: block;
-        font-size: medium;
+        font-size: 20px;
     }
 
     #showTime #MM:before{
