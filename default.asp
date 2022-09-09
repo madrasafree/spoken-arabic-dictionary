@@ -142,13 +142,15 @@
         }
 
         #madrasa-welcome{
-            display:flex;
-            flex-wrap:wrap;
+            /* display:flex;
+            flex-wrap:wrap; */
         }
         #madrasa-welcome .madrasa-welcome-text{
             flex:2;
             font-size:20px;
             font-weight:800;
+            max-width:390px;
+            margin:0 auto;
         }
          #madrasa-welcome .madrasa-welcome-img{
             flex:1;
@@ -701,16 +703,18 @@ end if %>
 
 
 <div id="madrasa-welcome">
-    <div class="madrasa-welcome-text">
-       <p style="text-align:justify;padding:0 20px;">
-            ברוכים הבאים לדף הבית החדש של המילון החינמי והשיתופי לערבית מדוברת של מדרסה
-        </p>
-    </div>
     <div class="madrasa-welcome-img">
         <a href="https://madrasafree.com" target="_blank">
             <img src="/img/site/madrasa.png" alt="Madrasa's logo" width="120">
         </a>
     </div>
+
+    <div class="madrasa-welcome-text">
+       <p style="text-align:center;padding:0 20px;">
+            ברוכים הבאים לדף הבית החדש של המילון החינמי והשיתופי לערבית מדוברת
+        </p>
+    </div>
+    
 </div>
 
 <!-- TILE MENU-->
@@ -738,6 +742,12 @@ end if %>
     </div>
     <div style="display:none;">
         <a href="stats.asp"><div data-gtm="tile_stats">סטטיסטיקה</div></a>
+    </div>
+    <div >
+        <a href="https://rothfarb.info/ronen/arabic/"  style="line-height:16px;" target="_blank" ><div style="background-color:#c0dbf8">
+        פורטל ערבית מדוברת
+        <img style="height:100%;opacity:1;" src="img/site/logo.png"/>
+        </div></a>
     </div>
 </div>
 
