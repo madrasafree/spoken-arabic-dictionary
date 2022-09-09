@@ -14,7 +14,7 @@ $userEmail = "yaniv@madrasafree.com";
 
 $msg = "<html><body>";
 $msg .= "<div>AUTOMATIC EMAIL: ";
-$msg .= "<div>The user $username has added a <a href='https://dict.madrasafree.com/word.asp?id=$wordID'>new word</a> to the dictionary</div>";
+$msg .= "<div>The user $username has added a <a href='https://milon.madrasafree.com/word.asp?id=$wordID'>new word</a> to the dictionary</div>";
 $msg .= "<div>Arabic : $arabic</div>";
 $msg .= "<div>wordID : $wordID</div>";
 $msg .= "</body></html>";
@@ -32,7 +32,7 @@ $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 mail($userEmail,$subject,$msg,$headers);
 
 // Redirect browser
-header("Location: https://dict.madrasafree.com/word.asp?id=$wordID");
+header("Location: https://milon.madrasafree.com/word.asp?id=$wordID");
 exit();
 ?>
   
