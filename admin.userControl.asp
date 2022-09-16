@@ -42,7 +42,8 @@ res.open mySQL, con %>
 
 <table class="table" style="width:600px;">
     <tr style="background:#edc;">
-        <td>שם אמיתי</a></td>
+	    <td>userStatus</td>
+        <td>שם אמיתי</td>
 		<td dir="ltr">Username</td>
 		<td dir="ltr">eMail</td>
         <td dir="ltr">R</td>
@@ -50,7 +51,20 @@ res.open mySQL, con %>
     </tr><%
     do until res.EOF %>
 	    <tr class="userRow role<%=res("role")%>">
-			
+			<td><%
+				Select Case res("userStatus")
+					case 1 'active
+					response.write "פעיל"
+					case 77 'frozen
+					response.write "מוקפא"
+					case 88 'suspended
+					response.write "מושהה"
+					case 99 'deleted
+					response.write "מחוק"
+					case else 'error
+					response.write "שגיאה"
+				End Select
+			%></td>
 	        <td style="vertical-align:top; text-align:right;">
 	            <a href="profile.asp?id=<%=res("id")%>" target="profile<%=res("id")%>">
 					<%=res("name")%> <small>(<%if res("gender")=1 then %>M<% else %>F<%end if%>)</small>
