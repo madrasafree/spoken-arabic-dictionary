@@ -12,6 +12,18 @@ ok = false
 '2 - The user is the creator of the word, and it has not been aproved yet.
 
 
+openDB "arabicUsers"
+    'Checks if READ ONLY mode is Enabled
+    mySQL = "SELECT allowed FROM allowEdit WHERE siteName='readonly'"
+    res.open mySQL, con
+    if res(0) = true then
+        session("msg") = "אין כרגע אפשרות לערוך מילים. אנא נסו שנית מאוחר יותר"
+        response.Redirect "word.asp?id="&wordID
+    end if
+    res.close
+closeDB
+
+
 startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","word.edit.asp","permission",""

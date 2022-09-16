@@ -2,7 +2,21 @@
 If (session("role")<2) then 
     session("msg") = "אין לך הרשאה מתאימה"
     Response.Redirect Request.ServerVariables("HTTP_REFERER")
-end if %>
+end if
+
+
+openDB "arabicUsers"
+    'Checks if READ ONLY mode is Enabled
+    mySQL = "SELECT allowed FROM allowEdit WHERE siteName='readonly'"
+    res.open mySQL, con
+    if res(0) = true then
+        session("msg") = "אין כרגע אפשרות לערוך רשימות. אנא נסו שנית מאוחר יותר"
+        Response.Redirect Request.ServerVariables("HTTP_REFERER")
+    end if
+    res.close
+closeDB
+
+ %>
 <!DOCTYPE html>
 <html>
 <head>

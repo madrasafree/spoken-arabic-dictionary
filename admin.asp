@@ -4,7 +4,7 @@ if session("role") <> 15 then
 	session("msg") = "אין לך הרשאה מתאימה. פנה למנהל האתר"
 	Response.Redirect "team/login.asp"
 end if
-dim allowEdit
+dim allowEdit, readOnly
 
 startTime = timer()
 'openDB "arabicUsers"
@@ -14,6 +14,12 @@ mySQL = "SELECT allowed FROM allowEdit WHERE siteName='arabic'"
 res.open mySQL, con
 	if res(0)=true then allowEdit = true else allowEdit = false
 res.close
+
+mySQL = "SELECT allowed FROM allowEdit WHERE siteName='readOnly'"
+res.open mySQL, con
+	if res(0)=true then readOnly = true else readOnly = false
+res.close
+
 
 endTime = timer()
 durationMs = Int((endTime - startTime)*1000)
@@ -67,11 +73,25 @@ closeDbLogger "arabicUsers","C","admin.asp","allowEdit",durationMs,""
 		<li><a href="admin.listAllWords.asp">רשימת כל המילים במילון - מומלץ רק לוקאלי</a></li>
 	</ul>
 </div>
-<div class="enabler"><p>אפשר / מנע שינויים במסד נתונים</p>
+
+
+<div class="enabler">
+
+	<label>אפשר / מנע התחברות לאתר</label>
 	<label class="switch">
 	  <input type="checkbox" name="enabler" <%if allowEdit=true then%>checked<%end if%> onclick="location.href = 'admin.allowEditToggle.asp';">
 	  <span class="slider round"></span>
 	</label>
+
+
+	<br>
+	<label>אפשר / מנע שינויים במסד נתונים</label>
+	<label class="switch">
+	  <input type="checkbox" name="readOnlyToggle" <%if readOnly=false then%>checked<%end if%> onclick="location.href = 'admin.readOnlyToggle.asp';">
+	  <span class="slider round"></span>
+	</label>
+
+
 	  <div><%
 	startTime = timer()
 	'openDB "arabicUsers" 
@@ -90,6 +110,9 @@ closeDbLogger "arabicUsers","C","admin.asp","allowEdit",durationMs,""
 	  	
 	  </div>
 </div>
+
+
+
 <!--#include file="inc/trailer.asp"-->
 
 </body>

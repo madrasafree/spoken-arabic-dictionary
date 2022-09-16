@@ -4,6 +4,18 @@ If (session("role")<2) then
     Response.Redirect "team/login.asp"
 end if
 
+openDB "arabicUsers"
+    'Checks if READ ONLY mode is Enabled
+    mySQL = "SELECT allowed FROM allowEdit WHERE siteName='readonly'"
+    res.open mySQL, con
+    if res(0) = true then
+        session("msg") = "אין כרגע אפשרות ליצור רשימות חדשות. אנא נסו שנית מאוחר יותר"
+        response.Redirect "."
+    end if
+    res.close
+closeDB
+
+
 dim maxLists
 
 startTime = timer()

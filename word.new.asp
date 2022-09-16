@@ -9,6 +9,17 @@ if (session("role") and 2) = 0 then
     response.Redirect "login.asp"
 end if
 
+openDB "arabicUsers"
+    'Checks if READ ONLY mode is Enabled
+    mySQL = "SELECT allowed FROM allowEdit WHERE siteName='readonly'"
+    res.open mySQL, con
+    if res(0) = true then
+        session("msg") = "אין כרגע אפשרות להוסיף מילים חדשות למילון. אנא נסו שנית מאוחר יותר"
+        response.Redirect "."
+    end if
+    res.close
+closeDB
+
 dim countme
 countme = 0 %>
 <!DOCTYPE html>

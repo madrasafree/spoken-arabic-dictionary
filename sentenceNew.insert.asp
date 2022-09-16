@@ -19,6 +19,20 @@ if (session("role") and 2) = 0 then
 	response.Redirect "login.asp"
 end if
 
+
+openDB "arabicUsers"
+    'Checks if READ ONLY mode is Enabled
+    mySQL = "SELECT allowed FROM allowEdit WHERE siteName='readonly'"
+    res.open mySQL, con
+    if res(0) = true then
+        session("msg") = "אין כרגע אפשרות להוסיף משפטים. אנא נסו שנית מאוחר יותר"
+        Response.Redirect Request.ServerVariables("HTTP_REFERER")
+    end if
+    res.close
+closeDB
+
+
+
 Dim query,msg,maxId,myMail,nowUTC
 Dim arabic,hebrew,arabicHeb,info
 Dim status,i

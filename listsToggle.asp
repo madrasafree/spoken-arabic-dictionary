@@ -1,5 +1,19 @@
 ﻿<!--#include file="inc/inc.asp"--><%
 
+
+openDB "arabicUsers"
+    'Checks if READ ONLY mode is Enabled
+    mySQL = "SELECT allowed FROM allowEdit WHERE siteName='readonly'"
+    res.open mySQL, con
+    if res(0) = true then
+        session("msg") = "אין כרגע אפשרות להוסיף רשימות למועדפים. אנא נסו שנית מאוחר יותר"
+        Response.Redirect Request.ServerVariables("HTTP_REFERER")
+    end if
+    res.close
+closeDB
+
+
+
 dim debugMode,LID,maxPos
 LID = Request("lid")
 

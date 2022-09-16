@@ -3,6 +3,17 @@
     if not (session("userID")=1 or session("userID")=73 or session("userID")=77 or session("userID")=103 or session("userID")=118 or session("userID")=129) then Response.Redirect "login.asp" 
 
 
+openDB "arabicUsers"
+    'Checks if READ ONLY mode is Enabled
+    mySQL = "SELECT allowed FROM allowEdit WHERE siteName='readonly'"
+    res.open mySQL, con
+    if res(0) = true then
+        session("msg") = "אין כרגע אפשרות לערוך מידע במסד הנתונים. אנא נסו שנית מאוחר יותר"
+        Response.Redirect Request.ServerVariables("HTTP_REFERER")
+    end if
+    res.close
+closeDB    
+
 startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","mediaEdit.asp","media details",""
