@@ -1,33 +1,55 @@
-<HTML>
-<HEAD>
-<TITLE>404 Not Found</TITLE>
-<BASE href="/error_docs/"><!--[if lte IE 6]></BASE><![endif]-->
-</HEAD>
-<BODY>
-<H1>Not Found</H1>
-The requested document was not found on this server.
-<P>
-<HR>
-<ADDRESS>
-Web Server at milon.madrasafree.com
-</ADDRESS>
-</BODY>
-</HTML>
+<!DOCTYPE html>
+<html>
 
-<!--
-   - Unfortunately, Microsoft has added a clever new
-   - "feature" to Internet Explorer. If the text of
-   - an error's message is "too small", specifically
-   - less than 512 bytes, Internet Explorer returns
-   - its own error message. You can turn that off,
-   - but it's pretty tricky to find switch called
-   - "smart error messages". That means, of course,
-   - that short error messages are censored by default.
-   - IIS always returns error messages that are long
-   - enough to make Internet Explorer happy. The
-   - workaround is pretty simple: pad the error
-   - message with a big comment like this to push it
-   - over the five hundred and twelve bytes minimum.
-   - Of course, that's exactly what you're reading
-   - right now.
-   -->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Error 404</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo&family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: 'Abraham';
+      src: url('https://milon.madrasafree.com/inc/fonts/Abraham-Light.otf');
+    }
+    
+    h2,
+    p {
+      text-align: center;
+      font-family: "Heebo", sans-serif;
+      font-family: 'Abraham';
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    h2 {
+      font-size: 26px;
+    }
+    .logos a{
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body dir="rtl">
+  <div class="logos" style="text-align: center">
+    <a href="https://milon.madrasafree.com"><img height="100" style="position: relative; top: 15px" src="https://milon.madrasafree.com/img/site/milon-logo.png" /></a><a href="https://madrasafree.com"><img height="70" src="https://milon.madrasafree.com/img/site/madrasa.png" /></a>
+  </div>
+  <h1 style="display: none">404</h1>
+
+  <h2>وين أنا؟ וֵין אַנַא? איפה אני?</h2>
+  <p>כנראה שהגעת לדף שלא קיים…</p>
+  <p>
+    <a href="https://madrasafree.com"> לדף הבית של אתר מדרסה </a>
+    <br />
+    <a href="."> לדף הבית של המילון </a>
+  </p>
+  <div style="text-align: center">
+    <img src="https://madrasafree.com/wp-content/uploads/2022/03/404_illus.svg" style="max-width: 300px" />
+  </div>
+</body>
+
+</html>
