@@ -61,12 +61,87 @@ q = trim(Request("searchString"))
 %>
 
 <style>
+
+menu {
+  DISPLAY:NONE;
+  background:#f6f9fc;
+  border-left:1px solid #cddbea;
+  height:calc(100vh);
+  font-size:1.4em;
+  position:fixed;
+  top:0;
+  z-index:2;
+  padding:0;
+  margin:0;
+ }
+
+  menu ul {
+    display:flex;
+    flex-direction:column;
+    gap:1%;
+    height:calc(100% - 85px);
+    justify-content:space-around;
+    list-style:none;
+    margin:0;
+    padding:0 45px 45px 45px;
+    width:160px;
+  }
+
+  menu li {
+    background-color:#ffffff;
+    border-radius:10px 0;
+    text-align:center;
+    flex:1;
+    border: 1px solid lightgray;
+    box-shadow: 1px 1px 1px #ccc;
+  }
+
+  menu li:hover {
+    cursor:pointer;
+    background-color:#ddd;
+  }
+
+  menu div {
+  display:flex;
+  padding:0;
+  margin:0;
+  height:100%;
+  justify-content: center;
+  align-items: center;
+  }
+
+menu div p {
+  align-self:center;
+  flex:1;
+  margin:0;
+}
+menu li:first-child p, menu li:last-child p{
+  font-size:18px;
+  }
+@media (max-width:600px) {
+  menu {
+    width:100%;
+    padding:0;
+  }
+  menu ul {
+    width: calc(100% - 60px);
+    padding: 0 30px 40px 30px;
+    height: calc(100% - 100px); 
+     }
+
+    menu li:first-child p, menu li:last-child p{
+  font-size:1em;
+  }
+}
+
+
+
   #bar-search-container {
     background-color: #f6f9fc; 
     border-bottom: 1px solid #cddbea;
     position: sticky;
     top:0;
-    z-index:1;
+    z-index:2;
   }
 
   #bar {
@@ -236,8 +311,8 @@ q = trim(Request("searchString"))
 <form id="bar-search-container" action="." autocomplete="off" onsumbit="loadAnim(e)">
   <div dir="rtl" id="bar">
     <div id="bar-search-flex">
-      <div id="bar-menu" onclick="toggleMenu();">
-        <span class="material-icons" style="font-size: 40px; color: #5b7a99;">menu</span>
+      <div id="bar-menu">
+       <span class="material-icons" id="menuOpen" style="font-size: 40px; color: #5b7a99;">menu</span>
       </div>
       <div id="bar-search">
         <label for="searchBoxTop" style="DISPLAY:NONE;"> </label>
@@ -280,7 +355,22 @@ q = trim(Request("searchString"))
 
 
 <div id="container">
-    <div id="nav" class="navNew" style="z-index:3;"><%
+
+    <menu>
+           <span class="material-icons" id="menuClose" style="cursor: pointer;font-size: 50px; color: #5b7a99;">close</span>
+
+      <ul>
+        <li><div onclick="window.location.href='default.asp'"><p>דף הבית של המילון</p></div></li>
+        <li><div onclick="window.location.href='labels.asp'"><p>רשימת נושאים</p></div></li>
+        <li><div onclick="window.location.href='lists.all.asp'"><p>רשימות אישיות</p></div></li>
+        <li><div onclick="window.location.href='games.mem.asp'"><p>משחק זיכרון</p></div></li>
+        <li><div onclick="window.location.href='guide.asp'"><p>מדריך שימוש</p></div></li>
+        <li><div onclick="window.location.href='about.asp'"><p>אודות המילון</p></div></li>
+        <li><div onclick="window.location.href='https://madrasafree.com'"><p>לאתר הבית של מדרסה</p></div></li>
+      </ul>
+    </menu>
+
+    <div id="nav" class="navNew" style="visibility:hidden;z-index:3;"><%
         dim cURL
         cURL = mid(Request.ServerVariables("url"),22) %>
         <ul>
@@ -312,6 +402,14 @@ q = trim(Request("searchString"))
     <br />
 
     <script>
+
+    $(function(){
+    $("#menuOpen, #menuClose").click(function(){
+      $("menu").toggle("slow");
+      // $("#menuOpen, #menuClose").toggle();
+    });
+    });
+
       $("#searchBoxTop").focusin(function(){
         $("#bar-menu, #bar-logo").addClass("hideOnMobile");
         $("#barSearchTools").slideDown();
