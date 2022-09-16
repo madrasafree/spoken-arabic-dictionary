@@ -700,6 +700,22 @@ end if %>
 
 
 
+<%
+dim fromApp
+fromApp = false
+if request("app") = "androidFromPortal" then fromApp = true
+if fromApp then %>
+<div style="background:#ffff0087; padding:10px 30px ; 
+        border-radius:10px; font-size:1.1em; text-align:center;  margin-bottom:20px;">
+        <b>גולשים מהאפליקציה?</b>
+        <br>
+        המילון עובר בימים אלה לבית המאמץ החדש שלו במדרסה. בקרוב תצא גרסה עדכנית לאפליקציה שלא תפתח לכם את המילון בדפדפן של הטלפון.
+        <br>
+        תודה על סבלנותכם
+</div>
+<%
+end if
+%>
 
 
 <div id="madrasa-welcome">
