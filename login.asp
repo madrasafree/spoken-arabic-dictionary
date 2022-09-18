@@ -77,11 +77,15 @@ if debugMode then response.write "<div class='debug'>request(username) = "&reque
 
 if Len(Request("username"))>0 then
 
-	res.Open "SELECT id,name,role,email FROM users WHERE username="""&Request("username")&""" AND password="""&Request("password")&"""",con,1
+	res.Open "SELECT id,name,role,email,userStatus FROM users WHERE username="""&Request("username")&""" AND password="""&Request("password")&"""",con,1
 	if res.eof then 
 		error="טעות בשם המשתמש או הסיסמא"
         session("role")=0
 	else
+        if res("userStatus")=77 and res("ID")<380 then
+            session("msg") = "ברוכים השבים! חשבונכם הוקפא עם המעבר למדרסה. על מנת להחזיר אותו לפעילות, אנא אשרו העברת הפרטים שלכם אלינו על ידי שליחת מייל ל-arabic4hebs@gmail.com"
+            response.redirect returnTo
+        end if
         if allowEdit = false then
             if request("username")<>"kanija" then
                 if request("username")<>"yanivg" then
