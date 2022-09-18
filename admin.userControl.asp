@@ -10,10 +10,13 @@ end if %>
 	<title>ניהול משתמשים - גרסא מינימלית</title>
     <META NAME="ROBOTS" CONTENT="NONE">
 	<style>
-		.role1 td {background:#80808030;}
-		.role7 td {background:#fffc92;}
-		.role15 td {background:#ffd392;}
+		.role1 {background:#80808030;} /*guest*/
+		.role7 {background:#fffc92;} /*editor*/
+		.role15 {background:#ffd392;} /*admin*/
 		.userRow td {border-bottom:1px dotted gray;}
+		.userStatus77 {background:#a9f5ff; color:#1a8995;} /*frozen*/
+		.userStatus88 {background:lightgray;} /*suspended*/
+		.userStatus99 {background:gray; color:white;} /*deleted*/
 	</style>
 <!--#include file="inc/header.asp"-->
 </head>
@@ -42,7 +45,7 @@ res.open mySQL, con %>
 
 <table class="table" style="width:600px;">
     <tr style="background:#edc;">
-	    <td>userStatus</td>
+		<td>userStatus</td>
         <td>שם אמיתי</td>
 		<td dir="ltr">Username</td>
 		<td dir="ltr">eMail</td>
@@ -50,8 +53,8 @@ res.open mySQL, con %>
         <td></td>
     </tr><%
     do until res.EOF %>
-	    <tr class="userRow role<%=res("role")%>">
-			<td><%
+	    <tr class="userRow">
+			<td class="userStatus<%=res("userStatus")%>"><%
 				Select Case res("userStatus")
 					case 1 'active
 					response.write "פעיל"
@@ -65,13 +68,13 @@ res.open mySQL, con %>
 					response.write "שגיאה"
 				End Select
 			%></td>
-	        <td style="vertical-align:top; text-align:right;">
+	        <td class="role<%=res("role")%>" style="vertical-align:top; text-align:right;">
 	            <a href="profile.asp?id=<%=res("id")%>" target="profile<%=res("id")%>">
 					<%=res("name")%> <small>(<%if res("gender")=1 then %>M<% else %>F<%end if%>)</small>
 				</a></td>
 			<td dir="ltr"><%=res("userName")%></td>
 			<td dir="ltr"><%=res("eMail")%></td>
-			<td style="text-align:center;"><%=res("role")%></td>
+			<td class="role<%=res("role")%>" style="text-align:center;"><%=res("role")%></td>
 	        <td dir="ltr"><a href="admin.userEdit.asp?id=<%=res("id")%>"><div>עריכה</div></a></td>
 	    </tr><%
 	    res.movenext

@@ -27,7 +27,7 @@ startTime = timer()
 openDbLogger "arabicUsers","O","admin.userNew.insert.asp","single",""
 
 set cmd=Server.CreateObject("adodb.command")
-mySQL = "INSERT INTO [users] ([name],[eMail],[about],[username],[password],[role],[gender],joinDateUTC) VALUES ("&_
+mySQL = "INSERT INTO [users] ([userStatus],[name],[eMail],[about],[username],[password],[role],[gender],joinDateUTC) VALUES (1,"&_
 		name&","&eMail&","&about&","&username&","&password&","&role&"+1, "&gender&",'"&joinDate&"')"
 response.write "<br>mySQL:<br>"&mySQL&"<br><br>"
 cmd.CommandType=1

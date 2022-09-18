@@ -67,6 +67,17 @@ res.open mySQL, con
             <td>מס' רשימות מקס':</td>
             <td><input name="maxLists" value="<%=res("maxLists")%>" /></td>
         </tr>
+        <tr>
+            <td><label for="userStatus">סטטוס חשבון:</label></td>
+            <td>
+                <select name="userStatus" id="userStatus">
+                    <option value="1" <% if res("userStatus")=1 then %>selected<% end if%> >פעיל</option>
+                    <option value="77" <% if res("userStatus")=77 then %>selected<% end if%> >מוקפא</option>
+                    <option value="88" <% if res("userStatus")=88 then %>selected<% end if%> >מושהה</option>
+                    <option value="99" <% if res("userStatus")=99 then %>selected<% end if%> >מחוק</option>
+                </select>
+            </td>
+        </tr>
     </table>
     <br /><input type="submit" value="עדכן" />
     <br /><br /><a href="admin.asp">חזרה לדף שליטה</a>
