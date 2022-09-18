@@ -64,11 +64,11 @@ if creatorName <> session("username") then sqlShow = "AND show" %>
     <title><%=LName%> - רשימה אישית</title>
     <meta name="Description" content="רשימת מילים אישית בנושא - <%=LName%> | מילון ערבית מדוברת" />
     <meta name="Keywords" content="רשימת מילים, אוסף מילים, ערבית מדוברת, מילים לשיעור, מילים לכיתה, מילים לשיחה" />
-    <meta property="og:url"     content="https://rothfarb.info/ronen/arabic/lists.asp?id=<%=LID%>" />
+    <meta property="og:url"     content="https://milon.madrasafree.com/lists.asp?id=<%=LID%>" />
     <meta property="og:type"     content="website" />
     <meta property="og:title"     content="<%=LName%> - רשימה אישית" />
     <meta property="og:description"     content="רשימת מילים אישית בנושא - <%=LName%> | מילון ערבית מדוברת" />
-    <meta property="og:image"           content="https://rothfarb.info/ronen/arabic/img/lists/<%=LID%>.png" />
+    <meta property="og:image"           content="https://milon.madrasafree.com/img/lists/<%=LID%>.png" />
     <link rel="stylesheet" href="team/inc/edit.css" />
 
     <!--#include file="inc/header.asp"-->

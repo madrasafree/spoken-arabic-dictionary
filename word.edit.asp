@@ -123,7 +123,7 @@ closeDbLogger "arabicWords","C","word.edit.asp","lock",durationMs,""
     </div>
     <div class="boxes" id="firstTimer" style="border:1px solid #cccccc; margin: 0 auto 10px auto; padding:10px; width:90%; max-width:500px; background-color:#ffffff75; ">
         <ol style="line-height: 15px; margin-bottom:10px;">
-            <li style="margin-bottom:10px;">קראו את <a href="https://rothfarb.info/ronen/arabic/guideTeam.asp" target="guideTeam">מדריך הוספה ועריכת מילה</a></li>
+            <li style="margin-bottom:10px;">קראו את <a href="https://milon.madrasafree.com/guideTeam.asp" target="guideTeam">מדריך הוספה ועריכת מילה</a></li>
         </ol>
     </div>
     <div class="boxes" id="20min" style="border:1px solid #cccccc; margin: 0 auto 10px auto; padding:10px; width:90%; max-width:500px; background-color:#fbdcdc75;color:rgb(230, 89, 89); ">

@@ -33,11 +33,11 @@ closeDbLogger "arabicWords","C","games.mem.pics.asp","list details",durationMs,"
 		<title><%=LName%> - תמונות לחיצות</title>
 		<meta name="Description" content="משחק זיכרון תמונות על בסיס רשימות אישיות של משתמשים" />
     <meta name="Keywords" content="משחק זיכרון, משחקים בערבית מדוברת" />
-    <meta property="og:url"     content="https://rothfarb.info/ronen/arabic/games.mem.pics.asp?lid=<%=LID%>" />
+    <meta property="og:url"     content="https://milon.madrasafree.com/games.mem.pics.asp?lid=<%=LID%>" />
     <meta property="og:type"     content="website" />
     <meta property="og:title"     content="<%=LName%> - תמונות לחיצות" />
     <meta property="og:description"     content="משחק זיכרון תמונות על בסיס רשימות אישיות של משתמשים" />
-    <meta property="og:image"           content="https://rothfarb.info/ronen/arabic/img/lists/<%=LID%>.png" />
+    <meta property="og:image"           content="https://milon.madrasafree.com/img/lists/<%=LID%>.png" />
 		<!--#include file="inc/header.asp"-->
     <style>
 		.viewMenu {

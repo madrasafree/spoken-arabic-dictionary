@@ -4,7 +4,7 @@ Option Explicit
 dim res, res2, res3, conSql, mySQL, cmd
 dim baseA, baseT
 
-'baseA = "https://rothfarb.info/ronen/arabic/"
+'baseA = "https://milon.madrasafree.com/"
 'baseA = "127.0.0.1:8080/"
 baseA = ""
 baseT = baseA + "/team/"

@@ -5,11 +5,11 @@
     <title>קריאת שעון בערבית מדוברת</title>
 	<meta name="Description" content="קריאת השעון בערבית מדוברת. אפשרות לתעתיק עברי או כתב ערבי. ניתן לשנות את השעה שמוצגת" />
     <meta name="Keywords" content="מה השעה בערבית, שעון בערבית, שעה בערבית" />
-    <meta property="og:url"     content="https://rothfarb.info/ronen/arabic/clock.asp" />
+    <meta property="og:url"     content="https://milon.madrasafree.com/clock.asp" />
     <meta property="og:type"     content="website" />
     <meta property="og:title"     content="קריאת השעון בערבית מדוברת" />
     <meta property="og:description"     content="קריאת השעון בערבית מדוברת. אפשרות לתעתיק עברי או כתב ערבי. ניתן לשנות את השעה שמוצגת" />
-    <meta property="og:image"           content="https://rothfarb.info/ronen/arabic/img/site/page.banner.clock.png" />
+    <meta property="og:image"           content="https://milon.madrasafree.com/img/site/page.banner.clock.png" />
     <!--#include file="inc/header.asp"-->
     <script>
         function loadDeferredIframe() {

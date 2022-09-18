@@ -37,9 +37,9 @@ console.log({a,b});
 
 Sub Checkbox(role, mask)
 	if (role and mask)<>0 then %>
-		<img style="width:16px;height:16px;opacity:.9;" alt="V" src="https://rothfarb.info/ronen/arabic/img/site/correct.png"><%
+		<img style="width:16px;height:16px;opacity:.9;" alt="V" src="https://milon.madrasafree.com/img/site/correct.png"><%
 	else %>
-		<img style="width:16px;height:16px;opacity:.3;" alt="X" src="https://rothfarb.info/ronen/arabic/img/site/x.png" /><%
+		<img style="width:16px;height:16px;opacity:.3;" alt="X" src="https://milon.madrasafree.com/img/site/x.png" /><%
     end if
 End Sub
 
@@ -104,12 +104,12 @@ res.open mySQL, con %>
 	            gen=""
 	        end if
 	        if res("picture")=true then %>
-	            <td><img src="https://rothfarb.info/ronen/arabic/img/profiles/<%=res("id")%>.png" title="<%=res("userName")%>" style="height:16px;" /></td><%
+	            <td><img src="https://milon.madrasafree.com/img/profiles/<%=res("id")%>.png" title="<%=res("userName")%>" style="height:16px;" /></td><%
 	        else %>
-	            <td><img src="https://rothfarb.info/ronen/arabic/img/profiles/<%=gen %>male.png" title="<%=res("userName")%>" style="height:16px;" /></td><%
+	            <td><img src="https://milon.madrasafree.com/img/profiles/<%=gen %>male.png" title="<%=res("userName")%>" style="height:16px;" /></td><%
 	        end if %>
 	        <td style="vertical-align:top; text-align:right;">
-	            <a href="https://rothfarb.info/ronen/arabic/profile.asp?id=<%=res("id")%>" target="profile<%=res("id")%>">
+	            <a href="https://milon.madrasafree.com/profile.asp?id=<%=res("id")%>" target="profile<%=res("id")%>">
 					<%=res("name")%>
 				</a></td>
 			<td><%=res("userName")%></td>

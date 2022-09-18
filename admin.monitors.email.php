@@ -30,7 +30,7 @@ $headers .= "MIME-Version: 1.0\r\n";
 mail($userEmail,$subject,$msg,$headers);
 
 // Redirect browser
-header("Location: https://rothfarb.info/ronen/arabic/admin.monitors.asp?email='sent'");
+header("Location: https://milon.madrasafree.com/admin.monitors.asp?email='sent'");
 exit();
 ?>
   

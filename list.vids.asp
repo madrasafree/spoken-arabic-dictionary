@@ -117,5 +117,5 @@ closeDbLogger "arabicWords","C","list.vids.asp","single",durationMs,""
 %>
 <br>
 </div>
-<script src="https://rothfarb.info/ronen/arabic/inc/youtube.js"></script>
+<script src="https://milon.madrasafree.com/inc/youtube.js"></script>
 <!--#include file="inc/trailer.asp"-->

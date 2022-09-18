@@ -16,7 +16,7 @@ $msg = "<html><body dir='rtl' style='background:#dddddd;'>";
 $msg .= "<div>$username שלום!</div>";
 $msg .= "<br/>";
 $msg .= "<div>זהו מייל אוטומטי המאשר שהוספת את המילה ";
-$msg .= "<a href='https://rothfarb.info/ronen/arabic/word.asp?id=$wordID'>$arabic (מספר סידורי $wordID)</a>";
+$msg .= "<a href='https://milon.madrasafree.com/word.asp?id=$wordID'>$arabic (מספר סידורי $wordID)</a>";
 $msg .= " בהצלחה למילון.";
 $msg .= "<div>תודה רבה על תרומתך למילון!</div>";
 $msg .= "<br/>";
@@ -43,7 +43,7 @@ $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 mail($userEmail,$subject,$msg,$headers);
 
 // Redirect browser
-header("Location: https://rothfarb.info/ronen/arabic/word.asp?id=$wordID");
+header("Location: https://milon.madrasafree.com/word.asp?id=$wordID");
 
 exit();
 ?>

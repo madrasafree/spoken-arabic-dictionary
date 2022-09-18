@@ -12,8 +12,9 @@
     <meta name="Keywords" content="מילון עברי ערבי, תרגום עברית ערבית, מילון ערבי עברי, תרגום מעברית לערבית, תרגום ערבית עברית, מתרגם עברית ערבית" /> <!-- since 2021-06 -->
     <meta property="og:title" content="מילון ערבית מדוברת - לדוברי עברית" />
     <meta property="og:description" content="המילון לערבית מדוברת (לדוברי עברית) הוא שירות חינמי שנועד לעזור לקהילת לומדי הערבית המדוברת" />
-    <meta property="og:url" content="https://rothfarb.info/ronen/arabic/" />
+    <meta property="og:url" content="https://milon.madrasafree.com/" />
     <meta property="og:type" content="website" />
+    <meta property="og:image" content="img/site/og-image.png">
     <style>
         /* loading animation START - this code is DUPLIC from edit.css - MERGE needed */
         .lds-ring {

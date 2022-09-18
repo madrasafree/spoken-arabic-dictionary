@@ -33,11 +33,11 @@ closeDbLogger "arabicWords","C","games.mem.list.asp","list details",durationMs,"
 		<title><%=LName%> - קלפי זיכרון</title>
 		<meta name="Description" content="הפכו את הקלפים וגלו אם זכרתם נכון. זכרתם? השאירו אותו הפוך. לא זכרתם? החזירו חזרה ונסו שוב כשתסיימו לעבור על כל הקלפים" />
     <meta name="Keywords" content="משחק זיכרון, משחקים בערבית מדוברת" />
-    <meta property="og:url"     content="https://rothfarb.info/ronen/arabic/games.mem.list.asp?lid=<%=LID%>" />
+    <meta property="og:url"     content="https://milon.madrasafree.com/games.mem.list.asp?lid=<%=LID%>" />
     <meta property="og:type"     content="website" />
     <meta property="og:title"     content="<%=LName%> - קלפי זיכרון" />
     <meta property="og:description"     content="הפכו את הקלפים וגלו אם זכרתם נכון. זכרתם? השאירו אותו הפוך. לא זכרתם? החזירו חזרה ונסו שוב כשתסיימו לעבור על כל הקלפים" />
-    <meta property="og:image"           content="https://rothfarb.info/ronen/arabic/img/lists/<%=LID%>.png" />
+    <meta property="og:image"           content="https://milon.madrasafree.com/img/lists/<%=LID%>.png" />
 	<!--#include file="inc/header.asp"-->
     <style>
 		.viewMenu {

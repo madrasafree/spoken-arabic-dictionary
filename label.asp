@@ -32,7 +32,7 @@ res.close
 <head>
     <title><%=LName%></title>
 	<meta name="Description" content="קבוצות מילים לפי נושאים" />
-    <meta property="og:image"           content="https://rothfarb.info/ronen/arabic/img/labels/<%=LID%>.png" />
+    <meta property="og:image"           content="https://milon.madrasafree.com/img/labels/<%=LID%>.png" />
     <!--#include file="inc/header.asp"-->
     <style>
         #lingolearn button:hover {

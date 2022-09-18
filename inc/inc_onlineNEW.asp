@@ -4,7 +4,7 @@ Option Explicit
 dim res, res2, con, mySQL, cmd
 dim baseA, baseT
 
-baseA = "https://rothfarb.info/ronen/arabic/" 'online'
+baseA = "https://milon.madrasafree.com/" 'online'
 'baseA = "http://127.0.0.1:8080/" 'local'
 baseT = baseA + "Team/" 'online'
 
