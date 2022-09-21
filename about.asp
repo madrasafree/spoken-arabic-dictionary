@@ -108,7 +108,7 @@
 <div class="table divStats">
     <div>לדיווח על חשד בפגיעה בזכויות יוצרים או קניין רוחני באתר, 
         אנא כתבו לנו למייל וציינו את מהות הפגיעה בצירוף קישור לדף הרלוונטי. 
-        <br>yaniv@madrasafree.com
+        <br>admin@madrasafree.com
     </div>
     <ul style="text-align:right;">
         <li>טקסט</li>

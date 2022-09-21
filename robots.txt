@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /users.landingPage.asp
+Disallow: /login.asp

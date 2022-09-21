@@ -278,7 +278,7 @@ wordMain=0 %>
         </p>
         יש מעט מאוד מילים קצרות כל כך במילון
         <p style="padding:20px; max-width:300px; margin:0 auto; font-size:small;">
-            אם אתם בטוחים שהמילה הזו אמורה להופיע במילון, פנו אלינו כדי שנוסיף אותה - yaniv@madrasafree.com
+            אם אתם בטוחים שהמילה הזו אמורה להופיע במילון, פנו אלינו כדי שנוסיף אותה - admin@madrasafree.com
         </p>
     </div>
     

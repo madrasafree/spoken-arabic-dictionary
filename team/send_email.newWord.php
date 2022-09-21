@@ -10,7 +10,7 @@
 $wordID = $_GET['wordID'];
 $arabic = $_GET['arabic'];
 $username = $_GET['username'];
-$userEmail = "yaniv@madrasafree.com";
+$userEmail = "admin@madrasafree.com";
 
 $msg = "<html><body>";
 $msg .= "<div>AUTOMATIC EMAIL: ";

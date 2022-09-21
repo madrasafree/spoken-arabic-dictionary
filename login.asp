@@ -173,7 +173,7 @@ End if %>
 <div class="table divStats">
 	רוצים גם להוסיף מילים ולאסוף רשימות?
     <br/>כתבו לנו מייל עם הנושא - הרשמה למילון
-    <br/>yaniv@madrasafree.com
+    <br/>admin@madrasafree.com
 </div>
 </form>
 <div class="table" style="max-width:290px; text-align:center; margin-top:40px;">
