@@ -172,8 +172,11 @@ End if %>
 <div id="pTitle" style="margin-top:40px;">הרשמה</div>
 <div class="table divStats">
 	רוצים גם להוסיף מילים ולאסוף רשימות?
-    <br/>כתבו לנו מייל עם הנושא - הרשמה למילון
-    <br/>admin@madrasafree.com
+    <br/>
+    מלאו את הטופס
+    <a href="https://forms.monday.com/forms/e1e61a471abeb0dc03e71395cf63bac0?r=use1">
+    בקשת הצטרפות למילון
+    </a>
 </div>
 </form>
 <div class="table" style="max-width:290px; text-align:center; margin-top:40px;">
