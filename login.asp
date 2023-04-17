@@ -174,7 +174,7 @@ End if %>
 	רוצים גם להוסיף מילים ולאסוף רשימות?
     <br/>
     מלאו את הטופס
-    <a href="https://forms.monday.com/forms/e1e61a471abeb0dc03e71395cf63bac0?r=use1">
+    <a style="text-decoration:underline;" href="https://forms.monday.com/forms/e1e61a471abeb0dc03e71395cf63bac0?r=use1">
     בקשת הצטרפות למילון
     </a>
 </div>
