@@ -33,14 +33,7 @@ If you want to run the project locally or set it up on a new server, follow the 
      - Set the **binding** to the desired port (default is 80 for HTTP).
    - Enable **ASP** in **Handler Mappings** by navigating to the site in **IIS Manager**, then selecting **Handler Mappings**, and ensuring that **ASP** is enabled.
 
-3. **Database Configuration**
-   - Set up your database configuration properly to ensure correct data handling. Typically, the connection string looks like:
-   ```asp
-     Set conn = Server.CreateObject("ADODB.Connection")
-     conn.Open "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\path\to\your\database.mdb;"
-     ```
-
-4. **Permissions**
+3. **Permissions**
    - Ensure that the **IUSR** (IIS User) account has **Read/Write** permissions to the directory containing the **.mdb** file, as the dictionary allows user contributions.
 
 ### Local Environment Setup
