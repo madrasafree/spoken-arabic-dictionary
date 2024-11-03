@@ -12,8 +12,8 @@ Session("msg") = "" %>
 	<link rel="stylesheet" href="static/css/nav.css" />
     <link rel="stylesheet" href="static/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="static/css/arabic_constant.css" />
-	<link rel="shortcut icon" href="img/site/favicon.ico" />
-    <link rel="image_src" href="img/site/logo.jpg" />
+	<link rel="shortcut icon" href="static/images/site/favicon.ico" />
+    <link rel="image_src" href="static/images/site/logo.jpg" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3KCSSVHC9Z"></script>

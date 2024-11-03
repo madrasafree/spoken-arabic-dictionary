@@ -64,7 +64,7 @@ q = trim(Request("searchString"))
   <div id="bar" style="background-color: #f6f9fc; border-bottom:1px solid #cddbea; position:fixed; top:0; width:100%; z-index:3; display: grid; grid-template-columns: 40px 1fr 40px; grid-template-rows: repeat(2, 46px); grid-column-gap: 10px; grid-row-gap: 10px;">
 
       <div id="bar-menu" style="flex: 0 0 40px; display:flex; justify-content:center; align-items:center; cursor: pointer" onclick="toggleMenu();">
-        <img style="width: 100%;" src="img/site/menu.png" alt="menu"/>
+        <img style="width: 100%;" src="static/images/site/menu.png" alt="menu"/>
       </div>
         <div>
             <label for="searchBoxTop" style="display:NONE;"></label>
@@ -75,7 +75,7 @@ q = trim(Request("searchString"))
 
       <div id="bar-logo" style="flex: 0 0 40px; display:flex; justify-content:center; align-items:center; cursor: pointer; margin-left: 6px">
         <a href="default.asp">
-            <img style="width:100%;" src="img/site/logo_small.png" alt="logo" />
+            <img style="width:100%;" src="static/images/site/logo_small.png" alt="logo" />
         </a>
       </div>
 
@@ -110,7 +110,7 @@ q = trim(Request("searchString"))
 <!--div id="bar" style="Z-INDEX:3; display: flex; position: fixed; top:0; width:100%; justify-content:space-between;
         height: 46px; background-color: #f6f9fc; border-bottom:1px solid #cddbea;">
       <div id="bar-menu" style="flex: 0 0 40px; display:flex; justify-content:center; align-items:center; cursor: pointer" onclick="toggleMenu();">
-        <img style="width: 100%;" src="img/site/menu.png" alt="menu"/>
+        <img style="width: 100%;" src="static/images/site/menu.png" alt="menu"/>
       </div--><%
 
 dim url
@@ -157,7 +157,7 @@ url = request.ServerVariables("URL")
 
       <div id="bar-logo" style="flex: 0 0 40px; display:flex; justify-content:center; align-items:center; cursor: pointer; margin-left: 6px">
         <a href="default.asp">
-            <img style="width:100%;" src="img/site/logo_small.png" alt="logo" />
+            <img style="width:100%;" src="static/images/site/logo_small.png" alt="logo" />
         </a>
       </div>
 <%

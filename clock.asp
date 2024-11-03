@@ -9,7 +9,7 @@
     <meta property="og:type"     content="website" />
     <meta property="og:title"     content="קריאת השעון בערבית מדוברת" />
     <meta property="og:description"     content="קריאת השעון בערבית מדוברת. אפשרות לתעתיק עברי או כתב ערבי. ניתן לשנות את השעה שמוצגת" />
-    <meta property="og:image"           content="https://milon.madrasafree.com/img/site/page.banner.clock.png" />
+    <meta property="og:image"           content="https://milon.madrasafree.com/static/images/site/page.banner.clock.png" />
     <!--#include file="inc/header.asp"-->
     <script>
         function loadDeferredIframe() {

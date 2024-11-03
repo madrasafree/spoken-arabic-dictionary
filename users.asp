@@ -63,7 +63,7 @@ nikud = "" %>
                     end if
                 end if %>
                 <a href="profile.asp?id=<%=res("id")%>">
-                    <img src="img/profiles/<%=pic%>.png" title="<%=res("username")%>" />
+                    <img src="static/images/profiles/<%=pic%>.png" title="<%=res("username")%>" />
                 </a><%
                 countMe = countMe+1
                 res.moveNext

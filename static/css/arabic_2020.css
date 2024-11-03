@@ -84,7 +84,7 @@ a:link, a:visited {
 }
 
 #logo {
-    background-image: url('../img/site/logo_small.png');
+    background-image: url('../static/images/site/logo_small.png');
     background-size: cover;
     border-radius: 10%;
 }

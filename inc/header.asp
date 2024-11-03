@@ -18,8 +18,8 @@ Session("msg") = "" %>
     <link rel="stylesheet" href="static/css/arabic_from500wide.css" media="(min-width:500px)" />
 	<link rel="stylesheet" href="static/css/arabic_upto499high.css" media="(max-height:499px)" />
     <link rel="stylesheet" href="static/css/arabic_from500high.css" media="(min-height:500px)" />
-	<link rel="shortcut icon" href="img/site/favicon.ico" />
-    <link rel="image_src" href="img/site/logo.jpg" />
+	<link rel="shortcut icon" href="static/images/site/favicon.ico" />
+    <link rel="image_src" href="static/images/site/logo.jpg" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 

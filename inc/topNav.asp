@@ -1,7 +1,7 @@
 ﻿	<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="static/css/arabic_2020.css" />
-	<link rel="shortcut icon" href="img/site/favicon.ico" />
+	<link rel="shortcut icon" href="static/images/site/favicon.ico" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script>        

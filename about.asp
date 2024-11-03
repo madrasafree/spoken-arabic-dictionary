@@ -77,7 +77,7 @@
     <h3>מי בודק את המילים שהוסיפו?</h3>
     <div style="line-height:1.4em;">
         את המילים בודקים משתמשים ותיקים, עם ידע רחב גם בעברית וגם בערבית מדוברת.
-        <br>חפשו את הסימן <img src="img/site/correct.png" title="correct" style="width: 15px; opacity: 0.4;" /> לצד המילים שעברו את בדיקתם.
+        <br>חפשו את הסימן <img src="static/images/site/correct.png" title="correct" style="width: 15px; opacity: 0.4;" /> לצד המילים שעברו את בדיקתם.
         <br>
         <br>נכון ל-1 בינואר 2020
         <br>96% מהמילים נבדקו ונמצאו תקינות

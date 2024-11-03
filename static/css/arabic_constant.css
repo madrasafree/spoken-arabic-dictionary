@@ -10,7 +10,7 @@
     .highlight a:link,.highlight a:visited {color:red;}
 
 /* html */
-    body		{ direction:rtl; color:gray; font-family:Arial; padding:0px 0px; background-image:url(../img/site/diagBlue.png); background-repeat:repeat; }
+    body		{ direction:rtl; color:gray; font-family:Arial; padding:0px 0px; background-image:url(/static/images/site/diagBlue.png); background-repeat:repeat; }
     a:link		{ color: gray; text-decoration: none }
     a:visited	{ color: gray; text-decoration: none }
     a:active,
@@ -19,7 +19,7 @@
 
     .attr {border: 1px dotted #a5d0f3; line-height: 2; background-color: white; display: table; width: 99%; text-align: center; margin: 0 auto; }
     .attr > div {display:table-cell; vertical-align:middle; font-size:small; width:33%;}
-    #banner     { width:100%; position:fixed; top:0px; text-align:right; background-image:url(../img/site/diagBlue.png); background-repeat:repeat; background:#f6f9fc; border-bottom:1px solid #cddbea; }
+    #banner     { width:100%; position:fixed; top:0px; text-align:right; background-image:url(/static/images/site/diagBlue.png); background-repeat:repeat; background:#f6f9fc; border-bottom:1px solid #cddbea; }
     #beta       { padding:2px 12px 2px 2px; font-size:small; color:#ad2e2e; }
     #container  { width:100%; }
     #createDate { font-size:small;float:right; display:inline; color:gray; direction:rtl; padding-right:0px; }
@@ -75,11 +75,11 @@
     #searchTd       { padding:10px 0px 5px 0px; }
     #searchBox      { height:25px; font-size:125%; border-radius: 5px; padding-right:5px; }
     #searchBoxTop   { height:20px; font-size:125%; border-radius: 5px; padding:4px 4px 4px 30px;
-                      background-color:white; background-image:url(img/site/search.png); background-repeat:no-repeat; background-position:right; background-size:24px;
+                      background-color:white; background-image:url(static/images/site/search.png); background-repeat:no-repeat; background-position:right; background-size:24px;
     }
     #searchLeft     { text-align:left; padding:0px 0px 10px 22px; }
     #searchRight    { text-align:right; font-size:80%; padding:0px 22px 10px 0px; }
-    /*#searchTop input  { background-image: url(img/site/search.png); background-position:0px 0px; background-repeat:no-repeat; background-size:24px;}*/
+    /*#searchTop input  { background-image: url(static/images/site/search.png); background-position:0px 0px; background-repeat:no-repeat; background-size:24px;}*/
     #showTime {
         font-size: 20px;
         margin: 40px auto 0 auto;

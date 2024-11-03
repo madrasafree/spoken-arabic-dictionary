@@ -92,11 +92,11 @@ If Len(Request("username"))>0 and allowEdit=true then
 	CloseDB
 End if %>
 <div class="table teamLogo" dir="ltr">
-    <div><img src="img/site/team/teamLogo-let1-60px.png" alt="t" /></div>
-    <div><img src="img/site/team/teamLogo-let2-60px.png" alt="E" /></div>
-    <div><img src="img/site/team/teamLogo-let3-60px.png" alt="A" /></div>
-    <div><img src="img/site/team/teamLogo-let4-60px.png" alt="M" /></div>
-    <div><img src="<%=baseA%>img/site/logo-60px.png" alt="ע" /></div>
+    <div><img src="static/images/site/team/teamLogo-let1-60px.png" alt="t" /></div>
+    <div><img src="static/images/site/team/teamLogo-let2-60px.png" alt="E" /></div>
+    <div><img src="static/images/site/team/teamLogo-let3-60px.png" alt="A" /></div>
+    <div><img src="static/images/site/team/teamLogo-let4-60px.png" alt="M" /></div>
+    <div><img src="<%=baseA%>static/images/site/logo-60px.png" alt="ע" /></div>
 </div>
 <div id="pTitle">התחברות למערכת המילון</div>
 <form method="post" id="Form1" action="login.asp" >

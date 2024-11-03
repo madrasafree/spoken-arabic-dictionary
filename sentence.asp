@@ -174,7 +174,7 @@ res.open mySQL, con
 	<div class="heb" style="text-align:center;"><%=res("hebrew")%></div>
 </div><%
 if len(res("info"))>0 then %>
-<span title="הערות" style="position:relative; color: #9e9e9e;top: 34px; right:4px; opacity:0.5;"><img src="img/site/info.png" style="width:24px;"/></span>
+<span title="הערות" style="position:relative; color: #9e9e9e;top: 34px; right:4px; opacity:0.5;"><img src="static/images/site/info.png" style="width:24px;"/></span>
 <div class="info"><%=res("info")%></div><%
 end if
 res.close

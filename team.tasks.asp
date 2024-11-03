@@ -518,7 +518,7 @@ dim taskVotes
                     if res("img") then %>
                         צילום מסך:
                         <div style="text-align:left; padding:0 30px 0 10px;">
-                            <img src="img/tasks/<%=res("id")%>.jpg" alt="תמונה או צילום מסך להמחשת המשימה" style="width:100%; border:1px solid #d4e7fb;">
+                            <img src="static/images/tasks/<%=res("id")%>.jpg" alt="תמונה או צילום מסך להמחשת המשימה" style="width:100%; border:1px solid #d4e7fb;">
                         </div><%
                     end if %>
                     <ol class="subTasks"><%

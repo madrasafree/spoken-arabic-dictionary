@@ -26,12 +26,12 @@
                         mySQL = "SELECT username,[picture],gender FROM users WHERE id="&session("userID")
                         res.open mySQL, con 
                             if res("picture") then %>
-                                 src="img/profiles/<%=session("userID")%>.png"<%
+                                 src="static/images/profiles/<%=session("userID")%>.png"<%
                             else 
                                 if res("gender")=1 then %>
-                                     src="img/profiles/male.png"<%
+                                     src="static/images/profiles/male.png"<%
                                 else %>
-                                     src="img/profiles/female.png"<%
+                                     src="static/images/profiles/female.png"<%
                                 end if
                             end if %>
                              style="height:24px; " title="<%=session("username")%>'s avatar" /></a><%
@@ -44,12 +44,12 @@
                     %>
 
                     <div style="display:inline-block;">
-                        <a href="word.new.asp"><img src="img/site/add-square.png" style="width:24px;" alt="הוספת מילה" title="הוספת מילה" /></a>
+                        <a href="word.new.asp"><img src="static/images/site/add-square.png" style="width:24px;" alt="הוספת מילה" title="הוספת מילה" /></a>
                     </div><%
                     end if%>
 
                     <div style="display:inline-block;">
-                        <a href="users.landingPage.asp"><img src="team/img/teamLogo.png" style="width:24px;" alt="התחברו למילון" title="התחברו למילון" /></a>
+                        <a href="users.landingPage.asp"><img src="static/images/team/teamLogo.png" style="width:24px;" alt="התחברו למילון" title="התחברו למילון" /></a>
                     </div>
                 </div>
             </td>

@@ -17,8 +17,8 @@ Session("msg") = "" %>
   If (session("role") and 2) > 0 then %>
   <link rel="stylesheet" href="inc/arabicTeam.css" /><%
   end if%>
-	<link rel="shortcut icon" href="img/teamFavicon.ico" />
-  <link rel="image_src" href="<%=baseA%>img/site/logo.jpg" />
+	<link rel="shortcut icon" href="static/images/teamFavicon.ico" />
+  <link rel="image_src" href="<%=baseA%>static/images/site/logo.jpg" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 

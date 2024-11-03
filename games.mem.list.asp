@@ -37,7 +37,7 @@ closeDbLogger "arabicWords","C","games.mem.list.asp","list details",durationMs,"
     <meta property="og:type"     content="website" />
     <meta property="og:title"     content="<%=LName%> - קלפי זיכרון" />
     <meta property="og:description"     content="הפכו את הקלפים וגלו אם זכרתם נכון. זכרתם? השאירו אותו הפוך. לא זכרתם? החזירו חזרה ונסו שוב כשתסיימו לעבור על כל הקלפים" />
-    <meta property="og:image"           content="https://milon.madrasafree.com/img/lists/<%=LID%>.png" />
+    <meta property="og:image"           content="https://milon.madrasafree.com/static/images/lists/<%=LID%>.png" />
 	<!--#include file="inc/header.asp"-->
     <style>
 		.viewMenu {

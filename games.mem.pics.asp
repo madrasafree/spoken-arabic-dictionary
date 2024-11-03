@@ -37,7 +37,7 @@ closeDbLogger "arabicWords","C","games.mem.pics.asp","list details",durationMs,"
     <meta property="og:type"     content="website" />
     <meta property="og:title"     content="<%=LName%> - תמונות לחיצות" />
     <meta property="og:description"     content="משחק זיכרון תמונות על בסיס רשימות אישיות של משתמשים" />
-    <meta property="og:image"           content="https://milon.madrasafree.com/img/lists/<%=LID%>.png" />
+    <meta property="og:image"           content="https://milon.madrasafree.com/static/images/lists/<%=LID%>.png" />
 		<!--#include file="inc/header.asp"-->
     <style>
 		.viewMenu {
@@ -217,7 +217,7 @@ end if %>
 							<span style="font-size:small;">(<%=trim(res("hebrewDef"))%>)</span><%
 							end if %>
 						</div><%
-						if len(res("imgLink"))>0 then imgLink = res("imgLink") else imgLink = "img/site/noPhoto.jpg"
+						if len(res("imgLink"))>0 then imgLink = res("imgLink") else imgLink = "static/images/site/noPhoto.jpg"
 						%>
 						<img class="img" src="<%=imgLink%>" alt="<%=res("hebrewTranslation")%>" title="<%=res("imgCredit")%>" style="max-width:480px;" />
 					</div>
