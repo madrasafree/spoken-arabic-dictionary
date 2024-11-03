@@ -12,7 +12,7 @@ end if %>
     <meta name="ROBOTS" content="NONE">
 	<title>הזנת משימה חדשה במסד נתונים</title>
     <!--#include file="inc/header.asp"-->
-    <link rel="stylesheet" href="css/devMode.css">
+    <link rel="stylesheet" href="static/css/devMode.css">
 </head>
 <body>
 <ol id="fix">

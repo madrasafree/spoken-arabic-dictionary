@@ -10,7 +10,7 @@
     <title>מוניטור</title>
 	<meta name="robots" content="noindex" />
     <!--#include file="inc/header.asp"-->
-  	<link rel="stylesheet" href="css/test.css" />
+  	<link rel="stylesheet" href="static/css/test.css" />
     <style>
         .mdb {
             border:1px solid gray;

@@ -11,7 +11,7 @@ end if %>
 	<title>עדכון משימה במסד נתונים</title>
     <meta name="robots" content="none">
     <!--#include file="inc/header.asp"-->
-    <link rel="stylesheet" href="css/devMode.css">
+    <link rel="stylesheet" href="static/css/devMode.css">
 </head>
 <body>
 <ol id="fix">

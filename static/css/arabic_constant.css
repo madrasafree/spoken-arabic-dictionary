@@ -126,7 +126,7 @@
     #titleRight, #title, #titleLeft { text-align:right; display:table-cell; }
 
 /* language */
-    @font-face {font-family:"abraham"; src: url("../inc/fonts/Abraham-Light.otf");}
+    @font-face {font-family:"abraham"; src: url("../fonts/Abraham-Light.otf");}
 
     body       { font-family: 'abraham', sans-serif;}
     .arb        { color:#2ead31; text-align:center; font-weight: 100; letter-spacing: 0; } /* default.asp */
