@@ -22,13 +22,10 @@
         #columns {
 	        -webkit-column-count: 1;
 	        -webkit-column-gap: 10px;
-	        -webkit-column-fill: auto;
 	        -moz-column-count: 1;
 	        -moz-column-gap: 10px;
-	        -moz-column-fill: auto;
 	        column-count: 1;
 	        column-gap: 15px;
-	        column-fill: auto;
         }
 
         .pin {
