@@ -3,7 +3,7 @@ if (session("role")<2) then
     session("msg") = "יש להתחבר על מנת להצביע"
     Response.Redirect "team/login.asp"
 end if %>
-<!--#include file="team/inc/functions/string.asp"-->
+<!--#include file="team/library/string.asp"-->
 <!DOCTYPE html>
 <html>
 <head>

@@ -1,6 +1,6 @@
 ﻿<!--#include file="inc/inc.asp"-->
-<!--#include file="inc/functions/string.asp"-->
-<!--#include file="inc/functions/functions.asp"-->
+<!--#include file="library/string.asp"-->
+<!--#include file="library/functions.asp"-->
 <!--#include file="inc/time.asp"-->
 <%
 dim ok, countme, wordID, lockFrom, lockTo, lockDiff
@@ -101,9 +101,9 @@ closeDbLogger "arabicWords","C","word.edit.asp","lock",durationMs,""
     <META NAME="ROBOTS" CONTENT="NONE">
     <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js"></script>
 <!--#include file="inc/header.asp"-->
-    <link rel="stylesheet" href="team/inc/arabicTeam.css" />
-    <link rel="stylesheet" href="team/inc/guide.css" />
-    <link rel="stylesheet" href="team/inc/edit.css?v2" />
+    <link rel="stylesheet" href="static/css/arabicTeam.css" />
+    <link rel="stylesheet" href="static/css/guide.css" />
+    <link rel="stylesheet" href="static/css/edit.css?v2" />
     <script src="static/js/jquery.new.edit.js"></script> <!-- THIS HAS THE JSON CODE-->
 </head>
 <body>

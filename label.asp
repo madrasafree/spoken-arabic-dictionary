@@ -1,5 +1,5 @@
 <!--#include file="inc/inc.asp"-->
-<!--#include file="inc/functions/functions.asp"--><%
+<!--#include file="library/functions.asp"--><%
 'FILES TO EDIT WHEN ADDING/REMOVING LABEL FROM DB:
 'edit.update.asp - lblCnt'
 'word.asp - labelNames'

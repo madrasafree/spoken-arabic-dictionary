@@ -5,7 +5,7 @@
 	<title>מילון ערבית מדוברת - לדוברי עברית</title>
 	<meta name="Description" content="המילון לערבית מדוברת (לדוברי עברית), הוא שירות חינמי והתנדבותי שנועד לעזור לאלה מכם שלומדים ערבית מדוברת, ורוצים למצוא תירגום מהיר למילים מסוימות" />
 	<meta name="Keywords" content="מילון, ערבית, מדוברת, עברית, עברי, ערבי, חופשי, חינם, חינמי, תרגום, תירגום, מילים, איך, אומרים, בערבית" />
-    <link rel="stylesheet" href="team/inc/arabicTeam.css" />
+    <link rel="stylesheet" href="static/css/arabicTeam.css" />
     <style>
         .newWord {font-size: 1.5em; }
         .newWord a {color:#1988cc; }

@@ -28,7 +28,7 @@ end if
     <title><%=username%></title>
 	<meta name="Description" content="שם המשתמש: <%=res("username")%>" />
     <!--#include file="inc/header.asp"-->
-    <link rel="stylesheet" href="team/inc/arabicTeam.css" />
+    <link rel="stylesheet" href="static/css/arabicTeam.css" />
     <style>
         .listDiv > span {display:block; line-height: 15px;}
         @media(max-width:600px) {

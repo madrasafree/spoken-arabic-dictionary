@@ -4,7 +4,7 @@ else
     session("msg") = "כדי לערוך משימות, עליך לקבל הרשאה מתאימה ממנהל האתר"
     Response.Redirect "team/login.asp"
 end if %>
-<!--#include file="team/inc/functions/string.asp"-->
+<!--#include file="team/library/string.asp"-->
 <!DOCTYPE html>
 <html>
 <head>

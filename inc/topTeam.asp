@@ -1,5 +1,5 @@
 ﻿
-<!--#include file="../inc/functions/string.asp"-->
+<!--#include file="../library/string.asp"-->
 
 <div id="topNav">
   <div id="menuBtn"><%

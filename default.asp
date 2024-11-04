@@ -1,6 +1,6 @@
 <!--#include file="inc/inc.asp"-->
-<!--#include file="team/inc/functions/string.asp"-->
-<!--#include file="inc/functions/functions.asp"-->
+<!--#include file="team/library/string.asp"-->
+<!--#include file="library/functions.asp"-->
 <!--#include file="inc/time.asp"-->
 <!DOCTYPE html>
 <html style="height:100%;">
@@ -232,7 +232,7 @@
 </head>
 <body>
 <!--#include file="inc/top.asp"-->
-<!--#include file="team/inc/functions/soundex.asp"--><%
+<!--#include file="team/library/soundex.asp"--><%
 
 dim countMe,resultPos,id,ids,idx,skip,wordMain,title,psikArr,psikWord,found
 

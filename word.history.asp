@@ -1,5 +1,5 @@
 ﻿<!--#include file="inc/inc.asp"-->
-<!--#include file="inc/functions/functions.asp"-->
+<!--#include file="library/functions.asp"-->
 <!--#include file="inc/time.asp"--><%
 
 dim wordId
@@ -62,7 +62,7 @@ res.close
     <title>היסטורית עריכות מילה</title>
     <meta property="og:title" content="היסטורית עריכות מילה" />
     <meta property="og:type" content="website" />
-    <link rel="stylesheet" href="team/inc/arabicTeam.css" />
+    <link rel="stylesheet" href="static/css/arabicTeam.css" />
     <style>
         .backButton {
             background:white;

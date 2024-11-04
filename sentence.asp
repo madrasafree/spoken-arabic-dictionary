@@ -1,5 +1,5 @@
 ﻿<!--#include file="inc/inc.asp"-->
-<!--#include file="inc/functions/functions.asp"-->
+<!--#include file="library/functions.asp"-->
 <!DOCTYPE html>
 <html style="height:100%;">
 <head>

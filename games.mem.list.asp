@@ -1,5 +1,5 @@
 ﻿<!--#include file="inc/inc.asp"-->
-<!--#include file="inc/functions/functions.asp"--><%
+<!--#include file="library/functions.asp"--><%
 
 dim LID,LName,Ldesc,countMe
 countMe=0

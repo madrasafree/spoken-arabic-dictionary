@@ -25,7 +25,7 @@ countme = 0
 	<title>הוספת משפט חדש</title>
     <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js"></script>
 <!--#include file="inc/header.asp"-->
-	<link rel="stylesheet" href="team/inc/edit.css" />
+	<link rel="stylesheet" href="static/css/edit.css" />
     <script>
         $(function() {
 
@@ -192,7 +192,7 @@ countme = 0
         });
     </script>
 </head>
-<!--#include file="inc/functions/functions.asp"-->
+<!--#include file="library/functions.asp"-->
 <body>
 <!--#include file="inc/top.asp"-->
 

@@ -1,5 +1,5 @@
 ﻿<!--#include file="inc/inc.asp"-->
-<!--#include file="inc/functions/functions.asp"-->
+<!--#include file="library/functions.asp"-->
 <!--#include file="inc/time.asp"--><%
 dim countMe, nikud, order
 dim LID,LName,lDesc,lPrivacy,psik,current,creatorID,creatorName,creationTimeUTC,lastUpdateUTC,sqlShow
@@ -69,7 +69,7 @@ if creatorName <> session("username") then sqlShow = "AND show" %>
     <meta property="og:title"     content="<%=LName%> - רשימה אישית" />
     <meta property="og:description"     content="רשימת מילים אישית בנושא - <%=LName%> | מילון ערבית מדוברת" />
     <meta property="og:image"           content="https://milon.madrasafree.com/static/images/lists/<%=LID%>.png" />
-    <link rel="stylesheet" href="team/inc/edit.css" />
+    <link rel="stylesheet" href="static/css/edit.css" />
 
     <!--#include file="inc/header.asp"-->
     <style>

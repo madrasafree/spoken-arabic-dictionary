@@ -1,6 +1,6 @@
 <!--#include file="inc/inc.asp"-->
-<!--#include file="inc/functions/soundex.asp"-->
-<!--#include file="inc/functions/string.asp"-->
+<!--#include file="library/soundex.asp"-->
+<!--#include file="library/string.asp"-->
 <!--#include file="inc/time.asp"-->
 <!-- Language="VBScript" CodePage="65001"-->
 <!-- Language="VBScript" CodePage="1255"-->

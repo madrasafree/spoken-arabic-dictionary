@@ -1,5 +1,5 @@
 ﻿<!--#include file="inc/inc.asp"-->
-<!--#include file="inc/functions/functions.asp"-->
+<!--#include file="library/functions.asp"-->
 <!--#include file="inc/time.asp"--><%
 
 dim wordId, countMe, spacer, show, status, imgLink, imgCredit
@@ -125,7 +125,7 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
     <title><%=hebTrans%> - איך אומרים בערבית</title>
     <meta property="og:title" content="<%=hebTrans%> - איך אומרים בערבית" />
     <meta property="og:type" content="website" />
-    <link rel="stylesheet" href="team/inc/arabicTeam.css" />
+    <link rel="stylesheet" href="static/css/arabicTeam.css" />
 	<style>
         h1 {
             opacity: 0.6;

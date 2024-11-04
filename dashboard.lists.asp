@@ -1,5 +1,5 @@
 ﻿<!--#include file="inc/inc.asp"-->
-<!--#include file="inc/functions/functions.asp"--><%
+<!--#include file="library/functions.asp"--><%
 
 startTime = timer()
 'openDB "arabicWords"

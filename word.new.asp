@@ -29,12 +29,12 @@ countme = 0 %>
     <meta name="ROBOTS" content="NONE">
     <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js"></script>
 <!--#include file="inc/header.asp"-->
-    <link rel="stylesheet" href="team/inc/arabicTeam.css" />
-    <link rel="stylesheet" href="team/inc/guide.css" />
-    <link rel="stylesheet" href="team/inc/edit.css" />
+    <link rel="stylesheet" href="static/css/arabicTeam.css" />
+    <link rel="stylesheet" href="static/css/guide.css" />
+    <link rel="stylesheet" href="static/css/edit.css" />
     <script src="static/js/jquery.new.edit.js"></script>
 </head>
-<!--#include file="inc/functions/functions.asp"-->
+<!--#include file="library/functions.asp"-->
 <body>
 
 <!--#include file="inc/top.asp"-->

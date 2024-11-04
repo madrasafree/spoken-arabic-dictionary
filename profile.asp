@@ -33,7 +33,7 @@ end if
     <title><%=username%></title>
 	<meta name="Description" content="כל המילים שהוסיף המשתמש <%=res("username")%>" />
     <!--#include file="inc/header.asp"-->
-    <link rel="stylesheet" href="team/inc/arabicTeam.css" />
+    <link rel="stylesheet" href="static/css/arabicTeam.css" />
     <style>
         #boxMenu {min-width:320px; max-width:490px; margin:20px auto; text-align: center;}
         #boxMenu > div {background-color:#e4e3e2;display: inline-block; margin-top:5px; opacity:.7;}

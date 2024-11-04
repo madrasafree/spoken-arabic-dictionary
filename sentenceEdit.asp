@@ -25,7 +25,7 @@ closeDB
     <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js"></script>
 <!--#include file="inc/header.asp"-->
     <link rel="stylesheet" href="inc/guide.css" />
-    <link rel="stylesheet" href="team/inc/edit.css" />
+    <link rel="stylesheet" href="static/css/edit.css" />
     <script>
         $(function() {
 
@@ -119,7 +119,7 @@ closeDB
         });
     </script>
 </head>
-<!--#include file="inc/functions/functions.asp"-->
+<!--#include file="library/functions.asp"-->
 <body>
 <!--#include file="inc/top.asp"-->
 

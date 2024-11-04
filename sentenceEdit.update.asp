@@ -1,5 +1,5 @@
 <!--#include file="inc/inc.asp"-->
-<!--#include file="inc/functions/soundex.asp"-->
+<!--#include file="library/soundex.asp"-->
 <!-- Language="VBScript" CodePage="65001"-->
 <!-- Language="VBScript" CodePage="1255"--><%
 if session("role") < 7 then
