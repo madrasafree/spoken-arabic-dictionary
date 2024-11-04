@@ -32,7 +32,7 @@ countme = 0 %>
     <link rel="stylesheet" href="team/inc/arabicTeam.css" />
     <link rel="stylesheet" href="team/inc/guide.css" />
     <link rel="stylesheet" href="team/inc/edit.css" />
-    <script src="team/js/jquery.new.edit.js"></script>
+    <script src="static/js/jquery.new.edit.js"></script>
 </head>
 <!--#include file="inc/functions/functions.asp"-->
 <body>
@@ -421,6 +421,6 @@ countme = 0 %>
 
 
 <!--#include file="inc/trailer.asp"-->
-<script src="js/scripts.js"></script>
+<script src="statis/js/scripts.js"></script>
 </body> 
 </html>

@@ -157,7 +157,7 @@ if creatorName <> session("username") then sqlShow = "AND show" %>
         }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="team/js/jquery.list.update.js"></script> <!-- THIS HAS THE JSON CODE-->
+    <script src="static/js/jquery.list.update.js"></script> <!-- THIS HAS THE JSON CODE-->
     <script>
         $(document).ready(function(){
             //$("#wordsSum").html("1");

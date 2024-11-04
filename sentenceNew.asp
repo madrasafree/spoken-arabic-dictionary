@@ -269,6 +269,6 @@ countme = 0
 
 
 <!--#include file="inc/trailer.asp"-->
-<script type="text/javascript" src="js/scripts.js"></script>
+<script type="text/javascript" src="statis/js/scripts.js"></script>
 </body>
 </html>

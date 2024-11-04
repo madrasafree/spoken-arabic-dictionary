@@ -104,7 +104,7 @@ closeDbLogger "arabicWords","C","word.edit.asp","lock",durationMs,""
     <link rel="stylesheet" href="team/inc/arabicTeam.css" />
     <link rel="stylesheet" href="team/inc/guide.css" />
     <link rel="stylesheet" href="team/inc/edit.css?v2" />
-    <script src="team/js/jquery.new.edit.js"></script> <!-- THIS HAS THE JSON CODE-->
+    <script src="static/js/jquery.new.edit.js"></script> <!-- THIS HAS THE JSON CODE-->
 </head>
 <body>
 <!--#include file="inc/top.asp"-->
@@ -691,7 +691,7 @@ end if %>
 
 
 <!--#include file="inc/trailer.asp"-->
-<script type="text/javascript" src="js/scripts.js"></script>
+<script type="text/javascript" src="statis/js/scripts.js"></script>
 
 <script>
     $("#edit").on("submit",function(){

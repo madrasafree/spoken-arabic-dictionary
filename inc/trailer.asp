@@ -87,7 +87,7 @@
 
     </script>
 
-    <script src="inc/functions/saa3a.js?v=3"></script>
+    <script src="static/js/saa3a.js?v=3"></script>
 
 </body>
 </html>
