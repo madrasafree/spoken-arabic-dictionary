@@ -421,6 +421,6 @@ countme = 0 %>
 
 
 <!--#include file="inc/trailer.asp"-->
-<script src="statis/js/scripts.js"></script>
+<script src="static/js/scripts.js"></script>
 </body> 
 </html>
