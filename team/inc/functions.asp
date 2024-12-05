@@ -1,4 +1,7 @@
 ﻿<%
+function shadaAlt (word)
+    shadaAlt=Replace(word,chrw(&H0651),chrw(&hFB1E))
+end function
 
 function isAndroid ()
     if inStr(lcase(Request.ServerVariables ("HTTP_USER_AGENT")),"android")>0 then

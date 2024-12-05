@@ -245,20 +245,21 @@ wordMain=0 %>
 
 <div class="box">
     <h1>מילון ערבית מדוברת</h1>
+	
 	<%
-        ' Check if the searchString parameter exists in the query string
-        If Len(Request.QueryString("searchString")) > 0 Then
-    %>
-    <div id="msgRsltsExct" style="text-align: center;padding: 15px;background: rgb(255 255 255 / 95%);border: 1px solid #d1d9e6;margin: 0px auto;color: #1988cc;margin-bottom: 20px;font-size: 16px;font-family: 'Abraham', sans-serif;border-radius: 8px;box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);width: 90%;max-width:400px">
+' Check if the searchString parameter exists in the query string
+If Len(Request.QueryString("searchString")) > 0 Then
+%>
+<div id="msgRsltsExct" style="text-align: center;padding: 15px;background: rgb(255 255 255 / 95%);border: 1px solid #d1d9e6;margin: 0px auto;color: #1988cc;margin-bottom: 20px;font-size: 16px;font-family: 'Abraham', sans-serif;border-radius: 8px;box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);width: 90%;max-width:400px">
   רוצים ללמוד לתקשר בערבית כמו שצריך?
-        <div style="margin-top: 15px;">
-            <a href="https://madrasafree.com?utm_source=dictionary&utm_medium=banner&utm_campaign=free_online_courses" style="padding: 6px 12px;background-color: #e6f2ff;color: #4a6f8a;border: 1px solid #b3d1ff;border-radius: 4px;text-decoration: none;cursor: pointer;margin-right: 8px;font-size: 15px;display: inline-block;">לקורסים מקוונים בחינם</a>
-            <a href="https://madrasafree.com/our-courses/zoom?utm_source=dictionary&utm_medium=banner&utm_campaign=zoom_teacher" style="padding: 6px 12px;background-color: #e6f2ff;color: #4a6f8a;border: 1px solid #b3d1ff;border-radius: 4px;text-decoration: none;cursor: pointer;font-size: 15px;display: inline-block;">לקורסים עם מורה בזום</a>
-        </div>
-    </div>
-    <%
-    End If
-    %>
+  <div style="margin-top: 15px;">
+    <a href="https://madrasafree.com?utm_source=dictionary&utm_medium=banner&utm_campaign=free_online_courses" style="padding: 6px 12px;background-color: #e6f2ff;color: #4a6f8a;border: 1px solid #b3d1ff;border-radius: 4px;text-decoration: none;cursor: pointer;margin-right: 8px;font-size: 15px;display: inline-block;">לקורסים מקוונים בחינם</a>
+    <a href="https://madrasafree.com/our-courses/zoom?utm_source=dictionary&utm_medium=banner&utm_campaign=zoom_teacher" style="padding: 6px 12px;background-color: #e6f2ff;color: #4a6f8a;border: 1px solid #b3d1ff;border-radius: 4px;text-decoration: none;cursor: pointer;font-size: 15px;display: inline-block;">לקורסים עם מורה בזום</a>
+  </div>
+</div>
+<%
+End If
+%>
 
     
     <div id="msgRsltsExct" style="DISPLAY:NONE; text-align: center; padding: 5px; background:#fff5d7b8; border-bottom: 2px solid #8286ff; margin: 0 auto; color: #8286ff;">

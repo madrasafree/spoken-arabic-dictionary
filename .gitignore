@@ -1,1 +1,4 @@
 App_Data/
+.well-known/
+error_docs/
+web.config*
