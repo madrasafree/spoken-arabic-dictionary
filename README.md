@@ -1,4 +1,4 @@
-# Spoken Arabic Dictionary Project - Current (Old Version)
+# Spoken Arabic Dictionary Project - Current (Legacy Version)
 
 Welcome to the repository for the Spoken Arabic Dictionary, currently hosted at [milon.madrasafree.com](https://milon.madrasafree.com/). This project serves as a free resource for Hebrew speakers who are interested in learning and speaking Arabic.
 
@@ -42,24 +42,3 @@ For local development:
 2. Clone the repository to your local machine.
 3. Configure IIS to point to the cloned directory.
 4. Update any paths to ensure the database is accessible locally.
-
-## Migration Project
-We are currently working on migrating this project to a more modern stack using **Flask (Python)** for the backend and **PostgreSQL** as the database. This migration aims to improve scalability, maintainability, and performance, while also making it easier for developers to contribute to the project.
-
-### Planned Technology Stack
-- **Backend**: Flask (Python)
-- **Database**: PostgreSQL
-- **Web Server**: Nginx or another modern web server
-
-Stay tuned for updates as we make progress on this migration.
-
-## Contributing
-If you are interested in contributing to this project, whether in its current ASP Classic form or the upcoming Flask version, please feel free to reach out. Contributions are welcome, especially in the areas of:
-- Improving ASP Classic code for current stability.
-- Assisting with the migration to Flask and PostgreSQL.
-- Testing and providing feedback.
-
-
-## Contact
-For questions or suggestions, please contact the project maintainers at [info@madrasafree.com](mailto:info@madrasafree.com).
-
