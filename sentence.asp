@@ -54,7 +54,7 @@
 	<a href="admin.asp">ניהול</a> / <%
 	end if %>
 	<a href="test.asp">ארגז חול</a> / 
-	<a href="test.sentences.asp">משפטים</a> / 
+	<a href="sentences.asp">משפטים</a> / 
 	<h1>משפט</h1>
 </div>
 

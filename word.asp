@@ -790,7 +790,7 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
         if NOT res.EOF then %>
 <!-- SENTENCES -->        
             <div class="table h2">
-                <h2><a href="TEST.sentences.asp">משפטים לדוגמא</a></h2><%
+                <h2><a href="sentences.asp">משפטים לדוגמא</a></h2><%
             do until res.EOF
                 if lastID<>res("id") then %>
                     <div class="sentence">

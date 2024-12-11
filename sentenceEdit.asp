@@ -1,7 +1,7 @@
 ﻿<!--#include file="inc/inc.asp"--><%
 if session("role") < 7 then
     session("msg") = "אינך מחובר/ת או שאין לך הרשאה מתאימה לערוך משפטים"
-    response.redirect "test.sentences.asp" 
+    response.redirect "sentences.asp" 
 end if 
 
 

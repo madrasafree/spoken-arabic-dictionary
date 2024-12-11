@@ -105,7 +105,7 @@
 
 	startTime = timer()
 	'openDB "arabicWords"
-	openDbLogger "arabicWords","O","TEST.sentences.asp","single",""
+	openDbLogger "arabicWords","O","sentences.asp","single",""
 
 	mySQL = "SELECT count(id) FROM sentences"
 	res.open mySQL, con %>
@@ -163,7 +163,7 @@
 	endTime = timer()
 	durationMs = Int((endTime - startTime)*1000)
 	'closeDB
-	closeDbLogger "arabicWords","C","TEST.sentences.asp","single",durationMs,""
+	closeDbLogger "arabicWords","C","sentences.asp","single",durationMs,""
 
 
 	%>
