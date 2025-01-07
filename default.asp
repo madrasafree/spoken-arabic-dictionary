@@ -500,8 +500,9 @@ else
 
 
                 'SINGLE - PLURAL'
-                if res("partOfSpeach")=1 then 
-                    mySQL = "SELECT * FROM wordsRelations WHERE (word1="&res("id")&" OR word2="&res("id")&") AND relationType=3"
+               ' Check if part of speech is noun (1) or adjective (2). If it is a noun or adjective, show plural if single and show single if plural
+                if res("partOfSpeach") = 1 OR res("partOfSpeach") = 2 then
+                    mySQL = "SELECT * FROM wordsRelations WHERE (word1=" & res("id") & " OR word2=" & res("id") & ") AND relationType=3"
                     res2.open mySQL, con
                     if not res2.EOF then 
                         if res2("word1") = res("id") then
@@ -509,7 +510,7 @@ else
                             title = "רבים"
                         else 
                             wordMain = res2("word1")
-                            title = "יחיד"
+                            title = "יחיד" 
                         end if
                     end if
                     res2.close
