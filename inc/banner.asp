@@ -14,7 +14,6 @@
         direction: rtl;
         box-sizing: border-box;
         font-family: 'Abraham', sans-serif;
-        /* Assuming you use Heebo or similar */
         overflow: hidden;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
@@ -89,50 +88,51 @@
     /* --- MOBILE RESPONSIVE (Max width 768px) --- */
     @media screen and (max-width: 768px) {
         .madrasa-banner-wrapper {
-            flex-direction: column;
-            /* Stack elements vertically */
+            flex-wrap: wrap;
             height: auto;
-            padding-bottom: 25px;
-            text-align: center;
+            padding: 15px;
+            gap: 10px;
         }
 
         .madrasa-logo {
-            width: 100%;
-            height: auto;
-            padding: 15px 0;
-            margin-bottom: 15px;
+            background-color: #ffffff;
+            height: 55px;
+            width: 55px;
+            padding: 6px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
         }
 
         .madrasa-logo img {
-            height: 60px;
-            /* Smaller logo on mobile */
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
         }
 
         .madrasa-content {
-            padding: 0 15px;
-            margin-bottom: 20px;
+            flex: 1;
+            text-align: center;
+            padding: 0;
         }
 
         .madrasa-content h2 {
-            font-size: 24px;
-            /* Smaller title */
+            font-size: 22px;
         }
 
         .madrasa-content p {
-            font-size: 18px;
-            /* Smaller subtitle */
+            font-size: 20px;
         }
 
         .madrasa-cta-container {
-            padding-left: 0;
-            width: 100%;
-            box-sizing: border-box;
-            padding: 0 20px;
+            flex-basis: 100%;
+            padding: 0;
         }
 
         .madrasa-btn {
             width: 100%;
-            /* Full width button */
             text-align: center;
             box-sizing: border-box;
             padding: 12px 0;
@@ -155,6 +155,6 @@
 
     <!-- CTA Button -->
     <div class="madrasa-cta-container">
-        <a href="https://madrasafree.com" class="madrasa-btn">לפרטים והרשמה</a>
+        <a href="https://madrasafree.com/our-courses/zoom?utm_source=milon.madrasafree.com&utm_medium=referral&utm_campaign=dictionary_banner" class="madrasa-btn">לפרטים והרשמה</a>
     </div>
 </section>
