@@ -136,7 +136,7 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
             font-size: 1em;
         }
 
-        h2 {
+        main h2 {
             background-color: #8cc3fd;
             font-weight: 100;
             padding: 4px;
@@ -262,7 +262,7 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
 </head>
 <body>
 <!--#include file="inc/top.asp"-->
-
+<!--#include file="inc/banner.asp"-->
 
 <main class="flex-container">
     <section class="sctRight">
