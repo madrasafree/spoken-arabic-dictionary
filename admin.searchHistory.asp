@@ -91,10 +91,7 @@ res.close %>
 <div id="container">
 
 	<div id="bread">
-		<a href=".">מילון</a> / <%
-		if session("userID")=1 then %>
-	<%
-		end if %>
+		<a href=".">מילון</a> /
 		<h1>היסטורית חיפוש</h1>
 	</div>
 
