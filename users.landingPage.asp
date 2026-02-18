@@ -71,7 +71,6 @@ if (session("role") and 2) = 0 then Response.Redirect "login.asp?returnTo=users.
     <h2>מנהלה</h2>
     <ul>
         <a href="team.tasks.asp"><li>משימות ורעיונות</li></a>
-        <a href="test.asp"><li>ארגז חול</li></a>
     </ul>
 
 </div>
