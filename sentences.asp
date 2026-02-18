@@ -6,7 +6,7 @@
 	<title>ארגז חול - משפטים</title>
 	<meta name="Description" content="נסיונות מילון על משפטים" />
 	<!--#include file="inc/header.asp"-->
-	<link rel="stylesheet" href="css/test.css" />
+	<link rel="stylesheet" href="css/arabic_utils.css" />
 	<style>
 		.arb {
 			font-size:initial;
@@ -83,7 +83,7 @@
 	if session("userID")=1 then %>
 	<a href="admin.asp">ניהול</a> / <%
 	end if %>
-	<a href="test.asp">ארגז חול</a> / 
+
 	<h1>משפטים</h1>
 </div>
 

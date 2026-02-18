@@ -382,7 +382,6 @@ menu li:first-child p, menu li:last-child p{
             <li><a href="guide.asp">מדריך שימוש <span style="font-size:80%;"></span></a></li>
             <li style="display:none;"><a href="activity.asp">פעילות קהילה</a></li>
             <li style="display:none;"><a href="team.tasks.asp">דף משימות</a></li>
-            <li style="display:none;"><a href="test.asp">ארגז חול</a></li>
             <li><a href="about.asp">אודות המילון</a></li>
             <li style="display:none;"><a href="stats.asp">סטטיסטיקה</a></li>
             <li class="hr"></li>

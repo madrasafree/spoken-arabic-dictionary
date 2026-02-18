@@ -2,3 +2,6 @@ App_Data/
 .well-known/
 error_docs/
 web.config*
+.claude/
+.playwright-mcp/
+file-inventory.csv

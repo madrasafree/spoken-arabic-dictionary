@@ -10,7 +10,7 @@ end if %>
 	<title>היסטורית חיפושים</title>
     <META NAME="ROBOTS" CONTENT="NONE">
 <!--#include file="inc/header.asp"-->
-	<link rel="stylesheet" href="css/test.css" />
+	<link rel="stylesheet" href="css/arabic_utils.css" />
 	<style>
 		.bg {background: #F9F9F9;}
 		.bg2 {background: #EAE6E6;}
@@ -91,10 +91,7 @@ res.close %>
 <div id="container">
 
 	<div id="bread">
-		<a href=".">מילון</a> / <%
-		if session("userID")=1 then %>
-		<a href="test.asp">ארגז חול</a> / <%
-		end if %>
+		<a href=".">מילון</a> /
 		<h1>היסטורית חיפוש</h1>
 	</div>
 

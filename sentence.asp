@@ -6,7 +6,7 @@
 	<title></title>
 	<meta name="Description" content="נסיונות מילון על משפטים" />
 	<!--#include file="inc/header.asp"-->
-	<link rel="stylesheet" href="css/test.css" />
+	<link rel="stylesheet" href="css/arabic_utils.css" />
 	<style>
 		.sentence {background: #ffffff90; margin: 10px 0px 5px 0px ; border-radius:4px; box-shadow:rgba(0,0,0,0.45) 2px 2px 22px -3px;}
 		.info {border:1px solid #dedede; border-radius:4px; margin:0px 36px 15px 0px; padding:10px; background:#ffffff90;}
@@ -53,7 +53,6 @@
 	if session("userID")=1 then %>
 	<a href="admin.asp">ניהול</a> / <%
 	end if %>
-	<a href="test.asp">ארגז חול</a> / 
 	<a href="sentences.asp">משפטים</a> / 
 	<h1>משפט</h1>
 </div>

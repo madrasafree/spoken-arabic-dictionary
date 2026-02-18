@@ -56,7 +56,6 @@ if (session("role") and 2) = 0 then Response.Redirect "login.asp" %>
         <li><a href="mediaControl.asp">תוכן - בנק מדיה</a></li>
         <li><a href=""></a></li>
         <li><a href="../team.tasks.asp">מנהלה - משימות ורעיונות</a></li>
-        <li><a href="../test.asp">מנהלה - ארגז חול</a></li>
     </ul>
 
 </div>

@@ -398,7 +398,7 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
             res.open mySQL, con
             if NOT res.EOF then %>
                 <div class="table h2">
-                    <h2><a href="TEST.RELATIONS.ASP">קשרים בין מילים</a></h2><%
+                    <h2>קשרים בין מילים</h2><%
 
                     do until res.EOF %>
                         <fieldset><%

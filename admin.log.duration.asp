@@ -2,7 +2,7 @@
 <!--#include file="inc/time.asp"--><%
   if session("role") < 6 then
     session("msg") = "אין לך הרשאה מתאימה לצפייה בדף המבוקש"
-    response.redirect "test.asp"
+    response.redirect "login.asp"
   end if %>
 <!DOCTYPE html>
 <html>
@@ -10,7 +10,7 @@
     <title>log - server request duration</title>
 	<meta name="robots" content="noindex" />
     <!--#include file="inc/header.asp"-->
-	<link rel="stylesheet" href="css/test.css" />
+	<link rel="stylesheet" href="css/arabic_utils.css" />
     <style>
     .logger {
         font-size:small;
