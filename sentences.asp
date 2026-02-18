@@ -83,7 +83,7 @@
 	if session("userID")=1 then %>
 	<a href="admin.asp">ניהול</a> / <%
 	end if %>
-	<a href="test.asp">ארגז חול</a> / 
+
 	<h1>משפטים</h1>
 </div>
 

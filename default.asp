@@ -768,9 +768,6 @@ end if
         <a href="games.mem.asp"><div data-gtm="tile_games">משחק זיכרון</div></a>
     </div>
     <div style="display:none;">
-        <a href="test.asp"><div data-gtm="tile_links">ארגז חול</div></a>
-    </div>
-    <div style="display:none;">
         <a href="stats.asp"><div data-gtm="tile_stats">סטטיסטיקה</div></a>
     </div>
     <div >

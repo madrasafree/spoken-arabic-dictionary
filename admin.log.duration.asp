@@ -2,7 +2,7 @@
 <!--#include file="inc/time.asp"--><%
   if session("role") < 6 then
     session("msg") = "אין לך הרשאה מתאימה לצפייה בדף המבוקש"
-    response.redirect "test.asp"
+    response.redirect "login.asp"
   end if %>
 <!DOCTYPE html>
 <html>

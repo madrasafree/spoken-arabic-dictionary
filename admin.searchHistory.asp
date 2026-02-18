@@ -93,7 +93,7 @@ res.close %>
 	<div id="bread">
 		<a href=".">מילון</a> / <%
 		if session("userID")=1 then %>
-		<a href="test.asp">ארגז חול</a> / <%
+	<%
 		end if %>
 		<h1>היסטורית חיפוש</h1>
 	</div>

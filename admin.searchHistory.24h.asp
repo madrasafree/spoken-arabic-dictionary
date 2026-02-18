@@ -83,7 +83,7 @@ res.close %>
 
 	<div id="bread">
 		<a href=".">מילון</a> / 
-		<a href="test.asp">ארגז חול</a> / 
+	
 		<a href="admin.searchHistory.asp">היסטורית חיפוש</h1> /
 		<h1>החיפושים הנפוצים - ב-24 השעות האחרונות</h1>
 	</div>
