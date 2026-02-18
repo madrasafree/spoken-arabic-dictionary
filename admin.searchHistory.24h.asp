@@ -10,7 +10,7 @@ end if %>
 	<title>החיפושים הנפוצים - ב-24 השעות האחרונות</title>
     <META NAME="ROBOTS" CONTENT="NONE">
 <!--#include file="inc/header.asp"-->
-	<link rel="stylesheet" href="css/test.css" />
+	<link rel="stylesheet" href="css/arabic_utils.css" />
 	<style>
 		.bg {background: #F9F9F9;}
 		.bg2 {background: #EAE6E6;}

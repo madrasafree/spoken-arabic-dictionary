@@ -10,7 +10,7 @@
     <title>log - server request duration</title>
 	<meta name="robots" content="noindex" />
     <!--#include file="inc/header.asp"-->
-	<link rel="stylesheet" href="css/test.css" />
+	<link rel="stylesheet" href="css/arabic_utils.css" />
     <style>
     .logger {
         font-size:small;
