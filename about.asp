@@ -1,13 +1,13 @@
-﻿<!--#include file="inc/inc.asp"-->
+<!--#include file="inc/inc.asp"-->
 <!DOCTYPE html>
 <html>
 <head>
 	<title>אודות המילון</title>
-	<meta name="Description" content="כמה מילים אודות המילון ואיך הוא עובד" />
+	<meta name="description" content="כמה מילים אודות המילון ואיך הוא עובד" />
 <!--#include file="inc/header.asp"-->
     <style>
 
-        #copyrights+div label {
+        #copyrights+div b {
             text-decoration:underline;
             }
         #copyrights+div li {
@@ -16,23 +16,33 @@
         .divStats {
             text-align:center;
         }
-        #people {
-            list-style:none;
-            padding:0;
-            text-align:center;
-        }
-
-        #people li {
-            display: inline-block;
-            border: 1px solid gray;
-            padding: 2px 7px;
-            margin: 2px auto;
-            border-radius: 5px;
-        }
         .table {
             margin-bottom:10px;
             width: min(90%,500px);
             padding: 8px;
+        }
+        .body-text {
+            line-height:1.4em;
+        }
+        .note {
+            font-size:small;
+        }
+        .text-right {
+            text-align:right;
+        }
+        .underlink {
+            text-decoration:underline;
+        }
+        .contributors {
+            padding-right:15px;
+            margin-top:10px;
+        }
+        .word-check-icon {
+            width:15px;
+            opacity:0.4;
+        }
+        .section-gap {
+            margin-top:80px;
         }
 
     </style>
@@ -49,35 +59,33 @@
     <br>אשר מעוניינים לדבר ערבית
 </div>
 
-<div class="table divStats" style="text-align:right;">
+<div class="table divStats text-right">
     <br>פרויקט 'מילון ערבית מדוברת' נוסד בשנת 2005 על ידי רונן רוטפרב ונוהל על ידו עד שעבר לידי עמותת 'מדרסה' בשנת 2022.
-    <br> <br>לפורטל ערבית מדוברת של רונן <a href="https://rothfarb.info/ronen/arabic/" style="text-decoration:underline;" target="_blank">לחצו כאן</a>
+    <br><br>לפורטל ערבית מדוברת של רונן <a href="https://rothfarb.info/ronen/arabic/" class="underlink" target="_blank">לחצו כאן</a>
     <br>
-    <br>תודה רבה לאנשים שתרמו, תמכו וסייעו לרונן בפרויקט בין השנים 2005 - 2022, ביניהם: 
+    <br>תודה רבה לאנשים שתרמו, תמכו וסייעו לרונן בפרויקט בין השנים 2005 - 2022, ביניהם:
 
-    <div style="padding-right:15px; margin-top:10px;">
+    <div class="contributors">
         אדם גנשאפט, אהרון ורדי, אחלאס נסאר, איציק קסאפו, אלון רוטפרב, אלעד בכר, אמיליה רוטפרב, אסיל ג'ורן, אסיל מחאג'נה, ארוא מסלחה, ג'וליה הזימה, גילעד סוויט, גנאדי, דוד מור, דור ויטלין, דין מוריאל, דנה ענבר-איתמר, דניאל ורנובסקי, האמבטיה ללימודי שפות, הדר רובינזון, הילה רוזנפלד, יהושע רוטפרב, ליאת קוזניץ, מוחמד נופאל, מוחמד עוידאת, מיקה סמטנסקי, מריה מיגל דה-פינה, מרים ג'ייקובס, נג'אח אטרש, נועם רוזנטל, ניצן קרימסקי, סעיד כבהא, ספאא בדרנה, פרויקט 'ערביט', קנאן קאסם, רועי נחמיאס, רים פיומי, שחר לוי, שרון קומש, שרית טמורה.
         <br>
         <br>תודה מיוחדת ל: יניב גרשון, איתי כץ ויעל ניצן.
     </div>
 
-
-
 </div>
 
 <div class="table divStats">
     <h3>מי מוסיף את המילים?</h3>
-    <div style="font-weight:bold;">אתם!</div>
-    <div style="line-height:1.4em;">המילון שלנו מבוסס תוכן קהילתי (כמו ויקיפדיה),
+    <strong>אתם!</strong>
+    <div class="body-text">המילון שלנו מבוסס תוכן קהילתי (כמו ויקיפדיה),
         <br>כך שהמשתמשים עצמם מוסיפים את המילים למילון
     </div>
 </div>
 
 <div class="table divStats">
     <h3>מי בודק את המילים שהוסיפו?</h3>
-    <div style="line-height:1.4em;">
+    <div class="body-text">
         את המילים בודקים משתמשים ותיקים, עם ידע רחב גם בעברית וגם בערבית מדוברת.
-        <br>חפשו את הסימן <img src="img/site/correct.png" title="correct" style="width: 15px; opacity: 0.4;" /> לצד המילים שעברו את בדיקתם.
+        <br>חפשו את הסימן <img src="img/site/correct.png" title="correct" class="word-check-icon" /> לצד המילים שעברו את בדיקתם.
         <br>
         <br>נכון ל-1 בינואר 2020
         <br>96% מהמילים נבדקו ונמצאו תקינות
@@ -86,7 +94,7 @@
 
 <div class="table divStats">
     <h3>מה אנחנו מתכננים לעתיד?</h3>
-    <div style="line-height:1.4em;">
+    <div class="body-text">
         יש לנו רשימה כל-כך ארוכה של משימות ורעיונות, שזה יהיה מטורף להציג אותה כאן. אז הכנו לכם <b><a href="team.tasks.asp">דף משימות</a></b> יעודי שבו תוכלו לצפות בכל מה שכרגע בטיפול, מתוכנן להמשך, מתוכנן לעתיד הרחוק ועד לרעיונות הכי פרועים שקיבלנו.
         <br>
         <br>* משתמשים רשומים יכולים להצביע ולהשפיע על אילו משימות נטפל קודם
@@ -97,65 +105,69 @@
 
 <div class="table divStats">
     <h3>כמה אנשים משתמשים במילון?</h3>
-    <div style="line-height:1.4em;">
+    <div class="body-text">
         ב-2021 נעשו 996,000 כניסות לאתר ומעל 4,800,000 צפיות בדפים השונים
         <br>
         <br>לעוד מספרים מעניינים, הכנסו לדף <b><a href="stats.asp" data-gtm="goToStats">הסטטיסטיקה</a></b> היעודי
     </div>
 </div>
 
-<h2 class="pTitle" id="copyrights" style="margin-top:80px;">זכויות יוצרים</h2>
+<h2 class="pTitle section-gap" id="copyrights">זכויות יוצרים</h2>
 <div class="table divStats">
-    <div>לדיווח על חשד בפגיעה בזכויות יוצרים או קניין רוחני באתר, 
-        אנא כתבו לנו למייל וציינו את מהות הפגיעה בצירוף קישור לדף הרלוונטי. 
+    <div>לדיווח על חשד בפגיעה בזכויות יוצרים או קניין רוחני באתר,
+        אנא כתבו לנו למייל וציינו את מהות הפגיעה בצירוף קישור לדף הרלוונטי.
         <br>admin@madrasafree.com
     </div>
-    <ul style="text-align:right;">
-        <li>טקסט</li>
-        <ul>
-            <li><label>מילים</label>
-                <div style="font-size:small;">למיטב ידיעתנו, מילה בפני עצמה היא נחלת הכלל</div>
-            </li>
-            <li><label>טקסט נלווה <span style="font-size:small;">(משפטים לדוגמא, הערות וכן הלאה...)</span></label>
-                <div style="font-size:small;">
-                    המשתמשים אשר מוסיפים תוכן טקסטואלי למילון מתבקשים להעלות טקסט מקורי שלהם, ובשום פנים שלא להעתיק טקסט ממקור אחר אשר מוגן בזכויות יוצרים.
-                    <br>אם לא צוין אחרת, הזכויות שמורות למילון ולכותב הטקסט ואין לעשות בו שימוש ללא אישור פרטני בכתב.
-                </div>
-            </li>
-        </ul>
-        <li>תמונות</li>
-        <ul>
-            <li><label>רונן רוטפרב</label>
-                <div style="font-size:small;">בחלק מהערכים מופיעות תמונות שצילם רונן רוטפרב. כל הזכויות שמורות ואין לעשות בהן שימוש ללא אישורו.</div>
-            </li>
-            <li><label>ויקימדיה</label>
-                <div style="font-size:small;">בחלק מהערכים מופיעות תמונות מתוך אתר ויקימדיה. כל התמונות חופשיות לשימוש, כל אחת בהתאם לרישיון שלה אשר מצוין בקרדיט של התמונה.</div>
-            </li>
-            <li><label>אחרים</label>
-                <div style="font-size:small;">במקרים בהם מופיעות תמונות מאתרים אחרים, סוג הרישיון יופיע עם הקרדיט לצד התמונה.</div>            
-            </li>
-        </ul>
-        <li>וידאו</li>
-        <ul>
-            <li><label>arabic4hebs</label>
-                <div style="font-size:small;">סרטונים של arabic4hebs מופיעים ברחבי המילון. הרישיון הוא בהתאם למופיע בתיאור הסרטון ביו-טיוב. אם לא צוין אחרת, כל הזכויות שמורות לרונן רוטפרב ואין לעשות שימוש בסרטונים ללא אישורו.</div>
-            </li>
-            <li><label>אחרים</label>
-                <div style="font-size:small;">במידה ומוצגים סרטונים של יוצרים אחרים, מידע לגבי זכויות יופיע לצד הסרטון</div>
-            </li>
-        </ul>
-        <li>אודיו</li>
-        <ul>
-            <li><label>מילון ערבית מדוברת</label>
-                <div style="font-size:small;">במילון מוטמעים קטעי אודיו שהוקלטו על ידי מתנדבים במסגרת הפרויקט. אין לעשות שימוש בקטעים אלה ללא אישור פרטני ממדרסה או מהמתנדב שהקליט את הקטע.</div>
-            </li>
-            <li><label><a href="https://www.facebook.com/ערביט-247705252430009">ערביט</a></label>
-                <div style="font-size:small;">במילון מוטמעים קטעי אודיו ששייכים לפרויקט 'ערביט'. קטעים אלה הוטמעו באישורם. כל הזכויות שמורות ל'ערביט'.</div>
-            </li>
-            <li><label><a href="https://www.facebook.com/Kilme.A.Word.A.Day">כלמה/מילה אחת ביום</a></label>
-                <div style="font-size:small;">במילון מוטמעים קטעי אודיו ששייכים לפרויקט 'כלמה/מילה אחת ביום'. קטעים אלה הוטמעו באישורם. כל הזכויות שמורות ל'כלמה/מילה אחת ביום'.</div>
-            </li>
-        </ul>
+    <ul class="text-right">
+        <li>טקסט
+            <ul>
+                <li><b>מילים</b>
+                    <div class="note">למיטב ידיעתנו, מילה בפני עצמה היא נחלת הכלל</div>
+                </li>
+                <li><b>טקסט נלווה <span class="note">(משפטים לדוגמא, הערות וכן הלאה...)</span></b>
+                    <div class="note">
+                        המשתמשים אשר מוסיפים תוכן טקסטואלי למילון מתבקשים להעלות טקסט מקורי שלהם, ובשום פנים שלא להעתיק טקסט ממקור אחר אשר מוגן בזכויות יוצרים.
+                        <br>אם לא צוין אחרת, הזכויות שמורות למילון ולכותב הטקסט ואין לעשות בו שימוש ללא אישור פרטני בכתב.
+                    </div>
+                </li>
+            </ul>
+        </li>
+        <li>תמונות
+            <ul>
+                <li><b>רונן רוטפרב</b>
+                    <div class="note">בחלק מהערכים מופיעות תמונות שצילם רונן רוטפרב. כל הזכויות שמורות ואין לעשות בהן שימוש ללא אישורו.</div>
+                </li>
+                <li><b>ויקימדיה</b>
+                    <div class="note">בחלק מהערכים מופיעות תמונות מתוך אתר ויקימדיה. כל התמונות חופשיות לשימוש, כל אחת בהתאם לרישיון שלה אשר מצוין בקרדיט של התמונה.</div>
+                </li>
+                <li><b>אחרים</b>
+                    <div class="note">במקרים בהם מופיעות תמונות מאתרים אחרים, סוג הרישיון יופיע עם הקרדיט לצד התמונה.</div>
+                </li>
+            </ul>
+        </li>
+        <li>וידאו
+            <ul>
+                <li><b>arabic4hebs</b>
+                    <div class="note">סרטונים של arabic4hebs מופיעים ברחבי המילון. הרישיון הוא בהתאם למופיע בתיאור הסרטון ביו-טיוב. אם לא צוין אחרת, כל הזכויות שמורות לרונן רוטפרב ואין לעשות שימוש בסרטונים ללא אישורו.</div>
+                </li>
+                <li><b>אחרים</b>
+                    <div class="note">במידה ומוצגים סרטונים של יוצרים אחרים, מידע לגבי זכויות יופיע לצד הסרטון</div>
+                </li>
+            </ul>
+        </li>
+        <li>אודיו
+            <ul>
+                <li><b>מילון ערבית מדוברת</b>
+                    <div class="note">במילון מוטמעים קטעי אודיו שהוקלטו על ידי מתנדבים במסגרת הפרויקט. אין לעשות שימוש בקטעים אלה ללא אישור פרטני ממדרסה או מהמתנדב שהקליט את הקטע.</div>
+                </li>
+                <li><b><a href="https://www.facebook.com/ערביט-247705252430009">ערביט</a></b>
+                    <div class="note">במילון מוטמעים קטעי אודיו ששייכים לפרויקט 'ערביט'. קטעים אלה הוטמעו באישורם. כל הזכויות שמורות ל'ערביט'.</div>
+                </li>
+                <li><b><a href="https://www.facebook.com/Kilme.A.Word.A.Day">כלמה/מילה אחת ביום</a></b>
+                    <div class="note">במילון מוטמעים קטעי אודיו ששייכים לפרויקט 'כלמה/מילה אחת ביום'. קטעים אלה הוטמעו באישורם. כל הזכויות שמורות ל'כלמה/מילה אחת ביום'.</div>
+                </li>
+            </ul>
+        </li>
     </ul>
 </div>
 
