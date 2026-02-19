@@ -72,38 +72,28 @@ Inline `<style>` block in `<head>`. Classes defined:
 
 **URL:** https://milon.madrasafree.com/labels.asp
 **Feature area:** dictionary
-**Auth:** public (no login required)
+**Auth:** public
 **DB access:** arabicWords — `labels`, `wordsLabels`
 
 ### Purpose
 
-Renders a tag cloud of all label (topic) categories. Each label appears as a clickable link; its font size scales with the number of words in that label. Clicking a label navigates to `label.asp`.
+Tag cloud of all label (topic) categories. Font size of each label scales with the number of words it contains. Clicking navigates to `label.asp`.
 
 ### Includes
 
 ```
 inc/inc.asp      ← DB connection + utilities
-inc/header.asp   ← CSS/JS (already loads jQuery 1.11.3)
+inc/header.asp   ← CSS/JS including jQuery
 inc/top.asp      ← nav bar
 inc/trailer.asp  ← footer
 ```
 
-**Duplicate script load** (line 18): `<script src=".../jquery.min.js">` is loaded explicitly in this page, redundant with `inc/header.asp` line 24. jQuery ends up loaded twice.
-
-### Query params
-
-| Param | Values | Effect |
-|---|---|---|
-| `?order=` | `a` / `e` / `h` | **Declared but never used** — SQL is hardcoded to `ORDER BY labelName` regardless |
-
 ### SQL
 
-Two queries execute per page load:
+1. `SELECT * FROM labels ORDER BY labelName` — all labels alphabetically
+2. For each label: `SELECT count(wordID) FROM wordsLabels WHERE labelID=X` — **N+1 pattern**: one COUNT query per label
 
-1. `SELECT * FROM labels ORDER BY labelName` — fetches all labels
-2. For each label row: `SELECT count(wordID) FROM wordsLabels WHERE labelID=X` — **N+1 pattern**: one extra COUNT query per label
-
-### Font-size scale
+### Font-size scale (word count → CSS font-size)
 
 | Word count | Font size |
 |---|---|
@@ -115,19 +105,9 @@ Two queries execute per page load:
 | 181–300 | 1.9em |
 | 300+ | 2.4em |
 
-### Dead code
-
-| Type | Location | Detail |
-|---|---|---|
-| Variable | Line 2 | `nikud` — declared, set to `""`, never read |
-| Variable | Lines 3–8 | `order` — populated from `?order=` query param, but never used in any SQL |
-| Variable | Line 9 | `countMe` — declared, never incremented or output |
-| Duplicate script | Line 18 | jQuery already loaded by `inc/header.asp` |
-| CSS class | Line 20 | `.tag` — defined but never applied to any element (the `<li>` tags only use inline `font-size`) |
-
 ### Links to
 
-- `label.asp?id=X` — individual label word list
+- `label.asp?id=X`
 
 ---
 
@@ -135,19 +115,19 @@ Two queries execute per page load:
 
 **URL:** https://milon.madrasafree.com/label.asp?id=X
 **Feature area:** dictionary
-**Auth:** public (no login required)
+**Auth:** public
 **Required param:** `?id=` (label ID — integer, no validation)
 **DB access:** arabicWords — `labels`, `wordsLabels`, `words`, `wordsMedia`
 
 ### Purpose
 
-Displays all words belonging to a given label. Shows the same tag cloud as `labels.asp` (collapsed by default with a toggle), then the word list for the selected label with status icons and links to `word.asp`.
+Displays all words in a given label. Top of page has the same tag cloud as `labels.asp` (collapsed by default, toggled by "הצג רשימת נושאים"). Below that is the word list for the selected label, with status icons and links to `word.asp`.
 
 ### Includes
 
 ```
 inc/inc.asp                  ← DB connection + utilities
-inc/functions/functions.asp  ← isAndroid() + showShada() — included but never called here
+inc/functions/functions.asp  ← isAndroid() / showShada() for Android Arabic rendering
 inc/header.asp               ← CSS/JS including jQuery
 inc/top.asp                  ← nav bar
 inc/trailer.asp              ← footer
@@ -155,57 +135,47 @@ inc/trailer.asp              ← footer
 
 ### Query params
 
-| Param | Values | Effect |
-|---|---|---|
-| `?id=` | integer | **Required.** Label ID. Used directly in SQL — see Security below. |
-| `?order=` | `e` / `h` (default: `arabicWord`) | Sort order for the word list (`e`=pronunciation, `h`=Hebrew translation) |
+| Param | Values | Default | Effect |
+|---|---|---|---|
+| `?id=` | integer | — | **Required.** Which label to show. |
+| `?order=` | `e` / `h` | `arabicWord` | Sort word list by pronunciation (`e`) or Hebrew translation (`h`) |
 
 ### SQL
 
-1. Fetch label name: `SELECT labelName FROM labels WHERE id=` + LID
+1. `SELECT labelName FROM labels WHERE id=` + LID — fetch current label name for the page title
 2. Tag cloud N+1 (same as `labels.asp`): `SELECT * FROM labels` + N × `SELECT count(wordID) FROM wordsLabels WHERE labelID=X`
-3. Word list: `SELECT DISTINCT words.id, words.arabic, words.arabicWord, words.hebrewTranslation, words.hebrewDef, words.pronunciation, words.status, words.imgLink, wordsLabels.labelID, wordsMedia.mediaID FROM (words INNER JOIN wordsLabels ON words.id = wordsLabels.wordID) LEFT JOIN wordsMedia ON words.id = wordsMedia.wordID WHERE show AND wordsLabels.labelID=LID ORDER BY <order>`
+3. Word list: `SELECT DISTINCT words.id, words.arabic, words.arabicWord, words.hebrewTranslation, words.hebrewDef, words.pronunciation, words.status, words.imgLink, wordsLabels.labelID, wordsMedia.mediaID FROM (words INNER JOIN wordsLabels ...) LEFT JOIN wordsMedia ... WHERE show AND wordsLabels.labelID=LID ORDER BY <order>`
 
-The `LEFT JOIN wordsMedia` means a word with multiple media rows can appear more than once even with `DISTINCT`. The `prevID` guard (line 146) deduplicates at render time — only the first occurrence of each word ID is output.
+The `LEFT JOIN wordsMedia` can produce duplicate word rows when a word has multiple media entries. `DISTINCT` reduces but doesn't eliminate them; a `prevID` guard in the render loop skips any repeated word ID.
 
-### Word status display
+### Word status icons
 
-| `status` value | Rendered as |
+| `status` value | Display |
 |---|---|
-| `1` | Green checkmark icon — reviewed OK |
-| `-1` | Red badge "ערך בבדיקה" — under review |
-| other | Orange badge "טרם נבדק" — not yet reviewed |
+| `1` | Green checkmark — reviewed OK |
+| `-1` | Red "ערך בבדיקה" badge — under review |
+| other | Orange "טרם נבדק" badge — not yet reviewed |
 
 ### Page-specific CSS
 
 | Selector | Purpose |
 |---|---|
-| `#lingolearn button:hover` | **Dead** — `#lingolearn` never appears in the page HTML |
-| `#hide`, `#unhide` | Tag cloud toggle buttons |
-| `.eng`, `.heb` | Word entry column layout |
+| `#hide`, `#unhide` | Toggle buttons for the tag cloud |
+| `.eng`, `.heb` | Column layout for word entries |
 | `.pos`, `.def` | Part-of-speech and definition inline display |
-| `.result` | Word card background, border, hover state |
+| `.result` | Word card styling |
 | `.icons`, `.correct`, `.imgLink`, `.audio`, `.erroneous` | Status and media icon positioning |
-| `@media (max-width: 600px)` | Stacks `.eng`/`.heb` columns on narrow screens |
-
-### Dead code
-
-| Type | Location | Detail |
-|---|---|---|
-| Dead CSS | Lines 38–40 | `#lingolearn button:hover` — `#lingolearn` element does not exist in this page |
-| Commented JS | Line 180 | `document.title = ...` — permanently commented out |
-| Unused include | Line 2 | `inc/functions/functions.asp` — `isAndroid()` and `showShada()` are never called |
-| Meta casing | Line 34 | `name="Description"` — should be lowercase `name="description"` (HTML spec) |
+| `@media (max-width: 600px)` | Stacks columns on narrow screens |
 
 ### Security
 
-**SQL injection** (lines 23 and 142): `LID = Request("id")` is concatenated directly into SQL strings with no type-checking or parameterization. A crafted `?id=` value can inject arbitrary SQL against the `arabicWords` database.
+`LID = Request("id")` is concatenated directly into SQL with no type-checking or parameterization — SQL injection risk on both queries that use it (label name lookup and word list).
 
 ### OG image
 
-`<meta property="og:image" content=".../img/labels/<LID>.png" />` — expects one image per label ID in `img/labels/`. If the image is missing, social share previews will be broken for that label.
+`<meta property="og:image" content=".../img/labels/<LID>.png" />` — one image per label ID expected in `img/labels/`. Missing images break social share previews for that label.
 
 ### Links to
 
-- `label.asp?id=X` (self — tag cloud links)
-- `word.asp?id=X` — each word card links to its word page
+- `label.asp?id=X` (self — tag cloud links highlight current label)
+- `word.asp?id=X` — each word card

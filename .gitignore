@@ -4,4 +4,3 @@ error_docs/
 web.config*
 .claude/
 .playwright-mcp/
-file-inventory.csv
