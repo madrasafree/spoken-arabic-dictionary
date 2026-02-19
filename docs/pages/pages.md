@@ -1,15 +1,19 @@
-# about.asp — Page Documentation
+# Pages Documentation
+
+Page-by-page reference for all public and internal ASP pages in the site.
+
+---
+
+## about.asp
 
 **URL:** https://milon.madrasafree.com/about.asp
 **Feature area:** dictionary
 **Auth:** public (no login required)
 **DB access:** none (opens connection via `inc/inc.asp` but never queries)
 
----
+### Structure
 
-## Structure
-
-### Includes
+#### Includes
 
 ```
 inc/inc.asp      ← DB connection + utility functions (required by inc/trailer.asp)
@@ -26,7 +30,7 @@ The connection is kept because `inc/trailer.asp` uses it to load the avatar for 
 > file. Never place any content (even an HTML comment) before it — doing so breaks
 > `Option Explicit` in `inc/inc.asp` with VBScript error 800a0400.
 
-### Page-specific CSS
+#### Page-specific CSS
 
 Inline `<style>` block in `<head>`. Classes defined:
 
@@ -44,9 +48,7 @@ Inline `<style>` block in `<head>`. Classes defined:
 | `#copyrights+div b` | Underlines category labels in copyright list |
 | `#copyrights+div li` | Adds spacing between copyright list items |
 
----
-
-## Content Sections
+### Content Sections
 
 | Lines | Topic |
 |---|---|
@@ -58,42 +60,21 @@ Inline `<style>` block in `<head>`. Classes defined:
 | ~98–105 | Usage numbers — **hardcoded 2021 stats** (996,000 sessions, 4.8M page views); links to `stats.asp` |
 | ~107–160 | Copyright section — text, images (Wikimedia, Ronen), video (YouTube/arabic4hebs), audio |
 
----
-
-## Known Stale Content
-
-- **"96% reviewed" stat** — hardcoded to January 2020. Should be made dynamic from the DB or updated manually.
-- **Usage numbers** — hardcoded 2021 data. Could be pulled from `stats.asp` logic or updated manually each year.
-
----
-
-## Migration Notes
+### Migration Notes
 
 1. **No server-side logic** — purely static content. Can be migrated to a plain HTML template or a CMS page with zero backend changes needed.
 2. **DB connection overhead** — `inc/inc.asp` opens a connection that this page never uses. In the new stack, a static page won't open a DB connection at all, eliminating this overhead.
 3. **No auth dependency** — page is fully public. No session logic required (the nav bar reads session vars but degrades gracefully for anonymous users).
 
----
+### Safe Optimizations to Consider
 
-## Optimization History
+Identified from codebase scan — none change layout or CSS class names.
 
-**2026-02 — round-1 code cleanup (pages/code-optimization branch):**
-- Removed dead `#people` / `#people li` CSS (element never existed on this page)
-- Extracted 7 sets of repeated inline styles into named CSS classes (`.body-text` x4, `.note` x9, `.text-right` x2, etc.)
-- Fixed invalid HTML: 4 nested `<ul>` were direct children of `<ul>` — wrapped inside parent `<li>`
-- Replaced 10 misused `<label>` elements with `<b>` in copyright section (`<label>` is a form element)
-- Updated CSS selector accordingly: `#copyrights+div label` to `#copyrights+div b`
-- Fixed `name="Description"` to `name="description"` (HTML spec casing)
-- Replaced `<div style="font-weight:bold;">` with semantic `<strong>` for "אתם!"
-- Visual layout is **identical to production**
+| # | Type | Location | Issue | Fix |
+|---|---|---|---|---|
+| 1 | Security | Line 64 | `target="_blank"` external link without `rel="noopener noreferrer"` | Add `rel="noopener noreferrer"` to the Rothfarb portal `<a>` |
+| 2 | UX | Line 119 | Email address `admin@madrasafree.com` is plain text | Wrap in `<a href="mailto:admin@madrasafree.com">` |
+| 3 | Consistency | Lines 163, 166 | Facebook links lack `target="_blank"` (unlike line 64) | Add `target="_blank" rel="noopener noreferrer"` |
+| 4 | Semantic | Lines 124, 127, 137, 140, 143, 150, 153, 160 | `<b>` used for important labels in copyright section | Replace with `<strong>`; update CSS selector `#copyrights+div b` → `#copyrights+div strong` |
 
-**Round-2 attempt (reverted):**
-- Tried semantic HTML rewrite (`<section>`, `<p>`, `<small>`, `<address>`, `<time>`, CSS renamed to `.card`)
-- Used `<%-- --%>` ASP.NET comments — caused 500 (invalid Classic ASP syntax)
-- Fixed comments but visual layout differed from production — reverted to round-1
-
-**Classic ASP lessons learned (applied to this project):**
-- `<!--#include file="inc/inc.asp"-->` must be line 1 — no content before it
-- Classic ASP comments inside script blocks: `<% ' comment %>` — never `<%-- --%>`
-- `web.config` `errorMode` valid values: `Custom`, `Detailed`, `DetailedLocalOnly` (not `Off`)
-- Local dev: set `errorMode="Detailed"` in `web.config` (gitignored) to see real ASP errors in browser
+**CSS dead selectors:** None — all 11 CSS rules in the inline `<style>` block match elements that exist in the page.
