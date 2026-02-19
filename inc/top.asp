@@ -25,14 +25,6 @@ function gereshFix(str)
 end function
 
 
-'edit.update.asp - still used for requesting 'on' labels'
-'{MOVE BACK TO FUNCTIONS/STRING.ASP AFTER DIRECTORY SORTING}
-Function getString (f)
-    getString = replace(f,"'","''")
-End function 
-
-
-
 dim strInput,strDisplay,strClean
 
 strInput = request("searchString")
@@ -45,19 +37,6 @@ if len(strInput)>0 then
     strDisplay = trim(strDisplay)
     strClean = onlyLetters(strDisplay)
 end if
-
-
-
-'REPLACE WITH FUNCTIONS FROM string.asp'
-dim qq,qqFix,qDisplay
-q = trim(Request("searchString"))
-    dim quotes, dQuotes
-    quotes = chr(34)
-    dQuotes = chr(34) & chr(34)
-    qq = replace(q,quotes,dQuotes) 'REPLACE QUOTE WITH DOUBLE-QUOTE, FOR LATER SQL'
-    qqFix = Replace(qq, ChrW(160), "") 'REPLACE UNVISIBLE UNICODE-160 WITH NOTHING'
-    qFix = Replace(q, ChrW(160), "") 'REPLACE UNVISIBLE UNICODE-160 WITH NOTHING'
-    qDisplay = Replace(q,quotes,"&quot;") 'REPLACE QUOTE. FOR DISPLAY WITH HTML'
 %>
 
 <style>
@@ -308,7 +287,7 @@ menu li:first-child p, menu li:last-child p{
   מילון ערבית מדוברת
   </a>
 </div>
-<form id="bar-search-container" action="." autocomplete="off" onsumbit="loadAnim(e)">
+<form id="bar-search-container" action="." autocomplete="off">
   <div dir="rtl" id="bar">
     <div id="bar-search-flex">
       <div id="bar-menu">
@@ -371,8 +350,7 @@ menu li:first-child p, menu li:last-child p{
     </menu>
 
     <div id="nav" class="navNew" style="visibility:hidden;z-index:3;"><%
-        dim cURL
-        cURL = mid(Request.ServerVariables("url"),22) %>
+%>
         <ul>
             <li><a href="default.asp">דף הבית של המילון</a></li>
             <li class="hr"></li>
@@ -380,10 +358,7 @@ menu li:first-child p, menu li:last-child p{
             <li><a href="lists.all.asp">רשימות אישיות</a></li>
             <li><a href="games.mem.asp">משחק זיכרון</a></li>
             <li><a href="guide.asp">מדריך שימוש <span style="font-size:80%;"></span></a></li>
-            <li style="display:none;"><a href="activity.asp">פעילות קהילה</a></li>
-            <li style="display:none;"><a href="team.tasks.asp">דף משימות</a></li>
             <li><a href="about.asp">אודות המילון</a></li>
-            <li style="display:none;"><a href="stats.asp">סטטיסטיקה</a></li>
             <li class="hr"></li>
             <li><a href="https://madrasafree.com">לאתר הבית של מדרסה</a></li>
 

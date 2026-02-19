@@ -26,7 +26,7 @@
     </tr>
 </table>
 
-<div class="space" id="cons"/></div>
+<div class="space" id="cons"></div>
 <h3>עיצורים</h3>
 <table class="tableInfo letters">
     <tr>
@@ -393,26 +393,7 @@
         א עיצורית או כ דגושה או ג (תלוי בלהג), ובמילים מסוימות, תמיד כמו ק עמוקה כמו בערבית הספרותית
         <br/><br/>אנו מקווים לפתח את נושא הלהגים במילון. ייתכן ובעתיד התעתיק הלועזי יופרד כמספר הלהגים. נכון לעכשיו, כתבו את כולם באופן זהה
         </td>
-        <td>
-            <div class="player" style="display:none;">
-                <audio controls>
-                    <source src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Glottal_stop.ogg" type="audio/ogg">
-                </audio>
-            </div>
-        </td>
-    </tr>
-    <tr style="display:none;">
-        <td style="display:none;"></td>
-        <td>ק<label>מוּסִיקַא</label></td>
-        <td>q<label>mu-sii-qa</label></td>
-        <td style="display:none;"></td>
-        <td>
-            <div class="player">
-                <audio controls>
-                    <source src="https://upload.wikimedia.org/wikipedia/commons/1/19/Voiceless_uvular_plosive.ogg" type="audio/ogg">
-                </audio>
-            </div>
-        </td>
+        <td></td>
     </tr>
     <tr>
         <td title="ּכַאף">ك</td>

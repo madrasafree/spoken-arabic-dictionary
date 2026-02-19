@@ -55,13 +55,19 @@ web.config.local        ← reference copy of local dev web.config
 ## Databases
 
 All databases are MS Access `.mdb` files in `App_Data/` (gitignored, deployed separately).
+Full schema documentation: **`docs/db.md`**
 
-| Database | Contents |
-|---|---|
-| `arabicWords` | words, labels, sentences, lists, media, relations |
-| `arabicUsers` | users, login logs, permissions |
+| Database | Status | Contents |
+|---|---|---|
+| `arabicWords` | Live | words, labels, sentences, lists, media, relations, history |
+| `arabicUsers` | Live | users, authentication, feature flags |
+| `arabicSearch` | Live | search term analytics and per-search event log |
+| `arabicManager` | Live | team task management, subtasks, community voting |
+| `arabicLogs` | Live (admin-only) | system monitor status (scheduled job health) |
+| ~~`arabicSchools`~~ | Dead | MDB does not exist; dead code remains in `admin.log.duration.asp` |
+| ~~`arabicSandbox`~~ | Dead | MDB does not exist (test DB removed); dead code remains in `admin.log.duration.asp` |
 
-Connection and recordset objects (`con`, `res`, `res2`) are opened in `inc/inc.asp`.
+Connection and recordset objects (`con`, `res`, `res2`, `res3`) are opened in `inc/inc.asp`.
 Use `openDbLogger` / `closeDbLogger` wrappers — not `openDB` / `closeDB` directly.
 
 ---

@@ -57,33 +57,10 @@
     </table>
 	
 	<script>
-        function toggleTable() {
-        var lTable = document.getElementById("inFooter");
-        lTable.style.display = (lTable.style.display == "table") ? "none" : "table";
-        }
-
-        function toggleSearch() {
-        var srch = document.getElementById("topSearch");
-        srch.style.display = (srch.style.display == "inline-block") ? "none" : "inline-block";
-        }	
-    
         function toggleMenu() {
         var lMenu = document.getElementById("nav");
         lMenu.style.display = (lMenu.style.display == "table") ? "none" : "table";
-        }	
-        
-        $(".clear-input").on("click", function(){
-            $("#searchBoxTop").val("").focus();
-        });
-
-        $("#topSearch").on("submit",function(){
-            if($("#searchBoxTop").val().trim() == ""){
-                return false;
-            }
-            $("#submitTop").prop("disabled",true);
-            $("#loadingAnmTop").show().attr("float","left");
-            return true;
-        });
+        }
 
     </script>
 
