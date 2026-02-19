@@ -1,5 +1,4 @@
 App_Data/
 .well-known/
-error_docs/
 .claude/
 .playwright-mcp/
