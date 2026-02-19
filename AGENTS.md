@@ -146,6 +146,45 @@ Always merge feature branches to `main` before expecting changes on the live sit
 
 ---
 
+## Testing Tools
+
+Shared scripts in `tools/` — usable by any agent (Claude, Codex) or developer.
+
+### Setup (once)
+```bash
+pip install -r tools/requirements.txt
+playwright install chromium
+```
+
+### HTTP status checker
+```bash
+python tools/check-http.py              # production
+python tools/check-http.py --local      # localhost:8081
+```
+Checks that key pages return 200, non-existent pages return 404 with the custom error page, and `/docs/` is blocked.
+Exit code 0 = all passed, 1 = failures.
+
+### Browser checker (Playwright)
+```bash
+python tools/browser-check.py              # production, headless
+python tools/browser-check.py --local      # localhost:8081
+python tools/browser-check.py --headed     # show browser window
+python tools/browser-check.py --screenshot # save screenshots to tools/screenshots/
+```
+Loads pages in a real Chromium browser and checks:
+- No IIS error screen ("Server Error", "HTTP Error", etc.)
+- Nav bar is present (confirms inc/top.asp loaded)
+- Key page text is present
+- Custom 404 page is served (not the IIS default "File or directory not found")
+- `/docs/` is blocked
+
+### When to run
+- After any change to `web.config` → run both scripts against production after deploy
+- After editing an `.asp` page → run browser-check with `--local` to confirm no IIS error
+- After merging to `main` → run both scripts against production to confirm deploy succeeded
+
+---
+
 ## Documentation
 
 - **`docs/file-inventory.csv`** — every file in the repo with metadata (size, lines, DB access, dependencies, feature area, can_delete, notes). Keep updated when files change.
