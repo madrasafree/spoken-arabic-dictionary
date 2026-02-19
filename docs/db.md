@@ -278,7 +278,7 @@ Feature flags / site-wide switches.
 
 ### `loginLog`
 
-Login audit trail. Referenced in code but appears to have been disabled (no active inserts found).
+Login audit trail. Written by `login.fixhref.asp` on successful login; read in admin dashboard.
 
 | Field | Notes |
 |---|---|
@@ -292,9 +292,9 @@ Login audit trail. Referenced in code but appears to have been disabled (no acti
 **Used by:** `default.asp`, `default.min.asp` (write on every search); `stats.asp`,
 `stats.topSearch.asp`, `admin.searchHistory.*.asp` (read).
 
-### `wordsSearched`
+### `wordsSearched` — Live
 
-Aggregate search term statistics.
+Aggregate search term statistics. One row per unique search term, updated on every search.
 
 | Field | Notes |
 |---|---|
@@ -302,15 +302,32 @@ Aggregate search term statistics.
 | `typed` | Search term as entered |
 | `searchCount` | Total number of searches for this term |
 | `result` | 1=exact match, 2=soundex match, 9=no results; combined codes (11, 21, 91) also used |
+| `translated` | Classification field — **never written via SQL**; shown in admin UI dropdowns only |
 
-### `latestSearched`
+### `latestSearched` — Live
 
-Per-search event log.
+Per-search event log. One row per search event. Written by `default.asp` and `default.min.asp`;
+read by admin search history pages (`admin.searchHistory.*.asp`).
 
 | Field | Notes |
 |---|---|
 | `searchTime` | UTC timestamp |
 | `searchID` | FK → `wordsSearched.id` |
+
+### ~~`log`~~ — Dead
+
+Performance log table. Schema matches the DB operation log the logger was meant to write to,
+but the INSERT SQL was always commented out and has since been removed.
+The table is queried (SELECT only) in `admin.log.duration.asp` but will always return empty rows.
+
+| Field | Notes |
+|---|---|
+| `id` | PK |
+| `opType` | O=open, C=close |
+| `afDB`, `afPage`, `opNum` | Operation context |
+| `userIP`, `opTimestamp` | Request metadata |
+| `durationMs` | Milliseconds |
+| `sStr` | Search string or label |
 
 ---
 
@@ -374,7 +391,7 @@ Per-search event log.
 | 5 | Games |
 | 6 | Sentences |
 
-### `subTasks`
+### `subTasks` — Live
 
 | Field | Notes |
 |---|---|
@@ -384,14 +401,47 @@ Per-search event log.
 | `place` | Order within parent task |
 | `isDone` | BOOLEAN — completion status |
 
-### `tasksVotes` / `tasksVoting`
+### `tasksVoting` — Live
 
-Community voting on which tasks to prioritize.
+One row per user per task they voted for. Written by `team.task.vote.asp` (INSERT / DELETE).
+Max 3 active votes per user enforced in application code.
 
-| Table | Fields | Notes |
-|---|---|---|
-| `tasksVotes` | `taskID`, `votes` | Aggregate vote count per task |
-| `tasksVoting` | `taskID`, `userID` | One row per user per voted task |
+| Field | Notes |
+|---|---|
+| `taskID` | FK → `tasks.id` |
+| `userID` | FK → `arabicUsers.users.id` |
+
+### `tasksVotes` — Stale / Broken
+
+Intended as an aggregate vote count per task (pre-computed from `tasksVoting`).
+Never written by any ASP page — the aggregation code was never completed or was removed.
+Read by `team.tasks.asp` to display vote counts, but the data is out of date.
+
+| Field | Notes |
+|---|---|
+| `taskID` | FK → `tasks.id` |
+| `votes` | Aggregate count — stale |
+
+### ~~`tasksLabels`~~ — Write-only orphan
+
+Labels/tags associated with tasks. Rows are inserted in `team.task.new.insert.asp` when
+a new task is created, but the table is **never queried** anywhere in the codebase —
+no page reads or displays the labels.
+
+| Field | Notes |
+|---|---|
+| `task` | FK → `tasks.id` |
+| `Label` | Label ID |
+
+### ~~`log`~~ — Disabled
+
+Same performance log schema as arabicSearch's `log` table. The INSERT code in
+`team/inc/inc.asp` is commented out. Never written to; never read.
+
+| Field | Notes |
+|---|---|
+| `id`, `opType`, `afDB`, `afPage`, `opNum` | Operation context |
+| `userIP`, `opTimestamp`, `durationMs`, `sStr` | Request metadata |
 
 ---
 
