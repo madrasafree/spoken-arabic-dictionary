@@ -5,6 +5,7 @@
     <security>
       <requestFiltering>
         <hiddenSegments>
+          <add segment="docs" />
           <add segment="tools" />
         </hiddenSegments>
       </requestFiltering>
