@@ -20,8 +20,9 @@ Community-sourced words reviewed by experienced users.
 |---|---|
 | Server-side | Classic ASP (VBScript) |
 | Database | Microsoft Access `.mdb` files |
-| Web server | IIS on Windows Server (Plesk) |
-| Deployment | `git pull` on production server |
+| Web server | IIS on Windows (GoDaddy Windows web hosting) |
+| DNS / CDN | Cloudflare |
+| Deployment | Push to `main` → auto-deploy via GoDaddy git integration |
 | Local dev | IIS on Windows, port 8081 |
 
 ---
@@ -115,7 +116,10 @@ git update-index --no-skip-worktree web.config
 **Production web.config does:**
 - Custom 404 → `error_docs/not_found.html`
 - Blocks public access to `/docs/` via `requestFiltering hiddenSegments`
-- Sets Plesk compilation temp directory
+- Sets compilation temp directory (absolute path — verify this matches GoDaddy's actual server path)
+
+> **Note:** `web.config.prod` currently contains Plesk-style absolute paths (`G:\PleskVhosts\...`).
+> If these don't match the actual GoDaddy server paths, the custom 404 and temp dir settings will silently fall back to IIS defaults. Verify with the hosting control panel.
 
 ---
 
@@ -132,7 +136,10 @@ git update-index --no-skip-worktree web.config
 
 ## Deployment
 
-Production server pulls from the `main` branch via `git pull`.
+**Host:** GoDaddy Windows web hosting
+**CDN/DNS:** Cloudflare sits in front — DNS is pointed at Cloudflare, which proxies to GoDaddy.
+**Deploy:** Push to `main` → GoDaddy git integration auto-deploys to production.
+
 Always merge feature branches to `main` before expecting changes on the live site.
 
 **Branch convention:** feature branches merged to `main`; push `main` to deploy.
