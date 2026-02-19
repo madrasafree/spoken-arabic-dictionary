@@ -179,3 +179,82 @@ The `LEFT JOIN wordsMedia` can produce duplicate word rows when a word has multi
 
 - `label.asp?id=X` (self — tag cloud links highlight current label)
 - `word.asp?id=X` — each word card
+
+---
+
+## guide.asp
+
+**URL:** https://milon.madrasafree.com/guide.asp
+**Feature area:** dictionary
+**Auth:** public
+**DB access:** none
+
+### Purpose
+
+Transliteration and pronunciation reference guide for the dictionary's notation system. Covers all 28 Arabic consonants, short and long vowels, shada (doubling diacritic), the definite article, and special characters. Each consonant row has Arabic script, Hebrew transliteration, Latin transliteration, a pronunciation description, and an audio sample player.
+
+### Includes
+
+```
+inc/inc.asp                ← DB connection (required by inc/trailer.asp); MUST be line 1
+inc/header.asp             ← CSS/JS, loads team/inc/guide.css via <link>
+team/inc/functions.asp     ← showShada() / isAndroid() — included before <body> (see note)
+inc/top.asp                ← nav bar
+team/guide.embed.asp       ← all guide content
+inc/trailer.asp            ← footer
+```
+
+> **Note on include order:** `team/inc/functions.asp` is included after `inc/header.asp` but before `<body>` opens. This is intentional — `team/guide.embed.asp` calls `<%=showShada(...)%>` inline throughout its content, so the function must be defined before the embed is processed by the ASP engine.
+
+### Dependencies
+
+| File | Role |
+|---|---|
+| `team/guide.embed.asp` | All actual guide content (HTML tables + ASP calls) |
+| `team/inc/functions.asp` | `showShada()`, `isAndroid()` — Android shada rendering fix |
+| `team/inc/guide.css` | Page-specific styles (also used by team word entry pages) |
+
+### team/inc/functions.asp
+
+Three VBScript functions:
+
+| Function | Signature | Purpose |
+|---|---|---|
+| `shadaAlt(word)` | string → string | Replaces Arabic shada U+0651 (ّ) with Hebrew point varika U+FB1E — visually similar but renders correctly on Android |
+| `isAndroid()` | → boolean | Checks `HTTP_USER_AGENT` for "android" (case-insensitive) |
+| `showShada(word)` | string → string | If Android: calls `shadaAlt()`; else returns word unchanged |
+
+### team/guide.embed.asp
+
+Pure content file — no `#include` directives, no DB access. Contains 662 lines of HTML with inline `<%=showShada(...)%>` calls for shada diacritics. Sections (linked from the in-page nav at the top):
+
+| Section | Anchor | Content |
+|---|---|---|
+| Syllables | `#syllable` | Hyphen separator convention in Latin transliteration |
+| Consonants | `#cons` | 28-row table: Arabic letter, Hebrew transcription, Latin transcription, pronunciation, audio |
+| Short vowels | `#short` | 5 vowels (a / e / u / o / i) |
+| Long vowels | `#long` | 5 long vowels (aa / ei / ii / ou / uu) |
+| Shada | `#shada` | Consonant doubling diacritic — displayed using `showShada()` |
+| Definite article | `#al` | al- assimilation rules with parenthesised silent letters |
+| Extra characters | `#extra` | Alif maqsura, alif madda, ta marbuta |
+| Links | `#links` | (empty `<div>` — placeholder, no content rendered) |
+
+Audio samples are `<audio>` elements pointing to Wikimedia Commons `.ogg` files. No self-hosted audio.
+
+One hidden `<tr style="display:none;">` exists for the ق letter (second variant with a uvular stop recording) — dead HTML.
+
+### team/inc/guide.css
+
+Shared with team word-entry pages (`team/word.correct.asp`, new.asp, edit.asp per the file comment).
+
+| Selector | Purpose |
+|---|---|
+| `audio` | `max-width: 100px` — constrains the native browser player |
+| `.tableInfo` | Full-width collapsed-border table for the consonant/vowel grids |
+| `.tableInfo td:nth-child(1)` | Green — Arabic script column |
+| `.tableInfo td:nth-child(2)` | Blue — Hebrew transliteration column |
+| `.tableInfo td:nth-child(3)` | Orange — Latin transliteration column |
+| `.player` | Constrained audio player widget (`width: 32px`, overflow hidden, shadow box) |
+| `.credit` | Attribution text below audio (0.5em, near-invisible `#eee`) |
+| `.space` | `margin-bottom: 50px` between sections |
+| `label` | `display: block; font-size: small; color: gray` — example word below each transcription |
