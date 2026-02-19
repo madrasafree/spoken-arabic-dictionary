@@ -12,20 +12,9 @@
     </tracing>
     <security>
       <requestFiltering>
-        <!-- Block developer-only directories -->
         <hiddenSegments>
           <add segment="docs" />
-          <add segment="tools" />
-          <add segment=".git" />
         </hiddenSegments>
-        <!-- Block developer-only file types -->
-        <fileExtensions>
-          <add fileExtension=".md"    allowed="false" />
-          <add fileExtension=".py"    allowed="false" />
-          <add fileExtension=".ini"   allowed="false" />
-          <add fileExtension=".prod"  allowed="false" />
-          <add fileExtension=".local" allowed="false" />
-        </fileExtensions>
       </requestFiltering>
     </security>
   </system.webServer>
