@@ -144,6 +144,26 @@ Always merge feature branches to `main` before expecting changes on the live sit
 
 **Branch convention:** feature branches merged to `main`; push `main` to deploy.
 
+### ⚠ Safety rules — mandatory before any push
+
+**Always test before pushing:**
+- ASP page changes → run `python tools/browser-check.py --local` against localhost:8081
+- Any change → run `python tools/check-http.py --local` to confirm no broken routes
+- web.config changes → apply the requestFiltering/hiddenSegments rules to the local web.config temporarily and verify locally before committing the production version
+
+**Use a pull request (not a direct push to main) for anything that can break production:**
+
+| Change type | Branch + PR required |
+|---|---|
+| `web.config` changes | **Yes** — infrastructure, instant effect on all pages |
+| Shared includes (`inc/*.asp`) | **Yes** — used by ~120 pages |
+| Database schema changes | **Yes** |
+| CSS/JS loaded site-wide | **Yes** |
+| Single `.asp` page | No — direct to main is fine after local test |
+| Documentation / inventory | No — no runtime effect |
+
+**Why PR for web.config:** A bad web.config takes down every page instantly. A PR gives a review checkpoint before the GoDaddy git integration auto-deploys.
+
 ---
 
 ## Testing Tools
