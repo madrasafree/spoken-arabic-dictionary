@@ -2,5 +2,12 @@
 <configuration>
   <system.webServer>
     <httpErrors errorMode="Detailed" />
+    <security>
+      <requestFiltering>
+        <hiddenSegments>
+          <add segment="tools" />
+        </hiddenSegments>
+      </requestFiltering>
+    </security>
   </system.webServer>
 </configuration>

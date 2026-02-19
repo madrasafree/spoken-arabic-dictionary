@@ -2,3 +2,4 @@ App_Data/
 .well-known/
 .claude/
 .playwright-mcp/
+_rebuild_inventory.py
