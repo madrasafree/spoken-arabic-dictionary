@@ -1,24 +1,10 @@
-﻿<!--#include file="inc/inc.asp"--><%
-dim countMe, nikud, order
-order = "pos"
-Select case Left(Request("order")&"p",1)
-    Case "a": order = "arabicWord"
-    Case "e": order = "pronunciation"
-    Case "h": order = "hebrewTranslation"
-End select
-countMe = 0
-nikud = "" %>
-
+<!--#include file="inc/inc.asp"-->
 <!DOCTYPE html>
 <html style="height:100%;">
 <head>
     <title>אינדקס נושאים</title>
-	<meta name="Description" content="אינדקס נושאים" />
+	<meta name="description" content="אינדקס נושאים" />
     <!--#include file="inc/header.asp"-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <style>
-        .tag {display:inline-block; cursor:pointer; margin:15px 0;}
-    </style>
 </head>
 <body>
 
@@ -35,8 +21,6 @@ nikud = "" %>
         <ul><%
         dim x,tagSize
 
-        startTime = timer()
-        'openDB "arabicWords"
         openDbLogger "arabicWords","O","labels.asp","single",""
 
         mySQL = "SELECT * FROM labels ORDER BY labelName"
@@ -62,18 +46,15 @@ nikud = "" %>
                         tagSize = "2.4em"
                     END SELECT
                 res2.close %>
-                <li style="font-size:<%=tagSize%>;" title="ישנן <%=x%> מילים בנושא זה" style="font-size:<%=tagSize%>">
+                <li style="font-size:<%=tagSize%>;" title="ישנן <%=x%> מילים בנושא זה">
                     <a href="label.asp?id=<%=res("id")%>"><%=res("labelName")%></a>
                 </li><%
                 res.moveNext
             Loop
         res.close
-        
-        endTime = timer()
-        durationMs = Int((endTime - startTime)*1000)
-        'closeDB
-        closeDbLogger "arabicWords","C","labels.asp","single",durationMs,""
-        
+
+        closeDbLogger "arabicWords","C","labels.asp","single","",""
+
         %>
         </ul>
     </div>
