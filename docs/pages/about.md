@@ -22,6 +22,10 @@ These four includes are the **standard page wrapper** used by almost every publi
 Despite including `inc/inc.asp` (which opens a DB connection), this page never queries the DB.
 The connection is kept because `inc/trailer.asp` uses it to load the avatar for logged-in users.
 
+> **Classic ASP rule:** `<!--#include file="inc/inc.asp"-->` MUST be the very first line of the
+> file. Never place any content (even an HTML comment) before it — doing so breaks
+> `Option Explicit` in `inc/inc.asp` with VBScript error 800a0400.
+
 ### Page-specific CSS
 
 Inline `<style>` block in `<head>`. Classes defined:
@@ -58,8 +62,8 @@ Inline `<style>` block in `<head>`. Classes defined:
 
 ## Known Stale Content
 
-- **"96% reviewed" stat** — hardcoded to January 2020 (line ~82). Should be made dynamic from the DB or updated manually.
-- **Usage numbers** — hardcoded 2021 data (line ~101). Could be pulled from `stats.asp` logic or updated manually each year.
+- **"96% reviewed" stat** — hardcoded to January 2020. Should be made dynamic from the DB or updated manually.
+- **Usage numbers** — hardcoded 2021 data. Could be pulled from `stats.asp` logic or updated manually each year.
 
 ---
 
@@ -73,11 +77,23 @@ Inline `<style>` block in `<head>`. Classes defined:
 
 ## Optimization History
 
-**2026-02 — code cleanup (pages/code-optimization branch):**
+**2026-02 — round-1 code cleanup (pages/code-optimization branch):**
 - Removed dead `#people` / `#people li` CSS (element never existed on this page)
-- Extracted 7 sets of repeated inline styles into named CSS classes (`.body-text` ×4, `.note` ×9, `.text-right` ×2, etc.)
+- Extracted 7 sets of repeated inline styles into named CSS classes (`.body-text` x4, `.note` x9, `.text-right` x2, etc.)
 - Fixed invalid HTML: 4 nested `<ul>` were direct children of `<ul>` — wrapped inside parent `<li>`
 - Replaced 10 misused `<label>` elements with `<b>` in copyright section (`<label>` is a form element)
-- Updated CSS selector accordingly: `#copyrights+div label` → `#copyrights+div b`
-- Fixed `name="Description"` → `name="description"` (HTML spec casing)
+- Updated CSS selector accordingly: `#copyrights+div label` to `#copyrights+div b`
+- Fixed `name="Description"` to `name="description"` (HTML spec casing)
 - Replaced `<div style="font-weight:bold;">` with semantic `<strong>` for "אתם!"
+- Visual layout is **identical to production**
+
+**Round-2 attempt (reverted):**
+- Tried semantic HTML rewrite (`<section>`, `<p>`, `<small>`, `<address>`, `<time>`, CSS renamed to `.card`)
+- Used `<%-- --%>` ASP.NET comments — caused 500 (invalid Classic ASP syntax)
+- Fixed comments but visual layout differed from production — reverted to round-1
+
+**Classic ASP lessons learned (applied to this project):**
+- `<!--#include file="inc/inc.asp"-->` must be line 1 — no content before it
+- Classic ASP comments inside script blocks: `<% ' comment %>` — never `<%-- --%>`
+- `web.config` `errorMode` valid values: `Custom`, `Detailed`, `DetailedLocalOnly` (not `Off`)
+- Local dev: set `errorMode="Detailed"` in `web.config` (gitignored) to see real ASP errors in browser
