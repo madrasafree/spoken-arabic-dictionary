@@ -1,11 +1,11 @@
-<%-- DB connection; required by inc/trailer.asp for the logged-in user avatar query --%>
+<!-- DB connection; required by inc/trailer.asp for the logged-in user avatar query -->
 <!--#include file="inc/inc.asp"-->
 <!DOCTYPE html>
 <html>
 <head>
     <title>אודות המילון</title>
     <meta name="description" content="כמה מילים אודות המילון ואיך הוא עובד" />
-    <%-- Global CSS/JS, Google Analytics, jQuery --%>
+    <!-- Global CSS/JS, Google Analytics, jQuery -->
     <!--#include file="inc/header.asp"-->
     <style>
 
@@ -63,7 +63,7 @@
     </style>
 </head>
 <body>
-<%-- Navigation bar, search box, session handling (opens the page container div) --%>
+<!-- Navigation bar, search box, session handling (opens the page container div) -->
 <!--#include file="inc/top.asp"-->
 
 <h1 class="pTitle">אודות</h1>
@@ -108,7 +108,7 @@
     <h3>מי בודק את המילים שהוסיפו?</h3>
     <p>את המילים בודקים משתמשים ותיקים, עם ידע רחב גם בעברית וגם בערבית מדוברת.</p>
     <p>חפשו את הסימן <img src="img/site/correct.png" title="correct" class="word-check-icon" /> לצד המילים שעברו את בדיקתם.</p>
-    <%-- TODO: stat hardcoded to Jan 2020 — consider pulling live percentage from DB --%>
+    <!-- TODO: stat hardcoded to Jan 2020 — consider pulling live percentage from DB -->
     <p>נכון ל-<time datetime="2020-01-01">1 בינואר 2020</time>, 96% מהמילים נבדקו ונמצאו תקינות</p>
 </section>
 
@@ -127,7 +127,7 @@
 <!-- ── Section: Usage statistics ── -->
 <section class="card">
     <h3>כמה אנשים משתמשים במילון?</h3>
-    <%-- TODO: stat hardcoded to 2021 — update annually or pull from analytics DB --%>
+    <!-- TODO: stat hardcoded to 2021 — update annually or pull from analytics DB -->
     <p>ב-<time datetime="2021">2021</time> נעשו 996,000 כניסות לאתר ומעל 4,800,000 צפיות בדפים השונים</p>
     <p>לעוד מספרים מעניינים, הכנסו לדף <b><a href="stats.asp" data-gtm="goToStats">הסטטיסטיקה</a></b> היעודי</p>
 </section>
@@ -194,5 +194,5 @@
     </ul>
 </section>
 
-<%-- Footer, avatar for logged-in users, closes the page container div --%>
+<!-- Footer, avatar for logged-in users, closes the page container div -->
 <!--#include file="inc/trailer.asp"-->
