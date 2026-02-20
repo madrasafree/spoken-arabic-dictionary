@@ -1,84 +1,232 @@
-# Madrasa Spoken Arabic Dictionary — Improvement Plan (v2)
-
-This document outlines a concrete, actionable plan to transform the legacy Spoken Arabic Dictionary into a modern, AI-powered, and maintainable platform. It is based on a detailed analysis of the existing codebase and a clarification of priorities.
+# Madrasa Spoken Arabic Dictionary — Improvement Plan
 
 ## 🧭 Strategic Vision
 
 Transform the legacy ASP/Access dictionary into a modern, maintainable, SEO-strong, AI-powered Arabic learning platform — while keeping the site live and Google rankings intact throughout the process.
 
-## 🏛️ Architecture Decision: The Modern Stack
+## 🏛️ Architecture Decision
 
-To enable rapid development, superior user experience, and AI integration, we will adopt a modern, decoupled architecture. This stack is chosen for its performance, scalability, and excellent developer (and AI agent) experience.
-
-| Layer | Technology | Rationale |
+| | Current | Target |
 |---|---|---|
-| **Backend API** | **FastAPI (Python)** | Blazing fast, simple for AI to build and maintain, and keeps you in the Python ecosystem you want to learn. Perfect for a robust API. |
-| **Frontend** | **Next.js (React)** | The industry standard for high-quality, server-rendered web apps. Enables the rich, beautiful UX you want (like Palweb) with top-tier SEO. |
-| **Database** | **PostgreSQL** | Powerful, reliable, and the standard for modern web applications. Will handle the complexity of the dictionary data with ease. |
-| **Hosting** | **Vercel & Render** | **Vercel** for the Next.js frontend (zero-config deployments) and **Render** for the FastAPI backend + PostgreSQL database. A cost-effective, scalable, and low-maintenance combination. |
-| **Audio Files** | **Cloudflare R2** | The cheapest and fastest option for hosting audio files, especially since you already use Cloudflare for DNS. |
-| **Authentication** | **NextAuth.js** | A flexible, secure library for handling user login (including future SSO with Google/Facebook or OpenEdX) seamlessly within the Next.js app. |
+| Backend | Classic ASP (VBScript) | **Django (Python) or FastAPI** |
+| Database | MS Access `.mdb` | **PostgreSQL** |
+| Frontend | Server-rendered HTML | **Django templates + React components where needed** |
+| Hosting | GoDaddy Windows/IIS | **Modern Linux hosting (Render / Railway / VPS)** |
+| Audio | Embedded (Clypit/YouTube) | **Hosted files + AI TTS (Palestinian dialect)** |
+| Search | Custom Soundex | **Morphological + phonetic + relevance ranking** |
+| Auth | Manual/closed | **Django auth, reopened post-migration** |
 
-This architecture moves away from the original Django proposal to prioritize **speed of development and ease of use for AI agents**, which was a key concern. It provides a clear path to building a best-in-class application.
+> **Note on Stack:** Django is aligned with the OpenEdX ecosystem. However, FastAPI might offer faster development, especially with AI agents. This decision should be finalized before starting Phase 1.
 
-## 🗺️ Migration Strategy: The Strangler Fig
+## 🗺️ Migration Strategy: Gradual (Strangler Fig Pattern)
 
-We will use the **Strangler Fig Pattern** to migrate the site gradually with **zero downtime** and **no SEO ranking loss**. The old ASP site and the new Next.js/FastAPI site will run in parallel. Cloudflare will act as a reverse proxy, directing traffic to the new pages as they become ready.
+Rather than a risky "big bang" rewrite, migrate feature by feature:
 
-1.  **Initial State:** All traffic goes to the legacy ASP site on GoDaddy.
-2.  **Phase 0:** A new FastAPI search service is deployed. The *legacy ASP code* is modified to call this API, instantly improving search without a full rewrite.
-3.  **Phase 1:** The new Next.js frontend is launched. Cloudflare rules are updated to send traffic for the homepage, search results, and word pages (`/`, `/word/*`) to the new Vercel-hosted site.
-4.  **Subsequent Phases:** As more features (user profiles, lists, editing) are built on the new stack, Cloudflare rules are updated to strangle more and more of the old site.
-5.  **Final State:** All traffic is handled by the new stack. The legacy ASP site is decommissioned.
+- **Phase 0** → Stabilize legacy (bug fixes, cleanup)
+- **Phase 1** → New stack setup + database migration
+- **Phase 2** → Migrate core pages (word, search, home)
+- **Phase 3** → Migrate user/auth/lists/team features
+- **Phase 4** → AI content features (audio, sentences)
+- **Phase 5** → Madrasa ecosystem integration
 
-This strategy is safe, reversible, and delivers value to users at every step.
+Run old and new in parallel behind a reverse proxy (Cloudflare) — swap pages one by one. **Zero downtime. No Google ranking loss.**
 
----
+## 🔑 URL & SEO Strategy
 
-## 🚀 The Phased Plan
+Since the site ranks strongly on Google — this is **critical**:
 
-This is a concrete, step-by-step plan designed for rapid progress with a small team.
-
-### Phase 0: Foundation & The Search Quick-Win (Now)
-
-**Goal:** Set up the new infrastructure, migrate the data, and deliver an immediate, high-impact improvement to the live site's biggest pain point: search.
-
-| Priority | Task | Status |
+| Current URL | New URL | Strategy |
 |---|---|---|
-| 🔴 **Critical** | **1. Migrate Database:** Write a Python script to export all data from the MS Access `.mdb` files into a new PostgreSQL database. This is the first and most important technical task. | To Do |
-| 🟠 **High** | **2. Setup Infrastructure:** Create projects on Vercel (frontend) and Render (backend + DB). Set up a new GitHub monorepo to hold both the `frontend` (Next.js) and `backend` (FastAPI) code. | To Do |
-| 🟢 **High** | **3. Build Search v1 API:** Create a FastAPI service with a single endpoint that provides vastly superior search over the PostgreSQL data (using morphological, phonetic, and fuzzy matching). | To Do |
-| 🔵 **Quick Win** | **4. Integrate Search API into Legacy Site:** Modify the existing `default.asp` page to call the new FastAPI search endpoint instead of its own internal logic. This provides an immediate, massive user-facing improvement. | To Do |
-| ⚪️ **Admin** | **5. Analytics & Monitoring:** Set up Google Analytics 4 on the new stack and document current Cloudflare settings. | To Do |
+| `/word.asp?id=123` | `/word/123/` or `/word/123/slug` | 301 redirect old → new |
+| `/label.asp?id=5` | `/label/5/` | 301 redirect |
+| `/lists.asp` | `/lists/` | 301 redirect |
 
-### Phase 1: The New Read-Only Dictionary (First Public Launch)
+**Action items:**
 
-**Goal:** Launch the core, read-only dictionary experience on the new, modern, and beautiful Next.js frontend.
+- [ ] Create and submit a `sitemap.xml` to Google Search Console **now** (before migration)
+- [ ] Set up Google Search Console if not already done
+- [ ] Document all existing URL patterns before migration
+- [ ] Implement 301 redirects at Cloudflare or Django level
+- [ ] Consider SEO-friendly slug URLs: `/word/123/yalla` (id + Arabic word transliteration)
 
-| Priority | Task | Status |
-|---|---|---|
-| 🔴 **Critical** | **1. Build Core API Endpoints:** In FastAPI, create the API routes needed to serve words, sentences, labels, etc., to the frontend. | To Do |
-| 🟠 **High** | **2. Design & Build Frontend:** Create the Next.js application. Design and build the main page layouts, including a beautiful, modern word page inspired by Palweb and Living Arabic. | To Do |
-| 🟢 **High** | **3. Launch & Redirect:** Deploy the Next.js app to Vercel. Update Cloudflare to route traffic for `/`, `/word/*`, and `/label/*` to the new application. The old site continues to handle all other routes. | To Do |
+## Phase 0 — Stabilize Legacy (Start Now)
 
-### Phase 2: AI Content & Team Workflow
+**Goal:** Stop the bleeding, fix known issues, no new features.
 
-**Goal:** Empower the team with AI tools for content creation and establish a modern, efficient workflow for editing and approving dictionary entries.
+### 🐛 Bug Fixes
 
-| Priority | Task | Status |
-|---|---|---|
-| 🔴 **Critical** | **1. Bulk Audio Generation:** Create a script to use an AI TTS service (like ElevenLabs) to generate high-quality audio for all ~9,000 words and upload them to Cloudflare R2. | To Do |
-| 🟠 **High** | **2. Bulk Sentence Generation:** Create a script to use a language model to generate relevant example sentences for words that lack them. | To Do |
-| 🟢 **Medium** | **3. Team Authentication:** Implement a secure login system for the team using NextAuth.js. | To Do |
-| 🔵 **Medium** | **4. Content Management UI:** Build the forms and workflows within the Next.js app for the team to add, edit, and approve words, sentences, and AI-generated content. All changes must be logged. | To Do |
+- [ ] **High Priority:** Fix login flow (currently manual/broken for regular users)
+- [ ] **High Priority:** Fix list creation (currently not functional)
+- [ ] Remove dead database references (arabicSchools, arabicSandbox) from `admin.log.duration.asp`
 
-### Phase 3: Community & Ecosystem
+### 🧹 Code Cleanup
 
-**Goal:** Re-open the dictionary to community contributions and begin integrating it into the broader Madrasa ecosystem.
+- [ ] Audit all files — identify dead/unused pages
+- [ ] Extract copy-pasted logic into shared includes
+- [ ] Reorganize flat root files into feature folders:
+    - `/word/` → `word.asp`, `word.edit.asp`, `word.new.asp`, `word.history.asp`
+    - `/sentence/` → `sentence.asp`, `sentenceNew.asp`, `sentence.edit.asp`
+    - `/lists/` → `lists.asp`, `listsNew.asp`, `listsEdit.asp`, etc.
+    - `/label/` → `label.asp`, `labels.asp`
+    - `/user/` → `login.asp`, `profile.asp`, `users.asp`
+    - `/admin/` → all `admin.*.asp` files
+    - `/games/` → `games.mem.*.asp`
+    - `/stats/` → `stats.asp`, `activity.asp`, `dashboard.asp`
+- [ ] Add `docs/file-inventory.md` — document every file's purpose and status (live/dead)
+- [ ] Complete `docs/pages/pages.md` and `docs/db.md`
 
-| Priority | Task | Status |
-|---|---|---|
-| 🟠 **High** | **1. Re-open Public Registration:** Allow new users to sign up and create accounts. | To Do |
-| 🟢 **Medium** | **2. User Features:** Implement features for registered users, such as creating and managing personal word lists. | To Do |
-| 🔵 **Low** | **3. Plan OpenEdX SSO:** Research and design the technical implementation for a Single Sign-On (SSO) solution that connects the dictionary, WordPress, and OpenEdX for a unified user experience. | To Do |
-| ⚪️ **Low** | **4. Public API:** Formalize the API and publish documentation, allowing external developers and researchers to build on the dictionary's data. | To Do |
+### 🔒 Security
+
+- [ ] Audit SQL queries for injection vulnerabilities (MS Access + ASP classic)
+- [ ] Review session management and auth levels
+- [ ] Ensure admin pages (auth level 15) are properly protected
+
+## Phase 1 — New Stack Setup & Database Migration
+
+**Goal:** Get the new stack running with real data, not yet public.
+
+### 🛠️ Setup
+
+- [ ] Create a new repo: `madrasafree/spoken-arabic-dictionary-v2`
+- [ ] Set up Django project with PostgreSQL
+- [ ] Set up Django REST Framework for API endpoints
+- [ ] Set up React (bundled via Vite) for interactive components
+- [ ] Apply Madrasa branding/design system from the start
+- [ ] Connect to Cloudflare for DNS (keep old site live)
+
+### 🗄️ Database Migration
+
+- [ ] **High Priority:** Write Python script to migrate data directly from local `.mdb` files to PostgreSQL.
+- [ ] Design PostgreSQL schema (based on existing Access schema + improvements)
+- [ ] Key tables: `words`, `labels`, `sentences`, `lists`, `list_words`, `users`, `media`, `search_log`, `edit_history`, `tasks`
+- [ ] Write migration scripts (Python)
+- [ ] Validate migrated data (word count ~9,000, check integrity)
+- [ ] Add proper **indexing** from day one (word text, Hebrew translation, search fields)
+
+### 🔐 Auth System
+
+- [ ] Implement Django auth with user levels (anonymous / registered / team / admin)
+- [ ] Plan for reopening registration post-migration
+- [ ] SSO consideration: shared login with Madrasa WordPress + OpenEdX (future)
+
+## Phase 2 — Core Pages Migration (First Public Phase)
+
+**Goal:** Launch the new stack for read-only pages. Search, word view, home.
+
+### 🔍 Search (Highest Priority)
+
+The current Soundex-based search has wrong results and wrong ordering. Replace with:
+
+- [ ] **Morphological analysis** — Arabic root/pattern matching (consider `camel-tools` Python library)
+- [ ] **Phonetic matching** — Hebrew transliteration → Arabic phonetics
+- [ ] **Fuzzy matching** → Handle typos in both Hebrew and Arabic script
+- [ ] **Relevance ranking** — Exact match > starts with > contains > phonetic > morphological
+- [ ] **Full-text search index** — PostgreSQL `tsvector` or Elasticsearch (if scale demands)
+- [ ] **Multi-script search** — Hebrew text, Arabic script, and Hebrew transliteration of Arabic
+- [ ] **Search analytics** — Log what users search for (already exists, keep it)
+
+### 📄 Core Pages
+
+- [ ] Home / search page (`default.asp` → `/`)
+- [ ] Word detail page (`word.asp` → `/word/<id>`)
+- [ ] Label/category page (`label.asp` → `/label/<id>`)
+- [ ] Labels list (`labels.asp` → `/labels/`)
+- [ ] About page (`about.asp` → `/about/`)
+- [ ] Stats page (`stats.asp` → `/stats/`)
+
+### 🎨 UX & Design
+
+- [ ] Apply Madrasa branding and design system
+- [ ] Mobile-first responsive design (RTL support for Arabic)
+- [ ] Improve word card layout — Arabic word, Hebrew translation, transliteration, dialect tag, audio player, sentences
+- [ ] Add dialect tagging display (Palestinian / MSA)
+
+## Phase 3 — User, Team & Content Features
+
+**Goal:** Enable login, content contribution, team workflow.
+
+### 👤 Users & Registration
+
+- [ ] Reopen registration (Hebrew-speaking learners + Arabic/Hebrew team members)
+- [ ] User profiles (`profile.asp` → `/profile/<id>`)
+- [ ] User roles: **Anonymous** (read) / **Registered** (lists, contribute) / **Team** (review, edit) / **Admin**
+
+### ✍️ Word Contribution & Review
+
+- [ ] Word submission form (`word.new.asp` → `/word/new/`)
+- [ ] Word edit form (`word.edit.asp` → `/word/<id>/edit/`)
+- [ ] Edit history (`word.history.asp` → `/word/<id>/history/`)
+- [ ] **Team review queue** — Make it easier for team + teachers to approve/reject words
+
+### 👩‍🏫 Teacher Workflow
+
+- [ ] **Community Lists:** Decide on lists strategy: keep community lists? Teacher-created lists for students?
+- [ ] Lists pages (`lists.asp` → `/lists/`)
+- [ ] Create/edit lists (fix the current broken flow)
+- [ ] Connect lists to OpenEdX — teachers assign word lists as learning activities
+
+### 📈 Team Task Management
+
+- [ ] Migrate `team.tasks.asp` → `/team/tasks/`
+- [ ] Improve team dashboard UI
+- [ ] Task voting, assignment, subtasks
+
+### 🎲 Games
+
+- [ ] Migrate memory games (`games.mem.asp` → `/games/memory/`)
+- [ ] Consider expanding games (quiz, fill-in-the-blank using sentences)
+
+## Phase 4 — AI Content Features
+
+**Goal:** Use AI to expand and improve dictionary content.
+
+### 🔊 Audio
+
+- [ ] **Task:** Inventory existing audio (~1000 words) and their sources (Clypit/YouTube).
+- [ ] **Host audio files** ourselves (S3 / Cloudflare R2) — stop depending on Clypit
+- [ ] **AI TTS for Palestinian dialect** — Evaluate options (e.g., ElevenLabs, Google TTS, Microsoft Azure Arabic TTS)
+- [ ] **Bulk generate audio** for the ~9,000 existing words
+- [ ] Add audio player component to word page (React component)
+- [ ] Allow team to record and upload human audio (preferred over TTS where available)
+
+### 📝 Sentences
+
+- [ ] **AI-generate example sentences** per word (Palestinian dialect, Hebrew translation)
+- [ ] **Bulk add new words** via an AI-assisted workflow, with all changes logged.
+- [ ] Team reviews and approves AI-generated sentences before publishing
+- [ ] Add sentences to word detail page
+
+### 🧠 Linguistic Improvements
+
+- [ ] Add **vowelization (tashkeel)** to Arabic words where missing
+- [ ] Add **word root** field
+- [ ] Add **part of speech** tagging
+- [ ] Add **dialect tag** (Palestinian / MSA / other)
+- [ ] AI-assisted content review — flag low-quality or missing content
+
+## Phase 5 — Madrasa Ecosystem Integration
+
+**Goal:** Connect the dictionary to WordPress and OpenEdX.
+
+### 🔗 Integration Points
+
+| Integration | How |
+|---|---|
+| **Madrasa WordPress** | Link from marketing site; share branding; maybe embed word widget |
+| **OpenEdX LMS** | Teachers create word lists → assigned as LMS activities; SSO login |
+| **Shared Auth** | Single sign-on across dictionary + LMS (OAuth2 / JWT) |
+| **Shared Branding** | Consistent design language across all Madrasa products |
+
+### 🌐 Public API
+
+- [ ] Build a public REST API (`/api/v1/words/`, `/api/v1/search/`, etc.)
+- [ ] Used internally by React components and future mobile app
+- [ ] Could be opened to external developers / researchers
+
+## ✅ Key Decisions & Next Steps
+
+1.  **Architecture:** Finalize the backend choice before Phase 1: **Django** (for OpenEdX alignment) or **FastAPI** (for development speed).
+2.  **Hosting:** Evaluate and select a hosting provider for the new stack (e.g., Render, Railway, Vercel).
+3.  **Audio Hosting:** Proceed with **Cloudflare R2** for hosting audio files.
+4.  **Registration:** Registration will reopen in Phase 3, after the core site is stable and team workflows are in place.
+5.  **OpenEdX SSO:** This is a **long-term goal**. It will be planned after the core dictionary migration is complete.
