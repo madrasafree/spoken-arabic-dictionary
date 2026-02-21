@@ -54,3 +54,9 @@ This document tracks technical debt, dead code, and other codebase issues discov
 - **Architecture / In-UI Dev Notes:** `lists.asp` renders an HTML `div` with "Admin Tasks" explicitly to the screen for admin users. This belongs in a project tracker.
 - **Architecture / Postgres Migration:** `lists.all.asp` executes an MS Access cross-database JOIN (`FROM [users] IN 'arabicUsers.mdb'`) to fetch the list creator's username.
 - **CRITICAL / Security:** Multiple handlers (`listsWord.insert.asp`, `listsEdit.update.asp`, `listsToggle.asp`) are vulnerable to SQL injection because integer parameters (`wordID`, `listID`) are directly concatenated into SQL queries without casting to `CInt()` or parameterization.
+
+## Team Tasks (`team.tasks.asp`, `team.task.*.asp`)
+
+- **CRITICAL / Security:** The handlers (`team.task.edit.update.asp` and `team.task.vote.asp`) are vulnerable to SQL injection via the unescaped `tID` parameter (`WHERE id="&tID`).
+- **Architecture / Leftover Dev Output:** Handlers include full HTML scaffolding (`head`, `body`) and "To-Do" lists (`<ol id="fix">`) before executing their database logic, but then issue a standard `Response.Redirect`. This generates unnecessary overhead and represents orphaned dev-mode debugging code.
+- **Performance / N+1 Queries:** The main loop in `team.tasks.asp` runs an `N+1` sub-query (`SELECT votes FROM tasksVoting WHERE taskID=...`) for every single task loaded on the page to fetch its vote count.
