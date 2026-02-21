@@ -93,6 +93,7 @@ Junction: words ↔ sentences.
 | `sentence` | FK → `sentences.id` |
 | `word` | FK → `words.id` |
 | `location` | Position / ordering within sentence |
+| `merge` | Int controlling spacing/concatenation (e.g. 1=hyperlink w/o trailing space, 2=add space, etc) |
 
 ### `labels`
 
