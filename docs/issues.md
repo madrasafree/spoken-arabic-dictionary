@@ -40,3 +40,10 @@ This document tracks technical debt, dead code, and other codebase issues discov
 - **Hardcoded Select Options:** Metadata lists such as `partOfSpeach`, `binyan`, `gender`, and `number` are hardcoded `<option>` elements in `word.new.asp`/`word.edit.asp` rather than dynamic data mappings. Furthermore, these explicit mappings have to be duplicated again in `word.history.asp` in VBScript to render the textual diff.
 - **Pessimistic Locking Code Smell:** The editing lock system operates by writing an arbitrary string format into a `lockedUTC` string column (e.g., `2023-11-20T14:30Z_uid123`) and does string manipulation `right() / dateDiff / Replace` in VBScript to check the lock duration. This is fragile.
 - **Cross-Database Joins:** `word.history.asp` runs multiple queries containing MS Access direct file joins (`FROM [users] IN 'arabicUsers.mdb'`). This requires refactoring for standard RDBMS cross-table JOINs on a centralized database.
+
+## Sentence Management (`sentenceNew.asp`, `sentenceEdit.asp`)
+
+- **CRITICAL / Security:** `sentenceEdit.asp` and `sentenceEdit.update.asp` are immediately vulnerable to SQL injection via the `sID` parameter (`WHERE id="&sID`).
+- **Architecture / Mismatched Permissions:** The view page `sentenceNew.asp` enforces an admin requirement (`role < 7 & userID <> 90`), while the POST handler `sentenceNew.insert.asp` requires an editor bitmask (`role AND 2`). The same inconsistency exists in the edit pages.
+- **Architecture / Hardcoded Limits:** `sentenceEdit.update.asp` hardcodes its loop limit for word-mappings to `for i=0 to 20`. Any Arabic sentence longer than 21 words will silently fail to save relationships for the trailing words.
+- **Architecture / Destructive Form Handling:** The update handler (`sentenceEdit.update.asp`) brutally executes `DELETE FROM wordsSentences WHERE sentence=[ID]` and then runs `INSERT` for every field, rather than executing an intelligent `UPDATE` or `UPSERT`. This pattern destroys DB row stability and inflates auto-increment keys.
