@@ -1,4 +1,4 @@
-# Spoken Arabic Dictionary Project - Current (Legacy Version)
+# Spoken Arabic Dictionary Project
 
 Welcome to the repository for the Spoken Arabic Dictionary, currently hosted at [milon.madrasafree.com](https://milon.madrasafree.com/). This project serves as a free resource for Hebrew speakers who are interested in learning and speaking Arabic.
 
@@ -10,35 +10,43 @@ The dictionary is designed as a community-driven content platform, similar to Wi
 ## Current Technology Stack
 The current version of the Spoken Arabic Dictionary is built using:
 - **ASP Classic**: for server-side scripting.
-- **MS Access**: as the database backend.
 - **IIS (Internet Information Services)**: as the web server.
+- **MS Access Database**: as the database backend. *(Note: MS Access software is only required if you want to open and strictly inspect the `.mdb` files directly. The IIS server interfaces via OLEDB drivers.)*
 
-## Setup for IIS and Local Environment
-If you want to run the project locally or set it up on a new server, follow the steps below:
+## Setting Up Locally
+
+The easiest way to get the project running locally, either as a developer or through an AI agent, is using the automated setup script we provide. This requires a **Windows** environment.
 
 ### Requirements
-- **Windows Server** or **Windows 10+** (for local development).
-- **IIS** (Internet Information Services) installed.
-- **MS Access Runtime** (if required for local testing).
+- **Windows** (Windows 10+ or Windows Server).
+- **IIS (Internet Information Services)** (can be enabled via our script).
+- Administrator Privileges to execute the setup script.
 
-### Step-by-Step Setup for IIS
-1. **Install IIS**
-   - On Windows, go to **Control Panel** > **Programs** > **Turn Windows features on or off**.
-   - Enable **Internet Information Services (IIS)** and ensure that **ASP** support is checked.
+### Automated Setup (Recommended)
+You can quickly establish your `App_Data` folder and an IIS site mapped to port `8081` using PowerShell:
 
-2. **Configure IIS for ASP Classic**
-   - Open **IIS Manager**.
-   - Add a new **Website**:
-     - Point the **physical path** to the directory where your project files are located.
-     - Set the **binding** to the desired port (default is 80 for HTTP).
-   - Enable **ASP** in **Handler Mappings** by navigating to the site in **IIS Manager**, then selecting **Handler Mappings**, and ensuring that **ASP** is enabled.
+1. Open PowerShell **as Administrator**.
+2. Navigate to the project root directory.
+3. Run the setup script:
+   ```powershell
+   .\tools\setup-local-env.ps1
+   ```
 
-3. **Permissions**
-   - Ensure that the **IUSR** (IIS User) account has **Read/Write** permissions to the directory containing the **.mdb** file, as the dictionary allows user contributions.
+**What the script does:**
+- Creates a demo `App_Data` folder in the project if one doesn't exist (this folder is ignored in version control).
+- Checks if IIS and Classic ASP features are installed, and enables them if missing.
+- Checks if the IIS service is running and starts it if necessary.
+- Creates an Application Pool enabling 32-bit apps (useful for Access Database OLEDB connections).
+- Provisions a new IIS Site designated to port `8081` mapped to the project root.
+- Assigns required `IIS_IUSRS` permissions to the `App_Data` folder for file read/write.
 
-### Local Environment Setup
-For local development:
-1. **Install IIS** on your local machine (follow the same steps as above).
-2. Clone the repository to your local machine.
-3. Configure IIS to point to the cloned directory.
-4. Update any paths to ensure the database is accessible locally.
+After running the script, your local instance should be accessible at: `http://localhost:8081/`.
+*Make sure to drop the application `.mdb` database into the generated `App_Data` folder before starting the app!*
+
+### Manual Setup
+If you prefer not to use the automated script:
+1. Make sure you enable **IIS** with the **ASP** feature turned on in Windows Features.
+2. In IIS Manager, create a new Website pointing the Physical Path to this repository's root. Set Port to `8081` (or another port).
+3. Ensure the Application Pool for the site has **Enable 32-Bit Applications** set to `True`.
+4. Create an `App_Data` folder at the root of the repository and place the project's MS Access database file inside.
+5. In your file explorer, provide `IIS_IUSRS` Read/Write permissions into the new `App_Data` folder.
