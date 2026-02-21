@@ -273,10 +273,4 @@ response.Redirect "/dashboard.lists.asp?listID=1"
 
 
 
-'session("msg") = "המילה <a href=""https://milon.madrasafree.com/word.asp?id=" & maxId & """><span class=""nikud"">" & arabicWord & "</span></a> נוספה למילון בהצלחה"
-
-'response.write "<br/>END OF INSERT"
-'response.end
-'Response.Redirect "send_email.php?wordID="&maxId&"&arabic="&arabicWord
-
 %>

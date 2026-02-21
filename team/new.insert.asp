@@ -265,10 +265,6 @@ closeDbLogger "arabicUsers","C","new.insert.asp","username email",durationMs,""
 session("msg") = "המילה <a href=""word.asp?id=" & maxID & """><span class=""nikud"">" & request("arabicWord") & "</span></a> נוספה למילון בהצלחה"
 
 response.write "<br/>END OF INSERT"
-'response.end
-if Request.ServerVariables("SERVER_NAME") ="rothfarb.info" then
-	Response.Redirect "send_email.newWord.php?wordID="&maxID&"&arabic="&arabicWord&"&username="&uName&"&userEmail="&userEmail
-end if
 Response.Redirect "../word.asp?id="&maxID
 %>
 </html>

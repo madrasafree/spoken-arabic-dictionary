@@ -581,10 +581,4 @@ session("msg") = "העריכה התבצעה בהצלחה"
 
 dim temp
 
-if Request.ServerVariables("SERVER_NAME") = "rothfarb.info" then
-	temp = "send_email_wordEdit.php?wordID="&wordId&"&arabic="&arabicWord&"&username="&uName&"&userEmail="&userEmail
-	'Response.Redirect server.HTMLencode("send_email_wordEdit.php?wordID="&wordId&"&arabic="&arabicWord&"&username="&uName&"&userEmail="&userEmail)
-	Response.Redirect "send_email_wordEdit.php?wordID="&wordId&"&arabic="&arabicWord&"&username="&uName&"&userEmail="&userEmail
-else
-	response.Redirect "../word.asp?id="&wordID
-end if %>
+response.Redirect "../word.asp?id="&wordID %>
