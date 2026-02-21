@@ -1,15 +1,21 @@
-<div dir="rtl" align="right">
-  
-# 📘 מילון ערבית מדוברת (Spoken Arabic Dictionary)
+<div align="center">
+  <img src="https://github.com/madrasafree.png" alt="Madrasa Logo" width="150"/>
 
-ברוכים הבאים למאגר הקוד של **מילון הערבית המדוברת**, פרויקט קהילתי חינמי ללימוד השפה הערבית המדוברת עבור דוברי עברית.
-הפרויקט זמין כיום אונליין בכתובת:
-[milon.madrasafree.com](https://milon.madrasafree.com/)
+  # 📘 Spoken Arabic Dictionary 
+  ### מילון ערבית מדוברת
+
+  *A free, community-driven resource for Hebrew speakers learning Spoken Arabic.* <br>
+  *פרויקט קהילתי טכנולוגי ללימוד השפה הערבית המדוברת עבור דוברי עברית.*
+  
+  [![Website](https://img.shields.io/badge/Website-milon.madrasafree.com-00a2e8?style=for-the-badge&logo=google-chrome)](https://milon.madrasafree.com/)
+  [![License](https://img.shields.io/badge/License-Open_Source-4caf50?style=for-the-badge)](#)
 </div>
 
----
+<br>
 
-## 🌟 About the Project
+Welcome to the **Spoken Arabic Dictionary** repository! This project powers the active dictionary at [milon.madrasafree.com](https://milon.madrasafree.com/), bridging languages and communities through collaborative learning.
+
+---
 The *Spoken Arabic Dictionary* project was founded in 2005 by Ronen Rothfarb and managed by him until 2022, when it was adopted by the non-profit organization **Madrasa**.
 
 The dictionary is a community-driven content platform (similar to Wikipedia) where users can contribute words and expressions. To ensure high quality, contributions are reviewed by experienced moderators with a deep knowledge of both Hebrew and spoken Arabic.
