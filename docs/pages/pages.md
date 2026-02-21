@@ -4,7 +4,7 @@ Page-level documentation for selected public pages.
 
 Documentation layout:
 - `docs/pages/pages.md`: page behavior and logic
-- `docs/pages/files.md`: included and embedded file documentation
+- `docs/includes.md`: all shared include files (replaces `docs/pages/files.md`)
 
 ---
 
