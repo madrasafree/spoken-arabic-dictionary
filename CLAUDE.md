@@ -1,7 +1,7 @@
 # Spoken Arabic Dictionary — Claude Instructions
 
 Read this file before making any changes.
-Full onboarding reference: `AGENTS.md` | DB schema: `docs/db.md` | Includes: `docs/includes.md` | Pages: `docs/pages.md` | Migration plan: `plan.md`
+Full onboarding reference: `AGENTS.md` | DB schema: `docs/db.md` | Includes: `docs/includes.md` | Pages: `docs/pages.md` | Migration plan: `docs/plan.md`
 
 ---
 
