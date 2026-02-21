@@ -1,23 +1,78 @@
 /* STYLESHEET FOR 500PX OR WIDER VIEWPORTS */
 
-    #instructions, #pTitle, .pTitle, #results, #search, #tags, #tagTitle, #wordList { width:490px; }
+#instructions,
+#pTitle,
+.pTitle,
+#results,
+#search,
+#tags,
+#tagTitle,
+#wordList {
+    width: 490px;
+}
 
-    #inBanner   { width:100%; }
-    #menu       { height:30px; vertical-align:middle; display:inline-block; }
-    #searchBox  { width:445px; }
-    #searchBoxTop   {width:350px; }
-    #logo       { display:none; }
+#inBanner {
+    width: 100%;
+}
 
-    .arb { font-size:130%; }
-    .hebrew, .english { font-size:150%; }
+#menu {
+    height: 30px;
+    vertical-align: middle;
+    display: inline-block;
+}
 
-    .listDiv, .lMenu, .table, .tableH, .tableHeader { width:490px; }
+#searchBox {
+    width: 445px;
+}
 
-    .tableStats td  { min-width:100px; }
-    .tableWord  { width:450px; }
-    .youTube    { width:450px; height:275px; }
-	.photo		{ max-width:100%; max-height:100%; }
+#searchBoxTop {
+    width: 350px;
+}
+
+#logo {
+    display: none;
+}
+
+.arb {
+    font-size: 130%;
+}
+
+.hebrew,
+.english {
+    font-size: 150%;
+}
+
+.listDiv,
+.lMenu,
+.table,
+.tableH,
+.tableHeader {
+    width: 490px;
+}
+
+.tableStats td {
+    min-width: 100px;
+}
+
+.youTube {
+    width: 450px;
+    height: 275px;
+}
+
+.photo {
+    max-width: 100%;
+    max-height: 100%;
+}
 
 @media (min-width:1024px) {
-    .lMenu      { position:fixed; left:60px; float:left; width:180px; background-color:white; top:80px; padding:10px 10px; box-shadow: 0 1px 2px rgba(0,0,0,.3); }
+    .lMenu {
+        position: fixed;
+        left: 60px;
+        float: left;
+        width: 180px;
+        background-color: white;
+        top: 80px;
+        padding: 10px 10px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+    }
 }

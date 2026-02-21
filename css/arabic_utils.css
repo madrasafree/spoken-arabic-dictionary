@@ -18,11 +18,7 @@ h1 {
     margin:0;
     text-align: center;
     }
-.informative {
-    color: #43808e;
-    background: #a6eaf970;
-    border: 1px solid #8ab8c3;
-}
+
 .message {
     max-width: 440px;
     margin: 30px auto;
