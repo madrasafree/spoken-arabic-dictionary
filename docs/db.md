@@ -5,7 +5,7 @@ Connection is opened via `OpenDbLogger(db, ...)` / `CloseDbLogger(db, ...)` in `
 
 Cross-database foreign keys are not enforced by the DB engine — they are logical only.
 
-See also: `docs/pages/pages.md`, `docs/pages/files.md`
+See also: `docs/pages.md`, `docs/includes.md`
 
 ---
 

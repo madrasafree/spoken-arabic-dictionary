@@ -3,7 +3,7 @@
 Documentation for all files pulled into pages via `<!--#include file="...">`.
 These are not pages themselves — they provide shared code, markup, or content.
 
-For DB schema see `docs/db.md`. For page behavior see `docs/pages/pages.md`.
+For DB schema see `docs/db.md`. For page behavior see `docs/pages.md`.
 
 ---
 

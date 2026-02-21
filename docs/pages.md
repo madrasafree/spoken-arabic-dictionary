@@ -3,16 +3,16 @@
 Page-level documentation for selected public pages.
 
 Documentation layout:
-- `docs/pages/pages.md`: page behavior and logic
-- `docs/includes.md`: all shared include files (replaces `docs/pages/files.md`)
+- `docs/pages.md`: page behavior and logic
+- `docs/includes.md`: all shared include files
 
 ---
 
 ## about.asp
 
-**URL:** https://milon.madrasafree.com/about.asp  
-**Feature area:** dictionary  
-**Auth:** public  
+**URL:** https://milon.madrasafree.com/about.asp
+**Feature area:** dictionary
+**Auth:** public
 **DB access (page code):** none
 
 ### Purpose
@@ -53,9 +53,9 @@ inc/trailer.asp  -> footer and closing tags
 
 ## labels.asp
 
-**URL:** https://milon.madrasafree.com/labels.asp  
-**Feature area:** dictionary  
-**Auth:** public  
+**URL:** https://milon.madrasafree.com/labels.asp
+**Feature area:** dictionary
+**Auth:** public
 **DB access:** `arabicWords` (`labels`, `wordsLabels`)
 
 ### Purpose
@@ -96,9 +96,9 @@ Each label links to `label.asp?id=<labelId>`.
 
 ## guide.asp
 
-**URL:** https://milon.madrasafree.com/guide.asp  
-**Feature area:** dictionary  
-**Auth:** public  
+**URL:** https://milon.madrasafree.com/guide.asp
+**Feature area:** dictionary
+**Auth:** public
 **DB access (page code):** none
 
 ### Purpose
@@ -127,4 +127,4 @@ inc/trailer.asp        -> footer and closing tags
 ### Notes
 
 - Page acts mainly as a shell around embedded guide content.
-- Detailed include/embed file docs are in `docs/pages/files.md`.
+- Detailed include/embed file docs are in `docs/includes.md`.

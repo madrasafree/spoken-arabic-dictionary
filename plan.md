@@ -73,7 +73,7 @@ Since the site ranks strongly on Google — this is **critical**:
     - `/games/` → `games.mem.*.asp`
     - `/stats/` → `stats.asp`, `activity.asp`, `dashboard.asp`
 - [ ] Add `docs/file-inventory.md` — document every file's purpose and status (live/dead)
-- [ ] Complete `docs/pages/pages.md` and `docs/db.md`
+- [ ] Complete `docs/pages.md` and `docs/db.md`
 
 ### 🔒 Security
 

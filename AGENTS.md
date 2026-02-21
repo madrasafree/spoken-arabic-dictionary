@@ -42,7 +42,7 @@ App_Data/                ← MS Access .mdb databases (gitignored — server-onl
 error_docs/              ← custom IIS error pages (only not_found.html is used)
 docs/                    ← project documentation (blocked from public HTTP access)
 docs/file-inventory.csv ← full file inventory with metadata
-docs/pages/pages.md     ← page-by-page code/logic/dependency documentation
+docs/pages.md           ← page-by-page code/logic/dependency documentation
 web.config              ← IIS production config (see web.config section below)
 web.config.prod         ← reference copy of production web.config
 web.config.local        ← reference copy of local dev web.config
@@ -214,7 +214,7 @@ Loads pages in a real Chromium browser and checks:
 ## Documentation
 
 - **`docs/file-inventory.csv`** — every file in the repo with metadata (size, lines, DB access, dependencies, feature area, can_delete, notes). Keep updated when files change.
-- **`docs/pages/pages.md`** — structural documentation for each page: includes, SQL, query params, CSS, security notes. Documents code/logic/dependencies — not change history.
+- **`docs/pages.md`** — structural documentation for each page: includes, SQL, query params, CSS, security notes. Documents code/logic/dependencies — not change history.
 
 When modifying a file, update the relevant inventory row (lines, size_kb, description, notes).
 
