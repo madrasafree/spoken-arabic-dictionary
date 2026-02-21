@@ -47,3 +47,10 @@ This document tracks technical debt, dead code, and other codebase issues discov
 - **Architecture / Mismatched Permissions:** The view page `sentenceNew.asp` enforces an admin requirement (`role < 7 & userID <> 90`), while the POST handler `sentenceNew.insert.asp` requires an editor bitmask (`role AND 2`). The same inconsistency exists in the edit pages.
 - **Architecture / Hardcoded Limits:** `sentenceEdit.update.asp` hardcodes its loop limit for word-mappings to `for i=0 to 20`. Any Arabic sentence longer than 21 words will silently fail to save relationships for the trailing words.
 - **Architecture / Destructive Form Handling:** The update handler (`sentenceEdit.update.asp`) brutally executes `DELETE FROM wordsSentences WHERE sentence=[ID]` and then runs `INSERT` for every field, rather than executing an intelligent `UPDATE` or `UPSERT`. This pattern destroys DB row stability and inflates auto-increment keys.
+
+## Lists Management (`lists.asp`, `lists.all.asp`, Handlers)
+
+- **Architecture / Hardcoded Admin Logic:** Hardcoded user IDs (`1`, `73`, `76`) control access to setting list privacy to "Private" or "Shared" in `listsNew.asp` and `listsEdit.asp`.
+- **Architecture / In-UI Dev Notes:** `lists.asp` renders an HTML `div` with "Admin Tasks" explicitly to the screen for admin users. This belongs in a project tracker.
+- **Architecture / Postgres Migration:** `lists.all.asp` executes an MS Access cross-database JOIN (`FROM [users] IN 'arabicUsers.mdb'`) to fetch the list creator's username.
+- **CRITICAL / Security:** Multiple handlers (`listsWord.insert.asp`, `listsEdit.update.asp`, `listsToggle.asp`) are vulnerable to SQL injection because integer parameters (`wordID`, `listID`) are directly concatenated into SQL queries without casting to `CInt()` or parameterization.
