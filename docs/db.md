@@ -235,6 +235,16 @@ Full audit trail of word edits.
 | *(other `New`/`Old` pairs)* | All main word fields tracked |
 | `explain` | Reason for change |
 
+
+### `taskNoPlural`
+
+Undocumented view/table joining words to flag those missing a plural relation.
+Queried by `dashboard.asp` and `dashboard.lists.asp` (List ID 13 and 14).
+
+| Field | Notes |
+|---|---|
+| `word1` | FK → `words.id` |
+
 ---
 
 ## `arabicUsers`
@@ -249,7 +259,7 @@ Full audit trail of word edits.
 | `id` | INT PK | |
 | `username` | VARCHAR | Login handle |
 | `name` | VARCHAR | Real name |
-| `password` | VARCHAR | Password (hashed) |
+| `password` | VARCHAR | Password (**likely cleartext** — `user.insert.asp` applies only `Replace(pwd,"'","''")`, no hash function) |
 | `email` | VARCHAR | Email address |
 | `role` | INT | Auth level — see table below |
 | `userStatus` | INT | 1=active, 77=frozen, 88=suspended, 99=deleted |
@@ -315,20 +325,6 @@ read by admin search history pages (`admin.searchHistory.*.asp`).
 | `searchTime` | UTC timestamp |
 | `searchID` | FK → `wordsSearched.id` |
 
-### ~~`log`~~ — Dead
-
-Performance log table. Schema matches the DB operation log the logger was meant to write to,
-but the INSERT SQL was always commented out and has since been removed.
-The table is queried (SELECT only) in `admin.log.duration.asp` but will always return empty rows.
-
-| Field | Notes |
-|---|---|
-| `id` | PK |
-| `opType` | O=open, C=close |
-| `afDB`, `afPage`, `opNum` | Operation context |
-| `userIP`, `opTimestamp` | Request metadata |
-| `durationMs` | Milliseconds |
-| `sStr` | Search string or label |
 
 ---
 
@@ -412,37 +408,6 @@ Max 3 active votes per user enforced in application code.
 | `taskID` | FK → `tasks.id` |
 | `userID` | FK → `arabicUsers.users.id` |
 
-### `tasksVotes` — Stale / Broken
-
-Intended as an aggregate vote count per task (pre-computed from `tasksVoting`).
-Never written by any ASP page — the aggregation code was never completed or was removed.
-Read by `team.tasks.asp` to display vote counts, but the data is out of date.
-
-| Field | Notes |
-|---|---|
-| `taskID` | FK → `tasks.id` |
-| `votes` | Aggregate count — stale |
-
-### ~~`tasksLabels`~~ — Write-only orphan
-
-Labels/tags associated with tasks. Rows are inserted in `team.task.new.insert.asp` when
-a new task is created, but the table is **never queried** anywhere in the codebase —
-no page reads or displays the labels.
-
-| Field | Notes |
-|---|---|
-| `task` | FK → `tasks.id` |
-| `Label` | Label ID |
-
-### ~~`log`~~ — Disabled
-
-Same performance log schema as arabicSearch's `log` table. The INSERT code in
-`team/inc/inc.asp` is commented out. Never written to; never read.
-
-| Field | Notes |
-|---|---|
-| `id`, `opType`, `afDB`, `afPage`, `opNum` | Operation context |
-| `userIP`, `opTimestamp`, `durationMs`, `sStr` | Request metadata |
 
 ---
 
@@ -462,12 +427,3 @@ Tracks the last run time and health of scheduled/background jobs.
 
 ---
 
-## ~~`arabicSchools`~~ / ~~`arabicSandbox`~~
-
-**Status: Dead — MDB files do not exist on the server.**
-`arabicSandbox` was a testing DB removed along with test files.
-`arabicSchools` no longer exists.
-
-Both are still referenced in `admin.log.duration.asp` — those sections are dead code
-and will fail with a file-not-found error if that admin page is loaded.
-See `docs/pages/issues.md`.
