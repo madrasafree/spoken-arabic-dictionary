@@ -230,3 +230,50 @@ When modifying a file, update the relevant inventory row (lines, size_kb, descri
 
 ### openDbLogger / closeDbLogger
 Wrappers around DB open/close with timing. The timing result is not stored anywhere meaningful — timing-only code is dead code.
+
+---
+
+## Migration Tools
+
+Three Python scripts in `tools/migration/` support the ASP → Django migration.
+Both Claude Code and Gemini/Antigravity agents can use these.
+
+| Script | Purpose | Usage |
+|---|---|---|
+| `analyze_asp.py` | Scan all .asp files → complexity report, SQL ops, injection risks | `python tools/migration/analyze_asp.py . --output asp-analysis.md --csv` |
+| `generate_view.py` | Generate Django view + template skeleton from a single .asp file | `python tools/migration/generate_view.py label.asp --out-dir output/` |
+| `models_reference.py` | Reference Django models for all 5 Access databases | Read as reference — not executable |
+
+Run `analyze_asp.py` at the start of any migration sprint to get a current complexity map.
+
+---
+
+## Multi-Agent Coordination
+
+Two AI agents work on this project:
+- **Claude Code** (Anthropic) — runs locally, reads `CLAUDE.md` + `AGENTS.md`
+- **Antigravity / Gemini** — external agent, reads `AGENTS.md` + repo via GitHub
+
+### Branching convention
+| Agent | Branch prefix | Example |
+|---|---|---|
+| Claude Code | `claude/` | `claude/migrate-label` |
+| Gemini / Antigravity | `gemini/` | `gemini/migrate-word` |
+
+Both agents: one branch per task, PR to `main`.
+
+### Task assignment
+- **GitHub Issues** are the shared task board — use the `migration-task` issue template
+- Label `agent:claude` or `agent:gemini` to assign ownership
+- Never work on the same `.asp` file in two branches simultaneously
+
+### Files that require a PR (never commit directly)
+- `AGENTS.md` — shared instructions, both agents must agree on changes
+- `inc/*.asp` — shared includes used by ~120 pages
+- `web.config` — frozen locally (see below)
+- `tools/migration/` — shared scripts, changes affect both agents
+
+### Before starting any migration task
+```bash
+python tools/migration/analyze_asp.py . --output asp-analysis.md
+```

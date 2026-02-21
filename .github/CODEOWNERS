@@ -1,0 +1,9 @@
+# CODEOWNERS — require review for shared/critical files
+# Both Claude Code and Gemini agent must open a PR for these
+
+/inc/*.asp          @yaniv
+/web.config         @yaniv
+AGENTS.md           @yaniv
+CLAUDE.md           @yaniv
+docs/               @yaniv
+tools/migration/    @yaniv
