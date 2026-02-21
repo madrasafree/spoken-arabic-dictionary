@@ -1,17 +1,10 @@
-<div align="center">
-  <img src="https://github.com/madrasafree.png" alt="Madrasa Logo" width="150"/>
+<img src="https://github.com/madrasafree.png" alt="Madrasa Logo" width="150"/>
 
-  # 📘 Spoken Arabic Dictionary 
-  ### מילון ערבית מדוברת
+# 📘 Spoken Arabic Dictionary 
 
-  *A free, community-driven resource for Hebrew speakers learning Spoken Arabic.* <br>
-  *פרויקט קהילתי טכנולוגי ללימוד השפה הערבית המדוברת עבור דוברי עברית.*
-  
-  [![Website](https://img.shields.io/badge/Website-milon.madrasafree.com-00a2e8?style=for-the-badge&logo=google-chrome)](https://milon.madrasafree.com/)
-  [![License](https://img.shields.io/badge/License-Open_Source-4caf50?style=for-the-badge)](#)
-</div>
+*A free, community-driven resource for Hebrew speakers learning Spoken Arabic.*
 
-<br>
+[![Website](https://img.shields.io/badge/Website-milon.madrasafree.com-00a2e8?style=for-the-badge&logo=google-chrome)](https://milon.madrasafree.com/)
 
 Welcome to the **Spoken Arabic Dictionary** repository! This project powers the active dictionary at [milon.madrasafree.com](https://milon.madrasafree.com/), bridging languages and communities through collaborative learning.
 
