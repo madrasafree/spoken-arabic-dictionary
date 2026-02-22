@@ -35,7 +35,6 @@ countMe = 0 %>
 	</tr>
 </table><%
 
-    startTime = timer()
     'openDB "arabicWords"
     openDbLogger "arabicWords","O","list.pics.asp","single",""
 
@@ -78,8 +77,6 @@ countMe = 0 %>
 		Loop
 	    res.close 
         
-    endTime = timer()
-    durationMs = Int((endTime - startTime)*1000)
     'closeDB
     closeDbLogger "arabicWords","C","list.pics.asp","single",durationMs,"" %>
 

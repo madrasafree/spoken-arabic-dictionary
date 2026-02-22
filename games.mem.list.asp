@@ -7,7 +7,6 @@ countMe=0
 LID = Request("LID")
 if LID = "" then LID = 0
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","games.mem.list.asp","list details",""
 
@@ -21,8 +20,6 @@ res.open mySQL, con
 	LDesc = res("listDesc")
 res.close
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","games.mem.list.asp","list details",durationMs,""
 
@@ -126,7 +123,6 @@ end if %>
 <div style="width:90%; margin:0 auto;max-width:1050px; border:0px solid gray;">
 	<div style="display:flex;flex-wrap:wrap;justify-content:space-around ;"><%
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","games.mem.list.asp","main",""
 
@@ -156,8 +152,6 @@ openDbLogger "arabicWords","O","games.mem.list.asp","main",""
 	<span id="countMe" data-count="<%=countMe%>"></span>
 </div><%
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","games.mem.list.asp","main",durationMs,""
 

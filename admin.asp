@@ -6,7 +6,6 @@ if session("role") <> 15 then
 end if
 dim allowEdit, readOnly
 
-startTime = timer()
 'openDB "arabicUsers"
 openDbLogger "arabicUsers","O","admin.asp","allowEdit",""
 
@@ -21,8 +20,6 @@ res.open mySQL, con
 res.close
 
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicUsers","C","admin.asp","allowEdit",durationMs,""
 
@@ -93,7 +90,6 @@ closeDbLogger "arabicUsers","C","admin.asp","allowEdit",durationMs,""
 
 
 	  <div><%
-	startTime = timer()
 	'openDB "arabicUsers" 
 	openDbLogger "arabicUsers","O","admin.asp","users",""
 		mySQL = "SELECT loginLog.*,users.username, users.name FROM loginLog LEFT JOIN users ON users.id = loginLog.userID WHERE userID<>1 ORDER BY loginTimeUTC DESC"
@@ -103,8 +99,6 @@ closeDbLogger "arabicUsers","C","admin.asp","allowEdit",durationMs,""
 			 </p><%
 			
 		res.close
-	endTime = timer()
-	durationMs = Int((endTime - startTime)*1000)
 	'closeDB
 	closeDbLogger "arabicUsers","C","admin.asp","users",durationMs,""	%>
 	  	

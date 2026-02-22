@@ -28,7 +28,6 @@ End select
 <div id="simpleList"><%
 
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","admin.listAllWords.asp","single",""
 
@@ -57,8 +56,6 @@ openDbLogger "arabicWords","O","admin.listAllWords.asp","single",""
 	    Loop
 	    res.close 
         
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","admin.listAllWords.asp","single",durationMs,""
         

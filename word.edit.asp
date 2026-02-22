@@ -24,7 +24,6 @@ openDB "arabicUsers"
 closeDB
 
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","word.edit.asp","permission",""
 
@@ -60,8 +59,6 @@ res.open mySQL, con
 res.close
 
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","word.edit.asp","permission",durationMs,""
 
@@ -71,7 +68,6 @@ closeDbLogger "arabicWords","C","word.edit.asp","permission",durationMs,""
 if ok=false then Response.Redirect "login.asp?returnTo=word.asp?id="&wordID 
 
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","word.edit.asp","lock",""
 
@@ -87,8 +83,6 @@ res.open mySQL, con
 'res.close
 
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","word.edit.asp","lock",durationMs,""
 
@@ -138,7 +132,6 @@ closeDbLogger "arabicWords","C","word.edit.asp","lock",durationMs,""
     <input type="HIDDEN" id="wordID" value="<%=wordID%>"><%
 
 
-    startTime = timer()
     'openDB "arabicWords"
     openDbLogger "arabicWords","O","word.edit.asp","word details",""
 
@@ -644,8 +637,6 @@ closeDbLogger "arabicWords","C","word.edit.asp","lock",durationMs,""
 	res.close
     
     
-    endTime = timer()
-    durationMs = Int((endTime - startTime)*1000)
     'closeDB
     closeDbLogger "arabicWords","C","word.edit.asp","word details",durationMs,""
     

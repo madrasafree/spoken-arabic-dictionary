@@ -17,7 +17,6 @@ dim maxId, labelName
 labelName = getString("labelNew")
 
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","admin.labelNew.insert.asp","single",""
 
@@ -45,8 +44,6 @@ cmd.CommandText=mySQL
 set cmd.ActiveConnection=con
 cmd.execute ,,128
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","admin.labelNew.insert.asp","single",durationMs,""
 

@@ -18,7 +18,6 @@ closeDB
 
 dim maxLists
 
-startTime = timer()
 'openDB "arabicUsers"
 openDbLogger "arabicUsers","O","listsNew.asp","max user list",""
 
@@ -27,14 +26,11 @@ openDbLogger "arabicUsers","O","listsNew.asp","max user list",""
     maxLists = res(0)
     res.close
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicUsers","C","listsNew.asp","max user list",durationMs,""
 
 
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","listsNew.asp","main",""
 
@@ -144,8 +140,6 @@ res.close %>
     </form>
 
 </div><%
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","listsNew.asp","main",durationMs,""
 %>

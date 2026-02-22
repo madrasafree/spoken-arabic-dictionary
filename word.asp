@@ -10,7 +10,6 @@ dim sndxHeb,sndxArb,hebDef,hebClean,searchString,needsEdit
 
 wordId = request("id")
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","word.asp","Labels load",wordId
 
@@ -36,8 +35,6 @@ res.open mySQL, con
     loop
 res.close
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","word.asp","Labels load",durationMs,wordId
 
@@ -57,7 +54,6 @@ Function GetName (Names, Num)
 End Function
 
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","word.asp","Words Main",wordId
 
@@ -106,8 +102,6 @@ res.open mySQL, con
 
 res.close
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+hebTrans
 
@@ -352,7 +346,6 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
         </div>
 
         <!-- LABELS --><%
-        startTime = timer()
         'openDB "arabicWords"
         openDbLogger "arabicWords","O","word.asp","Labels display",wordId
 
@@ -368,8 +361,6 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
         end if
         res.close 
         
-        endTime = timer()
-        durationMs = Int((endTime - startTime)*1000)
         'closeDB
         closeDbLogger "arabicWords","C","word.asp","Labels display",durationMs,wordId+" "+hebTrans
         %>
@@ -390,7 +381,6 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
             lastType = -1 'PUT SAME TYPES IN ONE ROW'
             skip = false
 
-            startTime = timer()
             'openDB "arabicWords"
             openDbLogger "arabicWords","O","word.asp","Relations",wordId
 
@@ -641,8 +631,6 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
                 end if
                 res.close 
 
-            endTime = timer()
-            durationMs = Int((endTime - startTime)*1000)
             'closeDB
             closeDbLogger "arabicWords","C","word.asp","Relations",durationMs,wordId+" "+hebTrans
             %>
@@ -652,7 +640,6 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
 
         <!-- DISPLAY LISTS --><%
         
-        startTime = timer()
         'openDB "arabicWords"
         openDbLogger "arabicWords","O","word.asp","Lists",wordId
         
@@ -699,8 +686,6 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
             
         </div><%
         
-        endTime = timer()
-        durationMs = Int((endTime - startTime)*1000)
         'closeDB
         closeDbLogger "arabicWords","C","word.asp","Lists",durationMs,wordId+" "+hebTrans
         
@@ -716,7 +701,6 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
 
         <%
 
-        startTime = timer()
         'openDB "arabicWords"
         openDbLogger "arabicWords","O","word.asp","Media",wordId
 
@@ -770,8 +754,6 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
         end if
         res.close 
 
-        endTime = timer()
-        durationMs = Int((endTime - startTime)*1000)
         'closeDB
         closeDbLogger "arabicWords","C","word.asp","Media",durationMs,wordId+" "+hebTrans
 
@@ -781,7 +763,6 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
         cls="normal"
         lastID=0
 
-        startTime = timer()
         'openDB "arabicWords"
         openDbLogger "arabicWords","O","word.asp","Sentences",wordId
 
@@ -856,8 +837,6 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
         end if
         res.close 
         
-        endTime = timer()
-        durationMs = Int((endTime - startTime)*1000)
         'closeDB
         closeDbLogger "arabicWords","C","word.asp","Sentences",durationMs,wordId+" "+hebTrans
 
@@ -888,7 +867,6 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
 
 <!-- EDITORS AREA --><%
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","word.asp","Editor",wordId
 
@@ -972,8 +950,6 @@ if (session("role") > 6) and (needsEdit=true) then %>
 end if
 res.close 
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","word.asp","Editor",durationMs,wordId+" "+hebTrans
 %>

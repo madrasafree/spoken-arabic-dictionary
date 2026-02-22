@@ -42,7 +42,6 @@ lPrivacy = 1 'unlisted
 lType = 10 'regular
 'lType = request("lType")
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","listsNew.insert.asp","single",""
 
@@ -74,8 +73,6 @@ res.open mySQL, con
 	maxID = res(0)
 res.close
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","listsNew.insert.asp","single",durationMs,""
 

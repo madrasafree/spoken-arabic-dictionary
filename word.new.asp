@@ -148,7 +148,6 @@ countme = 0 %>
             <div class="tags"><%
                 dim LID, LName
 
-                startTime = timer()
                 'openDB "arabicWords"
                 openDbLogger "arabicWords","O","new.asp","labels",""
 
@@ -168,8 +167,6 @@ countme = 0 %>
                     Loop
                 res.close
 
-                endTime = timer()
-                durationMs = Int((endTime - startTime)*1000)
                 'closeDB
                 closeDbLogger "arabicWords","C","new.asp","labels",durationMs,""
                 
@@ -364,7 +361,6 @@ countme = 0 %>
                     <select name="mediaNew" style="width:95%;">
                         <option value="">בחר מדיה</option><%
 
-                    startTime = timer()
                     'openDB "arabicWords"
                     openDbLogger "arabicWords","O","new.asp","media",""
 
@@ -376,8 +372,6 @@ countme = 0 %>
                     loop
                     res.close 
                     
-                    endTime = timer()
-                    durationMs = Int((endTime - startTime)*1000)
                     'closeDB
                     closeDbLogger "arabicWords","C","new.asp","media",durationMs,""
                     

@@ -62,7 +62,6 @@ closeDB
                 <select name="speaker">
                     <option value=""> - </option><%
 
-                startTime = timer()
                 'openDB "arabicUsers"
                 openDbLogger "arabicUsers","O","mediaNew.asp","single",""
                 
@@ -74,8 +73,6 @@ closeDB
                 loop
                 res.close 
                 
-                endTime = timer()
-                durationMs = Int((endTime - startTime)*1000)
                 'closeDB
                 closeDbLogger "arabicUsers","C","mediaNew.asp","single",durationMs,""
 

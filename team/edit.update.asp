@@ -32,7 +32,6 @@ Dim taatik,hebClean,arbClean,taatikClean
 dim hebrewCleanMore,arabicCleanMore,arabicHebCleanMore
 
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","edit.update.asp","1_lblCNT",""
 
@@ -41,8 +40,6 @@ res.open mySQL, con
 	lblCNT = res(0)
 res.close
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","edit.update.asp","1_lblCNT",durationMs,""
 
@@ -58,7 +55,6 @@ explain = gereshFix(request("explain"))
 
 
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","edit.update.asp","2_words",""
 
@@ -93,8 +89,6 @@ else
 end if
 res.close
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","edit.update.asp","2_words",durationMs,""
 
@@ -147,7 +141,6 @@ if len(arabicHebCleanMore)>0 then arabicHebCleanMore = gereshFix(onlyLetters(ara
 
 'Relations - DELETE all relations to this word'
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","edit.update.asp","3_rel_del",""
 
@@ -157,8 +150,6 @@ cmd.CommandText=mySQL
 Set cmd.ActiveConnection=con
 cmd.execute ,,128
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","edit.update.asp","3_rel_del",durationMs,""
 
@@ -168,7 +159,6 @@ dim a,b,x,y,relsChecked
 relsChecked = Request("rel")
 a=split(relsChecked,", ")
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","edit.update.asp","4_rel_ins",""
 
@@ -180,8 +170,6 @@ for each x in a
 	cmd.execute ,,128
 next
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","edit.update.asp","4_rel_ins",durationMs,""
 
@@ -259,7 +247,6 @@ if newRelCnt>0 then
 					newRelType = 8
 			END SELECT
 
-			startTime = timer()
 			'openDB "arabicWords"
 			openDbLogger "arabicWords","O","edit.update.asp","5_rel_new",""
 
@@ -268,8 +255,6 @@ if newRelCnt>0 then
 			Set cmd.ActiveConnection=con
 			cmd.execute ,,128
 
-			endTime = timer()
-			durationMs = Int((endTime - startTime)*1000)
 			'closeDB
 			closeDbLogger "arabicWords","C","edit.update.asp","5_rel_new",durationMs,""
 
@@ -318,7 +303,6 @@ for i=1 to lblCnt
 	end if
 next
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","edit.update.asp","6_labels",""
 
@@ -339,8 +323,6 @@ if not res.EOF then
 end if
 res.close
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","edit.update.asp","6_labels",durationMs,""
 
@@ -352,7 +334,6 @@ psikOld = ""
 psikNew = ""
 mediaCnt = 0
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","edit.update.asp","7_media",""
 
@@ -370,8 +351,6 @@ do until res.EOF
 loop
 res.close
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","edit.update.asp","7_media",durationMs,""
 
@@ -383,7 +362,6 @@ end if
 
 'DELETE ALL media from word'
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","edit.update.asp","8_media_del",""
 
@@ -393,8 +371,6 @@ cmd.CommandText=mySQL
 Set cmd.ActiveConnection=con
 cmd.execute ,,128
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","edit.update.asp","8_media_del",durationMs,""
 
@@ -404,7 +380,6 @@ dim mediaNewArr
 if len(mediaNewStr)>0 then
 	mediaNewArr = Split(mediaNewStr,",")
 
-	startTime = timer()
 	'openDB "arabicWords"
 	openDbLogger "arabicWords","O","edit.update.asp","9_media_new",""
 
@@ -417,8 +392,6 @@ if len(mediaNewStr)>0 then
 		end if
 	next
 
-	endTime = timer()
-	durationMs = Int((endTime - startTime)*1000)
 	'closeDB
 	closeDbLogger "arabicWords","C","edit.update.asp","9_media_new",durationMs,""
 
@@ -437,7 +410,6 @@ Set cmd=Server.CreateObject("adodb.command")
 'INSERT MISSING: media, relations
 dim maxId
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","edit.update.asp","10_history_max",""
 
@@ -446,13 +418,10 @@ res.open mySQL, con
 	maxId = res(0)
 res.close
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","edit.update.asp","10_history_max",durationMs,""
 
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","edit.update.asp","11_history_ins",""
 
@@ -462,8 +431,6 @@ cmd.CommandText=mySQL
 Set cmd.ActiveConnection=con
 cmd.execute ,,128
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","edit.update.asp","11_history_ins",durationMs,""
 
@@ -471,7 +438,6 @@ closeDbLogger "arabicWords","C","edit.update.asp","11_history_ins",durationMs,""
 
 'Inserting only the memo field to resolve error 80040e57'
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","edit.update.asp","12_history_str",""
 
@@ -488,13 +454,10 @@ res.open mySQL, con
 	end if
 res.close
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","edit.update.asp","12_history_str",durationMs,""
 
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","edit.update.asp","13_update",""
 
@@ -509,13 +472,10 @@ cmd.CommandText=mySQL
 Set cmd.ActiveConnection=con
 cmd.execute ,,128
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","edit.update.asp","13_update",durationMs,""
 
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","edit.update.asp","14_labels_del",""
 
@@ -525,14 +485,11 @@ cmd.CommandText=mySQL
 Set cmd.ActiveConnection=con
 cmd.execute ,,128
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","edit.update.asp","14_labels_del",durationMs,""
 
 
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","edit.update.asp","15_labels_ins",""
 
@@ -545,8 +502,6 @@ for i=1 to lblCnt
 	end if
 next
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","edit.update.asp","15_labels_ins",durationMs,""
 
@@ -555,7 +510,6 @@ closeDbLogger "arabicWords","C","edit.update.asp","15_labels_ins",durationMs,""
 
 dim uName,userEmail
 
-startTime = timer()
 'openDB "arabicUsers"
 openDbLogger "arabicUsers","O","edit.update.asp","username email",""
 
@@ -565,8 +519,6 @@ openDbLogger "arabicUsers","O","edit.update.asp","username email",""
 		userEmail = res(1)
 	res.close
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicUsers","C","edit.update.asp","username email",durationMs,""
 

@@ -39,7 +39,6 @@ if tImg = "" then tImg = "off"
 tNotes = gereshFix(request("notes"))
 
 
-startTime = timer()
 'openDB "arabicManager"
 openDbLogger "arabicManager","O","team.task.new.insert.asp","single",""
 
@@ -118,8 +117,6 @@ if len(request("newSubTitle"))>0 then
     cmd.execute ,,128
 end if
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicManager","C","team.task.new.insert.asp","single",durationMs,""
 

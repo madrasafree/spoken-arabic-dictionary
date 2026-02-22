@@ -50,7 +50,6 @@ if len(returnTo)=0 then returnTo = "users.landingPage.asp"
 if debugMode then response.write "<div class='debug'>returnTo (0) = "&returnTo&"</div>"
 
 
-startTime = timer()
 'openDB "arabicUsers"
 openDbLogger "arabicUsers","O","login.asp","single",""
 
@@ -121,8 +120,6 @@ if Len(Request("username"))>0 then
 	res.Close
 
 
-    endTime = timer()
-    durationMs = Int((endTime - startTime)*1000)
     'closeDB
     closeDbLogger "arabicUsers","C","login.asp","single",durationMs,""
 

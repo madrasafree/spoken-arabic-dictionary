@@ -39,7 +39,6 @@ maxPos = 0
 if debugMode then response.write "<br>LID="&LID
 
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","listsToggle.asp","single",""
 
@@ -73,8 +72,6 @@ cmd.CommandText=mySQL
 Set cmd.ActiveConnection=con
 cmd.execute ,,128
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","listsToggle.asp","single",durationMs,""
 

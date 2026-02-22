@@ -29,7 +29,6 @@ dim userId, userName, d
 
 userId = request("id")
 
-startTime = timer()
 'openDB "arabicUsers"
 openDbLogger "arabicUsers","O","admin.userEdit.asp","single",""
 
@@ -82,8 +81,6 @@ res.open mySQL, con
     <br /><input type="submit" value="עדכן" />
     <br /><br /><a href="admin.asp">חזרה לדף שליטה</a>
 </form><%
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicUsers","C","admin.userEdit.asp","single",durationMs,""
 

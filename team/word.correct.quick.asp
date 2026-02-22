@@ -42,7 +42,6 @@ explain = "'מנגנון אישור מהיר'"
 	response.write "<br/>explain = "&explain
 
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","word.correct.quick.asp","main",""
 
@@ -233,8 +232,6 @@ Set cmd.ActiveConnection=con
 cmd.execute ,,128
 
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","word.correct.quick.asp","main",durationMs,""
 
@@ -243,7 +240,6 @@ closeDbLogger "arabicWords","C","word.correct.quick.asp","main",durationMs,""
 
 dim uName,userEmail
 
-startTime = timer()
 'openDB "arabicUsers"
 openDbLogger "arabicUsers","O","word.correct.quick.asp","username email",""
 
@@ -256,8 +252,6 @@ openDbLogger "arabicUsers","O","word.correct.quick.asp","username email",""
 	res.close
 
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicUsers","C","word.correct.quick.asp","username email",durationMs,""
 

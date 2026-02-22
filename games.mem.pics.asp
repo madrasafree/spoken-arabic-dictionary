@@ -6,7 +6,6 @@ dim LID,LName,LDesc,imgLink
 LID = Request("LID")
 if LID = "" then LID = 0
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","games.mem.pics.asp","list details",""
 
@@ -20,8 +19,6 @@ res.open mySQL, con
 	LDesc = res("listDesc")
 res.close
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","games.mem.pics.asp","list details",durationMs,""
 
@@ -184,7 +181,6 @@ end if %>
 <div id="wrapper">
 	<div id="columns"><%
 
-	startTime = timer()
 	'openDB "arabicWords"
 	openDbLogger "arabicWords","O","games.mem.pics.asp","main",""
 
@@ -231,8 +227,6 @@ end if %>
 	end if
 	res.close 
 	
-	endTime = timer()
-	durationMs = Int((endTime - startTime)*1000)
 	'closeDB
 	closeDbLogger "arabicWords","C","games.mem.pics.asp","main",durationMs,""
 

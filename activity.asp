@@ -2,7 +2,6 @@
 <!--#include file="inc/time.asp"--><%
 
 
-startTime = timer()
 'openDB "arabicWords" 
 openDbLogger "arabicWords","O","activity.asp","single",""
 
@@ -612,8 +611,6 @@ res.close
     res.close %>
 </div><%
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","activity.asp","single",durationMs,""
 

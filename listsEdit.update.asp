@@ -40,7 +40,6 @@ lDesc = gereshFix(request("lDesc"))
 lPrivacy = request("lPrivacy")
 lType = request("lType")
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","listsEdit.update.asp","single",""
 
@@ -74,8 +73,6 @@ cmd.CommandText=mySQL
 Set cmd.ActiveConnection=con
 cmd.execute ,,128
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","listsEdit.update.asp","single",durationMs,""
 

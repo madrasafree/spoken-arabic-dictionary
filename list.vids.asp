@@ -40,7 +40,6 @@ dim countMe, lastLink
 lastLink = ""
 countMe = 0
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","list.vids.asp","single",""
 
@@ -108,8 +107,6 @@ res.open mySQL, con
 	Loop
 res.close 
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","list.vids.asp","single",durationMs,""
 

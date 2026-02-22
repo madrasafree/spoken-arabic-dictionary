@@ -41,7 +41,6 @@ listsCnt = 0
 viewsAvg = 0
 viewsSum = 0
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","admin.monitors.asp","m1",""
 
@@ -54,8 +53,6 @@ do until res.EOF
 loop
 res.close
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","admin.monitors.asp","m1",durationMs,"" 'inc.asp
 
@@ -90,7 +87,6 @@ response.write "<br>viewsAvg = "&viewsAvg%>
         <th>hours</th>
     </tr><%
 
-startTime = timer()
 'openDB "arabicLogs"
 openDbLogger "arabicLogs","O","admin.monitors.asp","mdb",""
 
@@ -119,8 +115,6 @@ do until res.EOF
 loop
 res.close
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicLogs","C","admin.monitors.asp","mdb",durationMs,"" 'inc.asp %>
 

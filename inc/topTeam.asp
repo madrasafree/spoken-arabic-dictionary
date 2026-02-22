@@ -6,7 +6,6 @@
     if session("role")>2 then %>
         <img <%
 
-        startTime = timer()
         'openDB "arabicUsers"
         openDbLogger "arabicUsers","O","inc/topTeam.asp","single",""
 
@@ -24,8 +23,6 @@
               style="height:40px; border-radius:50%; border:1px solid #d0ddeb;" title="<%=session("username")%>'s avatar" /><%
         res.close
 
-        endTime = timer()
-        durationMs = Int((endTime - startTime)*1000)
         'closeDB
         closeDbLogger "arabicUsers","C","inc/topTeam.asp","single",durationMs,""
 

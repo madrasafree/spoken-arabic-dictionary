@@ -23,7 +23,6 @@ Dim taatik,hebClean,arbClean,taatikClean
 Dim hebrewCleanMore,arabicCleanMore,arabicHebCleanMore
 
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","new.insert.asp","words",""
 
@@ -235,8 +234,6 @@ for i=1 to 3
 	end if
 next
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","new.insert.asp","words",durationMs,""
 
@@ -244,7 +241,6 @@ closeDbLogger "arabicWords","C","new.insert.asp","words",durationMs,""
 
 dim uName,userEmail
 
-startTime = timer()
 'openDB "arabicUsers"
 openDbLogger "arabicUsers","O","new.insert.asp","username email",""
 
@@ -255,8 +251,6 @@ openDbLogger "arabicUsers","O","new.insert.asp","username email",""
 		userEmail = res(1)
 	res.close
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicUsers","C","new.insert.asp","username email",durationMs,""
 

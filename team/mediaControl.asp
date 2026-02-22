@@ -43,7 +43,6 @@ end if %>
         </div><%
 
 
-        startTime = timer()
         'openDB "arabicWords"
         openDbLogger "arabicWords","O","mediaControl.asp","single",""
 
@@ -88,8 +87,6 @@ end if %>
             loop
         res.close 
         
-        endTime = timer()
-        durationMs = Int((endTime - startTime)*1000)
         'closeDB
         closeDbLogger "arabicWords","C","mediaControl.asp","single",durationMs,""
         

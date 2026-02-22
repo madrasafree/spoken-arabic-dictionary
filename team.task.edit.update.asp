@@ -40,7 +40,6 @@ dateStart = gereshFix(request("dateStart")) 'Make sure UTC'
 dateEnd = gereshFix(request("dateEnd"))
 
 
-startTime = timer()
 'openDB "arabicManager"
 openDbLogger "arabicManager","O","team.task.edit.update.asp","single",""
 
@@ -111,8 +110,6 @@ Set cmd.ActiveConnection=con
 cmd.execute ,,128
 
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicManager","C","team.task.edit.update.asp","single",durationMs,""
 

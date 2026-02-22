@@ -8,7 +8,6 @@ nikud = ""
 userId = request("id")
 
 
-startTime = timer()
 'openDB "arabicUsers"
 openDbLogger "arabicUsers","O","profile.allwords.asp","user details",""
 
@@ -54,13 +53,10 @@ end if
         end if 
         res.close
 
-        endTime = timer()
-        durationMs = Int((endTime - startTime)*1000)
         'closeDB
         closeDbLogger "arabicUsers","C","profile.allwords.asp","user details",durationMs,""
 
 
-        startTime = timer()
         'openDB "arabicWords"
         openDbLogger "arabicWords","O","profile.allwords.asp","words",""
 
@@ -225,8 +221,6 @@ if (session("role") And 2)>0 then
     res.close 
 end if 
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","profile.allwords.asp","words",durationMs,""
 

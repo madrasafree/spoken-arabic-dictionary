@@ -23,7 +23,6 @@ maxLists = CLng(request("maxLists"))
 userStatus = request("userStatus")
 
 
-startTime = timer()
 'openDB "arabicUsers"
 openDbLogger "arabicUsers","O","admin.userEdit.update.asp","single",""
 
@@ -36,8 +35,6 @@ cmd.CommandText=mySQL
 set cmd.ActiveConnection=con
 cmd.execute ,,128
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicUsers","C","admin.userEdit.update.asp","single",durationMs,""
 

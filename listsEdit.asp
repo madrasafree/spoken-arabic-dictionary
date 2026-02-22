@@ -72,7 +72,6 @@ closeDB
 <!--#include file="inc/top.asp"-->
 <div id="dashboard"><%
     
-    startTime = timer()
     'openDB "arabicWords"
     openDbLogger "arabicWords","O","listsEdit.asp","single",""
     
@@ -119,8 +118,6 @@ closeDB
     </form><%
     res.close 
     
-    endTime = timer()
-    durationMs = Int((endTime - startTime)*1000)
     'closeDB
     closeDbLogger "arabicWords","C","listsEdit.asp","single",durationMs,""    
     %>

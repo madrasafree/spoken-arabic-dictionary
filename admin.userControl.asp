@@ -30,7 +30,6 @@ gen=""
 userId = request("id")
 
 
-startTime = timer()
 'openDB "arabicUsers"
 openDbLogger "arabicUsers","O","admin.userControl.asp","single",""
 
@@ -80,8 +79,6 @@ res.open mySQL, con %>
 	    res.movenext
 	loop %>
 </table><%
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicUsers","C","admin.userControl.asp","single",durationMs,""
 %>

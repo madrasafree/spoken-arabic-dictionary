@@ -59,7 +59,6 @@
 
 <br/><%
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","sentence.asp","single",""
 
@@ -179,8 +178,6 @@ end if
 res.close
 
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","sentence.asp","single",durationMs,""
 

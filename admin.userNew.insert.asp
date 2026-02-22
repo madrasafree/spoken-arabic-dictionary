@@ -22,7 +22,6 @@ gender = getString("gender")
 joinDate = AR2UTC(now) 'using time.asp'
 
 
-startTime = timer()
 'openDB "arabicUsers"
 openDbLogger "arabicUsers","O","admin.userNew.insert.asp","single",""
 
@@ -39,8 +38,6 @@ mySQL = "SELECT MAX(id) FROM users"
 set res = con.Execute (mySQL)
 maxId = res(0)
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicUsers","C","admin.userNew.insert.asp","single",durationMs,""
 

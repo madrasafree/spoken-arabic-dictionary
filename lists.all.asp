@@ -51,7 +51,6 @@ nikud = "" %>
 <body>
 <!--#include file="inc/time.asp"-->
 <!--#include file="inc/top.asp"--><%
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","lists.all.asp","multi. Break down","" %>
 
@@ -246,8 +245,6 @@ end if %>
         res.moveNext
     Loop
 res.close 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","lists.all.asp","single",durationMs,""
 %>

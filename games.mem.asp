@@ -112,7 +112,6 @@
 <div id="wrapper">
 	<div id="columns"><%
 
-	startTime = timer()
 	'openDB "arabicWords"
 	openDbLogger "arabicWords","O","games.mem.asp","single",""
 
@@ -144,8 +143,6 @@
 	Loop
 	res.close 
 	
-	endTime = timer()
-	durationMs = Int((endTime - startTime)*1000)
 	'closeDB
 	closeDbLogger "arabicWords","C","games.mem.asp","single",durationMs,""
 

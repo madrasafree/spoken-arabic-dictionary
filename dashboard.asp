@@ -50,7 +50,6 @@
 
 dim total,totalLocal,totalShow,x
 
-startTime = timer()
 'openDB "arabicWords" 
 openDbLogger "arabicWords","O","dashboard.asp","single",""
 
@@ -419,8 +418,6 @@ openDbLogger "arabicWords","O","dashboard.asp","single",""
 
 </div><%
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","dashboard.asp","single",durationMs,""
 

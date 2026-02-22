@@ -18,7 +18,6 @@
                     <a href="profile.asp?id=<%=session("userID")%>">
                         <img id="avatar"
                     <%
-                    startTime = timer()
                     'openDB "arabicUsers"
                     openDbLogger "arabicUsers","O","inc/trailer.asp","show avatar",""
                     
@@ -37,8 +36,6 @@
                              style="height:24px; " title="<%=session("username")%>'s avatar" /></a><%
                         res.close
 
-                    endTime = timer()
-                    durationMs = Int((endTime - startTime)*1000)
                     'closeDB
                     closeDbLogger "arabicUsers","C","inc/trailer.asp","show avatar",durationMs,""
                     %>

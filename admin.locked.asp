@@ -12,7 +12,6 @@
 
   if unlockWord="true" then
 
-    startTime = timer()
     'openDB "arabicWords"
     openDbLogger "arabicWords","O","admin.locked.asp","unlock","" 
 
@@ -24,8 +23,6 @@
 		Set cmd.ActiveConnection=con
 		cmd.execute ,,128
 
-    endTime = timer()
-    durationMs = Int((endTime - startTime)*1000)
     'closeDB
     closeDbLogger "arabicWords","C","admin.locked.asp","unlock",durationMs,"" 'inc.asp 
 
@@ -81,7 +78,6 @@
         <th>action</th>
     </tr><%
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","admin.locked.asp","read","" 
 
@@ -100,8 +96,6 @@ do until res.EOF %>
 loop
 res.close 
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","admin.locked.asp","read",durationMs,"" 'inc.asp %>
 

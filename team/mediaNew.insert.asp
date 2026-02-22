@@ -39,7 +39,6 @@ end if
 mLink = getString("mLink")
 
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","mediaNew.insert.asp","single",""
 
@@ -72,8 +71,6 @@ Set cmd.ActiveConnection=con
 cmd.execute ,,128
 
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","mediaNew.insert.asp","single",durationMs,""
 

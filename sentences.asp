@@ -103,7 +103,6 @@
 	cls = "normal"
 
 
-	startTime = timer()
 	'openDB "arabicWords"
 	openDbLogger "arabicWords","O","sentences.asp","single",""
 
@@ -160,8 +159,6 @@
 	end if
 	res.close
 
-	endTime = timer()
-	durationMs = Int((endTime - startTime)*1000)
 	'closeDB
 	closeDbLogger "arabicWords","C","sentences.asp","single",durationMs,""
 

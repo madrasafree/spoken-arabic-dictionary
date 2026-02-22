@@ -25,7 +25,6 @@ tID = request("tID")
 vote = request("vote")
 userID = session("userID")
 
-startTime = timer()
 'openDB "arabicManager"
 openDbLogger "arabicManager","O","team.task.vote.asp","single",""
 
@@ -54,8 +53,6 @@ Set cmd.ActiveConnection=con
 cmd.execute ,,128
 
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicManager","C","team.task.vote.asp","single",durationMs,""
 

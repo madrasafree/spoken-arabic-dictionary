@@ -32,7 +32,6 @@ nikud = "bg"%>
 
 <table class="table log" style="margin-top:10px;"><%
 
-	startTime = timer()
 	'openDB "arabicSearch"
 	openDbLogger "arabicSearch","O","stats.topSearch.asp","single",""
 
@@ -56,8 +55,6 @@ nikud = "bg"%>
 	    Loop
 	    res.close
 
-	endTime = timer()
-	durationMs = Int((endTime - startTime)*1000)
 	'closeDB
 	closeDbLogger "arabicWords","C","stats.topSearch.asp","single",durationMs,""
 

@@ -2,6 +2,13 @@
 <%
 Option Explicit
 dim res, res2, res3, con, mySQL, cmd
+dim baseA, baseT
+
+'baseA = "http://ronen.rothfarb.info/arabic/"
+'baseA = "http://10.0.0.3:8080/" 'pcWhite'
+'baseA = "http://127.0.0.1:8080/" 'Lenovo x220'
+baseA = "../" 'test to remove bases'
+baseT = baseA + "team/"
 
 function intToStr (num, length)
 	'NUM to STRING
@@ -23,12 +30,22 @@ function AR2UTC (date)
 end function
 
 sub OpenDbLogger(db,opType,afPage,opNum,sStr)
+	userIP = Request.Servervariables("REMOTE_HOST")
+	opTime = AR2UTC(now())
 	OpenDB(db)
+	'mySQL = "INSERT INTO log (opType,afDB,afPage,opNum,userIP,opTimestamp,sStr) VALUES ('"&opType&"','"&db&"','"&afPage&"','"&opNum&"','"&userIP&"','"&opTime&"','"&sStr&"')"
+	'con.execute mySQL
 end sub
 
 sub CloseDbLogger(db,opType,afPage,opNum,durationMs,sStr)
-	closeDb
+	userIP = Request.Servervariables("REMOTE_HOST")
+	opTime = AR2UTC(now())
+	'mySQL = "INSERT INTO log (opType,afDB,afPage,opNum,userIP,opTimestamp,durationMs,sStr) VALUES ("&_
+	'"'"&opType&"','"&db&"','"&afPage&"','"&opNum&"','"&userIP&"','"&opTime&"','"&durationMs&"','"&sStr&"')"
+	'con.execute mySQL
+  closeDb
 end sub
+
 
 sub OpenDB(db)
 	set con = Server.CreateObject("adodb.connection")
@@ -52,5 +69,3 @@ Sub Go(url)
 	CloseDB
 	Response.Redirect url
 End Sub %>
-<!-- Language="VBScript" CodePage="65001"-->
-<!-- Language="VBScript" CodePage="1255"-->

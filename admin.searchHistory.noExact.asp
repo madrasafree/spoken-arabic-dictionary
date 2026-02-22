@@ -68,7 +68,6 @@ countMe = 0
 nikud = "bg"
 
 
-startTime = timer()
 'openDB "arabicSearch"
 openDbLogger "arabicSearch","O","admin.searchHistory.noExact.asp","single",""
 
@@ -150,8 +149,6 @@ res.close %>
 	</div>
 
 </div> <!-- container ends here --> <%
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicSearch","C","admin.searchHistory.noExact.asp","single",durationMs,""
 

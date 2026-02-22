@@ -20,7 +20,6 @@ If session("role") <> 15 then Response.Redirect "login.asp" %>
     <h2>ניהול נושאים</h2><%
 
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","admin.labelControl.asp","single",""
 
@@ -45,8 +44,6 @@ openDbLogger "arabicWords","O","admin.labelControl.asp","single",""
     </div><%
     res.close
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","admin.labelControl.asp","single",durationMs,""
 

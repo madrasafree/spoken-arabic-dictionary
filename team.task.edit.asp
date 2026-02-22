@@ -42,7 +42,6 @@ tID = request("ID")
 <div id="dashboard">
     <div class="table"><%
         
-        startTime = timer()
         'openDB "arabicManager"
         openDbLogger "arabicManager","O","team.task.edit.asp","single",""
         
@@ -190,8 +189,6 @@ tID = request("ID")
     </form><%
     res.close 
     
-    endTime = timer()
-    durationMs = Int((endTime - startTime)*1000)
     'closeDB
     closeDbLogger "arabicManager","C","team.task.edit.asp","single",durationMs,""
     

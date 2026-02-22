@@ -36,7 +36,6 @@ wordID = Request("wordID")
 response.write "<br/>wordID = "&wordID
 
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","listsWord.insert.asp","single",""
 
@@ -98,8 +97,6 @@ Set cmd.ActiveConnection=con
 cmd.execute ,,128
 
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","listsWord.insert.asp","single",durationMs,""
 

@@ -16,7 +16,6 @@ LName = "empty"
 psik = ""
 
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","label.asp","single",""
 
@@ -183,8 +182,6 @@ res.close
 <%
 
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","label.asp","single",durationMs,LName
 

@@ -48,7 +48,6 @@ uploaderID = session("userID")
 uploadTime = isrTime() 'add to DB and to INSERT'
 
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","mediaEdit.update.asp","single",""
 
@@ -62,8 +61,6 @@ cmd.CommandText=mySQL
 Set cmd.ActiveConnection=con
 cmd.execute ,,128
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","mediaEdit.update.asp","single",durationMs,""
 

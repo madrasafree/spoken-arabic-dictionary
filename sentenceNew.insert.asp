@@ -55,7 +55,6 @@ arabicHebClean = onlyLetters(arabicHeb)
 nowUTC = AR2UTC(now())
 
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","sentenceNew.insert.asp","single",""
 
@@ -68,8 +67,6 @@ Response.Write "<br/>"& mySQL
 Set cmd.ActiveConnection=con
 cmd.execute ,,128
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","sentenceNew.insert.asp","single",durationMs,""
 

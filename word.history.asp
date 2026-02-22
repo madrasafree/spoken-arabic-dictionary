@@ -11,7 +11,6 @@ wordId = request("id")
 
 
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","word.history.asp","single",wordId
 
@@ -481,8 +480,6 @@ res.close
     </div><%
     res.close 
     
-    endTime = timer()
-    durationMs = Int((endTime - startTime)*1000)
     'closeDB
     closeDbLogger "arabicWords","C","word.history.asp","single",durationMs,wordId
     

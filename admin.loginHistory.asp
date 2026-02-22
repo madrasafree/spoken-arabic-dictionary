@@ -22,7 +22,6 @@ If session("role") <> 15 then Response.Redirect "login.asp" %>
 	<div style="margin:50px auto;"><%
 
 
-	startTime = timer()
 	'openDB "arabicUsers"
 	openDbLogger "arabicUsers","O","admin.loginHistory.asp","single",""
 
@@ -39,8 +38,6 @@ If session("role") <> 15 then Response.Redirect "login.asp" %>
 		res.close
 
 
-	endTime = timer()
-	durationMs = Int((endTime - startTime)*1000)
 	'closeDB
 	closeDbLogger "arabicUsers","C","admin.loginHistory.asp","single",durationMs,""
 	%>

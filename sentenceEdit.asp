@@ -156,7 +156,6 @@ closeDB
 
     sID = request("sID")
 
-    startTime = timer()
     'openDB "arabicWords"
     openDbLogger "arabicWords","O","sentenceEdit.asp","single",""
 
@@ -237,8 +236,6 @@ closeDB
     </div>
     </form><%
     
-    endTime = timer()
-    durationMs = Int((endTime - startTime)*1000)
     'closeDB
     closeDbLogger "arabicWords","C","sentenceEdit.asp","single",durationMs,""
     

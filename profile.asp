@@ -12,7 +12,6 @@ else
 end if
 
 
-startTime = timer()
 'openDB "arabicUsers"
 openDbLogger "arabicUsers","O","profile.asp","user details",""
 
@@ -131,14 +130,11 @@ end if
             <span style="margin-bottom: 0px;">תאריך הצטרפות למילון -  <%=Str2hebDate(res("joinDateUTC"))%>.</span><%
         end if 
 
-        endTime = timer()
-        durationMs = Int((endTime - startTime)*1000)
         'closeDB
         closeDbLogger "arabicUsers","C","profile.asp","user details",durationMs,""
 
 
 
-        startTime = timer()
         'openDB "arabicWords"
         openDbLogger "arabicWords","O","profile.asp","main",""
 
@@ -824,8 +820,6 @@ end if
 res.close %>
 </div><%
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","profile.asp","main",durationMs,""
 

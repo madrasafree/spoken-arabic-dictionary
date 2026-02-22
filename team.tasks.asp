@@ -476,7 +476,6 @@ dim taskVotes
     <ul id="tasksUL"><%
     
 
-    startTime = timer()
     'openDB "arabicManager"
     openDbLogger "arabicManager","O","team.tasks.asp","single",""
 
@@ -631,8 +630,6 @@ dim taskVotes
     end if
     res.close 
     
-    endTime = timer()
-    durationMs = Int((endTime - startTime)*1000)
     'closeDB
     closeDbLogger "arabicManager","C","team.tasks.asp","single",durationMs,""
     

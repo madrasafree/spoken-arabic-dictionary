@@ -29,7 +29,6 @@ Select case Left(Request("order")&"h",1)
 End select
 countMe = 0
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","list.audio.asp","single",""
 
@@ -88,8 +87,6 @@ res.open mySQL, con %>
 <span id="countMe" data-count="<%=countMe%>"></span>
 <br /><%
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","list.audio.asp","single",durationMs,""
 

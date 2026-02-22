@@ -7,7 +7,6 @@ end if
 dim toggleTo
 
 
-startTime = timer()
 'openDB "arabicUsers"
 openDbLogger "arabicUsers","O","admin.allowEditToggle.asp","single",""
 
@@ -28,8 +27,6 @@ set cmd.ActiveConnection=con
 cmd.execute ,,128
 
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicUsers","C","admin.allowEditToggle.asp","single",durationMs,""
 

@@ -17,7 +17,6 @@ if LID = "" then LID = 0
 LName = "empty"
 psik = ""
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","lists.asp","list details",""
 
@@ -35,13 +34,10 @@ res.open mySQL, con
     lastUpdateUTC = res("lastUpdateUTC")
 res.close
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","lists.asp","list details",durationMs,""
 
 
-startTime = timer()
 'openDB "arabicUsers"
 openDbLogger "arabicUsers","O","lists.asp","username",""
 
@@ -50,8 +46,6 @@ res.open mySQL, con
     creatorName = res("username")
 res.close
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicUsers","C","lists.asp","username",durationMs,""
 
@@ -174,7 +168,6 @@ if creatorName <> session("username") then sqlShow = "AND show" %>
 </style>
 <!--#include file="inc/top.asp"--><%
 
-    startTime = timer()
     'openDB "arabicWords"
     openDbLogger "arabicWords","O","lists.asp","main",LID
     
@@ -482,8 +475,6 @@ res.close %>
     </div>
 
 <%
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","lists.asp","main",durationMs,LID+" "+LName
 %>

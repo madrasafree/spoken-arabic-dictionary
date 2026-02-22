@@ -63,20 +63,16 @@ end if %>
 		</tr><%
 
 	if request("action")="new" then
-		startTime = timer()
 		'openDB "arabicWords"
 		openDbLogger "arabicWords","O","admin.wordsShort.asp","new",""
 			mySQL = "INSERT INTO wordsShort (sStr,wordID) VALUES ('"&request("sStrNew")&"',"&request("wordIdNew")&")"
 			con.execute mySQL
 
-		endTime = timer()
-		durationMs = Int((endTime - startTime)*1000)
 		'closeDB
 		closeDbLogger "arabicWords","C","admin.wordsShort.asp","new",durationMs,""
 	end if
 
 	if request("action")="edit" then
-		startTime = timer()
 		'openDB "arabicWords"
 		openDbLogger "arabicWords","O","admin.wordsShort.asp","edit",""
 			if len(request("sStr"))>0 then
@@ -85,14 +81,11 @@ end if %>
 				mySQL = "DELETE FROM wordsShort WHERE id="&request("id")
 			end if
 			con.execute mySQL
-		endTime = timer()
-		durationMs = Int((endTime - startTime)*1000)
 		'closeDB
 		closeDbLogger "arabicWords","C","admin.wordsShort.asp","edit",durationMs,""
 	end if
 
 
-	startTime = timer()
 	'openDB "arabicWords"
 	openDbLogger "arabicWords","O","admin.wordsShort.asp","display",""
 	mySQL = "SELECT * FROM wordsShort"
@@ -120,8 +113,6 @@ end if %>
 	res.close 
 	
 	
-	endTime = timer()
-	durationMs = Int((endTime - startTime)*1000)
 	'closeDB
 	closeDbLogger "arabicWords","C","admin.wordsShort.asp","display",durationMs,""
 	

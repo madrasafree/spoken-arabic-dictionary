@@ -1,7 +1,6 @@
 ﻿<!--#include file="inc/inc.asp"-->
 <!--#include file="inc/functions/functions.asp"--><%
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","dashboard.lists.asp","single",""
 
@@ -155,8 +154,6 @@ end select %>
 
 </div><%
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","dashboard.lists.asp","single",durationMs,""
 

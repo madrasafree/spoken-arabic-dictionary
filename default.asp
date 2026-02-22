@@ -306,7 +306,6 @@ if len(strClean)=0 then
         </div> <%
     end if
 else
-    startTime = timer()
     'openDB "arabicWords"
     openDbLogger "arabicWords","O","default.asp","Main",strClean
 
@@ -563,8 +562,6 @@ else
     end if
     res.close
     
-    endTime = timer()
-    durationMs = Int((endTime - startTime)*1000)
 
     'closeDB
     closeDbLogger "arabicWords","C","default.asp","Main",durationMs,strClean 'inc.asp %>
@@ -613,7 +610,6 @@ else
             <%=searchTitle%>
             <div class="<%=divClass%>"><%
 
-                startTime = timer()
                 'openDB "arabicWords"
                 openDbLogger "arabicWords","O","default.asp",divClass,strClean
 
@@ -659,8 +655,6 @@ else
                     Loop
                 end if
                 res.close
-                endTime = timer()
-                durationMs = Int((endTime - startTime)*1000)
 
                 'closeDB
                 closeDbLogger "arabicWords","C","default.asp",divClass,durationMs,strClean %>
@@ -676,7 +670,6 @@ end if %>
 
 <!-- RESULTS FROM SENTENCES --><%
 if len(strClean)>0 AND inStr(strDisplay," ")>0 then 
-    startTime = timer()
     'openDB "arabicWords"
     openDbLogger "arabicWords","O","default.asp","Sentences",strClean
     mySQL = "SELECT sentences.* FROM sentences WHERE ((hebrewClean LIKE '%"& strClean &"%') OR (arabicClean LIKE '%"& strClean &"%') OR (arabicHebClean LIKE '%"& strClean &"%')) AND show"
@@ -696,8 +689,6 @@ if len(strClean)>0 AND inStr(strDisplay," ")>0 then
             res.moveNext
         loop
     end if
-    endTime = timer()
-    durationMs = Int((endTime - startTime)*1000)
     'closeDB
     closeDbLogger "arabicWords","C","default.asp","Sentences",durationMs,strClean
 end if %>
@@ -786,7 +777,6 @@ end if
     <ul><%
     dim x,tagSize
 
-    startTime = timer()
     'openDB "arabicWords"
     openDbLogger "arabicWords","O","default.asp","tagCloud",strClean
 
@@ -820,8 +810,6 @@ end if
         Loop
     res.close
 
-    endTime = timer()
-    durationMs = Int((endTime - startTime)*1000)
     'closeDB
     closeDbLogger "arabicWords","C","default.asp","tagCloud",durationMs,strClean
 
@@ -836,7 +824,6 @@ end if
 If len(strDisplay)=500 then 'DISABLED - Normally it's len(strDisplay)=0
     dim creatorID 
     
-    startTime = timer()
     'openDB "arabicWords"
     openDbLogger "arabicWords","O","default.asp","activity",strClean
     %>
@@ -892,8 +879,6 @@ If len(strDisplay)=500 then 'DISABLED - Normally it's len(strDisplay)=0
             <a href="activities.asp">הצג עוד</a>
         </div>
     </div><%
-    endTime = timer()
-    durationMs = Int((endTime - startTime)*1000)
     'closeDB
     closeDbLogger "arabicWords","C","default.asp","activity",durationMs,strClean
 end if %>
@@ -916,7 +901,6 @@ response.Flush
 'INSERT TO SEARCH HISTORY'
 if len(strDisplay)>500 then 'DISABLED - Normally it's len(strDisplay)>0
 
-    startTime = timer()
     'openDB "arabicSearch"
     openDbLogger "arabicSearch","O","default.asp","search history",strClean
     
@@ -946,8 +930,6 @@ if len(strDisplay)>500 then 'DISABLED - Normally it's len(strDisplay)>0
     mySQL = "INSERT into latestSearched(searchTime,searchID) VALUES('"& AR2UTC(now()) &"',"& searchID &")"
     con.execute mySQL
     
-    endTime = timer()
-    durationMs = Int((endTime - startTime)*1000)
     'closeDB
     closeDbLogger "arabicSearch","C","default.asp","search history",durationMs,strClean
 

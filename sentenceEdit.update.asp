@@ -40,7 +40,6 @@ Dim arabicOld,arabicHebOld,hebrewOld
 Dim arabicCleanOld,arabicHebCleanOld,hebrewCleanOld
 
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","sentenceEdit.update.asp","single",""
 
@@ -123,8 +122,6 @@ cmd.execute ,,128
 
 
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","sentenceEdit.update.asp","single",durationMs,""
 

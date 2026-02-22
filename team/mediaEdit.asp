@@ -14,7 +14,6 @@ openDB "arabicUsers"
     res.close
 closeDB    
 
-startTime = timer()
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","mediaEdit.asp","media details",""
 
@@ -71,8 +70,6 @@ speakerID = res("speaker")
 res.close
 
 
-endTime = timer()
-durationMs = Int((endTime - startTime)*1000)
 'closeDB
 closeDbLogger "arabicWords","C","mediaEdit.asp","media details",durationMs,""
 
@@ -82,7 +79,6 @@ closeDbLogger "arabicWords","C","mediaEdit.asp","media details",durationMs,""
                 <select name="speaker">
                     <option value=""> - </option><%
 
-                startTime = timer()
                 'openDB "arabicUsers"
                 openDbLogger "arabicUsers","O","mediaEdit.asp","speaker",""
 
@@ -94,8 +90,6 @@ closeDbLogger "arabicWords","C","mediaEdit.asp","media details",durationMs,""
                 loop
                 res.close 
 
-                endTime = timer()
-                durationMs = Int((endTime - startTime)*1000)
                 'closeDB
                 closeDbLogger "arabicUsers","C","mediaEdit.asp","speaker",durationMs,""
 
