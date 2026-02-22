@@ -3,6 +3,7 @@
 Option Explicit
 dim res, res2, res3, con, mySQL, cmd
 dim baseA, baseT
+dim startTime, endTime, durationMs, userIP, opTime
 
 'baseA = "http://ronen.rothfarb.info/arabic/"
 'baseA = "http://10.0.0.3:8080/" 'pcWhite'
@@ -30,20 +31,11 @@ function AR2UTC (date)
 end function
 
 sub OpenDbLogger(db,opType,afPage,opNum,sStr)
-	userIP = Request.Servervariables("REMOTE_HOST")
-	opTime = AR2UTC(now())
 	OpenDB(db)
-	'mySQL = "INSERT INTO log (opType,afDB,afPage,opNum,userIP,opTimestamp,sStr) VALUES ('"&opType&"','"&db&"','"&afPage&"','"&opNum&"','"&userIP&"','"&opTime&"','"&sStr&"')"
-	'con.execute mySQL
 end sub
 
 sub CloseDbLogger(db,opType,afPage,opNum,durationMs,sStr)
-	userIP = Request.Servervariables("REMOTE_HOST")
-	opTime = AR2UTC(now())
-	'mySQL = "INSERT INTO log (opType,afDB,afPage,opNum,userIP,opTimestamp,durationMs,sStr) VALUES ("&_
-	'"'"&opType&"','"&db&"','"&afPage&"','"&opNum&"','"&userIP&"','"&opTime&"','"&durationMs&"','"&sStr&"')"
-	'con.execute mySQL
-  closeDb
+	closeDb
 end sub
 
 
