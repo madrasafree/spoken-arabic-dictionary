@@ -10,7 +10,6 @@ Most JavaScript in the project relies on **jQuery 1.11.3** (loaded via CDN in `i
 
 | File | Purpose | Notes |
 |---|---|---|
-| `inc/audioPlayer.js` | Media playback logic. | Handles audio element behaviors on dictionary entries. |
 | `inc/youtube.js` | YouTube iframe lazy-loading. | Replaces `.youtube` div placeholders with actual iframe embeds on click to improve initial page load performance. |
 | `inc/functions/saa3a.js` | Arabic Clock logic. | Used entirely by `clock.asp`. Contains the transliteration engine for time, updating every 60 seconds (`setInterval`). |
 
@@ -50,7 +49,6 @@ Rather than using inline `@media` queries within the main CSS file, the project 
 
 | File | Purpose |
 |---|---|
-| `css/arabic_2020.css` | Late additions/overrides applied globally. |
 | `css/devMode.css` | Visual indicators when the application is running in a local development environment. |
 | `css/arabic_admin.css` | Admin dashboard styling. |
 | `css/arabic_admin_slider.css` | UI toggles in the admin dashboard. |

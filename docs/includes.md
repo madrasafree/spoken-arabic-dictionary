@@ -22,7 +22,7 @@ For DB schema see `docs/db.md`. For page behavior see `docs/pages.md`.
 | `inc/banner.asp` | Promotional banner | `default.asp`, `word.asp` |
 | `inc/topTeam.asp` | Team nav bar | `team/default.asp`, `team/media*.asp` |
 | `team/inc/functions.asp` | Android shada fix | `guide.asp` |
-| `team/inc/functions/string.asp` | String utilities (duplicate) | `default.asp`, `default.min.asp`, 2 task pages |
+| `team/inc/functions/string.asp` | String utilities (duplicate) | `default.asp`, `default.min.asp`, `team/edit.update.asp`, `team/new.insert.asp` |
 | `team/inc/functions/soundex.asp` | Phonetic search (correct version) | `default.asp`, `default.min.asp`, `team/edit.update.asp`, `team/new.insert.asp` |
 | `team/inc/time.asp` | Date/time helpers (superset) | `profile.asp`, `welcome.asp` |
 | `team/guide.embed.asp` | Guide body content | `guide.asp`, 4 word/sentence edit pages |
@@ -243,7 +243,7 @@ Uses `response.write` directly. Months are hardcoded Hebrew month names.
 
 ### Used by
 
-~35 pages including `activity.asp`, `admin.asp`, all `admin.searchHistory.*` pages,
+~20 pages including `activity.asp`, `admin.asp`, `admin.userControl.asp`, `admin.userControl.full.asp`,
 `word.asp`, `word.edit.asp`, `login.asp`, `lists.asp`, `profile.allwords.asp`.
 
 ### Notes

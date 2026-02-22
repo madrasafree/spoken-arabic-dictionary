@@ -40,7 +40,6 @@ inc/trailer.asp  -> footer and closing tags
 - Project history and contributors
 - Community contribution model
 - Review process note
-- Future plans link (`team.tasks.asp`)
 - Usage numbers section
 - Copyright section
 
@@ -414,15 +413,15 @@ inc/trailer.asp                    -> Footer
 - **Diff Engine:** For word edits, the page contains a huge VBScript block that manually compares every "Old" and "New" column state (e.g., `hebrewOld` vs `hebrewNew`). If there's a mismatch, it outputs a UI row showing what changed. 
 
 
-## login.asp / login.fixhref.asp
+## login.asp
 
-**URLs:** https://milon.madrasafree.com/login.asp, https://milon.madrasafree.com/login.fixhref.asp
+**URL:** https://milon.madrasafree.com/login.asp
 **Feature area:** authentication
 **Auth:** public
 **DB access:** `arabicUsers` (`users`, `allowEdit`, `loginLog`)
 
 ### Purpose
-Handles user authentication and session creation. login.fixhref.asp appears to be a legacy or alternative version of the login handler that manages redirects slightly differently using the HTTP_REFERER.
+Handles user authentication and session creation.
 
 ### Behavior & Logic
 - Checks `allowEdit` table to see if the site is in maintenance mode.
@@ -584,22 +583,6 @@ Displays the specific words that correspond to the metric categories clicked in 
 - This design inherently protects against SQL injection since the `listID` parameter never enters the SQL query string directly.
 - Displays words up to a `TOP 100` limit.
 - If the viewer is an editor (`session("role")>6`) and `listID=1` (unchecked words), it renders inline "Quick Edit" and "Quick Approve" buttons.
-
----
-
-## users.asp
-
-**URL:** https://milon.madrasafree.com/users.asp
-**Feature area:** community
-**Auth:** public
-**DB access:** `arabicUsers` (`users`)
-
-### Purpose
-Displays a directory of dictionary contributors/volunteers, showing their avatars and usernames.
-
-### Behavior & Logic
-- Excludes specific hardcoded system/admin user IDs `(2,5,6,7,36,37,48)`.
-- Uses jQuery to count the number of users rendered and displays the total.
 
 ---
 
