@@ -476,7 +476,7 @@ Forms for adding a new word or editing an existing word in the dictionary. It in
 ### Behavior & Logic
 - **Permissions:** word.new.asp requires an editor role bitmask (session("role") AND 2). word.edit.asp requires either a manager/admin role (>6), or the user must be the original creator AND the word must not be approved yet (status<>1).
 - **Read-Only Mode:** Checks `allowEdit` table where `siteName='readonly'`.
-- **Locking Mechanism (word.edit.asp):** Implements a 30-minute pessimistic lock on the word to prevent concurrent edits. Updates lockedUTC in the database.
+- **Locking Mechanism (word.edit.asp):** Implements a 30-minute pessimistic lock on the word to prevent concurrent edits. Updates lockedUTC in the database. `word.unlock.asp` allows releasing this lock dynamically (e.g., when the user cancels out of the edit form).
 - **UI:** Heavily utilizes jQuery to toggle the visibility of different metadata sections (Tags, Relations, Notes, Examples, Media) to keep the initial form clean.
 - **Relations Engine:** A complex client-side UI to add relations (synonyms, antonyms, conjugations) to other words, tied via Javascript to hidden form inputs.
 
@@ -712,6 +712,8 @@ Includes `admin.userControl.asp`, `admin.userControl.full.asp`, `admin.userEdit.
 - Allows assigning specific roles (Guest/1, Editor/7, Admin/15) via basic form submissions.
 
 ### Search History Analytics (`admin.searchHistory.*.asp`)
+**Status: DELETED.** The entire suite of `admin.searchHistory.*.asp` files and variants was permanently removed.
+
 Includes `admin.searchHistory.asp` (Index) and multiple variants: `.last50.asp`, `.24h.asp`, `.7days.asp`, `.since2009.asp`, `.noExact.asp`, `.noSentence.asp`.
 - Queries `arabicSearch` (`wordsSearched`, `latestSearched`).
 - The logic across these files is largely identical, differing primarily by the SQL `WHERE` clause (e.g. `WHERE actionUTC > dateAdd('d',-7,now())`).
@@ -719,11 +721,11 @@ Includes `admin.searchHistory.asp` (Index) and multiple variants: `.last50.asp`,
 
 ### Miscellanous Admin Tools
 - **`admin.wordsShort.asp`**: Allows inline creation/editing of shorthand aliases (`sStr`) mapped to a specific `wordID`. 
-- **`admin.monitors.asp`**: Iterates through database metrics (e.g., total list views) to calculate averages for system health reporting. Contains a button to send an admin alert email via `admin.monitors.email.php`.
+- **`admin.monitors.asp`**: **DELETED.** Iterated through database metrics (e.g., total list views) to calculate averages for system health reporting. Contains a button to send an admin alert email via `admin.monitors.email.php`.
 - **`admin.labelControl.asp`**: Basic UI for adding and editing word categories ("labels").
-- **`admin.select.asp`**: Dedicated UI to edit the custom dropdown option lists used throughout the site.
-- **`admin.loginHistory.asp`**: Displays the active sessions table (`loginLog`).
-- **`admin.listAllWords.asp`**: Produces a massive, paginated HTML table of the entire dictionary.
+- **`admin.select.asp`**: **DELETED.** Dedicated UI to edit the custom dropdown option lists used throughout the site.
+- **`admin.loginHistory.asp`**: **DELETED.** Displays the active sessions table (`loginLog`).
+- **`admin.listAllWords.asp`**: **DELETED.** Produces a massive, paginated HTML table of the entire dictionary.
 
 ---
 
@@ -759,7 +761,7 @@ The main homepage and search engine for the dictionary. Accepts a search query `
 - Handles exact match, fuzzy match (`LIKE`), and soundex phonetic matching.
 - Logs every search into `arabicSearch` (`wordsSearched`, `latestSearched`).
 - Renders word card with Arabic script, transliteration, Hebrew translation, images, audio, video, examples, and related words.
-- `default.min.asp` is a lightweight version that skips some UI elements and queries.
+- `default.min.asp` was a lightweight version that skipped some UI elements, but it was **DELETED** during cleanup.
 
 ---
 

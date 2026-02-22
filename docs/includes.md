@@ -299,7 +299,7 @@ Otherwise returns the word unchanged.
 `dashboard.lists.asp`, `default.asp`, `games.mem.asp`, `games.mem.list.asp`,
 `games.mem.pics.asp`, `json.asp`, `label.asp`, `lists.all.json.asp`, `lists.asp`,
 `sentence.asp`, `sentenceEdit.asp`, `sentenceNew.asp`, `sentences.asp`,
-`team.task.new.insert.asp`, `word.asp`, `word.edit.asp`, `word.history.asp`, `word.new.asp`.
+`word.asp`, `word.edit.asp`, `word.history.asp`, `word.new.asp`.
 
 ### Notes
 
@@ -355,7 +355,7 @@ Kept for `team/edit.update.asp` label queries. Should be replaced by `displayToS
 ### Used by
 
 `inc/topTeam.asp`, `json.asp`, `lists.all.json.asp`, `sentenceNew.insert.asp`,
-`team.task.new.insert.asp`, `word.edit.asp`.
+`word.edit.asp`.
 
 ### Notes
 
@@ -376,7 +376,7 @@ Identical content to `inc/functions/string.asp`. Same functions:
 
 ### Used by
 
-`default.asp`, `default.min.asp`, `team.task.edit.update.asp`, `team.task.vote.asp`.
+`default.asp`
 
 ### Notes
 
@@ -484,8 +484,7 @@ Responsive: on mobile (≤768px) the layout collapses to vertical stacking.
 
 ### Purpose
 
-Renders the navigation bar shown on team pages that are served from the root
-folder (`team.tasks.asp`, `team.task.*.asp`, etc.). These pages use `inc/top.asp`
+Renders the navigation bar shown on team pages that are served from the root. These pages use `inc/top.asp`
 for the standard public bar and then `inc/topTeam.asp` to add a team-specific
 search bar and breadcrumb.
 

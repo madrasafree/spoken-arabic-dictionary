@@ -69,16 +69,17 @@ All 301 redirects must be in place before the Cloudflare routing switch in Phase
 
 **Goal:** Prepare the ASP site for safe migration. No new features. Stop the bleeding, not fix everything.
 
-| ID | Task |
-|---|---|
-| P0-1 | Document all existing URL patterns before migration |
-| P0-2 | Create `sitemap.xml` and submit to Google Search Console |
-| P0-3 | Security audit: SQL injection vulnerabilities + admin auth protection |
-| P0-4 | Audit all files — identify dead/unused pages (candidates for deletion) |
-| P0-5 | Complete and reorganize `docs/` folder for new stack readiness |
+| ID | Task | Status |
+|---|---|---|
+| P0-1 | Document all existing URL patterns before migration | |
+| P0-2 | Create `sitemap.xml` and submit to Google Search Console | |
+| P0-3 | Security audit: SQL injection vulnerabilities + admin auth protection | |
+| P0-4 | Audit all files — identify dead/unused pages (candidates for deletion) | **DONE** (`cleanup-dead-code`) |
+| P0-5 | Complete and reorganize `docs/` folder for new stack readiness | **DONE** (`cleanup-dead-code`) |
 
 **Out of scope for Phase 0:**
-- List creation bug fix (unclear scope, not blocking migration)
+- List creation parameter bug (`?LID=` vs `?id=`) (logged in issues)
+- Media edit parameter bug (`?wordID=` vs `?id=`) (logged in issues)
 - Login flow fix (same reason)
 - ASP file folder reorganization (see SEO warning above)
 

@@ -1,0 +1,1900 @@
+
+<!-- Language="VBScript" CodePage="65001"-->
+<!-- Language="VBScript" CodePage="1255"-->
+
+<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+    <title>הרשימות שלכם</title>
+	<meta name="Description" content="רשימות מילים" />
+    
+
+	<meta charset="UTF-8">
+    <meta property="og:site_name" content="מילון ערבית מדוברת"/>
+    <meta property="fb:app_id" content="1067216663704512" />
+    <meta property="og:locale" content="he_IL" />
+    <meta property="og:locale:alternate" content="ar_JO" />
+    <meta property="og:locale:alternate" content="en" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/nav.css" />
+	<link rel="stylesheet" href="css/arabic_constant.css?v=2" />
+	<link rel="stylesheet" href="css/arabic_upto499wide.css" media="(max-width:499px)" />
+    <link rel="stylesheet" href="css/arabic_from500wide.css" media="(min-width:500px)" />
+	<link rel="stylesheet" href="css/arabic_upto499high.css" media="(max-height:499px)" />
+    <link rel="stylesheet" href="css/arabic_from500high.css" media="(min-height:500px)" />
+	<link rel="shortcut icon" href="img/site/favicon.ico" />
+    <link rel="image_src" href="img/site/logo.jpg" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3KCSSVHC9Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3KCSSVHC9Z');
+    </script>
+
+    <style>
+        h2 {margin: 0 4px 4px 0; font-size:1.2em; letter-spacing:0.1em; font-weight:100;}
+        button {margin:4px; min-width:50px; border-radius:20px; border:0px; background:#bad7f3; color:#3e3e3e; padding:4px 10px; box-shadow:#00000047 1px 1px;}
+        button:hover {box-shadow:#00000097 2px 2px;}
+        .hidden {display:none;}
+        .showMore {float:left;}
+        .listsWrapper {display:flex; flex-wrap:wrap; max-width:1000px; margin:0 auto;justify-content:center;}
+        .listsWrapper > div {display:flex; flex-wrap:wrap; justify-content:center; width:700px;}
+        .lists {width:320px; margin:5px auto; background:#6ab4fb36; padding:5px;}
+        
+        .lists > div , .lists > a {display:flex; justify-content:space-between; position:relative; min-height:30px; margin-bottom:5px; padding:2px 10px; background:white; border-radius:0 10px 0 0;}
+        .lists > div:hover {background:#fff786; cursor:pointer; color:#2d2d2d; box-shadow:-2px 1px 2px #00000037;}
+        .lists > div > span {position:relative; top:15%;}
+        .listName {font-size:1em; text-overflow:ellipsis; white-space:nowrap; overflow:hidden; padding-left:25px;}
+        .listData {min-width:70px; font-size:0.75em; padding-top:3px; text-align:left;}
+        .listsMine {background:#84d45c36;}
+        .listsSaved {background:#84d45c36;}
+        .listsNew {background:#fb936a36;}
+        .listsPop {background:#fb936a36;}
+        
+    </style>
+    <script>
+        $(document).ready(function(){
+            // HIDES / UNHIDES
+            $(".hidden").hide();
+            $(".showMore").click(function(){
+                $(this).parents(".lists").find(".hidden").slideToggle();
+                return false;
+            });
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+
+
+<style>
+
+menu {
+  DISPLAY:NONE;
+  background:#f6f9fc;
+  border-left:1px solid #cddbea;
+  height:calc(100vh);
+  font-size:1.4em;
+  position:fixed;
+  top:0;
+  z-index:2;
+  padding:0;
+  margin:0;
+ }
+
+  menu ul {
+    display:flex;
+    flex-direction:column;
+    gap:1%;
+    height:calc(100% - 85px);
+    justify-content:space-around;
+    list-style:none;
+    margin:0;
+    padding:0 45px 45px 45px;
+    width:160px;
+  }
+
+  menu li {
+    background-color:#ffffff;
+    border-radius:10px 0;
+    text-align:center;
+    flex:1;
+    border: 1px solid lightgray;
+    box-shadow: 1px 1px 1px #ccc;
+  }
+
+  menu li:hover {
+    cursor:pointer;
+    background-color:#ddd;
+  }
+
+  menu div {
+  display:flex;
+  padding:0;
+  margin:0;
+  height:100%;
+  justify-content: center;
+  align-items: center;
+  }
+
+menu div p {
+  align-self:center;
+  flex:1;
+  margin:0;
+}
+menu li:first-child p, menu li:last-child p{
+  font-size:18px;
+  }
+@media (max-width:600px) {
+  menu {
+    width:100%;
+    padding:0;
+  }
+  menu ul {
+    width: calc(100% - 60px);
+    padding: 0 30px 40px 30px;
+    height: calc(100% - 100px); 
+     }
+
+    menu li:first-child p, menu li:last-child p{
+  font-size:1em;
+  }
+}
+
+
+
+  #bar-search-container {
+    background-color: #f6f9fc; 
+    border-bottom: 1px solid #cddbea;
+    position: sticky;
+    top:0;
+    z-index:2;
+  }
+
+  #bar {
+    padding-bottom:4px;
+    width:100%;
+  }
+
+  #bar-menu {
+    cursor: pointer;
+    flex:0 0 40px;
+  }
+
+  #bar-logo {
+    cursor: pointer;
+    flex:0 0 40px;
+    padding-left:3px;
+  }
+  
+  #bar-search {
+    flex:1;
+    height:40px;
+    margin:0 3px;
+  }
+  
+  #bar-search-flex {
+    display:flex;
+    height:40px;
+  }
+  
+  #siteTitle {
+    background: #f6f9fc;
+    display:flex; 
+    align-items:center; 
+    justify-content:center; 
+    font-size:large;
+    letter-spacing:0.2em;
+    padding:0.2em;
+  }
+
+  #searchBoxTop {
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    max-width:600px;
+    background: white; 
+    display: block; 
+    width: 100%; 
+    height: 94%; 
+    padding: 3px 6px; 
+    border: 1px dotted gray; 
+    font-size:1.5em;
+    margin:0 auto;
+    background-image:url(img/site/search.png);
+    background-repeat:no-repeat;
+    background-position:left;
+    background-size:24px;
+  }
+  
+  #searchBoxTop::placeholder {
+    color:#bbb;
+    padding-right:10px;
+    font-size:0.8em;
+  }
+
+  #barSearchTools {
+    DISPLAY:NONE;
+    background-color: #f6f9fc;
+    padding-top:5px;
+  }
+
+  #barSearchTeaser, .barSearchTools {
+    max-width:600px;
+    margin:0 auto;  
+    }
+
+  #barSearchTeaser {
+    font-size: large;
+  }
+
+  .barSearchTools {
+    visibility:HIDDEN;
+    display: grid;
+    grid-template-columns: 3fr 6fr;
+    grid-column-gap: 10px;
+  }
+
+#clear-input, #search-button {
+    border: 0;
+    background: NONE;
+    cursor: pointer;
+    padding:5px;
+    border-radius:5px;
+  }
+
+  #clear-input {
+    /*visibility:HIDDEN;*/
+    font-family: 'Material Icons';    
+    font-size: 20px;
+    background: #c7c7c7;
+    color: black;
+  }
+
+  #clear-input:hover {
+    background: gray;
+    color: white;
+  }
+
+  #search-button {
+    /*visibility:HIDDEN;*/
+    font-size: 30px;
+    background: #5b7a99;
+    color:white;
+  }
+
+  #search-button:hover {
+    background: #d4eaff;
+    color: #5b7a99;
+  }
+
+  /* loading animation START - this code is DUPLIC from edit.css - MERGE needed */
+  .lds-ring {
+      display: inline-block;
+      position: relative;
+      width: 40px;
+      height: 40px;
+  }
+  .lds-ring div {
+      box-sizing: border-box;
+      display: block;
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      margin: 4px;
+      border: 4px solid #fff;
+      border-radius: 50%;
+      animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+      border-color: #82b1de transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+      animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+      animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+      animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+      0% {
+      transform: rotate(0deg);
+      }
+      100% {
+      transform: rotate(360deg);
+      }
+  }
+  /* loading animation END */  
+
+  @media only screen and (max-width:700px) {
+    .hideOnMobile {display:none;}
+  }  
+</style>
+
+<div id="siteTitle">
+<a href=".">
+  מילון ערבית מדוברת
+  </a>
+</div>
+<form id="bar-search-container" action="." autocomplete="off">
+  <div dir="rtl" id="bar">
+    <div id="bar-search-flex">
+      <div id="bar-menu">
+       <span class="material-icons" id="menuOpen" style="font-size: 40px; color: #5b7a99;">menu</span>
+      </div>
+      <div id="bar-search">
+        <label for="searchBoxTop" style="DISPLAY:NONE;"> </label>
+        <input id="searchBoxTop" name="searchString" type="search" value="" />
+      </div>
+      <div id="bar-logo">
+        <a href=".">
+          <img style="width:100%;" src="img/site/milon-logo.png" alt="logo" />
+        </a>
+      </div>
+    </div>
+    <div id="barSearchTools">
+      <div class="barSearchTools" style="height:0;">
+        <button id="clear-input" type="button" title="ניקוי חיפוש">
+          <span class="material-icons-outlined">close</span>
+        </button>
+        <input type="submit" style="DISPLAY:NONE;">
+        <button id="search-button" title="חפשו במילון">
+          יאללה!
+        </button>
+      </div>
+      <div id="barSearchTeaser">
+        <div style="text-align:center; border:0; line-height:1.5; padding:4px;">
+            חפשו <span class="heb" style="font-size:larger; float:none;">מילה</span>, <span class="arb">כִּלְמֵה</span> <span class="or">או</span> <span class="arb">كلمة</span>
+        </div>
+      </div>
+    </div>
+    <div id="loadingAnm" style="DISPLAY:NONE; text-align:center;">
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+  </div>
+</form>
+
+
+
+
+<div id="container">
+
+    <menu>
+           <span class="material-icons" id="menuClose" style="cursor: pointer;font-size: 50px; color: #5b7a99;">close</span>
+
+      <ul>
+        <li><div onclick="window.location.href='default.asp'"><p>דף הבית של המילון</p></div></li>
+        <li><div onclick="window.location.href='labels.asp'"><p>רשימת נושאים</p></div></li>
+        <li><div onclick="window.location.href='lists.all.asp'"><p>רשימות אישיות</p></div></li>
+        <li><div onclick="window.location.href='games.mem.asp'"><p>משחק זיכרון</p></div></li>
+        <li><div onclick="window.location.href='guide.asp'"><p>מדריך שימוש</p></div></li>
+        <li><div onclick="window.location.href='about.asp'"><p>אודות המילון</p></div></li>
+        <li><div onclick="window.location.href='https://madrasafree.com'"><p>לאתר הבית של מדרסה</p></div></li>
+      </ul>
+    </menu>
+
+    <div id="nav" class="navNew" style="visibility:hidden;z-index:3;">
+        <ul>
+            <li><a href="default.asp">דף הבית של המילון</a></li>
+            <li class="hr"></li>
+            <li><a href="labels.asp">רשימות נושאים<span style="font-size:80%;"></span></a></li>
+            <li><a href="lists.all.asp">רשימות אישיות</a></li>
+            <li><a href="games.mem.asp">משחק זיכרון</a></li>
+            <li><a href="guide.asp">מדריך שימוש <span style="font-size:80%;"></span></a></li>
+            <li><a href="about.asp">אודות המילון</a></li>
+            <li class="hr"></li>
+            <li><a href="https://madrasafree.com">לאתר הבית של מדרסה</a></li>
+
+        </ul>
+        <span style="position:absolute; top:10px; left:0;" onclick="toggleMenu();"><a href="#">x</a></span>
+    </div>
+
+    <br />
+
+    <script>
+
+    $(function(){
+    $("#menuOpen, #menuClose").click(function(){
+      $("menu").toggle("slow");
+      // $("#menuOpen, #menuClose").toggle();
+    });
+    });
+
+      $("#searchBoxTop").focusin(function(){
+        $("#bar-menu, #bar-logo").addClass("hideOnMobile");
+        $("#barSearchTools").slideDown();
+      });
+       $("body").on('click',function(e){
+        $("#bar-menu, #bar-logo").removeClass("hideOnMobile");
+        $("#barSearchTools").slideUp();
+      });
+      
+      $("#bar-search-container").keydown(function(e) {
+        if (e.key === "Escape" || e.key === "Esc") {
+          e.preventDefault();
+          document.activeElement.blur();
+          $("#barSearchTools").slideUp();
+        }
+        if (e.key === "Enter") {
+          var isEmpty = isInputEmpty();
+          if(isEmpty) e.preventDefault();
+        }
+      });
+      
+      $("#searchBoxTop").on("input focus",function(){
+        var isToolsVisable=false;
+        if ($(".barSearchTools").css("visibility") == "visible") isToolsVisable=true;
+        if ((!isInputEmpty()==true) && (isToolsVisable==false)) {
+            $(".barSearchTools").css({visibility:"visible",opacity:0.0}).animate({opacity:1.0});
+            $("#barSearchTeaser").css({visibility:"hidden"});
+        } else if ((isInputEmpty()==true) && (isToolsVisable==true)) {
+            $(".barSearchTools").animate({opacity:0.0},150,function(){$(".barSearchTools").css({visibility:"hidden"})});
+            $("#barSearchTeaser").css({visibility:"visible",opacity:0.0}).animate({opacity:1.0});
+        }
+      });
+
+      $("#searchBoxTop, #clear-input, #search-button").on("click",function(e){
+        e.stopPropagation(); // ignores clicking on the other elements "behind" the selected one.
+      });
+
+      $("#clear-input").on("click",function(e){
+        $("#searchBoxTop").val('').focus();
+      });
+
+      function isInputEmpty(){return $("#searchBoxTop").val().trim().length == 0;}
+
+      $("#bar-search-container").on("submit",function(e){
+          var isEmpty = isInputEmpty();
+          if(isEmpty) {
+            e.preventDefault(); //prevent the default action
+            $("#searchBoxTop").focus();
+            return false;
+          } else {
+            $("#loadingAnm").show();
+            $("#barSearchTools").hide();
+            return true;
+          }
+      });
+
+   </script>
+
+
+
+<div id="pTitle">
+    הרשימות שלכם
+</div>
+
+<div class="listsWrapper">
+    <div>
+        <div class="lists listsMine">
+        <h2>רשימות שיצרתי</h2>
+                    <div onclick="location.href='lists.asp?id=123';">
+                        <span class="listName">אונומטופיה / תצליל</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div onclick="location.href='lists.asp?id=285';">
+                        <span class="listName">אליחי - שיעור 16</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div onclick="location.href='lists.asp?id=291';">
+                        <span class="listName">אליחי - שיעור 17</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div onclick="location.href='lists.asp?id=307';">
+                        <span class="listName">אליחי - שיעור 18</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div onclick="location.href='lists.asp?id=308';">
+                        <span class="listName">אליחי - שיעור 19</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=313';">
+                        <span class="listName">אליחי - שיעור 20</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=327';">
+                        <span class="listName">אליחי - שיעור 21</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=332';">
+                        <span class="listName">אליחי - שיעור 22</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=336';">
+                        <span class="listName">אליחי - שיעור 23</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=346';">
+                        <span class="listName">אליחי - שיעור 24</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=347';">
+                        <span class="listName">אליחי - שיעור 25</span>
+                        <span class="material-icons" style="float:left;">lock_open
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=395';">
+                        <span class="listName">אליחי - שיעור 26</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=182';">
+                        <span class="listName">אקטואליה 2020 - קורונה</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=287';">
+                        <span class="listName">אקטואליה 2021 - מבצע שומר חומות ומהומות ברחבי הארץ</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=233';">
+                        <span class="listName">האם זה צריך להיות ערך במילון</span>
+                        <span class="material-icons" style="float:left;">group
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=80';">
+                        <span class="listName">האמבטיה - אל קיטאר - יח׳ 1</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=112';">
+                        <span class="listName">האמבטיה - ויפ - יח׳ 1</span>
+                        <span class="material-icons" style="float:left;">lock_open
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=119';">
+                        <span class="listName">האמבטיה - ויפ - יח׳ 3</span>
+                        <span class="material-icons" style="float:left;">lock_open
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=135';">
+                        <span class="listName">האמבטיה - ויפ - יח׳ 4</span>
+                        <span class="material-icons" style="float:left;">lock_open
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=102';">
+                        <span class="listName">האמבטיה - עבאס 14 - יח׳ 1</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=103';">
+                        <span class="listName">האמבטיה - עבאס 14 - יח׳ 2</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=104';">
+                        <span class="listName">האמבטיה - עבאס 14 - יח׳ 3</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=126';">
+                        <span class="listName">האמבטיה - עבאס 14 - יח׳ 4</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=134';">
+                        <span class="listName">האמבטיה - עבאס 14 - יח׳ 5</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=183';">
+                        <span class="listName">האמבטיה - עבאס 14ב - יח׳ 1</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=202';">
+                        <span class="listName">האמבטיה - עבאס 14ב - יח׳ 2</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=207';">
+                        <span class="listName">האמבטיה - עבאס 14ב - יח׳ 3</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=210';">
+                        <span class="listName">האמבטיה - עבאס 14ב - יח׳ 4</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=211';">
+                        <span class="listName">האמבטיה - עבאס 14ב - יח׳ 5 - ״תאמא 38״</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=221';">
+                        <span class="listName">האמבטיה - עבאס 14ב - יח׳ 6</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=224';">
+                        <span class="listName">האמבטיה - עבאס 14ב - יח׳ 7</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=205';">
+                        <span class="listName">האמבטיה רמה 3 - מילים שונות</span>
+                        <span class="material-icons" style="float:left;">lock_open
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=32';">
+                        <span class="listName">זכר נקבה הפוכים</span>
+                        <span class="material-icons" style="float:left;">lock_open
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=37';">
+                        <span class="listName">חג המולד - Christmas</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=29';">
+                        <span class="listName">חורף</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=35';">
+                        <span class="listName">חנוכה</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=87';">
+                        <span class="listName">לבדיקה</span>
+                        <span class="material-icons" style="float:left;">lock
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=52';">
+                        <span class="listName">לזכור</span>
+                        <span class="material-icons" style="float:left;">lock
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=39';">
+                        <span class="listName">מגדל בבל - משחק</span>
+                        <span class="material-icons" style="float:left;">lock_open
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=3';">
+                        <span class="listName">מונחים מעולם הצילום</span>
+                        <span class="material-icons" style="float:left;">lock_open
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=161';">
+                        <span class="listName">משחקים כדורגל</span>
+                        <span class="material-icons" style="float:left;">lock_open
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=290';">
+                        <span class="listName">מתכון תפוחי אדמה בתנור</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=303';">
+                        <span class="listName">סתיו</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=222';">
+                        <span class="listName">ערכים רגישים ו/או בעייתיים</span>
+                        <span class="material-icons" style="float:left;">lock
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=58';">
+                        <span class="listName">פורים</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=5';">
+                        <span class="listName">פעלים בסיסיים</span>
+                        <span class="material-icons" style="float:left;">lock_open
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=1';">
+                        <span class="listName">קטאן - משחק לוח</span>
+                        <span class="material-icons" style="float:left;">lock_open
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=116';">
+                        <span class="listName">קיץ - מילים חיוביות</span>
+                        <span class="material-icons" style="float:left;">lock_open
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=283';">
+                        <span class="listName">קצת ערבית - חדש ו/או לזכור</span>
+                        <span class="material-icons" style="float:left;">lock_open
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=59';">
+                        <span class="listName">רמדאן | رَمَضَان</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div class="hidden" onclick="location.href='lists.asp?id=179';">
+                        <span class="listName">רשימת הקניות של רונן</span>
+                        <span class="material-icons" style="float:left;">lock_open
+                        </span>
+                    </div>
+                    <button class="showMore listsMine" style="background:#84d45c66;">⇵</button>
+            <button class="listsMine" style="background:#84d45c66;" onclick="location.href='listsNew.asp';">רשימה חדשה</button>
+        </div>
+
+        <div class="lists listsSaved">
+        <h2>המועדפים שלי</h2>
+                    <div onclick="location.href='lists.asp?id=52';">
+                        <span class="listName">לזכור</span>
+                        <span class="material-icons" style="float:left;">lock
+                        </span>
+                    </div>
+                    <div onclick="location.href='lists.asp?id=83';">
+                        <span class="listName">כוכבי הלכת</span>
+                        <span class="material-icons" style="float:left;">lock_open
+                        </span>
+                    </div>
+                    <div onclick="location.href='lists.asp?id=82';">
+                        <span class="listName">חלל ואסטרונומיה</span>
+                        <span class="material-icons" style="float:left;">lock_open
+                        </span>
+                    </div>
+                    <div onclick="location.href='lists.asp?id=336';">
+                        <span class="listName">אליחי - שיעור 23</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+                    <div onclick="location.href='lists.asp?id=332';">
+                        <span class="listName">אליחי - שיעור 22</span>
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </div>
+        </div>
+    </div>
+    <div>
+        <div class="lists listsNew">
+            <h2>הכי חדשות</h2>
+                <div onclick="location.href='lists.asp?id=546';">
+                    <span class="listName" title="מה אתה אומר">מה אתה אומר</span>
+                    <span class="listData">2024-07-21
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </span>
+                </div>
+                <div onclick="location.href='lists.asp?id=540';">
+                    <span class="listName" title="מילים 8">מילים 8</span>
+                    <span class="listData">2024-02-27
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </span>
+                </div>
+                <div onclick="location.href='lists.asp?id=538';">
+                    <span class="listName" title="מילים 7">מילים 7</span>
+                    <span class="listData">2023-11-26
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </span>
+                </div>
+                <div onclick="location.href='lists.asp?id=534';">
+                    <span class="listName" title="מילים 6">מילים 6</span>
+                    <span class="listData">2023-09-02
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </span>
+                </div>
+                <div onclick="location.href='lists.asp?id=530';">
+                    <span class="listName" title="שמות עצם">שמות עצם</span>
+                    <span class="listData">2023-09-02
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </span>
+                </div>
+                <div class="hidden" onclick="location.href='lists.asp?id=529';">
+                    <span class="listName" title="מילות קישור ויחס">מילות קישור ויחס</span>
+                    <span class="listData">2023-09-02
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </span>
+                </div>
+                <div class="hidden" onclick="location.href='lists.asp?id=528';">
+                    <span class="listName" title="רגשות ותיאורים">רגשות ותיאורים</span>
+                    <span class="listData">2023-09-02
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </span>
+                </div>
+                <div class="hidden" onclick="location.href='lists.asp?id=527';">
+                    <span class="listName" title="מילים ברנדום">מילים ברנדום</span>
+                    <span class="listData">2023-08-26
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </span>
+                </div>
+                <div class="hidden" onclick="location.href='lists.asp?id=523';">
+                    <span class="listName" title="דני - אימון 16">דני - אימון 16</span>
+                    <span class="listData">2023-07-18
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </span>
+                </div>
+                <div class="hidden" onclick="location.href='lists.asp?id=522';">
+                    <span class="listName" title="דני - אימון 15">דני - אימון 15</span>
+                    <span class="listData">2023-07-04
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </span>
+                </div>
+            <button class="showMore listsNew" style="background:#fb936a66;">⇵</button>
+        </div>
+
+        <div class="lists listsPop">
+            <h2>הכי נצפות</h2>
+                <div onclick="location.href='lists.asp?id=13';">
+                    <span class="listName" title="שמות ערביים">שמות ערביים</span>
+                    <span class="listData" title="מספר צפיות">50,004
+                        <span class="material-icons" style="float:left;">group
+                        </span>
+                    </span>
+                </div>
+                <div onclick="location.href='lists.asp?id=389';">
+                    <span class="listName" title="אוצר מילים">אוצר מילים</span>
+                    <span class="listData" title="מספר צפיות">13,070
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </span>
+                </div>
+                <div onclick="location.href='lists.asp?id=364';">
+                    <span class="listName" title="ערבית מדוברת - בטחון 1">ערבית מדוברת - בטחון 1</span>
+                    <span class="listData" title="מספר צפיות">10,832
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </span>
+                </div>
+                <div onclick="location.href='lists.asp?id=59';">
+                    <span class="listName" title="רמדאן | رَمَضَان">רמדאן | رَمَضَان</span>
+                    <span class="listData" title="מספר צפיות">10,302
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </span>
+                </div>
+                <div onclick="location.href='lists.asp?id=81';">
+                    <span class="listName" title="תבלינים - תַוַאבֵּל توابل">תבלינים - תַוַאבֵּל توابل</span>
+                    <span class="listData" title="מספר צפיות">9,404
+                        <span class="material-icons" style="float:left;">group
+                        </span>
+                    </span>
+                </div>
+                <div class="hidden" onclick="location.href='lists.asp?id=89';">
+                    <span class="listName" title="מהמטבח הערבי">מהמטבח הערבי</span>
+                    <span class="listData" title="מספר צפיות">8,793
+                        <span class="material-icons" style="float:left;">group
+                        </span>
+                    </span>
+                </div>
+                <div class="hidden" onclick="location.href='lists.asp?id=55';">
+                    <span class="listName" title="יום הולדת - עיד מילאד">יום הולדת - עיד מילאד</span>
+                    <span class="listData" title="מספר צפיות">8,369
+                        <span class="material-icons" style="float:left;">group
+                        </span>
+                    </span>
+                </div>
+                <div class="hidden" onclick="location.href='lists.asp?id=54';">
+                    <span class="listName" title="מדינות ערב">מדינות ערב</span>
+                    <span class="listData" title="מספר צפיות">8,230
+                        <span class="material-icons" style="float:left;">group
+                        </span>
+                    </span>
+                </div>
+                <div class="hidden" onclick="location.href='lists.asp?id=92';">
+                    <span class="listName" title="אליחי - שיעור 42">אליחי - שיעור 42</span>
+                    <span class="listData" title="מספר צפיות">8,123
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </span>
+                </div>
+                <div class="hidden" onclick="location.href='lists.asp?id=366';">
+                    <span class="listName" title="מילות חיבור - בטחון 2">מילות חיבור - בטחון 2</span>
+                    <span class="listData" title="מספר צפיות">8,081
+                        <span class="material-icons" style="float:left;">public
+                        </span>
+                    </span>
+                </div>
+            <button class="showMore listsPop" style="background:#fb936a66;">⇵</button>
+        </div>
+
+    
+
+<h3>אינדקס רשימות אישיות</h3>
+<div style="max-width:600px; margin:0 auto; text-align:center;">
+    <p>ישנן כרגע 533 רשימות</p>
+</div>
+
+<div class="table" style="text-align:center; padding:10px 0px;">
+    <input id="searchList" />
+    <div id="listSelect">
+    </div>
+</div>
+            <div class="lists"><h2>E</h2>
+        <div onclick="location.href='lists.asp?id=382'">
+            <span class="listName" title="El bulbul">El bulbul</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+                </div>
+            <div class="lists"><h2>א</h2>
+        <div onclick="location.href='lists.asp?id=350'">
+            <span class="listName" title="אונו 1">אונו 1</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=352'">
+            <span class="listName" title="אונו 2">אונו 2</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=349'">
+            <span class="listName" title="אונו 3">אונו 3</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=123'">
+            <span class="listName" title="אונומטופיה / תצליל">אונומטופיה / תצליל</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=24'">
+            <span class="listName" title="אוניברסיטה">אוניברסיטה</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">group
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=389'">
+            <span class="listName" title="אוצר מילים">אוצר מילים</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=50'">
+            <span class="listName" title="אירוויזיון">אירוויזיון</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">group
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=285'">
+            <span class="listName" title="אליחי - שיעור 16">אליחי - שיעור 16</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=291'">
+            <span class="listName" title="אליחי - שיעור 17">אליחי - שיעור 17</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=307'">
+            <span class="listName" title="אליחי - שיעור 18">אליחי - שיעור 18</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=308'">
+            <span class="listName" title="אליחי - שיעור 19">אליחי - שיעור 19</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=313'">
+            <span class="listName" title="אליחי - שיעור 20">אליחי - שיעור 20</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=327'">
+            <span class="listName" title="אליחי - שיעור 21">אליחי - שיעור 21</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=332'">
+            <span class="listName" title="אליחי - שיעור 22">אליחי - שיעור 22</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=336'">
+            <span class="listName" title="אליחי - שיעור 23">אליחי - שיעור 23</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=346'">
+            <span class="listName" title="אליחי - שיעור 24">אליחי - שיעור 24</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=395'">
+            <span class="listName" title="אליחי - שיעור 26">אליחי - שיעור 26</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=91'">
+            <span class="listName" title="אליחי - שיעור 41">אליחי - שיעור 41</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=92'">
+            <span class="listName" title="אליחי - שיעור 42">אליחי - שיעור 42</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=325'">
+            <span class="listName" title="אליחי - שיעור 43">אליחי - שיעור 43</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=355'">
+            <span class="listName" title="אליחי - שיעור 44">אליחי - שיעור 44</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=386'">
+            <span class="listName" title="אליחי - שיעור 45">אליחי - שיעור 45</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=182'">
+            <span class="listName" title="אקטואליה 2020 - קורונה">אקטואליה 2020 - קורונה</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=287'">
+            <span class="listName" title="אקטואליה 2021 - מבצע שומר חומות ומהומות ברחבי הארץ">אקטואליה 2021 - מבצע שומר חומות ומהומות ברחבי הארץ</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+                    <button class="showMore">⇵</button>
+                </div>
+            <div class="lists"><h2>ד</h2>
+        <div onclick="location.href='lists.asp?id=431'">
+            <span class="listName" title="דני - אימון 1">דני - אימון 1</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=506'">
+            <span class="listName" title="דני - אימון 10">דני - אימון 10</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=507'">
+            <span class="listName" title="דני - אימון 11">דני - אימון 11</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=511'">
+            <span class="listName" title="דני - אימון 12">דני - אימון 12</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=513'">
+            <span class="listName" title="דני - אימון 13">דני - אימון 13</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=516'">
+            <span class="listName" title="דני - אימון 14">דני - אימון 14</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=522'">
+            <span class="listName" title="דני - אימון 15">דני - אימון 15</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=523'">
+            <span class="listName" title="דני - אימון 16">דני - אימון 16</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=446'">
+            <span class="listName" title="דני - אימון 2">דני - אימון 2</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=495'">
+            <span class="listName" title="דני - אימון 3">דני - אימון 3</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=500'">
+            <span class="listName" title="דני - אימון 4">דני - אימון 4</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=501'">
+            <span class="listName" title="דני - אימון 5">דני - אימון 5</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=502'">
+            <span class="listName" title="דני - אימון 6">דני - אימון 6</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=503'">
+            <span class="listName" title="דני - אימון 7">דני - אימון 7</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=504'">
+            <span class="listName" title="דני - אימון 8">דני - אימון 8</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=505'">
+            <span class="listName" title="דני - אימון 9">דני - אימון 9</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+                    <button class="showMore">⇵</button>
+                </div>
+            <div class="lists"><h2>ה</h2>
+        <div onclick="location.href='lists.asp?id=233'">
+            <span class="listName" title="האם זה צריך להיות ערך במילון">האם זה צריך להיות ערך במילון</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">group
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=80'">
+            <span class="listName" title="האמבטיה - אל קיטאר - יח׳ 1">האמבטיה - אל קיטאר - יח׳ 1</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=102'">
+            <span class="listName" title="האמבטיה - עבאס 14 - יח׳ 1">האמבטיה - עבאס 14 - יח׳ 1</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=103'">
+            <span class="listName" title="האמבטיה - עבאס 14 - יח׳ 2">האמבטיה - עבאס 14 - יח׳ 2</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=104'">
+            <span class="listName" title="האמבטיה - עבאס 14 - יח׳ 3">האמבטיה - עבאס 14 - יח׳ 3</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=126'">
+            <span class="listName" title="האמבטיה - עבאס 14 - יח׳ 4">האמבטיה - עבאס 14 - יח׳ 4</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=134'">
+            <span class="listName" title="האמבטיה - עבאס 14 - יח׳ 5">האמבטיה - עבאס 14 - יח׳ 5</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=183'">
+            <span class="listName" title="האמבטיה - עבאס 14ב - יח׳ 1">האמבטיה - עבאס 14ב - יח׳ 1</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=202'">
+            <span class="listName" title="האמבטיה - עבאס 14ב - יח׳ 2">האמבטיה - עבאס 14ב - יח׳ 2</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=207'">
+            <span class="listName" title="האמבטיה - עבאס 14ב - יח׳ 3">האמבטיה - עבאס 14ב - יח׳ 3</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=210'">
+            <span class="listName" title="האמבטיה - עבאס 14ב - יח׳ 4">האמבטיה - עבאס 14ב - יח׳ 4</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=211'">
+            <span class="listName" title="האמבטיה - עבאס 14ב - יח׳ 5 - ״תאמא 38״">האמבטיה - עבאס 14ב - יח׳ 5 - ״תאמא 38״</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=221'">
+            <span class="listName" title="האמבטיה - עבאס 14ב - יח׳ 6">האמבטיה - עבאס 14ב - יח׳ 6</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=224'">
+            <span class="listName" title="האמבטיה - עבאס 14ב - יח׳ 7">האמבטיה - עבאס 14ב - יח׳ 7</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+                    <button class="showMore">⇵</button>
+                </div>
+            <div class="lists"><h2>ח</h2>
+        <div onclick="location.href='lists.asp?id=37'">
+            <span class="listName" title="חג המולד - Christmas">חג המולד - Christmas</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=7'">
+            <span class="listName" title="חג סוכות - עִיד אֵלְעֻרְש - عيد العرش">חג סוכות - עִיד אֵלְעֻרְש - عيد العرش</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">group
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=138'">
+            <span class="listName" title="חג שבועות">חג שבועות</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">group
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=29'">
+            <span class="listName" title="חורף">חורף</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=153'">
+            <span class="listName" title="חַיאת עילתנא: מש עאג׳בנא אלעג׳ב">חַיאת עילתנא: מש עאג׳בנא אלעג׳ב</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=35'">
+            <span class="listName" title="חנוכה">חנוכה</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+                    <button class="showMore">⇵</button>
+                </div>
+            <div class="lists"><h2>ט</h2>
+        <div onclick="location.href='lists.asp?id=180'">
+            <span class="listName" title="ט״ו בשבט">ט״ו בשבט</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">group
+                </span>
+            </span>
+        </div>
+                </div>
+            <div class="lists"><h2>י</h2>
+        <div onclick="location.href='lists.asp?id=55'">
+            <span class="listName" title="יום הולדת - עיד מילאד">יום הולדת - עיד מילאד</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">group
+                </span>
+            </span>
+        </div>
+                </div>
+            <div class="lists"><h2>כ</h2>
+        <div onclick="location.href='lists.asp?id=445'">
+            <span class="listName" title="כוכבי המדבר 1">כוכבי המדבר 1</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+                </div>
+            <div class="lists"><h2>ל</h2>
+        <div onclick="location.href='lists.asp?id=425'">
+            <span class="listName" title="ליסאן 1">ליסאן 1</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=377'">
+            <span class="listName" title="ליסאן ב׳1 - במרחב הציבורי">ליסאן ב׳1 - במרחב הציבורי</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=427'">
+            <span class="listName" title="ליסאן ב׳1 - יחידה 1">ליסאן ב׳1 - יחידה 1</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=449'">
+            <span class="listName" title="ליסאן ב׳1 - עתיד ירוק">ליסאן ב׳1 - עתיד ירוק</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=351'">
+            <span class="listName" title="ליסאן ב׳1 אירועים משפחתיים">ליסאן ב׳1 אירועים משפחתיים</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=392'">
+            <span class="listName" title="ליסאן ב׳1 זכויות, מגיע לי">ליסאן ב׳1 זכויות, מגיע לי</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=453'">
+            <span class="listName" title="ליסאן ב׳1 עבודה ואילוצים">ליסאן ב׳1 עבודה ואילוצים</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=441'">
+            <span class="listName" title="ליסאן ב׳1 שאיפות לעתיד">ליסאן ב׳1 שאיפות לעתיד</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+                    <button class="showMore">⇵</button>
+                </div>
+            <div class="lists"><h2>מ</h2>
+        <div onclick="location.href='lists.asp?id=54'">
+            <span class="listName" title="מדינות ערב">מדינות ערב</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">group
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=546'">
+            <span class="listName" title="מה אתה אומר">מה אתה אומר</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=89'">
+            <span class="listName" title="מהמטבח הערבי">מהמטבח הערבי</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">group
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=366'">
+            <span class="listName" title="מילות חיבור - בטחון 2">מילות חיבור - בטחון 2</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=529'">
+            <span class="listName" title="מילות קישור ויחס">מילות קישור ויחס</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=468'">
+            <span class="listName" title="מילים">מילים</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=362'">
+            <span class="listName" title="מילים 1">מילים 1</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=479'">
+            <span class="listName" title="מילים 2">מילים 2</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=483'">
+            <span class="listName" title="מילים 3">מילים 3</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=493'">
+            <span class="listName" title="מילים 4">מילים 4</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=510'">
+            <span class="listName" title="מילים 5">מילים 5</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=534'">
+            <span class="listName" title="מילים 6">מילים 6</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=538'">
+            <span class="listName" title="מילים 7">מילים 7</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=540'">
+            <span class="listName" title="מילים 8">מילים 8</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=527'">
+            <span class="listName" title="מילים ברנדום">מילים ברנדום</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=26'">
+            <span class="listName" title="מילים לא ערביות">מילים לא ערביות</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">group
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=353'">
+            <span class="listName" title="מילים מאלנור מכאנו">מילים מאלנור מכאנו</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=498'">
+            <span class="listName" title="מילים משירים">מילים משירים</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=407'">
+            <span class="listName" title="מילים קבוצת תרגול + ישנות">מילים קבוצת תרגול + ישנות</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=405'">
+            <span class="listName" title="מילים שזוכרת">מילים שזוכרת</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=508'">
+            <span class="listName" title="מילים שימושיות לעבודה בחקלאות">מילים שימושיות לעבודה בחקלאות</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=381'">
+            <span class="listName" title="מלים שימושיות למורה">מלים שימושיות למורה</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=290'">
+            <span class="listName" title="מתכון תפוחי אדמה בתנור">מתכון תפוחי אדמה בתנור</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+                    <button class="showMore">⇵</button>
+                </div>
+            <div class="lists"><h2>ס</h2>
+        <div onclick="location.href='lists.asp?id=303'">
+            <span class="listName" title="סתיו">סתיו</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+                </div>
+            <div class="lists"><h2>ע</h2>
+        <div onclick="location.href='lists.asp?id=364'">
+            <span class="listName" title="ערבית מדוברת - בטחון 1">ערבית מדוברת - בטחון 1</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=418'">
+            <span class="listName" title="ערבית ספרותית">ערבית ספרותית</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+                </div>
+            <div class="lists"><h2>פ</h2>
+        <div onclick="location.href='lists.asp?id=58'">
+            <span class="listName" title="פורים">פורים</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=115'">
+            <span class="listName" title="פסח - עִיד אֵלְפִצְח">פסח - עִיד אֵלְפִצְח</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">group
+                </span>
+            </span>
+        </div>
+                </div>
+            <div class="lists"><h2>צ</h2>
+        <div onclick="location.href='lists.asp?id=48'">
+            <span class="listName" title="ציפורים - טְיוּר طيور">ציפורים - טְיוּר طيور</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">group
+                </span>
+            </span>
+        </div>
+                </div>
+            <div class="lists"><h2>ק</h2>
+        <div onclick="location.href='lists.asp?id=367'">
+            <span class="listName" title="קבוצת מדרסה: הבית שלנו">קבוצת מדרסה: הבית שלנו</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=369'">
+            <span class="listName" title="קבוצת מדרסה: ללכת לים">קבוצת מדרסה: ללכת לים</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=358'">
+            <span class="listName" title="קבוצת מדרסה: קיץ">קבוצת מדרסה: קיץ</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=339'">
+            <span class="listName" title="קניות">קניות</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+                </div>
+            <div class="lists"><h2>ר</h2>
+        <div onclick="location.href='lists.asp?id=528'">
+            <span class="listName" title="רגשות ותיאורים">רגשות ותיאורים</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=59'">
+            <span class="listName" title="רמדאן | رَمَضَان">רמדאן | رَمَضَان</span>
+            <span class="listData">admin
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+                </div>
+            <div class="lists"><h2>ש</h2>
+        <div onclick="location.href='lists.asp?id=88'">
+            <span class="listName" title="שחמט شطرنج שַטְרַנְג׳">שחמט شطرنج שַטְרַנְג׳</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">group
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=404'">
+            <span class="listName" title="שיעור 1  ומילים של קבוצת תרגול">שיעור 1  ומילים של קבוצת תרגול</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=434'">
+            <span class="listName" title="שיעור 10 מדרסה ממשיכים">שיעור 10 מדרסה ממשיכים</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=408'">
+            <span class="listName" title="שיעור 3 מדרסה ממשיכים">שיעור 3 מדרסה ממשיכים</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div onclick="location.href='lists.asp?id=403'">
+            <span class="listName" title="שיעור 4 מדרסה ממשיכים">שיעור 4 מדרסה ממשיכים</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=415'">
+            <span class="listName" title="שיעור 5 מדרסה ממשיכים">שיעור 5 מדרסה ממשיכים</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=421'">
+            <span class="listName" title="שיעור 6 מדרסה ממשיכים">שיעור 6 מדרסה ממשיכים</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=422'">
+            <span class="listName" title="שיעור 7 מדרסה ממשיכים">שיעור 7 מדרסה ממשיכים</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=428'">
+            <span class="listName" title="שיעור 8 מדרסה ממשיכים">שיעור 8 מדרסה ממשיכים</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=430'">
+            <span class="listName" title="שיעור 9 מדרסה ממשיכים">שיעור 9 מדרסה ממשיכים</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=530'">
+            <span class="listName" title="שמות עצם">שמות עצם</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+        <div class="hidden" onclick="location.href='lists.asp?id=13'">
+            <span class="listName" title="שמות ערביים">שמות ערביים</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">group
+                </span>
+            </span>
+        </div>
+                    <button class="showMore">⇵</button>
+                </div>
+            <div class="lists"><h2>ת</h2>
+        <div onclick="location.href='lists.asp?id=81'">
+            <span class="listName" title="תבלינים - תַוַאבֵּל توابل">תבלינים - תַוַאבֵּל توابل</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">group
+                </span>
+            </span>
+        </div>
+                </div>
+            <div class="lists"><h2>ا</h2>
+        <div onclick="location.href='lists.asp?id=416'">
+            <span class="listName" title="الشسمو אלשסמו - פרק 1">الشسمو אלשסמו - פרק 1</span>
+            <span class="listData">
+                <span class="material-icons" style="float:left;">public
+                </span>
+            </span>
+        </div>
+</div>
+</div>
+
+
+<script>
+    var listStr,lists,listsFltr,domBuilder
+    function filterLists(list){
+        return list["listName"].toLowerCase().includes(listStr);
+    }
+    $.ajaxSetup({
+        async: false
+    });
+    $.getJSON("lists.all.json.asp",function(data){
+        lists = data;
+    });
+    $("#searchList").on("keyup",function(){
+        listStr = $(this).val().toLowerCase();
+        if (listStr.length > 0) { 
+            domBuilder = "<ul>";
+            listsFltr = lists.filter(filterLists);
+            listsFltr = listsFltr.slice(0,10);
+            $.each(listsFltr, function(index, value){
+                domBuilder += `<li><a href="lists.asp?id=${value.listID}">${value.listName}</a></li>`;
+            });
+            domBuilder += "</ul>";
+        } else if (listStr.length == 0) {
+            domBuilder = "";
+        }
+        $("#listSelect").html(domBuilder); 
+    });
+</script>
+
+</div>
+
+<div id="showTime" onclick="location.href='clock.asp';" style="cursor:pointer;">
+    <span id="clock" dir="LTR">
+        <span id="HH"></span><span id="MM"></span>
+    </span>
+    <span id="taatiklock"></span>
+</div>
+
+
+<!--these br's are needed cause the trailer hides the bottom part of the page-->
+<br><br><br>
+    <table class="footer">
+        <tr>
+            <td>
+                <div style="padding:5px 8px; text-align:left;">
+                    <a href="profile.asp?id=1">
+                        <img id="avatar"
+                    
+                                     src="img/profiles/male.png"
+                             style="height:24px; " title="admin's avatar" /></a>
+
+                    <div style="display:inline-block;">
+                        <a href="word.new.asp"><img src="img/site/add-square.png" style="width:24px;" alt="הוספת מילה" title="הוספת מילה" /></a>
+                    </div>
+
+                    <div style="display:inline-block;">
+                        <a href="users.landingPage.asp"><img src="team/img/teamLogo.png" style="width:24px;" alt="התחברו למילון" title="התחברו למילון" /></a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+	
+	<script>
+        function toggleMenu() {
+        var lMenu = document.getElementById("nav");
+        lMenu.style.display = (lMenu.style.display == "table") ? "none" : "table";
+        }
+
+    </script>
+
+    <script src="inc/functions/saa3a.js?v=3"></script>
+
+</body>
+</html>

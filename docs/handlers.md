@@ -6,7 +6,9 @@ Server-side action handlers — ASP files that receive form submissions or GET r
 
 ## Word Status Handlers
 
-These four handlers follow an almost identical pattern: auth check → read params → build timestamp → INSERT into `history` → UPDATE `words` → redirect.
+**Status: DELETED.** The four word status handlers (`word.correct.asp`, `word.erroneous.asp`, `word.reset.asp`, `word.hide.asp`) were removed during the `cleanup-dead-code` effort as they contained significant issues (debug output, SQL injection, dead timezone logic) and are obsolete. Below is documentation for historical context.
+
+These handlers followed an almost identical pattern: auth check → read params → build timestamp → INSERT into `history` → UPDATE `words` → redirect.
 
 ### `team/word.correct.asp`
 
@@ -150,6 +152,8 @@ These four handlers follow an almost identical pattern: auth check → read para
 
 ## `team/user.insert.asp`
 
+**Status: DELETED.** This file was permanently removed in the `cleanup-dead-code` branch.
+
 **Trigger:** New volunteer registration form submission.
 **Auth:** **None** — line 11 has the auth check **commented out**: `'If (session("role") and 2) = 0 then Response.Redirect "login.asp"`.
 **DB:** `arabicUsers` (`users` SELECT + INSERT)
@@ -227,6 +231,8 @@ These four handlers follow an almost identical pattern: auth check → read para
 ---
 
 ## PHP Email Scripts
+
+**Status: DELETED.** All five PHP files handling email notifications were permanently removed in the `cleanup-dead-code` branch because they were effectively dead code (only firing for dead domains) and presented security risks.
 
 Four PHP files handle email notifications. **All are effectively dead** — the ASP handlers that redirect to them only do so when the host is `rothfarb.info` (dead domain). On the live site, these scripts are **never called**.
 

@@ -1,0 +1,43 @@
+Microsoft (R) Windows Script Host Version 10.0
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+DB: arabicLogs.mdb
+  TABLE: durations
+  TABLE: monitors
+DB: arabicManager.mdb
+  TABLE: goals
+  TABLE: labels
+  TABLE: log
+  TABLE: projects
+  TABLE: subTasks
+  TABLE: tasks
+  TABLE: tasksLabels
+  TABLE: tasksVoting
+DB: arabicSandbox.mdb
+  TABLE: log
+  TABLE: timez
+DB: arabicSearch.mdb
+  TABLE: latestSearched
+  TABLE: log
+  TABLE: wordsSearched
+DB: arabicUsers.mdb
+  TABLE: allowEdit
+  TABLE: log
+  TABLE: loginLog
+  TABLE: Users
+  TABLE: usersWordsFollow
+DB: arabicWords.mdb
+  TABLE: history
+  TABLE: labels
+  TABLE: lists
+  TABLE: listsUsers
+  TABLE: log
+  TABLE: media
+  TABLE: sentences
+  TABLE: words
+  TABLE: wordsLabels
+  TABLE: wordsLists
+  TABLE: wordsMedia
+  TABLE: wordsRelations
+  TABLE: wordsSentences
+  TABLE: wordsShort

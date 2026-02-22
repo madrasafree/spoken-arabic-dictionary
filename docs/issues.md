@@ -4,6 +4,7 @@ This document tracks technical debt, dead code, and other codebase issues discov
 
 ## Dead Code & Includes
 
+*   **Cleanup Status:** The `cleanup-dead-code` branch has successfully removed significant technical debt, including orphaned admin pages, unused `inc/` headers, dead `team/` handlers, obsolete `team.task.*` system, and legacy PHP email scripts.
 *   **`clock.asp`:** No dead code or dead includes detected. The `daqiqa` variable toggles dynamically based on grammar rules as expected. (Logged during documentation review).
 
 ## Ongoing Issues
@@ -24,6 +25,9 @@ This document tracks technical debt, dead code, and other codebase issues discov
 *   **`games.mem.*.asp` SQL Injection Vulnerability:** `request("LID")` is directly concatenated to SQL on the list-based game pages.
 *   **`activity.asp` Broken Time Calculation:** The time-ago helper fails to accurately render `"לפני X שעות/ימים"` due to timezone mismatches between how MS Access records `Now()` and how timestamps are formatted, often throwing a localized error string in the UI. 
 *   **`activity.asp` Cross-DB Join Queries:** Similar to the disabled block on `default.asp`, the three main queries execute an inline string join to a separate Access file: `IN '"&Server.MapPath("App_Data/arabicUsers.mdb")&"'`. This needs to be normalized in PostgreSQL.
+*   **Parameter Mismatch Bugs (JET Errors):** 
+    - `listsEdit.asp` expects the parameter `id=` but is occasionally linked with `LID=`, causing a JET Database error missing operator.
+    - `team/mediaEdit.asp` expects the parameter `id=` but is linked via the team portal with `wordID=` and `mediaID=`, causing a similar JET error.
 
 ## Login & Profiles (login.asp, profile.asp)
 
@@ -57,28 +61,23 @@ This document tracks technical debt, dead code, and other codebase issues discov
 
 ## Team Tasks (`team.tasks.asp`, `team.task.*.asp`)
 
-- **CRITICAL / Security:** The handlers (`team.task.edit.update.asp` and `team.task.vote.asp`) are vulnerable to SQL injection via the unescaped `tID` parameter (`WHERE id="&tID`).
-- **Architecture / Leftover Dev Output:** Handlers include full HTML scaffolding (`head`, `body`) and "To-Do" lists (`<ol id="fix">`) before executing their database logic, but then issue a standard `Response.Redirect`. This generates unnecessary overhead and represents orphaned dev-mode debugging code.
-- **Performance / N+1 Queries:** The main loop in `team.tasks.asp` runs an `N+1` sub-query (`SELECT votes FROM tasksVoting WHERE taskID=...`) for every single task loaded on the page to fetch its vote count.
+- **Status: DELETED.** The entire team tasks system was orphaned and has been permanently removed in the `cleanup-dead-code` branch.
 
 ## Database Architecture Issues
 
-- **DB / `tasksVotes` (`arabicManager`)**: Stale / Broken. Intended as an aggregate vote count per task (pre-computed from `tasksVoting`). Never written by any ASP page — the aggregation code was never completed or was removed.
-- **DB / `tasksLabels` (`arabicManager`)**: Write-only orphan. Labels/tags associated with tasks. Rows are inserted in `team.task.new.insert.asp` when a new task is created, but the table is **never queried** anywhere in the codebase.
-- **DB / `log` (`arabicManager`)**: Disabled. Same performance log schema as arabicSearch's `log` table. The INSERT code in `team/inc/inc.asp` is commented out. Never written to; never read.
-- **DB / `arabicSchools` & `arabicSandbox`**: Dead databases. `arabicSandbox` was a testing DB removed along with test files. `arabicSchools` no longer exists. Both are still referenced in `admin.log.duration.asp`.
+- **DB / `tasksVotes` (`arabicManager`)**: Stale / Broken. Originally related to the now-deleted team tasks system.
+- **DB / `tasksLabels` (`arabicManager`)**: Write-only orphan. Related to the deleted team tasks system.
+- **DB / `log` (`arabicManager`)**: Disabled. Same performance log schema as arabicSearch's `log` table. The INSERT code in `team/inc/inc.asp` was removed. Never written to; never read.
+- **DB / `arabicSchools` & `arabicSandbox`**: Dead databases. References effectively removed.
 
 ## Include Files & Dead Code Issues
 
-- **Dead files — `inc/`**: `inc/top_admin.asp`, `inc/header2016x.asp`, `inc/header_admin.asp`, `inc/inc_admin.asp`, `inc/inc_onlineNEW.asp`, `inc/inc_sql.asp`, `inc/top.links.asp`, `inc/top.temp.asp`, `inc/topNav.asp`, `inc/trailer.2022.asp` are not included anywhere.
-- **Dead files — `team/inc/`**: `team/inc/inc.asp`, `team/inc/header.asp`, `team/inc/top.asp`, `team/inc/trailer.asp`, `team/inc/topTeam.asp`, `team/inc/inc_online.asp` are not included by any active page.
-- **Dead code within active files**: `inc/time.asp` (`isrTime()`, `dateToStr()`), `inc/functions/soundex.asp` (buggy `soundex()`), `inc/functions/string.asp` (`getString()`), `team/inc/time.asp` (`intToStr()`, `AR2UTC()`).
-- **Duplicates**: `inc/functions/string.asp` and `team/inc/functions/string.asp`, `inc/functions/functions.asp` and `team/inc/functions.asp`, `inc/functions/soundex.asp` and `team/inc/functions/soundex.asp` (different implementations).
+- **Cleanup Status:** The `cleanup-dead-code` branch successfully permanently purged almost all dead includes and removed global duration tracking (`durationMs`) that served no purpose.
+- **Duplicates**: `inc/functions/string.asp` and `team/inc/functions/string.asp`, `inc/functions/functions.asp` and `team/inc/functions.asp`, `inc/functions/soundex.asp` and `team/inc/functions/soundex.asp` (different implementations) remain but unused ones will be cleaned.
 
 ## Admin Panel (`admin.*`)
 
 - **Security / Missing Auth:** `admin.allowEditToggle.asp`, `admin.readOnlyToggle.asp`, and other inline handler files do not check `session("role")`, potentially allowing unauthorized toggles if accessed directly (though obscured).
-- **Architecture / Dead DBs:** `admin.log.duration.asp` continues to attempt to connect to and parse logs from `arabicSchools` and `arabicSandbox`, which no longer exist.
 - **SQL Injection:** Administrative unlock queries inside `admin.locked.asp` directly append raw URL parameters to queries (e.g. `WHERE id="&wordID`), creating SQL injection vulnerabilities even in the admin section.
 
 ## Dashboard & Users (`dashboard.asp`, `users.asp`)
@@ -98,10 +97,9 @@ This document tracks technical debt, dead code, and other codebase issues discov
 
 ## Admin Panel Tools (`admin.*.asp`)
 
-- **Security / Authorization Logic:** `admin.searchHistory.asp` and its variants use `if session("role") < 7 then Redirect`, which means Editors (Role 7) and Admins (Role 15) can view it. However, `admin.monitors.asp` uses `session("role") < 14`, and `admin.userControl.asp` explicitly checks `session("role") <> 15`. This indicates fragile and inconsistent RBAC implementation across admin tools.
+- **Cleanup Status:** The entire subset of `admin.searchHistory.*.asp` and `admin.monitors.asp` pages has been deleted as obsolete technical debt.
+- **Security / Authorization Logic:** `admin.userControl.asp` explicitly checks `session("role") <> 15`. This indicates fragile and inconsistent RBAC implementation across admin tools.
 - **SQL Injection Risk:** Many admin handlers, such as `admin.wordsShort.asp`, take `request("sStrNew")` and concatenate it directly into `INSERT` queries, violating parameterization standards even for admins.
-- **Architecture / Logic Duplication:** The entire `searchHistory` suite consists of 6 nearly identical physical ASP files that only differ by a single `WHERE` string condition. In Django, this should be collapsed into a single paginated API view with query/filter parameters.
-- **Documentation:** `admin.monitors.asp` queries an undocumented MS Access database called `arabicLogs.mdb` (`monitors` table), which is not listed in `db.md`.
 
 ## Dictionary Core Pages (`default.asp`, `word.asp`, `label.asp`, `sentence.asp`, `activity.asp`)
 
@@ -109,18 +107,11 @@ This document tracks technical debt, dead code, and other codebase issues discov
 - **Architecture / Missing Auth:** `activity.asp` does not contain a session guard, exposing all edit history and contributor names to the public.
 - **Architecture / Complexity:** `word.asp` is ~1000 lines with 12+ table joins — the single most complex page. It should be refactored into a Django view with clean serializers.
 - **Architecture / Complexity:** `default.asp` is ~950 lines handling search, logging, rendering, and soundex matching — multiple responsibilities that should be split into separate views.
-- **Architecture / Duplication:** `default.min.asp` duplicates most of `default.asp` logic. In Django, this should be a single view with a `?minimal=true` flag or a separate serializer.
 
 ## Team Handlers (`team/*.asp`) — see `handlers.md` for full analysis
 
-- **Security / SQL Injection:** All status handlers (`word.correct.asp`, `word.erroneous.asp`, `word.reset.asp`, `word.hide.asp`) concatenate `Request()` values directly into INSERT/UPDATE queries. Only `word.hide.asp` validates with `CLng()`.
 - **Security / SQL Injection:** `team/new.insert.asp` concatenates ~25 form fields into an INSERT query using only `gereshFix()` (single-quote doubling), which is insufficient protection.
-- **Security / SQL Injection:** `team/user.insert.asp` concatenates username, password, email directly into INSERT.
 - **Architecture / No CSRF:** All team action handlers execute database mutations via GET requests with no CSRF token protection.
-- **Dead Code / Debug Output:** Every handler contains `response.write` debug lines that dump variable values to the browser before the redirect. These are swallowed by IIS buffering but are still dead code. `word.correct.quick.asp` has ~60 such lines and always outputs "OOPS! There seems to be an error" on line 10.
-- **Dead Code / GoDaddy Timezone:** Five handlers contain a `ronen.rothfarb.info` host check to add 9 hours for GoDaddy's US timezone. This domain has been dead for years.
-- **Dead Code / Email Notifications:** `new.insert.asp`, `user.insert.asp`, and `word.correct.quick.asp` fetch username/email from `arabicUsers` for email notifications, but the redirect to the PHP email sender only fires for the dead domain `rothfarb.info`. On the live site, **no email notifications are sent**.
-- **Security / No Email Verification:** `user.insert.asp` has the auth check commented out (intentionally, for registration), but the email verification redirect only fires on the dead domain. New accounts are created with **no email verification** on the live site.
-- **Security / Password Storage:** `user.insert.asp` stores the password via `getString()` which only does quote escaping — no hashing is visible server-side. Passwords may be stored in cleartext.
+- **Dead Code:** Old dead handlers like `team/user.insert.asp` and status toggles have been deleted to clean up the codebase.
 - **Architecture / Hardcoded Constants:** `word.correct.quick.asp` has `Const lblCnt = 22` — will silently break if labels are added beyond 22.
 - **Architecture / Abandoned TODO:** `new.insert.asp` line 93 contains `'TEMP SEARCH STRING VALUE - REMOVE CODE WHEN FIELD REMOVE FROM DB` — this TODO has been pending for years.

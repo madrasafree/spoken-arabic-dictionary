@@ -1,0 +1,9 @@
+=== POTENTIALLY DEAD CSS CLASSES ===
+informative
+ta1
+ta3
+ta4
+ta5
+ta6
+tableWord
+trans

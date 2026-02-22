@@ -1,0 +1,27 @@
+=== DEAD FILES (Unreferenced in code) ===
+c:\Users\yaniv\dev\milon\spoken-arabic-dictionary\admin.userControl.full.asp
+c:\Users\yaniv\dev\milon\spoken-arabic-dictionary\default.ERR MSG.asp
+c:\Users\yaniv\dev\milon\spoken-arabic-dictionary\default.min.asp
+c:\Users\yaniv\dev\milon\spoken-arabic-dictionary\login.fixhref.asp
+c:\Users\yaniv\dev\milon\spoken-arabic-dictionary\users.asp
+c:\Users\yaniv\dev\milon\spoken-arabic-dictionary\inc\header2016x.asp
+c:\Users\yaniv\dev\milon\spoken-arabic-dictionary\inc\header_admin.asp
+c:\Users\yaniv\dev\milon\spoken-arabic-dictionary\inc\inc_admin.asp
+c:\Users\yaniv\dev\milon\spoken-arabic-dictionary\inc\inc_onlineNEW.asp
+c:\Users\yaniv\dev\milon\spoken-arabic-dictionary\inc\inc_sql.asp
+c:\Users\yaniv\dev\milon\spoken-arabic-dictionary\inc\top.links.asp
+c:\Users\yaniv\dev\milon\spoken-arabic-dictionary\inc\top.temp.asp
+c:\Users\yaniv\dev\milon\spoken-arabic-dictionary\inc\topNav.asp
+c:\Users\yaniv\dev\milon\spoken-arabic-dictionary\inc\top_admin.asp
+c:\Users\yaniv\dev\milon\spoken-arabic-dictionary\inc\trailer.2022.asp
+c:\Users\yaniv\dev\milon\spoken-arabic-dictionary\team\user.insert.asp
+c:\Users\yaniv\dev\milon\spoken-arabic-dictionary\team\word.correct.asp
+c:\Users\yaniv\dev\milon\spoken-arabic-dictionary\team\word.erroneous.asp
+c:\Users\yaniv\dev\milon\spoken-arabic-dictionary\team\word.hide.asp
+c:\Users\yaniv\dev\milon\spoken-arabic-dictionary\team\word.reset.asp
+c:\Users\yaniv\dev\milon\spoken-arabic-dictionary\team\inc\inc_online.asp
+c:\Users\yaniv\dev\milon\spoken-arabic-dictionary\error_docs\not_found.html
+c:\Users\yaniv\dev\milon\spoken-arabic-dictionary\inc\audioPlayer.js
+c:\Users\yaniv\dev\milon\spoken-arabic-dictionary\inc\bootstrap.min.js
+
+=== UNUSED DATABASES ===
