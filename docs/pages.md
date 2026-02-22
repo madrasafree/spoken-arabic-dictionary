@@ -551,23 +551,6 @@ Displays a table of words that are currently locked by pessimistic editing locks
 
 ---
 
-## admin.log.duration.asp
-
-**URL:** https://milon.madrasafree.com/admin.log.duration.asp
-**Feature area:** admin
-**Auth:** Editor/Admin (`session("role") < 6` guard)
-**DB access:** `arabicWords`, `arabicUsers`, `arabicSearch`, `arabicSchools`, `arabicSandbox`, `arabicManager` (`log` table in each)
-
-### Purpose
-A diagnostic dashboard that reads the `log` tables across all MS Access databases to trace query execution times and server response durations.
-
-### Behavior & Logic
-- Specifically loops through 6 distinct databases, including `arabicSchools` and `arabicSandbox` (which are noted as dead in `AGENTS.md`).
-- Queries the `log` table from each database for operations marked as closures (`opType='c'`).
-- Renders HTML tables for each database's log entries.
-- Flags and highlights any operation that took longer than 500ms by appending a CSS class (`.mark`).
-
----
 
 ## dashboard.asp
 
@@ -661,22 +644,6 @@ Provides a public-facing static data page showing cumulative metrics of the dict
 
 ---
 
-## stats.topSearch.asp
-
-**URL:** https://milon.madrasafree.com/stats.topSearch.asp
-**Feature area:** statistics
-**Auth:** public
-**DB access:** `arabicSearch` (`wordsSearched`)
-
-### Purpose
-Displays the Top 100 most searched terms in the dictionary system, drawn from the `wordsSearched` tracking table. Allows basic filtering by the first letter.
-
-### Behavior & Logic
-- Constructs the `WHERE` clause dynamically based on the `q` query string parameter (e.g., `?q=א`).
-- Executes a `SELECT TOP 100 ... ORDER BY searchCount DESC` query and renders a basic table.
-- Alternate row colors are handled manually in VBScript rather than CSS `nth-child`.
-
----
 
 ## json.asp
 
@@ -747,7 +714,7 @@ Displays a real-time activity feed of recent word edits, additions, and media up
 
 ---
 
-## default.asp / default.min.asp
+## default.asp
 
 **URL:** https://milon.madrasafree.com/ (or `default.asp`)
 **Feature area:** dictionary (homepage / search)
@@ -761,21 +728,9 @@ The main homepage and search engine for the dictionary. Accepts a search query `
 - Handles exact match, fuzzy match (`LIKE`), and soundex phonetic matching.
 - Logs every search into `arabicSearch` (`wordsSearched`, `latestSearched`).
 - Renders word card with Arabic script, transliteration, Hebrew translation, images, audio, video, examples, and related words.
-- `default.min.asp` was a lightweight version that skipped some UI elements, but it was **DELETED** during cleanup.
 
 ---
 
-## default.ERR MSG.asp
-
-**URL:** https://milon.madrasafree.com/default.ERR MSG.asp
-**Feature area:** error
-**Auth:** public
-**DB access:** `arabicWords` (`media`)
-
-### Purpose
-Fallback page shown when the main homepage encounters an error. Displays a basic error message.
-
----
 
 ## clock.asp
 
