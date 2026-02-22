@@ -6,7 +6,7 @@
 	<title></title>
 	<meta name="Description" content="נסיונות מילון על משפטים" />
 	<!--#include file="inc/header.asp"-->
-	<link rel="stylesheet" href="css/arabic_utils.css" />
+	<link rel="stylesheet" href="assets/css/arabic_utils.css" />
 	<style>
 		.sentence {background: #ffffff90; margin: 10px 0px 5px 0px ; border-radius:4px; box-shadow:rgba(0,0,0,0.45) 2px 2px 22px -3px;}
 		.info {border:1px solid #dedede; border-radius:4px; margin:0px 36px 15px 0px; padding:10px; background:#ffffff90;}
@@ -172,7 +172,7 @@ res.open mySQL, con
 	<div class="heb" style="text-align:center;"><%=res("hebrew")%></div>
 </div><%
 if len(res("info"))>0 then %>
-<span title="הערות" style="position:relative; color: #9e9e9e;top: 34px; right:4px; opacity:0.5;"><img src="img/site/info.png" style="width:24px;"/></span>
+<span title="הערות" style="position:relative; color: #9e9e9e;top: 34px; right:4px; opacity:0.5;"><img src="assets/images/site/info.png" style="width:24px;"/></span>
 <div class="info"><%=res("info")%></div><%
 end if
 res.close

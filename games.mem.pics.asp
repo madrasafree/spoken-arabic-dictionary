@@ -213,7 +213,7 @@ end if %>
 							<span style="font-size:small;">(<%=trim(res("hebrewDef"))%>)</span><%
 							end if %>
 						</div><%
-						if len(res("imgLink"))>0 then imgLink = res("imgLink") else imgLink = "img/site/noPhoto.jpg"
+						if len(res("imgLink"))>0 then imgLink = res("imgLink") else imgLink = "assets/images/site/noPhoto.jpg"
 						%>
 						<img class="img" src="<%=imgLink%>" alt="<%=res("hebrewTranslation")%>" title="<%=res("imgCredit")%>" style="max-width:480px;" />
 					</div>

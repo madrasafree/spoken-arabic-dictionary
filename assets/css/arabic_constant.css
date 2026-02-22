@@ -30,7 +30,7 @@ body {
     color: gray;
     font-family: Arial;
     padding: 0px 0px;
-    background-image: url(../img/site/diagBlue.png);
+    background-image: url(../images/site/diagBlue.png);
     background-repeat: repeat;
 }
 
@@ -76,7 +76,7 @@ h4 {
     position: fixed;
     top: 0px;
     text-align: right;
-    background-image: url(../img/site/diagBlue.png);
+    background-image: url(../images/site/diagBlue.png);
     background-repeat: repeat;
     background: #f6f9fc;
     border-bottom: 1px solid #cddbea;
@@ -234,7 +234,7 @@ fieldset:hover {
     border-radius: 5px;
     padding: 4px 4px 4px 30px;
     background-color: white;
-    background-image: url(img/site/search.png);
+    background-image: url(../images/site/search.png);
     background-repeat: no-repeat;
     background-position: right;
     background-size: 24px;
@@ -251,7 +251,7 @@ fieldset:hover {
     padding: 0px 22px 10px 0px;
 }
 
-/*#searchTop input  { background-image: url(img/site/search.png); background-position:0px 0px; background-repeat:no-repeat; background-size:24px;}*/
+/*#searchTop input  { background-image: url(../images/site/search.png); background-position:0px 0px; background-repeat:no-repeat; background-size:24px;}*/
 #showTime {
     font-size: 20px;
     margin: 40px auto 0 auto;
@@ -358,7 +358,7 @@ fieldset:hover {
 /* language */
 @font-face {
     font-family: "abraham";
-    src: url("../inc/fonts/Abraham-Light.otf");
+    src: url("../../inc/fonts/Abraham-Light.otf");
 }
 
 body {

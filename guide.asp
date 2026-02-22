@@ -5,7 +5,7 @@
 	<title>מדריך שימוש במילון - מדריך תעתיק והגייה</title>
 	<meta id="Description" content="כמה מילים אודות המילון ואיך הוא עובד" />
 <!--#include file="inc/header.asp"-->
-    <link rel="stylesheet" href="team/inc/guide.css" />
+    <link rel="stylesheet" href="assets/css/guide.css" />
 </head>
 <!--#include file="team/inc/functions.asp"-->
 <body>

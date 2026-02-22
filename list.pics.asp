@@ -27,11 +27,11 @@ countMe = 0 %>
 <table class="tableHeader">
 	<tr>
 		<td style="width:33%;text-align:right;">
-            <%if order="hebrewTranslation" then %> עברית <img src="img/site/sort.png" /><%else %> <a href="?order=h">עברית</a><%end if%></td>
+            <%if order="hebrewTranslation" then %> עברית <img src="assets/images/site/sort.png" /><%else %> <a href="?order=h">עברית</a><%end if%></td>
 		<td style="width:34%;text-align:center;">
-            <%if order="arabicWord" then %> ערבית <img src="img/site/sort.png" /><%else %> <a href="?order=a">ערבית</a><%end if%></td>
+            <%if order="arabicWord" then %> ערבית <img src="assets/images/site/sort.png" /><%else %> <a href="?order=a">ערבית</a><%end if%></td>
 	    <td style="width:33%;" class="tdEng">
-            <%if order="pronunciation" then %> הגייה <img src="img/site/sort.png" /><%else %> <a href="?order=e">הגייה</a><%end if%></td>
+            <%if order="pronunciation" then %> הגייה <img src="assets/images/site/sort.png" /><%else %> <a href="?order=e">הגייה</a><%end if%></td>
 	</tr>
 </table><%
 
@@ -44,16 +44,16 @@ countMe = 0 %>
 		if len(res("imgLink"))>0 then %>
             <div class="listDiv" onclick="location.href='word.asp?id=<%=res("id")%>'">
                 <span class="heb" style="float: none; position: relative;">
-                <img src="img/site/photo.png" alt="לערך זה יש תמונה" title="לערך זה יש תמונה" class="img" style="opacity: 0.6; float: none; position: absolute; top:4px; left: 20px;" /><%
+                <img src="assets/images/site/photo.png" alt="לערך זה יש תמונה" title="לערך זה יש תמונה" class="img" style="opacity: 0.6; float: none; position: absolute; top:4px; left: 20px;" /><%
                 if res("mediaID") then %>
-                    <img src="img/site/audio.png" alt="לערך זה יש סרטון או אודיו" title="לערך זה יש סרטון או אודיו" class="img"  style="max-width:16px ; opacity: 0.8; float: none; position: absolute; top:9px; left: 46px;"/><%
+                    <img src="assets/images/site/audio.png" alt="לערך זה יש סרטון או אודיו" title="לערך זה יש סרטון או אודיו" class="img"  style="max-width:16px ; opacity: 0.8; float: none; position: absolute; top:9px; left: 46px;"/><%
                 end if %>
 		            <%=res("hebrewTranslation")%><%
                     Select Case res("status")
                     Case 1 %>
-                        <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" style="width:15px;opacity:0.4; position: absolute; top:9px; left:5px;" /><%
+                        <img src="assets/images/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" style="width:15px;opacity:0.4; position: absolute; top:9px; left:5px;" /><%
                     Case -1 %>
-                        <img src="img/site/erroneous.png" id="ערך זה סומן כלא תקין" alt="ערך זה סומן כלא תקין" title="ערך זה סומן כלא תקין" style="width:15px;opacity:0.7; position: absolute; top:9px; left:5px;" /><%
+                        <img src="assets/images/site/erroneous.png" id="ערך זה סומן כלא תקין" alt="ערך זה סומן כלא תקין" title="ערך זה סומן כלא תקין" style="width:15px;opacity:0.7; position: absolute; top:9px; left:5px;" /><%
                     End Select %>
                 </span><%
                     if len(res("arabic"))>0 then %>

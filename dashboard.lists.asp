@@ -122,15 +122,15 @@ end select %>
                     end if %>
                         <span class="icons"><%
                         if len(res("imgLink"))>0 then %>
-                            <img src="img/site/photo.png" alt="לערך זה יש תמונה" title="לערך זה יש תמונה" class="imgLink" /><%
+                            <img src="assets/images/site/photo.png" alt="לערך זה יש תמונה" title="לערך זה יש תמונה" class="imgLink" /><%
                         end if
                         if res("show")=false then %>
-                            <img src="img/site/hidden.png" alt="ערך מוסתר" title="ערך מוסתר" class="correct" style="left:70px;opacity:1;" /><%
+                            <img src="assets/images/site/hidden.png" alt="ערך מוסתר" title="ערך מוסתר" class="correct" style="left:70px;opacity:1;" /><%
                         end if %>
                         </span><%
                     Select Case res("status")
                     Case 1 %>
-                        <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" /><%
+                        <img src="assets/images/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" /><%
                     Case -1 %>
                         <span style="background: #ff2f00; color: #ffffff; font-weight: bold; padding: 4px 10px; border-radius: 3px; position:absolute; left:0px; top:35px;">חשד לטעות</span><%
                     Case Else %>

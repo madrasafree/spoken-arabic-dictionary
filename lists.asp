@@ -63,7 +63,7 @@ if creatorName <> session("username") then sqlShow = "AND show" %>
     <meta property="og:title"     content="<%=LName%> - רשימה אישית" />
     <meta property="og:description"     content="רשימת מילים אישית בנושא - <%=LName%> | מילון ערבית מדוברת" />
     <meta property="og:image"           content="https://milon.madrasafree.com/img/lists/<%=LID%>.png" />
-    <link rel="stylesheet" href="team/inc/edit.css" />
+    <link rel="stylesheet" href="assets/css/edit.css" />
 
     <!--#include file="inc/header.asp"-->
     <style>
@@ -151,7 +151,7 @@ if creatorName <> session("username") then sqlShow = "AND show" %>
         }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="team/js/jquery.list.update.js"></script> <!-- THIS HAS THE JSON CODE-->
+    <script src="assets/js/jquery.list.update.js"></script> <!-- THIS HAS THE JSON CODE-->
     <script>
         $(document).ready(function(){
             //$("#wordsSum").html("1");
@@ -353,14 +353,14 @@ else
                     end if %>
                         <span class="icons"><%
                     if len(res("imgLink"))>0 then %>
-                        <img src="img/site/photo.png" alt="לערך זה יש תמונה" title="לערך זה יש תמונה" class="imgLink" /><%
+                        <img src="assets/images/site/photo.png" alt="לערך זה יש תמונה" title="לערך זה יש תמונה" class="imgLink" /><%
                     end if
                     if res("mediaID") then %>
-                        <img src="img/site/audio.png" alt="לערך זה יש סרטון או אודיו" title="לערך זה יש סרטון או אודיו" class="audio"/><%
+                        <img src="assets/images/site/audio.png" alt="לערך זה יש סרטון או אודיו" title="לערך זה יש סרטון או אודיו" class="audio"/><%
                     end if
                     Select Case res("status")
                     Case 1 %>
-                        <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" /><%
+                        <img src="assets/images/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" /><%
                     Case -1 %>
                         <span style="background: #ff2f00; color: #ffffff; font-weight: bold; padding: 4px 10px; border-radius: 3px;">ערך בבדיקה</span><%
                     Case Else %>

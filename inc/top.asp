@@ -172,7 +172,7 @@ menu li:first-child p, menu li:last-child p{
     border: 1px dotted gray; 
     font-size:1.5em;
     margin:0 auto;
-    background-image:url(img/site/search.png);
+    background-image:url(assets/images/site/search.png);
     background-repeat:no-repeat;
     background-position:left;
     background-size:24px;
@@ -299,7 +299,7 @@ menu li:first-child p, menu li:last-child p{
       </div>
       <div id="bar-logo">
         <a href=".">
-          <img style="width:100%;" src="img/site/milon-logo.png" alt="logo" />
+          <img style="width:100%;" src="assets/images/site/milon-logo.png" alt="logo" />
         </a>
       </div>
     </div>

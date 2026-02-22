@@ -10,7 +10,7 @@ end if %>
 	<title>ניהול חיפושים קצרים</title>
     <META NAME="ROBOTS" CONTENT="NONE">
 <!--#include file="inc/header.asp"-->
-	<link rel="stylesheet" href="css/arabic_utils.css" />
+	<link rel="stylesheet" href="assets/css/arabic_utils.css" />
 	<style>
 		.wordsShort {
 			margin:20px auto 40px auto;

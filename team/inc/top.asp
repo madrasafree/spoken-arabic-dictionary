@@ -66,18 +66,18 @@ q = trim(Request("searchString"))
 <div id="banner" style="z-index:3; text-align:center; min-width:320px;">
     <span style="position:fixed; top:5px; right:6px; ">
         <a id="toggleMenu" href="#" onclick="toggleMenu();">
-            <img src="<%=baseA%>img/site/menu.png" title="תפריט" alt="תפריט" />
+            <img src="<%=baseA%>assets/images/site/menu.png" title="תפריט" alt="תפריט" />
         </a>
     </span>
     <form action="<%=baseA%>default.asp" style="text-align:center; display:inline-block; padding:4px;">
         <span id="searchTop" style="border-bottom-left-radius:0px; border-top-left-radius:0px;" >
-            <input onclick="this.select();" type="text" id="searchBoxTop" name="searchString" value="<%=server.HTMLEncode(trim(gereshFix(request("searchString"))))%>" style="background-color:white; background-image:url(<%=baseA%>img/site/search.png); background-repeat:no-repeat; background-position:right; padding-right:30px; background-size:24px; "/>
+            <input onclick="this.select();" type="text" id="searchBoxTop" name="searchString" value="<%=server.HTMLEncode(trim(gereshFix(request("searchString"))))%>" style="background-color:white; background-image:url(<%=baseA%>assets/images/site/search.png); background-repeat:no-repeat; background-position:right; padding-right:30px; background-size:24px; "/>
         </span>
         <input type="submit" style="display:none;">
     </form>
     <span style="position:fixed; top:3px; left:4px; ">
         <a href="default.asp">
-            <img src="img/teamLogo.png" alt="צוות המילון" title="צוות המילון" style="height:34px;" />
+            <img src="../assets/images/team/teamLogo.png" alt="צוות המילון" title="צוות המילון" style="height:34px;" />
         </a>
     </span>
 </div>

@@ -85,7 +85,7 @@
     <h3>מי בודק את המילים שהוסיפו?</h3>
     <div class="body-text">
         את המילים בודקים משתמשים ותיקים, עם ידע רחב גם בעברית וגם בערבית מדוברת.
-        <br>חפשו את הסימן <img src="img/site/correct.png" title="correct" class="word-check-icon" /> לצד המילים שעברו את בדיקתם.
+        <br>חפשו את הסימן <img src="assets/images/site/correct.png" title="correct" class="word-check-icon" /> לצד המילים שעברו את בדיקתם.
         <br>
         <br>נכון ל-1 בינואר 2020
         <br>96% מהמילים נבדקו ונמצאו תקינות

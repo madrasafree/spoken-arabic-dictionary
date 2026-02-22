@@ -27,7 +27,7 @@ end if
     <title><%=username%></title>
 	<meta name="Description" content="שם המשתמש: <%=res("username")%>" />
     <!--#include file="inc/header.asp"-->
-    <link rel="stylesheet" href="team/inc/arabicTeam.css" />
+    <link rel="stylesheet" href="assets/css/arabicTeam.css" />
     <style>
         .listDiv > span {display:block; line-height: 15px;}
         @media(max-width:600px) {
@@ -105,16 +105,16 @@ else%>
                         <%=res("hebrewTranslation")%>
                         <span style="display: inline-block; position: absolute; top: 0px; left:0px;"><%
                         if len(res("imgLink"))>0 then %>
-                            <img src="img/site/photo.png" alt="לערך זה יש תמונה" title="לערך זה יש תמונה" class="img" style="opacity: 0.6; float: none; position: absolute; top:4px; left: 20px;" /><%
+                            <img src="assets/images/site/photo.png" alt="לערך זה יש תמונה" title="לערך זה יש תמונה" class="img" style="opacity: 0.6; float: none; position: absolute; top:4px; left: 20px;" /><%
                         end if
                         if res("wordID") <> "" then %>
-                            <img src="img/site/audio.png" alt="לערך זה יש סרטון או אודיו" title="לערך זה יש סרטון או אודיו" class="img" style="max-width:16px ; opacity: 0.7; float: none; position: absolute; top:9px; left: 46px;"/><%
+                            <img src="assets/images/site/audio.png" alt="לערך זה יש סרטון או אודיו" title="לערך זה יש סרטון או אודיו" class="img" style="max-width:16px ; opacity: 0.7; float: none; position: absolute; top:9px; left: 46px;"/><%
                         end if
                         Select Case res("status")
                         Case 1 %>
-                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" style="width:15px;opacity:0.4; position: absolute; top:9px; left:5px;" /><%
+                            <img src="assets/images/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" style="width:15px;opacity:0.4; position: absolute; top:9px; left:5px;" /><%
                         Case -1 %>
-                            <img src="img/site/erroneous.png" id="ערך זה סומן כלא תקין" alt="ערך זה סומן כלא תקין" title="ערך זה סומן כלא תקין" style="width:15px;opacity:0.7; position: absolute; top:9px; left:5px;" /><%
+                            <img src="assets/images/site/erroneous.png" id="ערך זה סומן כלא תקין" alt="ערך זה סומן כלא תקין" title="ערך זה סומן כלא תקין" style="width:15px;opacity:0.7; position: absolute; top:9px; left:5px;" /><%
                         End Select %>
                         </span>
                     </span><%
@@ -178,16 +178,16 @@ if (session("role") And 2)>0 then
                         <%=res("hebrewTranslation")%>
                         <span style="display: inline-block; position: absolute; top: 0px; left:0px;"><%
                         if len(res("imgLink"))>0 then %>
-                            <img src="img/site/photo.png" alt="לערך זה יש תמונה" title="לערך זה יש תמונה" class="img" style="opacity: 0.6; float: none; position: absolute; top:4px; left: 20px;" /><%
+                            <img src="assets/images/site/photo.png" alt="לערך זה יש תמונה" title="לערך זה יש תמונה" class="img" style="opacity: 0.6; float: none; position: absolute; top:4px; left: 20px;" /><%
                         end if
                         if res("wordID") <> "" then %>
-                            <img src="img/site/audio.png" alt="לערך זה יש סרטון או אודיו" title="לערך זה יש סרטון או אודיו" class="img" style="max-width:16px ; opacity: 0.7; float: none; position: absolute; top:9px; left: 46px;"/><%
+                            <img src="assets/images/site/audio.png" alt="לערך זה יש סרטון או אודיו" title="לערך זה יש סרטון או אודיו" class="img" style="max-width:16px ; opacity: 0.7; float: none; position: absolute; top:9px; left: 46px;"/><%
                         end if
                         Select Case res("status")
                         Case 1 %>
-                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" style="width:15px;opacity:0.4; position: absolute; top:9px; left:5px;" /><%
+                            <img src="assets/images/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" style="width:15px;opacity:0.4; position: absolute; top:9px; left:5px;" /><%
                         Case -1 %>
-                            <img src="img/site/erroneous.png" id="ערך זה סומן כלא תקין" alt="ערך זה סומן כלא תקין" title="ערך זה סומן כלא תקין" style="width:15px;opacity:0.7; position: absolute; top:9px; left:5px;" /><%
+                            <img src="assets/images/site/erroneous.png" id="ערך זה סומן כלא תקין" alt="ערך זה סומן כלא תקין" title="ערך זה סומן כלא תקין" style="width:15px;opacity:0.7; position: absolute; top:9px; left:5px;" /><%
                         End Select %>
                         </span>
                     </span><%

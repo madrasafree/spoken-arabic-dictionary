@@ -127,11 +127,11 @@ if Len(Request("username"))>0 then
 
 End if %>
 <div class="table teamLogo" dir="ltr">
-    <div><img src="team/img/teamLogo-let1-60px.png" alt="t" /></div>
-    <div><img src="team/img/teamLogo-let2-60px.png" alt="E" /></div>
-    <div><img src="team/img/teamLogo-let3-60px.png" alt="A" /></div>
-    <div><img src="team/img/teamLogo-let4-60px.png" alt="M" /></div>
-    <div><img src="img/site/logo-60px.png" alt="ע" /></div>
+    <div><img src="assets/images/team/teamLogo-let1-60px.png" alt="t" /></div>
+    <div><img src="assets/images/team/teamLogo-let2-60px.png" alt="E" /></div>
+    <div><img src="assets/images/team/teamLogo-let3-60px.png" alt="A" /></div>
+    <div><img src="assets/images/team/teamLogo-let4-60px.png" alt="M" /></div>
+    <div><img src="assets/images/site/logo-60px.png" alt="ע" /></div>
 </div>
 <div id="pTitle">כניסה למשתמשי המילון</div>
 

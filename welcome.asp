@@ -50,7 +50,7 @@
         <h2 id="login">התחברות לאתר</h2>        
         <fieldset>
             <ul>
-                <li>מכל מקום באתר, לחצו על האייקון הכתום בסרגל התחתון <img style="max-width:20px;" src="team/img/teamLogo.png" alt="t"/></li>
+                <li>מכל מקום באתר, לחצו על האייקון הכתום בסרגל התחתון <img style="max-width:20px;" src="assets/images/team/teamLogo.png" alt="t"/></li>
                 <li>הזינו את שם המשתמש והסיסמא שלכם ולחצו 'יאללה'</li>
             </ul>
             <div class="msgInfo">
@@ -82,7 +82,7 @@
             <div class="msgAlert">בפעם הראשונה, קראו גם את '<a href="guideTeam.asp" target="new">מדריך הוספת ועריכת מילים</a>'</div>
             <div class="msgAlert">לפני שמתחילים, בדקו שהתרגום המבוקש אינו מופיע כבר במילון</div>
             <ul>
-                <li>מכל מקום באתר, לחצו על האייקון + בסרגל התחתון <img style="max-width:20px;" src="img/site/add-square.png" alt="+"/></li>
+                <li>מכל מקום באתר, לחצו על האייקון + בסרגל התחתון <img style="max-width:20px;" src="assets/images/site/add-square.png" alt="+"/></li>
                 <li>מלאו את הטופס בהתאם להוראות המדריך</li>
                 <li>לסיום לחצו 'הוסף מילה'</li>
             </ul>

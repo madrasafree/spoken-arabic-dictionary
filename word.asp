@@ -113,13 +113,13 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
     <%if len(imgLink)>0 then%>
     <meta property="og:image" content="<%=imgLink%>" />
     <%else%>
-    <meta property="og:image" content="img/site/logo.jpg" />
+    <meta property="og:image" content="assets/images/site/logo.jpg" />
     <%end if%>
 <!--#include file="inc/header.asp"-->
     <title><%=hebTrans%> - איך אומרים בערבית</title>
     <meta property="og:title" content="<%=hebTrans%> - איך אומרים בערבית" />
     <meta property="og:type" content="website" />
-    <link rel="stylesheet" href="team/inc/arabicTeam.css" />
+    <link rel="stylesheet" href="assets/css/arabicTeam.css" />
 	<style>
         h1 {
             opacity: 0.6;
@@ -264,7 +264,7 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
         <!-- STATUS --><%
         if not show then %>
             <div class="tableH" style="border:dashed 2px red;">
-                <img src="img/site/hidden.png" alt="מילה זו מוסתרת מעיני הגולשים במילון" title="מילה זו מוסתרת מעיני הגולשים במילון" />
+                <img src="assets/images/site/hidden.png" alt="מילה זו מוסתרת מעיני הגולשים במילון" title="מילה זו מוסתרת מעיני הגולשים במילון" />
                 <br/>ערך מוסתר (לא יופיע בתוצאות חיפוש)
             </div><%
         end if 
@@ -276,13 +276,13 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
             Case 0 
                 needsEdit = true %>
                 <div class="tableH">
-                    <img src="img/site/unchecked.png" alt="ערך זה טרם נבדק" title="ערך זה טרם נבדק" />
+                    <img src="assets/images/site/unchecked.png" alt="ערך זה טרם נבדק" title="ערך זה טרם נבדק" />
                     <br />ערך זה טרם נבדק
                 </div> <%
             Case -1 
                 needsEdit = true %>
                 <div class="tableH" style="border:dashed 2px red;">
-                    <img src="img/site/erroneous.png" alt="ערך לא תקין" title="ערך לא תקין" />
+                    <img src="assets/images/site/erroneous.png" alt="ערך לא תקין" title="ערך לא תקין" />
                     <br />ערך זה סומן כ'לא תקין'.
                     <span style="display:inline-block;">ייתכן ואיננו מדויק.</span>
                 </div> <%
@@ -738,7 +738,7 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
                         if len(res("creditLink"))>0 then %>
                             <a href="<%=res("creditLink")%>" target="_new" style="line-height:normal; vertical-align:middle;"><%
                             if res("credit") = "ערביט" then %>
-                                <img src="img/site/links.arabit.png" alt="ערביט" title="לחצו לדף המילה בפרויקט ערביט"/><%
+                                <img src="assets/images/site/links.arabit.png" alt="ערביט" title="לחצו לדף המילה בפרויקט ערביט"/><%
                             else %>
                                 <%=res("credit")%><%
                             end if %>

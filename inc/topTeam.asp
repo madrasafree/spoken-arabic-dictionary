@@ -12,12 +12,12 @@
         mySQL = "SELECT username,[picture],gender FROM users WHERE id="&session("userID")
         res.open mySQL, con 
             if res("picture") then %>
-                  src="img/profiles/<%=session("userID")%>.png"<%
+                  src="assets/images/profiles/<%=session("userID")%>.png"<%
             else 
                 if res("gender")=1 then %>
-                      src="img/profiles/male.png"<%
+                      src="assets/images/profiles/male.png"<%
                 else %>
-                      src="img/profiles/female.png"<%
+                      src="assets/images/profiles/female.png"<%
                 end if
             end if %>
               style="height:40px; border-radius:50%; border:1px solid #d0ddeb;" title="<%=session("username")%>'s avatar" /><%
@@ -107,6 +107,6 @@
 
 <div style="display:inline-block; ">
     <a href="default.asp">
-        <img src="img/site/logo_small.png" alt="מילון ערבית מדוברת" style="height:40px;" />
+        <img src="assets/images/site/logo_small.png" alt="מילון ערבית מדוברת" style="height:40px;" />
     </a>
 </div>

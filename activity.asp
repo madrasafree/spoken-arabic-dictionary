@@ -133,7 +133,7 @@ res.close
                     <div style="line-height:0; padding-left:15px;">
                         <a href="profile.asp?id=<%=res("T.ID")%>" title="<%=res("username")%>"><% 
                             if res("picture")=true then %>
-                                <img class="activeUserImg" src="img/profiles/<%=res("T.ID")%>.png" /><%
+                                <img class="activeUserImg" src="assets/images/profiles/<%=res("T.ID")%>.png" /><%
                             else %>
                                 <span class="material-icons" style="font-size:40px;">account_box</span><%
                             end if %>
@@ -183,7 +183,7 @@ res.close
                     <div style="line-height:0; padding-left:15px;">
                         <a href="profile.asp?id=<%=res("T.ID")%>" title="<%=res("username")%>"><% 
                             if res("picture")=true then %>
-                                <img class="activeUserImg" src="img/profiles/<%=res("T.ID")%>.png" /><%
+                                <img class="activeUserImg" src="assets/images/profiles/<%=res("T.ID")%>.png" /><%
                             else %>
                                 <span class="material-icons" style="font-size:40px;">account_box</span><%
                             end if %>
@@ -222,7 +222,7 @@ res.close
                     <div style="line-height:0; padding-left:15px;">
                         <a href="profile.asp?id=<%=res("T.ID")%>"><% 
                             if res("picture") then %>
-                                <img class="activeUserImg" title="<%=res("username")%>" src="img/profiles/<%=res("T.ID")%>.png" /><%
+                                <img class="activeUserImg" title="<%=res("username")%>" src="assets/images/profiles/<%=res("T.ID")%>.png" /><%
                             else %>
                                 <span class="material-icons" style="font-size:40px;">account_box</span><%
                             end if %>

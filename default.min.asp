@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="Description" content="גרסא מינימלית לבדיקות של המילון לערבית מדוברת (לדוברי עברית). שירות חינמי שנועד לעזור ללומדים ערבית מדוברת" />
     <meta name="Keywords" content="מילון, ערבית, מדוברת, עברית, עברי, ערבי, חופשי, חינם, חינמי, תרגום, תירגום, מילים, איך, אומרים, בערבית" />
-    <link rel="shortcut icon" href="img/site/favicon.ico" />
+    <link rel="shortcut icon" href="assets/images/site/favicon.ico" />
     <style>
         body {max-width:600px; margin:0 auto; text-align:center; background:#effaff;font-family: Arial, Helvetica, sans-serif;}
         body,input,button {color:#266b8a;}

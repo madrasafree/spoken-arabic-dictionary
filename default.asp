@@ -14,7 +14,7 @@
     <meta property="og:description" content="המילון לערבית מדוברת (לדוברי עברית) הוא שירות חינמי שנועד לעזור לקהילת לומדי הערבית המדוברת" />
     <meta property="og:url" content="https://milon.madrasafree.com/" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="img/site/og-image.png">
+    <meta property="og:image" content="assets/images/site/og-image.png">
     <style>
         /* loading animation START - this code is DUPLIC from edit.css - MERGE needed */
         .lds-ring {
@@ -393,11 +393,11 @@ else
                             end if %>
                             <span class="icons"><%
                             if res("mediaID") then %>
-                                <img src="img/site/audio.png" alt="לערך זה יש סרטון או אודיו" title="לערך זה יש סרטון או אודיו" class="audio"/><%
+                                <img src="assets/images/site/audio.png" alt="לערך זה יש סרטון או אודיו" title="לערך זה יש סרטון או אודיו" class="audio"/><%
                             end if
                             Select Case res("status")
                             Case 1 %>
-                                <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" /><%
+                                <img src="assets/images/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" /><%
                             Case -1 %>
                                 <mark>ערך בבדיקה</mark><%
                             Case Else %>
@@ -478,7 +478,7 @@ else
                                 if len(res2("creditLink"))>0 then %>
                                     <a href="<%=res2("creditLink")%>" target="_new"><%
                                     if res2("credit") = "ערביט" then %>
-                                        <img src="img/site/links.arabit.png" alt="ערביט" title="לחצו לדף המילה בפרויקט ערביט"/><%
+                                        <img src="assets/images/site/links.arabit.png" alt="ערביט" title="לחצו לדף המילה בפרויקט ערביט"/><%
                                     else %>
                                         <%=res2("credit")%><%
                                     end if %>
@@ -521,14 +521,14 @@ else
                                     end if %>
                                     <span class="icons"><%
                                         if len(res2("imgLink"))>0 then %>
-                                            <img src="img/site/photo.png" alt="לערך זה יש תמונה" title="לערך זה יש תמונה" class="imgLink" /><%
+                                            <img src="assets/images/site/photo.png" alt="לערך זה יש תמונה" title="לערך זה יש תמונה" class="imgLink" /><%
                                         end if
                                         if res2("mediaID") then %>
-                                            <img src="img/site/audio.png" alt="לערך זה יש סרטון או אודיו" title="לערך זה יש סרטון או אודיו" class="audio"/><%
+                                            <img src="assets/images/site/audio.png" alt="לערך זה יש סרטון או אודיו" title="לערך זה יש סרטון או אודיו" class="audio"/><%
                                         end if
                                         Select Case res2("status")
                                             Case 1 %>
-                                                <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" /><%
+                                                <img src="assets/images/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" /><%
                                             Case -1 %>
                                                 <mark>ערך בבדיקה</mark><%
                                             Case Else %>
@@ -629,14 +629,14 @@ else
                                     end if %>
                                         <span class="icons"><%
                                     if len(res("imgLink"))>0 then %>
-                                        <img src="img/site/photo.png" alt="לערך זה יש תמונה" title="לערך זה יש תמונה" class="imgLink" /><%
+                                        <img src="assets/images/site/photo.png" alt="לערך זה יש תמונה" title="לערך זה יש תמונה" class="imgLink" /><%
                                     end if
                                     if res("mediaID") then %>
-                                        <img src="img/site/audio.png" alt="לערך זה יש סרטון או אודיו" title="לערך זה יש סרטון או אודיו" class="audio"/><%
+                                        <img src="assets/images/site/audio.png" alt="לערך זה יש סרטון או אודיו" title="לערך זה יש סרטון או אודיו" class="audio"/><%
                                     end if
                                     Select Case res("status")
                                         Case 1 %>
-                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" /><%
+                                            <img src="assets/images/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" /><%
                                         Case -1 %>
                                             <mark>ערך בבדיקה</mark><%
                                         Case Else %>
@@ -762,7 +762,7 @@ end if
     <div >
         <a href="https://rothfarb.info/ronen/arabic/"  style="line-height:16px;" target="_blank" ><div style="background-color:#c0dbf8">
         פורטל ערבית מדוברת
-        <img style="height:100%;opacity:1;" src="img/site/logo.png"/>
+        <img style="height:100%;opacity:1;" src="assets/images/site/logo.png"/>
         </div></a>
     </div>
 </div>

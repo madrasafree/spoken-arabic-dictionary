@@ -173,7 +173,7 @@ also shows a profile avatar and quick word-add link.
 - Clock widget (`#showTime`) — clicking navigates to `clock.asp`
 - Avatar image and profile/word-add links for logged-in contributors
 - `toggleMenu()` / `showEmail()` / `hideEmail()` inline scripts
-- `<script src="inc/functions/saa3a.js?v=3">` — Arabic keyboard/input helper
+- `<script src="assets/js/saa3a.js?v=3">` — Arabic keyboard/input helper
 
 ### DB access
 

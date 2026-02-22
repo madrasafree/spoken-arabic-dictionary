@@ -37,7 +37,7 @@
     <title>ערכים נעולים</title>
 	<meta name="robots" content="noindex" />
     <!--#include file="inc/header.asp"-->
-  	<link rel="stylesheet" href="css/arabic_utils.css" />
+  	<link rel="stylesheet" href="assets/css/arabic_utils.css" />
     <style>
     #lockTable {
         background:white;

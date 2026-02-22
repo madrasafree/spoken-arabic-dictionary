@@ -29,8 +29,8 @@ closeDbLogger "arabicUsers","C","admin.asp","allowEdit",durationMs,""
 <head>
 	<title>דף ניהול ראשי</title>
     <META NAME="ROBOTS" CONTENT="NONE">
-  	<link rel="stylesheet" href="css/arabic_admin.css" />
-  	<link rel="stylesheet" href="css/arabic_admin_slider.css" />
+  	<link rel="stylesheet" href="assets/css/arabic_admin.css" />
+  	<link rel="stylesheet" href="assets/css/arabic_admin_slider.css" />
 <!--#include file="inc/header.asp"-->
 	<style>
 		.enabler {max-width:600px; margin:0 auto; border:1px solid gray; text-align: center; padding: 10px; background:#eee; }
