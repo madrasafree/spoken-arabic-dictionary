@@ -50,24 +50,12 @@ closeDbLogger "arabicUsers","C","admin.asp","allowEdit",durationMs,""
 	<h2>משתמשים</h2>
 	<ul class="adminMenu">
 		<li><a href="admin.userControl.asp">ניהול משתמשים</a></li>
-		<li><a href="admin.loginHistory.asp">מעקב כניסות</a> - עד נוב' 21</li>
 	</ul>
 	<h2>תוכן מילון</h2>
 	<ul class="adminMenu">
 		<li><a href="admin.locked.asp">ערכים נעולים</li>
 		<li><a href="admin.wordsShort.asp">ניהול חיפושים קצרים</a></li>
 		<li><a href="admin.labelControl.asp">נושאים</a></li>
-		<li><a href="admin.lists.asp">רשימות אישיות</a></li>
-	</ul>
-	<h2>אחרים</h2>
-	<ul class="adminMenu">
-		<li><a href="admin.monitors.asp">ניטור מידע</a></li>
-		<li><a href="admin.log.duration.asp">מעקב - זמני תגובה שאילתות שרת</a></li>
-	</ul>
-	<h2>כבדים - להריץ מקומית בלבד</h2>
-	<ul class="adminMenu">
-		<li><a href="admin.select.asp">SQL SELECT</a></li>
-		<li><a href="admin.listAllWords.asp">רשימת כל המילים במילון - מומלץ רק לוקאלי</a></li>
 	</ul>
 </div>
 
@@ -88,21 +76,6 @@ closeDbLogger "arabicUsers","C","admin.asp","allowEdit",durationMs,""
 	  <span class="slider round"></span>
 	</label>
 
-
-	  <div><%
-	'openDB "arabicUsers" 
-	openDbLogger "arabicUsers","O","admin.asp","users",""
-		mySQL = "SELECT loginLog.*,users.username, users.name FROM loginLog LEFT JOIN users ON users.id = loginLog.userID WHERE userID<>1 ORDER BY loginTimeUTC DESC"
-		res.open mySQL, con
-			 %><p>חיבור אחרון ב- <%=res("loginTimeUTC")%> ע"י <%=res("username")%>
-			 	<br><small>הפסקנו לוג בנובמבר 2021</small>
-			 </p><%
-			
-		res.close
-	'closeDB
-	closeDbLogger "arabicUsers","C","admin.asp","users",durationMs,""	%>
-	  	
-	  </div>
 </div>
 
 

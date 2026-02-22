@@ -752,9 +752,7 @@ end if
     <div>
         <a href="guide.asp"><div data-gtm="tile_guide">מדריך שימוש</div></a>
     </div>
-    <div style="display:none;">
-        <a href="team.tasks.asp"><div data-gtm="tile_learn">דף משימות</div></a>
-    </div>
+
     <div>
         <a href="games.mem.asp"><div data-gtm="tile_games">משחק זיכרון</div></a>
     </div>

@@ -73,14 +73,7 @@ openDbLogger "arabicWords","O","word.edit.asp","lock",""
 
 
 mySQL = "UPDATE words SET lockedUTC='"&AR2UTC(now())&"_uid"&session("userID")&"' WHERE id="&wordID
-res.open mySQL, con
-    ' response.write "mySQL = "&mySQL
-    ' response.end
-    cmd.CommandType=1
-    cmd.CommandText=mySQL
-    Set cmd.ActiveConnection=con
-    cmd.execute ,,128
-'res.close
+con.execute mySQL
 
 
 'closeDB
@@ -628,7 +621,7 @@ closeDbLogger "arabicWords","C","word.edit.asp","lock",durationMs,""
                 <input style="border:0; color:white; background:#4d6bfd; padding:20px 80px; font-size:xx-large;" type="submit" value="עדכן מילה" name="Submit1" id="Submit1" />
                 <br>
                 <br>
-                <button style="border:0; color:white; background:#fd4d4d; padding:10px 40px;" type="button" id="cancel" onclick="window.location.href='word.asp?id=<%=wordID%>'">
+                <button style="border:0; color:white; background:#fd4d4d; padding:10px 40px;" type="button" id="cancel" onclick="window.location.href='word.unlock.asp?id=<%=wordID%>'">
                     חזרה לדף מילה
                     <br>(ללא שמירה)
                 </button>                

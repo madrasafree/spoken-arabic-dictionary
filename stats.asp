@@ -1,5 +1,5 @@
 ﻿<!--#include file="inc/inc.asp"--><%
-dim cntID, cntLBL, cntLST, cntIMG, cntVID, cntAUDIO, cntREL, cntUSR, cntSrch, sumSrch
+dim cntID, cntLBL, cntLST, cntIMG, cntVID, cntAUDIO, cntREL, cntUSR
     
 openDB "arabicWords"
     mySQL = "SELECT count(ID) as cntID FROM words WHERE words.show "
@@ -46,13 +46,7 @@ openDB "arabicUsers"
     res.close
 closeDB    
     
-openDB "arabicSearch"
-	mySQL = "SELECT count(*),sum(searchCount) FROM wordsSearched"
-	res.open mySQL, con     
-        cntSrch = FormatNumber(res(0),0)
-        sumSrch = FormatNumber(res(1),0)
-    res.close
-closeDB
+
 
 %>
 <!DOCTYPE html>
@@ -96,20 +90,7 @@ closeDB
     </ul>
 </div>
 <br />
-<div class="table divStats">
-	מאז דצמבר 2009 נעשו
-    <ul>
-        <li><label><%=sumSrch%></label> חיפושים</li>
-    </ul>
-    שהיו מורכבים מ:
-    <ul>
-        <li><label><%=cntSrch%></label> מילים וביטויים שונים</li>
-    </ul>
-</div>
-<br />
-<div class="table divStats" style=" max-width:280px; padding:10px 10px; border-radius:10px; ">
-    >> <a href="stats.topSearch.asp">100 המילים שחיפשו הכי הרבה</a>
-</div>
+
 <br/>
 <table class="tableStats">
     <tr>
