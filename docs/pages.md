@@ -118,7 +118,7 @@ inc/trailer.asp        -> footer and closing tags
 ### Behavior
 
 - Sets guide page title and header.
-- Loads `team/inc/guide.css`.
+- Loads `assets/css/guide.css`.
 - Injects full guide content from `team/guide.embed.asp`.
 - Provides `#links` anchor target used by the embedded content.
 - No request parameters or form handling in `guide.asp`.
@@ -193,7 +193,7 @@ inc/trailer.asp               -> Footer and closing tags
 - **Admin/Creator Tools:** 
     - If the user owns the list, it shows "Remove" buttons (`.removeBtn`), powered by jQuery and pointing to `listsWord.remove.asp`.
     - Certain admin user IDs (`1, 73, 76`) can add new words via a quick-add AJAX form pointing to `listsWord.insert.asp`.
-- **Client-Side:** Loads `team/js/jquery.list.update.js` which handles the AJAX word insertion logic and `newRelSelect` dropdown.
+- **Client-Side:** Loads `assets/js/jquery.list.update.js` which handles the AJAX word insertion logic and `newRelSelect` dropdown.
 
 
 ---
@@ -304,7 +304,7 @@ inc/trailer.asp                    -> Footer
 ```
 
 ### Behavior & Logic
-- **Header:** Fetches the `labelName` for the current ID to set the `<title>` and `<h1>`. Also dynamically points `og:image` to `img/labels/[ID].png`.
+- **Header:** Fetches the `labelName` for the current ID to set the `<title>` and `<h1>`. Also dynamically points `og:image` to `assets/images/labels/[ID].png`.
 - **Sorting:** Allows sorting the word list via the `order` query string parameter (`a` = Arabic (default), `e` = English/pronunciation, `h` = Hebrew).
 - **Tag Cloud:** Re-implements the exact same tag cloud weighing logic (`SELECT Case true... x>=0 AND x<=10...`) found in `default.asp` to display all available labels.
 - **Word Listing:** Uses a large `INNER JOIN` to fetch `words`, `wordsLabels`, and `wordsMedia` where `labelID = [ID]`. Renders the collection using the standard search result card UI (Hebrew, Arabic, transliteration, verification status icons, and media indicators).
@@ -723,7 +723,7 @@ The main homepage and search engine for the dictionary. Accepts a search query `
 **DB access:** none
 
 ### Purpose
-An interactive Arabic clock learning tool. Displays an SVG analog clock and transliterates the current time into Arabic using `saa3a.js`.
+An interactive Arabic clock learning tool. Displays an SVG analog clock and transliterates the current time into Arabic using `assets/js/saa3a.js`.
 
 ---
 
