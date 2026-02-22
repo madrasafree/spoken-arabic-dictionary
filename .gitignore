@@ -3,3 +3,4 @@ App_Data/
 .claude/
 .playwright-mcp/
 _rebuild_inventory.py
+robots.txt
