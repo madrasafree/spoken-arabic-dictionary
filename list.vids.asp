@@ -1,10 +1,10 @@
-﻿<!--#include file="inc/inc.asp"-->
+﻿<!--#include file="includes/inc.asp"-->
 <!DOCTYPE html>
 <html style="height:100%;">
 <head>
 	<title>מילים עם סרטון</title>
 	<meta name="Description" content="כל המילים שיש להם סירטון" />
-	<!--#include file="inc/header.asp"-->
+	<!--#include file="includes/header.asp"-->
     <style>
         #center {text-align:center;}
         .heb {text-align: right;}
@@ -29,7 +29,7 @@
     </script>
 </head>
 <body>
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/top.asp"-->
 <div id="pTitle">מילים עם סרטון</div>
 <div style="max-width:500px; margin:0 auto; text-align: center;">
 <div>
@@ -114,5 +114,5 @@ closeDbLogger "arabicWords","C","list.vids.asp","single",durationMs,""
 %>
 <br>
 </div>
-<script src="https://milon.madrasafree.com/inc/youtube.js"></script>
-<!--#include file="inc/trailer.asp"-->
+<script src="<%=baseA%>assets/js/youtube.js"></script>
+<!--#include file="includes/trailer.asp"-->

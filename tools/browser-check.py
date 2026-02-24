@@ -1,5 +1,5 @@
 """
-browser-check.py — Playwright browser tests for milon.madrasafree.com
+browser-check.py - Playwright browser tests for milon.madrasafree.com
 
 Usage:
     python tools/browser-check.py              # test production (headless)
@@ -8,21 +8,17 @@ Usage:
     python tools/browser-check.py --screenshot # save screenshots to tools/screenshots/
 
 Setup (once):
-    pip install playwright
+    pip install -r tools/requirements.txt
     playwright install chromium
-
-What it checks:
-  - Pages load without IIS error screen
-  - No "Server Error" text in the page (IIS default error indicator)
-  - Key elements are present (nav bar, page title area)
-  - Custom 404 page is served (not IIS default error)
-  - /docs/ returns 404 (blocked)
 """
 
-import sys
+from __future__ import annotations
+
 import argparse
+import sys
 from pathlib import Path
-from playwright.sync_api import sync_playwright, Page
+
+from playwright.sync_api import Page, sync_playwright
 
 PROD_BASE = "https://milon.madrasafree.com"
 LOCAL_BASE = "http://localhost:8081"
@@ -30,23 +26,32 @@ LOCAL_BASE = "http://localhost:8081"
 IIS_ERROR_INDICATORS = [
     "Server Error",
     "HTTP Error",
-    "IIS",
     "500 - Internal server error",
     "403 - Forbidden",
     "Runtime Error",
 ]
 
-PAGES_TO_CHECK = [
-    ("/", "default.asp or home", {"nav": True}),
-    ("/about.asp", "About page", {"nav": True, "text": "מילון ערבית מדוברת"}),
-    ("/labels.asp", "Labels tag cloud", {"nav": True, "text": "אינדקס נושאים"}),
-    ("/word.asp?id=1", "Word page", {"nav": True}),
+PUBLIC_PAGES = [
+    # path, description, expected_substring
+    ("/", "Home page", None),
+    ("/about.asp", "About page", "מילון ערבית מדוברת"),
+    ("/labels.asp", "Labels page", "אינדקס נושאים"),
+    ("/word.asp?id=1", "Word page", None),
 ]
 
-PAGES_404 = [
-    ("/1.asp", "Non-existent → custom 404"),
-    ("/docs/", "docs/ blocked → 404"),
+ERROR_PAGES = [
+    ("/1.asp", "Non-existent page (custom 404 expected)"),
+    ("/docs/", "docs/ blocked (404 expected)"),
 ]
+
+ADMIN_PAGES = [
+    ("/admin/", "Admin folder route"),
+    ("/admin.asp", "Legacy admin route"),
+]
+
+
+def _ok_icon(ok: bool) -> str:
+    return "[OK]" if ok else "[FAIL]"
 
 
 def has_iis_error(page: Page) -> str | None:
@@ -57,101 +62,135 @@ def has_iis_error(page: Page) -> str | None:
     return None
 
 
-def check_page(
+def screenshot_name(path: str, prefix: str = "") -> str:
+    normalized = path.strip("/").replace("/", "_").replace("?", "_").replace("=", "")
+    name = normalized or "home"
+    return f"{prefix}{name}.png"
+
+
+def check_public_page(
     page: Page,
     base: str,
     path: str,
     description: str,
-    expectations: dict,
+    expected_text: str | None,
     screenshot_dir: Path | None,
 ) -> bool:
     url = base + path
     passed = True
-    issues = []
+    issues: list[str] = []
 
     try:
-        response = page.goto(url, timeout=15000, wait_until="domcontentloaded")
-        status = response.status if response else "?"
+        response = page.goto(url, timeout=20000, wait_until="domcontentloaded")
+        status = response.status if response else -1
+
+        if status != 200:
+            passed = False
+            issues.append(f"Expected status 200, got {status}")
 
         iis_err = has_iis_error(page)
         if iis_err:
-            issues.append(f"IIS error indicator found: '{iis_err}'")
             passed = False
+            issues.append(f"IIS error indicator found: {iis_err}")
 
-        if expectations.get("nav"):
-            # Check nav bar is present (inc/top.asp renders #bar-search-container)
-            nav = page.locator("#bar-search-container, #siteTitle").first
-            if nav.count() == 0:
-                issues.append("Nav bar element not found")
-                passed = False
+        nav = page.locator("#bar-search-container, #siteTitle").first
+        if nav.count() == 0:
+            passed = False
+            issues.append("Nav bar element not found")
 
-        if "text" in expectations:
-            if expectations["text"] not in page.content():
-                issues.append(f"Expected text not found: {repr(expectations['text'])}")
-                passed = False
+        if expected_text and expected_text not in page.content():
+            passed = False
+            issues.append("Expected page marker text not found")
 
-        icon = "✓" if passed else "✗"
-        print(f"  {icon}  {description}  [{status}]  {url}")
+        print(f"  {_ok_icon(passed)} {description} [{status}] {url}")
         for issue in issues:
-            print(f"       ⚠ {issue}")
+            print(f"       - {issue}")
 
         if screenshot_dir:
-            fname = (
-                path.strip("/").replace("/", "_").replace("?", "_").replace("=", "")
-                or "home"
-            )
-            page.screenshot(path=screenshot_dir / f"{fname}.png", full_page=True)
-
-    except Exception as e:
-        print(f"  ✗  {description}  {url}")
-        print(f"       ERROR: {e}")
+            page.screenshot(path=screenshot_dir / screenshot_name(path), full_page=True)
+    except Exception as err:  # noqa: BLE001
+        print(f"  [FAIL] {description} {url}")
+        print(f"       - ERROR: {err}")
         passed = False
 
     return passed
 
 
-def check_404_page(
+def check_error_page(
     page: Page, base: str, path: str, description: str, screenshot_dir: Path | None
 ) -> bool:
     url = base + path
     try:
-        response = page.goto(url, timeout=15000, wait_until="domcontentloaded")
-        status = response.status if response else "?"
-
+        response = page.goto(url, timeout=20000, wait_until="domcontentloaded")
+        status = response.status if response else -1
         content = page.content()
-        # IIS default 404 shows "File or directory not found" — that means custom page is NOT serving
-        is_iis_default = "File or directory not found" in content or (
+
+        is_iis_default_404 = "File or directory not found" in content or (
             "404" in content and "Server Error" in content
         )
-        is_custom = "לא נמצא" in content  # Hebrew text from our custom not_found.html
+        passed = status == 404 and not is_iis_default_404
 
-        if status == 404 and not is_iis_default:
-            icon = "✓"
-            note = "custom 404" if is_custom else "404 (verify content)"
-            passed = True
-        elif status == 404 and is_iis_default:
-            icon = "✗"
-            note = "IIS default 404 — custom error page not serving"
-            passed = False
-        else:
-            icon = "✗"
-            note = f"unexpected status {status}"
-            passed = False
-
-        print(f"  {icon}  {description}  [{status}]  {url}  — {note}")
+        detail = "custom/non-IIS 404" if passed else "unexpected 404 response"
+        print(f"  {_ok_icon(passed)} {description} [{status}] {url} - {detail}")
 
         if screenshot_dir:
-            fname = "404_" + path.strip("/").replace("/", "_") or "404_root"
-            page.screenshot(path=screenshot_dir / f"{fname}.png", full_page=True)
+            page.screenshot(
+                path=screenshot_dir / screenshot_name(path, prefix="404_"),
+                full_page=True,
+            )
 
         return passed
-    except Exception as e:
-        print(f"  ✗  {description}  {url}")
-        print(f"       ERROR: {e}")
+    except Exception as err:  # noqa: BLE001
+        print(f"  [FAIL] {description} {url}")
+        print(f"       - ERROR: {err}")
         return False
 
 
-def main():
+def check_admin_route(
+    page: Page, base: str, path: str, description: str, screenshot_dir: Path | None
+) -> bool:
+    url = base + path
+    passed = True
+    issues: list[str] = []
+
+    try:
+        response = page.goto(url, timeout=20000, wait_until="domcontentloaded")
+        status = response.status if response else -1
+        final_url = page.url.lower()
+        content = page.content().lower()
+
+        if status == 404:
+            passed = False
+            issues.append("Admin route returned 404")
+
+        iis_err = has_iis_error(page)
+        if iis_err:
+            passed = False
+            issues.append(f"IIS error indicator found: {iis_err}")
+
+        if "login.asp" not in final_url and "submit1" not in content:
+            # Anonymous browser should land on login for protected admin pages.
+            passed = False
+            issues.append("Did not land on a login page for protected admin route")
+
+        print(f"  {_ok_icon(passed)} {description} [{status}] {url} -> {page.url}")
+        for issue in issues:
+            print(f"       - {issue}")
+
+        if screenshot_dir:
+            page.screenshot(
+                path=screenshot_dir / screenshot_name(path, prefix="admin_"),
+                full_page=True,
+            )
+    except Exception as err:  # noqa: BLE001
+        print(f"  [FAIL] {description} {url}")
+        print(f"       - ERROR: {err}")
+        passed = False
+
+    return passed
+
+
+def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--local", action="store_true", help="Test localhost:8081")
     parser.add_argument("--headed", action="store_true", help="Show browser window")
@@ -168,29 +207,34 @@ def main():
         screenshot_dir = Path(__file__).parent / "screenshots"
         screenshot_dir.mkdir(exist_ok=True)
 
-    print(f"\nBrowser check: {base}\n{'─' * 50}")
+    print(f"\nBrowser check: {base}\n" + ("-" * 60))
     all_passed = True
 
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=not args.headed)
+    with sync_playwright() as playwright:
+        browser = playwright.chromium.launch(headless=not args.headed)
         page = browser.new_page()
 
-        print("\n  Pages:")
-        for path, description, expectations in PAGES_TO_CHECK:
-            ok = check_page(page, base, path, description, expectations, screenshot_dir)
-            if not ok:
+        print("\nPublic pages:")
+        for path, description, expected_text in PUBLIC_PAGES:
+            if not check_public_page(
+                page, base, path, description, expected_text, screenshot_dir
+            ):
                 all_passed = False
 
-        print("\n  Error pages:")
-        for path, description in PAGES_404:
-            ok = check_404_page(page, base, path, description, screenshot_dir)
-            if not ok:
+        print("\nError pages:")
+        for path, description in ERROR_PAGES:
+            if not check_error_page(page, base, path, description, screenshot_dir):
+                all_passed = False
+
+        print("\nAdmin routes:")
+        for path, description in ADMIN_PAGES:
+            if not check_admin_route(page, base, path, description, screenshot_dir):
                 all_passed = False
 
         browser.close()
 
-    print(f"\n{'─' * 50}")
-    print(f"  {'ALL PASSED' if all_passed else 'SOME CHECKS FAILED'}\n")
+    print("\n" + ("-" * 60))
+    print("ALL PASSED\n" if all_passed else "SOME CHECKS FAILED\n")
     sys.exit(0 if all_passed else 1)
 
 
