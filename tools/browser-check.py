@@ -24,7 +24,7 @@ import argparse
 from pathlib import Path
 from playwright.sync_api import sync_playwright, Page
 
-PROD_BASE  = "https://milon.madrasafree.com"
+PROD_BASE = "https://milon.madrasafree.com"
 LOCAL_BASE = "http://localhost:8081"
 
 IIS_ERROR_INDICATORS = [
@@ -37,15 +37,15 @@ IIS_ERROR_INDICATORS = [
 ]
 
 PAGES_TO_CHECK = [
-    ("/",              "default.asp or home",     {"nav": True}),
-    ("/about.asp",     "About page",              {"nav": True, "text": "מילון ערבית מדוברת"}),
-    ("/labels.asp",    "Labels tag cloud",        {"nav": True, "text": "אינדקס נושאים"}),
-    ("/word.asp?id=1", "Word page",               {"nav": True}),
+    ("/", "default.asp or home", {"nav": True}),
+    ("/about.asp", "About page", {"nav": True, "text": "מילון ערבית מדוברת"}),
+    ("/labels.asp", "Labels tag cloud", {"nav": True, "text": "אינדקס נושאים"}),
+    ("/word.asp?id=1", "Word page", {"nav": True}),
 ]
 
 PAGES_404 = [
-    ("/1.asp",         "Non-existent → custom 404"),
-    ("/docs/",         "docs/ blocked → 404"),
+    ("/1.asp", "Non-existent → custom 404"),
+    ("/docs/", "docs/ blocked → 404"),
 ]
 
 
@@ -57,8 +57,14 @@ def has_iis_error(page: Page) -> str | None:
     return None
 
 
-def check_page(page: Page, base: str, path: str, description: str, expectations: dict,
-               screenshot_dir: Path | None) -> bool:
+def check_page(
+    page: Page,
+    base: str,
+    path: str,
+    description: str,
+    expectations: dict,
+    screenshot_dir: Path | None,
+) -> bool:
     url = base + path
     passed = True
     issues = []
@@ -73,8 +79,8 @@ def check_page(page: Page, base: str, path: str, description: str, expectations:
             passed = False
 
         if expectations.get("nav"):
-            # Check nav bar is present (inc/top.asp renders it)
-            nav = page.locator("#pTitle, nav, #topNav, .navbar").first
+            # Check nav bar is present (inc/top.asp renders #bar-search-container)
+            nav = page.locator("#bar-search-container, #siteTitle").first
             if nav.count() == 0:
                 issues.append("Nav bar element not found")
                 passed = False
@@ -90,7 +96,10 @@ def check_page(page: Page, base: str, path: str, description: str, expectations:
             print(f"       ⚠ {issue}")
 
         if screenshot_dir:
-            fname = path.strip("/").replace("/", "_").replace("?", "_").replace("=", "") or "home"
+            fname = (
+                path.strip("/").replace("/", "_").replace("?", "_").replace("=", "")
+                or "home"
+            )
             page.screenshot(path=screenshot_dir / f"{fname}.png", full_page=True)
 
     except Exception as e:
@@ -101,8 +110,9 @@ def check_page(page: Page, base: str, path: str, description: str, expectations:
     return passed
 
 
-def check_404_page(page: Page, base: str, path: str, description: str,
-                   screenshot_dir: Path | None) -> bool:
+def check_404_page(
+    page: Page, base: str, path: str, description: str, screenshot_dir: Path | None
+) -> bool:
     url = base + path
     try:
         response = page.goto(url, timeout=15000, wait_until="domcontentloaded")
@@ -110,8 +120,9 @@ def check_404_page(page: Page, base: str, path: str, description: str,
 
         content = page.content()
         # IIS default 404 shows "File or directory not found" — that means custom page is NOT serving
-        is_iis_default = "File or directory not found" in content or \
-                         ("404" in content and "Server Error" in content)
+        is_iis_default = "File or directory not found" in content or (
+            "404" in content and "Server Error" in content
+        )
         is_custom = "לא נמצא" in content  # Hebrew text from our custom not_found.html
 
         if status == 404 and not is_iis_default:
@@ -142,9 +153,13 @@ def check_404_page(page: Page, base: str, path: str, description: str,
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--local",      action="store_true", help="Test localhost:8081")
-    parser.add_argument("--headed",     action="store_true", help="Show browser window")
-    parser.add_argument("--screenshot", action="store_true", help="Save screenshots to tools/screenshots/")
+    parser.add_argument("--local", action="store_true", help="Test localhost:8081")
+    parser.add_argument("--headed", action="store_true", help="Show browser window")
+    parser.add_argument(
+        "--screenshot",
+        action="store_true",
+        help="Save screenshots to tools/screenshots/",
+    )
     args = parser.parse_args()
 
     base = LOCAL_BASE if args.local else PROD_BASE
