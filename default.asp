@@ -1,11 +1,11 @@
-<!--#include file="inc/inc.asp"-->
-<!--#include file="team/inc/functions/string.asp"-->
-<!--#include file="inc/functions/functions.asp"-->
-<!--#include file="inc/time.asp"-->
+<!--#include file="includes/inc.asp"-->
+<!--#include file="includes/functions/string.asp"-->
+<!--#include file="includes/functions/functions.asp"-->
+<!--#include file="includes/time.asp"-->
 <!DOCTYPE html>
 <html style="height:100%;">
 <head>
-    <!--#include file="inc/header.asp"-->
+    <!--#include file="includes/header.asp"-->
     <title>מילון ערבית מדוברת - לדוברי עברית</title>
     <meta name="Description" content="המילון לערבית מדוברת (לדוברי עברית) הוא שירות חינמי שנועד לעזור לקהילת לומדי הערבית המדוברת" />
     <!--meta name="Keywords" content="מילון, ערבית, מדוברת, עברית, עברי, ערבי, חופשי, חינם, חינמי, תרגום, תירגום, מילים, איך, אומרים, בערבית" /> up to 2021-06 -->
@@ -231,8 +231,8 @@
     </script>
 </head>
 <body>
-<!--#include file="inc/top.asp"-->
-<!--#include file="team/inc/functions/soundex.asp"--><%
+<!--#include file="includes/top.asp"-->
+<!--#include file="includes/functions/soundex.asp"--><%
 
 dim countMe,resultPos,id,ids,idx,skip,wordMain,title,psikArr,psikWord,found
 
@@ -242,7 +242,7 @@ ids = ""
 skip = false
 wordMain=0 %>
 
-<!--#include file="inc/banner.asp"-->
+<!--#include file="includes/banner.asp"-->
 
 <div class="box">
 
@@ -892,7 +892,7 @@ end if %>
 </script>
 
 
-<!--#include file="inc/trailer.asp"--><%
+<!--#include file="includes/trailer.asp"--><%
 response.Flush
 
 

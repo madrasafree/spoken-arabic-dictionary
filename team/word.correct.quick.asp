@@ -1,4 +1,4 @@
-<!--#include file="inc/inc.asp"-->
+<!--#include virtual="/includes/inc_team.asp"-->
 <!-- Language="VBScript" CodePage="65001"-->
 <!-- Language="VBScript" CodePage="1255"-->
 <!DOCTYPE html>

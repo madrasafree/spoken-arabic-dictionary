@@ -1,5 +1,5 @@
-﻿<!--#include file="inc/inc.asp"-->
-<!--#include file="inc/time.asp"--><%
+﻿<!--#include file="includes/inc.asp"-->
+<!--#include file="includes/time.asp"--><%
 dim userId, name, username, d, gen, countMe, nikud
 
 gen=""
@@ -26,7 +26,7 @@ end if
 <head>
     <title><%=username%></title>
 	<meta name="Description" content="שם המשתמש: <%=res("username")%>" />
-    <!--#include file="inc/header.asp"-->
+    <!--#include file="includes/header.asp"-->
     <link rel="stylesheet" href="assets/css/arabicTeam.css" />
     <style>
         .listDiv > span {display:block; line-height: 15px;}
@@ -37,7 +37,7 @@ end if
 </head>
 <body>
 
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/top.asp"-->
 <br />
 <table class="table" style="background:white; box-shadow:4px 2px 5px -2px #888; margin-bottom:20px;">
     <tr style="vertical-align:top;">
@@ -226,4 +226,4 @@ closeDbLogger "arabicWords","C","profile.allwords.asp","words",durationMs,""
 
 
 %>
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->

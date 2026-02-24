@@ -1,4 +1,4 @@
-﻿<!--#include file="inc/inc.asp"--><%
+﻿<!--#include file="includes/inc.asp"--><%
 If (session("role")<2) then 
     session("msg") = "על מנת לערוך רשימות, עליך להיות מחובר"
     Response.Redirect "team/login.asp"
@@ -49,7 +49,7 @@ res.close %>
 <head>
 	<title>יצירת רשימה חדשה</title>
     <meta name="robots" content="none">
-<!--#include file="inc/header.asp"-->
+<!--#include file="includes/header.asp"-->
     <style>
         .formList {
             background:#d4eaff33;
@@ -95,7 +95,7 @@ res.close %>
     </style>
 </head>
 <body>
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/top.asp"-->
 <div id="dashboard">
     <div style="text-align:center; margin-bottom: 10px; text-decoration:underline;"><%
         mySQL = "SELECT count(id) FROM lists WHERE creator="&session("userID")
@@ -143,4 +143,4 @@ res.close %>
 'closeDB
 closeDbLogger "arabicWords","C","listsNew.asp","main",durationMs,""
 %>
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->

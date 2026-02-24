@@ -1,6 +1,6 @@
-﻿<!--#include file="inc/inc.asp"-->
-<!--#include file="inc/functions/functions.asp"-->
-<!--#include file="inc/time.asp"--><%
+﻿<!--#include file="includes/inc.asp"-->
+<!--#include file="includes/functions/functions.asp"-->
+<!--#include file="includes/time.asp"--><%
 
 dim wordId
 dim timePast,creationTimeUTC,creatorID,userName
@@ -57,7 +57,7 @@ res.close
 <!DOCTYPE html>
 <html style="height:100%;">
 <head>
-<!--#include file="inc/header.asp"-->
+<!--#include file="includes/header.asp"-->
     <title>היסטורית עריכות מילה</title>
     <meta property="og:title" content="היסטורית עריכות מילה" />
     <meta property="og:type" content="website" />
@@ -71,7 +71,7 @@ res.close
     </style>
 </head>
 <body>
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/top.asp"-->
 
 <div class="table" style="margin-bottom:40px;">
     <a href="word.asp?id=<%=wordId%>" class="backButton">חזרה לדף המילה</a>
@@ -486,4 +486,4 @@ res.close
     %>
 </div>
 
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->

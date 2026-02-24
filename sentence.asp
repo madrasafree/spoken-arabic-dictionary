@@ -1,11 +1,11 @@
-﻿<!--#include file="inc/inc.asp"-->
-<!--#include file="inc/functions/functions.asp"-->
+﻿<!--#include file="includes/inc.asp"-->
+<!--#include file="includes/functions/functions.asp"-->
 <!DOCTYPE html>
 <html style="height:100%;">
 <head>
 	<title></title>
 	<meta name="Description" content="נסיונות מילון על משפטים" />
-	<!--#include file="inc/header.asp"-->
+	<!--#include file="includes/header.asp"-->
 	<link rel="stylesheet" href="assets/css/arabic_utils.css" />
 	<style>
 		.sentence {background: #ffffff90; margin: 10px 0px 5px 0px ; border-radius:4px; box-shadow:rgba(0,0,0,0.45) 2px 2px 22px -3px;}
@@ -45,13 +45,13 @@
 	</script>
 </head>
 <body>
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/top.asp"-->
 
 
 <div id="bread">
 	<a href=".">מילון</a> / <%
 	if session("userID")=1 then %>
-	<a href="admin.asp">ניהול</a> / <%
+	<a href="admin/">ניהול</a> / <%
 	end if %>
 	<a href="sentences.asp">משפטים</a> / 
 	<h1>משפט</h1>
@@ -220,4 +220,4 @@ closeDbLogger "arabicWords","C","sentence.asp","single",durationMs,""
 	</ul>
 </div>
 
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->

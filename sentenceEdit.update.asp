@@ -1,5 +1,5 @@
-<!--#include file="inc/inc.asp"-->
-<!--#include file="inc/functions/soundex.asp"-->
+<!--#include file="includes/inc.asp"-->
+<!--#include file="includes/functions/soundex.asp"-->
 <!-- Language="VBScript" CodePage="65001"-->
 <!-- Language="VBScript" CodePage="1255"--><%
 if session("role") < 7 then
@@ -24,7 +24,7 @@ closeDB
 <head>
 	<meta charset='utf-8'>
 </head>
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/top.asp"-->
 <%
 dim q,qFix 'TEMP from inc/top.asp'
 

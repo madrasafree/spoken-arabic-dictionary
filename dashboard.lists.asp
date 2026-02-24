@@ -1,5 +1,5 @@
-﻿<!--#include file="inc/inc.asp"-->
-<!--#include file="inc/functions/functions.asp"--><%
+﻿<!--#include file="includes/inc.asp"-->
+<!--#include file="includes/functions/functions.asp"--><%
 
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","dashboard.lists.asp","single",""
@@ -62,7 +62,7 @@ end select %>
 <head>
 	<title><%=pTitle%></title>
     <META NAME="ROBOTS" CONTENT="NONE">
-<!--#include file="inc/header.asp"-->
+<!--#include file="includes/header.asp"-->
     <style>
         .checker {border: 0px solid; margin-bottom: 20px; padding: 7px 0 10px 0; text-align: center;}
         h1 {font-size:1em; margin:0;}
@@ -97,7 +97,7 @@ end select %>
     </style>
 </head>
 <body>
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/top.asp"-->
 <div id="dashboard">
     <div id="pTitle"><h1><%=pTitle%></h1></div>
     <span>הערכים מסודרים מותיק לחדש
@@ -158,6 +158,6 @@ end select %>
 closeDbLogger "arabicWords","C","dashboard.lists.asp","single",durationMs,""
 
 %>
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->
 </body>
 </html>

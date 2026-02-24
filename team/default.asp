@@ -1,11 +1,11 @@
-﻿<!--#include file="inc/inc.asp"--><%
+﻿<!--#include virtual="/includes/inc_team.asp"--><%
 if (session("role") and 2) = 0 then Response.Redirect "login.asp" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="ROBOTS" content="NONE">
 	<title>דף צוות ראשי (זמני)</title>
-<!--#include virtual="/inc/header.asp"-->
+<!--#include virtual="/includes/header.asp"-->
     <style>
         h1 {font-size:1em; margin:0;}
         h2 {font-size:1em;}
@@ -40,7 +40,7 @@ if (session("role") and 2) = 0 then Response.Redirect "login.asp" %>
     </style>
 </head>
 <body>
-<!--#include virtual="/inc/top.asp"-->
+<!--#include virtual="/includes/top.asp"-->
 
 <div id="dashboard">
     <div id="pTitle"><h1>תפריט משתמשים רשומים</h1></div>
@@ -58,4 +58,4 @@ if (session("role") and 2) = 0 then Response.Redirect "login.asp" %>
     </ul>
 
 </div>
-<!--#include virtual="/inc/trailer.asp"-->
+<!--#include virtual="/includes/trailer.asp"-->

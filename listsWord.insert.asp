@@ -1,4 +1,4 @@
-﻿<!--#include file="inc/inc.asp"--><%
+﻿<!--#include file="includes/inc.asp"--><%
 If (session("role")<2) then 
     session("msg") = "אין לך הרשאה מתאימה"
     Response.Redirect Request.ServerVariables("HTTP_REFERER")
@@ -22,11 +22,11 @@ closeDB
 <head>
 	<title>הוספת מילה לרשימה</title>
     <meta name="robots" content="none">
-<!--#include file="inc/header.asp"-->
+<!--#include file="includes/header.asp"-->
 </head>
 <body style="text-align:left; direction: ltr;">
 <div style="padding:20px;">
-<!--#include file="inc/time.asp"--><%
+<!--#include file="includes/time.asp"--><%
 
 dim listID,wordID,maxPos,lastUpdateUTC
 

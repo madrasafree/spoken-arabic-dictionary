@@ -1,11 +1,11 @@
-﻿<!--#include file="inc/inc.asp"-->
-<!--#include file="team/inc/time.asp"-->
+﻿<!--#include file="includes/inc.asp"-->
+<!--#include file="includes/time.asp"-->
 <!DOCTYPE html>
 <html style="height:100%;">
 <head>
     <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 	<title>ברוכים הבאים</title>
-    <!--#include file="inc/header.asp"-->
+    <!--#include file="includes/header.asp"-->
     <style>
         h2 {}
         legend {padding:4px;}
@@ -28,7 +28,7 @@
     </script>
 </head>
 <body>
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/top.asp"-->
 
 <div id="pTitle">ברוכים הבאים</div>
     <div style="max-width:500px;margin:0 auto;">
@@ -127,4 +127,4 @@
     </div>
 </div>
 <br />
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->

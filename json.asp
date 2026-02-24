@@ -18,8 +18,8 @@ sub closeDB
 end sub 
 
 %>
-<!--#include file="inc/functions/string.asp"-->
-<!--#include file="inc/functions/functions.asp"-->
+<!--#include file="includes/functions/string.asp"-->
+<!--#include file="includes/functions/functions.asp"-->
 <%
 
 'GET SEARCH FROM CLIENT

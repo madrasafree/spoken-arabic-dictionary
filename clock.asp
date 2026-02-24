@@ -1,4 +1,4 @@
-﻿<!--#include file="inc/inc.asp"-->
+﻿<!--#include file="includes/inc.asp"-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +10,7 @@
     <meta property="og:title"     content="קריאת השעון בערבית מדוברת" />
     <meta property="og:description"     content="קריאת השעון בערבית מדוברת. אפשרות לתעתיק עברי או כתב ערבי. ניתן לשנות את השעה שמוצגת" />
     <meta property="og:image"           content="https://milon.madrasafree.com/img/site/page.banner.clock.png" />
-    <!--#include file="inc/header.asp"-->
+    <!--#include file="includes/header.asp"-->
     <script>
         function loadDeferredIframe() {
             // this function will load the iframes after the page loads and the JS runs
@@ -218,7 +218,7 @@
 
 </head>
 <body>
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/top.asp"-->
 
 <h1 id="pTitle">קריאת שעון בערבית מדוברת</h1>
 
@@ -538,4 +538,4 @@
     }, 60000);
 
 </script>
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->

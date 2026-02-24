@@ -1,10 +1,10 @@
-﻿<!--#include file="inc/inc.asp"-->
+﻿<!--#include file="includes/inc.asp"-->
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="ROBOTS" content="NONE">
 	<title>דף שליטה (תוכן)</title>
-<!--#include file="inc/header.asp"-->
+<!--#include file="includes/header.asp"-->
     <style>
         h1 {font-size:1em; margin:0;}
         h2 {font-size:1em;}
@@ -46,7 +46,7 @@
     </style>
 </head>
 <body>
-<!--#include file="inc/top.asp"--><%
+<!--#include file="includes/top.asp"--><%
 
 dim total,totalLocal,totalShow,x
 
@@ -423,6 +423,6 @@ closeDbLogger "arabicWords","C","dashboard.asp","single",durationMs,""
 
 
 %>
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->
 </body>
 </html>

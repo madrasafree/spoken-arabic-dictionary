@@ -1,5 +1,5 @@
-﻿<!--#include file="inc/inc.asp"-->
-<!--#include file="inc/time.asp"--><%
+﻿<!--#include file="includes/inc.asp"-->
+<!--#include file="includes/time.asp"--><%
 
 
 'openDB "arabicWords" 
@@ -82,7 +82,7 @@ res.close
         }
 
     </style>
-<!--#include file="inc/header.asp"-->
+<!--#include file="includes/header.asp"-->
     <script>
         $(document).ready(function(){
 
@@ -112,7 +112,7 @@ res.close
     </script>
 </head>
 <body>
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/top.asp"-->
 <div id="dashboard">
     <div id="pTitle">פעולות אחרונות באתר</div>
     <div class="notice info" style="text-align:center;">
@@ -618,6 +618,6 @@ closeDbLogger "arabicWords","C","activity.asp","single",durationMs,""
 
 
 
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->
 </body>
 </html>

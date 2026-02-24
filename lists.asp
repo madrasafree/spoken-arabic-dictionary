@@ -1,6 +1,6 @@
-﻿<!--#include file="inc/inc.asp"-->
-<!--#include file="inc/functions/functions.asp"-->
-<!--#include file="inc/time.asp"--><%
+﻿<!--#include file="includes/inc.asp"-->
+<!--#include file="includes/functions/functions.asp"-->
+<!--#include file="includes/time.asp"--><%
 dim countMe, nikud, order
 dim LID,LName,lDesc,lPrivacy,psik,current,creatorID,creatorName,creationTimeUTC,lastUpdateUTC,sqlShow
 
@@ -65,7 +65,7 @@ if creatorName <> session("username") then sqlShow = "AND show" %>
     <meta property="og:image"           content="https://milon.madrasafree.com/img/lists/<%=LID%>.png" />
     <link rel="stylesheet" href="assets/css/edit.css" />
 
-    <!--#include file="inc/header.asp"-->
+    <!--#include file="includes/header.asp"-->
     <style>
         h1,h3 {
             text-align:right;
@@ -166,7 +166,7 @@ if creatorName <> session("username") then sqlShow = "AND show" %>
         margin-top:0;
     }
 </style>
-<!--#include file="inc/top.asp"--><%
+<!--#include file="includes/top.asp"--><%
 
     'openDB "arabicWords"
     openDbLogger "arabicWords","O","lists.asp","main",LID
@@ -522,4 +522,4 @@ if session("userID")=1 then %>
 end if %>
 
 
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->

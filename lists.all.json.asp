@@ -17,8 +17,8 @@ sub closeDB
 	set con = nothing
 end sub %>
 
-<!--#include file="inc/functions/string.asp"-->
-<!--#include file="inc/functions/functions.asp"-->
+<!--#include file="includes/functions/string.asp"-->
+<!--#include file="includes/functions/functions.asp"-->
 <%
 
 dim data,psik

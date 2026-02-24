@@ -1,4 +1,4 @@
-﻿<!--#include file="inc/inc.asp"--><%
+﻿<!--#include file="includes/inc.asp"--><%
 if session("role") < 7 AND session("userID")<>90 then
     session("msg") = "אינך מחובר/ת או שאין לך הרשאה מתאימה להוספת משפטים למילון"
  response.redirect "sentences.asp"
@@ -24,7 +24,7 @@ countme = 0
     <meta name="ROBOTS" content="NONE">
 	<title>הוספת משפט חדש</title>
     <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js"></script>
-<!--#include file="inc/header.asp"-->
+<!--#include file="includes/header.asp"-->
 	<link rel="stylesheet" href="assets/css/edit.css" />
     <script>
         $(function() {
@@ -192,9 +192,9 @@ countme = 0
         });
     </script>
 </head>
-<!--#include file="inc/functions/functions.asp"-->
+<!--#include file="includes/functions/functions.asp"-->
 <body>
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/top.asp"-->
 
 <h1 style="text-align:center;">הוספת משפט חדש</h1>
 
@@ -268,7 +268,7 @@ countme = 0
 </div>
 
 
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->
 <script type="text/javascript" src="js/scripts.js"></script>
 </body>
 </html>

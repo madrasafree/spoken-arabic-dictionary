@@ -1,6 +1,6 @@
-﻿<!--#include file="inc/inc.asp"-->
-<!--#include file="inc/functions/functions.asp"-->
-<!--#include file="inc/time.asp"--><%
+﻿<!--#include file="includes/inc.asp"-->
+<!--#include file="includes/functions/functions.asp"-->
+<!--#include file="includes/time.asp"--><%
 
 dim wordId, countMe, spacer, show, status, imgLink, imgCredit
 dim	partsOfSpeach,pos,genders,gen,nums, binyan
@@ -115,7 +115,7 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
     <%else%>
     <meta property="og:image" content="assets/images/site/logo.jpg" />
     <%end if%>
-<!--#include file="inc/header.asp"-->
+<!--#include file="includes/header.asp"-->
     <title><%=hebTrans%> - איך אומרים בערבית</title>
     <meta property="og:title" content="<%=hebTrans%> - איך אומרים בערבית" />
     <meta property="og:type" content="website" />
@@ -255,8 +255,8 @@ closeDbLogger "arabicWords","C","word.asp","Words Main",durationMs,wordId+" "+he
     </script>
 </head>
 <body>
-<!--#include file="inc/top.asp"-->
-<!--#include file="inc/banner.asp"-->
+<!--#include file="includes/top.asp"-->
+<!--#include file="includes/banner.asp"-->
 
 <main class="flex-container">
     <section class="sctRight">
@@ -971,4 +971,4 @@ closeDbLogger "arabicWords","C","word.asp","Editor",durationMs,wordId+" "+hebTra
 </div>
 
 
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->

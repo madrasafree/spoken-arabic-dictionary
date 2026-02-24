@@ -1,5 +1,5 @@
-<!--#include file="inc/inc.asp"-->
-<!--#include file="team/inc/functions/string.asp"-->
+<!--#include file="includes/inc.asp"-->
+<!--#include file="includes/functions/string.asp"-->
 <!DOCTYPE html>
 <html style="height:100%;">
 <head>
@@ -84,7 +84,7 @@ q = trim(Request("searchString"))
     qDisplay = Replace(q,quotes,"&quot;") 'REPLACE QUOTE. FOR DISPLAY WITH HTML'
 %>
 
-<!--#include file="team/inc/functions/soundex.asp"--><%
+<!--#include file="includes/functions/soundex.asp"--><%
 
 dim countMe,id,ids,idx,skip,wordMain,title,psikArr,psikWord,found
 

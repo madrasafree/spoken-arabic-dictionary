@@ -1,7 +1,7 @@
-<!--#include file="inc/inc.asp"-->
-<!--#include file="inc/functions/soundex.asp"-->
-<!--#include file="inc/functions/string.asp"-->
-<!--#include file="inc/time.asp"-->
+<!--#include virtual="/includes/inc_team.asp"-->
+<!--#include virtual="/includes/functions/soundex.asp"-->
+<!--#include virtual="/includes/functions/string.asp"-->
+<!--#include virtual="/includes/time.asp"-->
 <!-- Language="VBScript" CodePage="65001"-->
 <!-- Language="VBScript" CodePage="1255"-->
 <!DOCTYPE html>

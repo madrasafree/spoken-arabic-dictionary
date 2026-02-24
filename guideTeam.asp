@@ -1,10 +1,10 @@
-﻿<!--#include file="inc/inc.asp"-->
+﻿<!--#include file="includes/inc.asp"-->
 <!DOCTYPE html>
 <html style="height:100%;">
 <head>
 	<title>מדריך שימוש במילון - מדריך הוספה ועריכת מילים</title>
 	<meta id="Description" content="כמה מילים אודות המילון ואיך הוא עובד" />
-<!--#include file="inc/header.asp"-->
+<!--#include file="includes/header.asp"-->
     <style>
         .big {font-size:1.4em;}
         .space {margin-bottom:50px;}
@@ -37,7 +37,7 @@ function showShada (word)
     end if
 end function %>
 <body>
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/top.asp"-->
 
 <div id="pTitle">מדריך שימוש במילון</div>
 
@@ -178,4 +178,4 @@ end function %>
 
 </ol>
 </div>
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->

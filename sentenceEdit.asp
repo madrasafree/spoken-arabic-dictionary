@@ -1,4 +1,4 @@
-﻿<!--#include file="inc/inc.asp"--><%
+﻿<!--#include file="includes/inc.asp"--><%
 if session("role") < 7 then
     session("msg") = "אינך מחובר/ת או שאין לך הרשאה מתאימה לערוך משפטים"
     response.redirect "sentences.asp" 
@@ -23,7 +23,7 @@ closeDB
     <meta name="ROBOTS" content="NONE">
 	<title>עריכת משפט</title>
     <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js"></script>
-<!--#include file="inc/header.asp"-->
+<!--#include file="includes/header.asp"-->
     <link rel="stylesheet" href="assets/css/guide.css" />
     <link rel="stylesheet" href="assets/css/edit.css" />
     <script>
@@ -119,9 +119,9 @@ closeDB
         });
     </script>
 </head>
-<!--#include file="inc/functions/functions.asp"-->
+<!--#include file="includes/functions/functions.asp"-->
 <body>
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/top.asp"-->
 
 <h1 style="text-align:center;">עריכת משפט</h1>
 
@@ -244,7 +244,7 @@ closeDB
 </div>
 
 
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->
 <script type="text/javascript" src="js/scripts.js"></script>
 </body>
 </html>

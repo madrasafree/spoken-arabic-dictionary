@@ -1,4 +1,4 @@
-﻿<!--#include file="inc/inc.asp"--><%
+﻿<!--#include file="includes/inc.asp"--><%
 dim cntID, cntLBL, cntLST, cntIMG, cntVID, cntAUDIO, cntREL, cntUSR
     
 openDB "arabicWords"
@@ -65,10 +65,10 @@ closeDB
         .divStats label {font-size:2em; display:block; margin-top:10px;}
         .grow   { display:block; color:#539425; }
     </style>
-    <!--#include file="inc/header.asp"-->
+    <!--#include file="includes/header.asp"-->
 </head>
 <body>
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/top.asp"-->
 
 <div id="pTitle">סטטיסטיקה</div>
 
@@ -204,4 +204,4 @@ closeDB
     </li>
 </ul>
 </div>
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->

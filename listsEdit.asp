@@ -1,4 +1,4 @@
-﻿<!--#include file="inc/inc.asp"--><%
+﻿<!--#include file="includes/inc.asp"--><%
 If (session("role")<2) then 
     session("msg") = "אין לך הרשאה מתאימה"
     Response.Redirect Request.ServerVariables("HTTP_REFERER")
@@ -22,7 +22,7 @@ closeDB
 <head>
 	<title>עריכת רשימה קיימת</title>
     <meta name="robots" content="none">
-<!--#include file="inc/header.asp"-->
+<!--#include file="includes/header.asp"-->
     <style>
         #listUpdate {
             background:#d4eaff33;
@@ -69,7 +69,7 @@ closeDB
     </style>
 </head>
 <body>
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/top.asp"-->
 <div id="dashboard"><%
     
     'openDB "arabicWords"
@@ -122,6 +122,6 @@ closeDB
     closeDbLogger "arabicWords","C","listsEdit.asp","single",durationMs,""    
     %>
 </div>
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->
 </body>
 </html>

@@ -1,11 +1,11 @@
-﻿<!--#include file="inc/inc.asp"--><%
+﻿<!--#include file="includes/inc.asp"--><%
 if (session("role") and 2) = 0 then Response.Redirect "login.asp?returnTo=users.landingPage.asp" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="ROBOTS" content="NONE">
 	<title>דף נחיתה משתמשים רשומים</title>
-<!--#include file="inc/header.asp"-->
+<!--#include file="includes/header.asp"-->
     <style>
         h2 {
             margin-bottom:0;
@@ -43,7 +43,7 @@ if (session("role") and 2) = 0 then Response.Redirect "login.asp?returnTo=users.
     </style>
 </head>
 <body>
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/top.asp"-->
 <h1 id="pTitle">תפריט משתמשים רשומים</h1>
 
 <div class="table userMenu">
@@ -71,6 +71,6 @@ if (session("role") and 2) = 0 then Response.Redirect "login.asp?returnTo=users.
 
 
 </div>
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->
 </body>
 </html>

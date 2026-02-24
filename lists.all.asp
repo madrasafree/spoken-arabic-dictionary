@@ -1,4 +1,4 @@
-﻿<!--#include file="inc/inc.asp"--><%
+﻿<!--#include file="includes/inc.asp"--><%
 dim countMe, nikud, order
 order = "pos"
 Select case Left(Request("order")&"p",1)
@@ -14,7 +14,7 @@ nikud = "" %>
 <head>
     <title>הרשימות שלכם</title>
 	<meta name="Description" content="רשימות מילים" />
-    <!--#include file="inc/header.asp"-->
+    <!--#include file="includes/header.asp"-->
     <style>
         h2 {margin: 0 4px 4px 0; font-size:1.2em; letter-spacing:0.1em; font-weight:100;}
         button {margin:4px; min-width:50px; border-radius:20px; border:0px; background:#bad7f3; color:#3e3e3e; padding:4px 10px; box-shadow:#00000047 1px 1px;}
@@ -49,8 +49,8 @@ nikud = "" %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 <body>
-<!--#include file="inc/time.asp"-->
-<!--#include file="inc/top.asp"--><%
+<!--#include file="includes/time.asp"-->
+<!--#include file="includes/top.asp"--><%
 'openDB "arabicWords"
 openDbLogger "arabicWords","O","lists.all.asp","multi. Break down","" %>
 
@@ -280,4 +280,4 @@ closeDbLogger "arabicWords","C","lists.all.asp","single",durationMs,""
     });
 </script>
 
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->

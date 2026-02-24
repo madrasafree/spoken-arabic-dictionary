@@ -1,10 +1,10 @@
-<!--#include file="inc/inc.asp"-->
+<!--#include file="includes/inc.asp"-->
 <!DOCTYPE html>
 <html>
 <head>
 	<title>אודות המילון</title>
 	<meta name="description" content="כמה מילים אודות המילון ואיך הוא עובד" />
-<!--#include file="inc/header.asp"-->
+<!--#include file="includes/header.asp"-->
     <style>
 
         #copyrights+div b {
@@ -48,7 +48,7 @@
     </style>
 </head>
 <body>
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/top.asp"-->
 
 <h1 class="pTitle">אודות</h1>
 
@@ -162,4 +162,4 @@
     </ul>
 </div>
 
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->

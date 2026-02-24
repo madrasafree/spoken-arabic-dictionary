@@ -1,7 +1,7 @@
-﻿<!--#include file="inc/inc.asp"-->
-<!--#include file="inc/functions/string.asp"-->
-<!--#include file="inc/functions/functions.asp"-->
-<!--#include file="inc/time.asp"-->
+﻿<!--#include file="includes/inc.asp"-->
+<!--#include file="includes/functions/string.asp"-->
+<!--#include file="includes/functions/functions.asp"-->
+<!--#include file="includes/time.asp"-->
 <%
 dim ok, countme, wordID, lockFrom, lockTo, lockDiff
 countme = 0
@@ -87,14 +87,14 @@ closeDbLogger "arabicWords","C","word.edit.asp","lock",durationMs,""
 	<title>עריכת מילה</title>
     <META NAME="ROBOTS" CONTENT="NONE">
     <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js"></script>
-<!--#include file="inc/header.asp"-->
+<!--#include file="includes/header.asp"-->
     <link rel="stylesheet" href="assets/css/arabicTeam.css" />
     <link rel="stylesheet" href="assets/css/guide.css" />
     <link rel="stylesheet" href="assets/css/edit.css?v2" />
     <script src="assets/js/jquery.new.edit.js"></script> <!-- THIS HAS THE JSON CODE-->
 </head>
 <body>
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/top.asp"-->
 
 <h1 style="text-align:center; margin:0;">עריכת מילה</h1>
 <div id="page">
@@ -674,7 +674,7 @@ end if %>
 
 
 
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->
 <script type="text/javascript" src="js/scripts.js"></script>
 
 <script>

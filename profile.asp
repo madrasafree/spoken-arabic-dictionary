@@ -1,4 +1,4 @@
-﻿<!--#include file="inc/inc.asp"--><%
+﻿<!--#include file="includes/inc.asp"--><%
 dim userId, name, username, d, gen, countMe, nikud
 
 gen=""
@@ -31,7 +31,7 @@ end if
 <head>
     <title><%=username%></title>
 	<meta name="Description" content="כל המילים שהוסיף המשתמש <%=res("username")%>" />
-    <!--#include file="inc/header.asp"-->
+    <!--#include file="includes/header.asp"-->
     <link rel="stylesheet" href="assets/css/arabicTeam.css" />
     <style>
         #boxMenu {min-width:320px; max-width:490px; margin:20px auto; text-align: center;}
@@ -102,8 +102,8 @@ end if
     </script>
 </head>
 <body>
-<!--#include file="team/inc/time.asp"-->
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/time.asp"-->
+<!--#include file="includes/top.asp"-->
 <br />
 <table class="table" style="background:white; box-shadow:4px 2px 5px -2px #888;">
     <tr style="vertical-align:top;">
@@ -825,4 +825,4 @@ closeDbLogger "arabicWords","C","profile.asp","main",durationMs,""
 
 
 %>
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->

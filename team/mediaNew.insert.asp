@@ -1,4 +1,4 @@
-﻿<!--#include file="inc/inc.asp"--><%
+﻿<!--#include virtual="/includes/inc_team.asp"--><%
     '1=ronen ; 73=yaniv ; 77=hadar ; 103 = ran ; 118 = noam ; 129 = sharon'
     if not (session("userID")=1 or session("userID")=73 or session("userID")=77 or session("userID")=103 or session("userID")=118 or session("userID")=129) then Response.Redirect "login.asp" 
 
@@ -20,11 +20,11 @@ closeDB
 <head>
 	<title>הוספת מדיה חדשה למסד נתונים</title>
     <meta name="robots" content="none">
-<!--#include virtual="/inc/header.asp"-->
+<!--#include virtual="/includes/header.asp"-->
 </head>
 <body style="text-align:left; direction: ltr;">
 <div style="padding:20px;">
-<!--#include file="inc/time.asp"--><%
+<!--#include virtual="/includes/time.asp"--><%
 Function getString (f)
     getString = "'" &replace(request(f),"'","&#39;")&"'"
 End function

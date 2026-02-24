@@ -1,5 +1,5 @@
-﻿<!--#include file="inc/inc.asp"-->
-<!--#include file="inc/functions/functions.asp"--><%
+﻿<!--#include file="includes/inc.asp"-->
+<!--#include file="includes/functions/functions.asp"--><%
 
 dim LID,LName,Ldesc,countMe
 countMe=0
@@ -35,7 +35,7 @@ closeDbLogger "arabicWords","C","games.mem.list.asp","list details",durationMs,"
     <meta property="og:title"     content="<%=LName%> - קלפי זיכרון" />
     <meta property="og:description"     content="הפכו את הקלפים וגלו אם זכרתם נכון. זכרתם? השאירו אותו הפוך. לא זכרתם? החזירו חזרה ונסו שוב כשתסיימו לעבור על כל הקלפים" />
     <meta property="og:image"           content="https://milon.madrasafree.com/img/lists/<%=LID%>.png" />
-	<!--#include file="inc/header.asp"-->
+	<!--#include file="includes/header.asp"-->
     <style>
 		.viewMenu {
 			list-style:none;
@@ -98,7 +98,7 @@ closeDbLogger "arabicWords","C","games.mem.list.asp","list details",durationMs,"
 	</script>
 </head>
 <body>
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/top.asp"-->
 
 <div id="pTitle">
 	<a href="lists.all.asp"><span style="font-size:medium;">רשימות אישיות</span></a>
@@ -161,4 +161,4 @@ closeDbLogger "arabicWords","C","games.mem.list.asp","main",durationMs,""
 	<span id="wordsSum"></span>
 </div>
 
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->

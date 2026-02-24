@@ -108,6 +108,10 @@ This document tracks technical debt, dead code, and other codebase issues discov
 - **Architecture / Complexity:** `word.asp` is ~1000 lines with 12+ table joins — the single most complex page. It should be refactored into a Django view with clean serializers.
 - **Architecture / Complexity:** `default.asp` is ~950 lines handling search, logging, rendering, and soundex matching — multiple responsibilities that should be split into separate views.
 
+## Media Pages (`team/mediaEdit.asp`, `team/mediaNew.asp`, `team/mediaControl.asp`)
+
+- **UX / Responsiveness (Partial Fix):** The media edit/new/control pages were not responsive on mobile. Fixed in Feb 2026: `#dashboard` now uses `max-width` instead of a fixed `800px` width, inputs/selects in the form are set to `width: 100%`, and `mediaControl.asp`'s wide table is wrapped in `overflow-x: auto`. However, **horizontal scrolling still exists on real mobile devices** (verified on device). Full responsiveness of `mediaControl.asp`'s 12-column table on small screens requires a deeper redesign (e.g., a card-based layout or column-hiding pattern). Low priority — team-only page.
+
 ## Team Handlers (`team/*.asp`) — see `handlers.md` for full analysis
 
 - **Security / SQL Injection:** `team/new.insert.asp` concatenates ~25 form fields into an INSERT query using only `gereshFix()` (single-quote doubling), which is insufficient protection.

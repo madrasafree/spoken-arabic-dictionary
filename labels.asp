@@ -1,14 +1,14 @@
-<!--#include file="inc/inc.asp"-->
+<!--#include file="includes/inc.asp"-->
 <!DOCTYPE html>
 <html style="height:100%;">
 <head>
     <title>אינדקס נושאים</title>
 	<meta name="description" content="אינדקס נושאים" />
-    <!--#include file="inc/header.asp"-->
+    <!--#include file="includes/header.asp"-->
 </head>
 <body>
 
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/top.asp"-->
 <div id="pTitle">
     אינדקס נושאים
     <div style="font-size:.7em;">
@@ -61,4 +61,4 @@
 </div>
 
 
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->

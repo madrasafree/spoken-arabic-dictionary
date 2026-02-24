@@ -1,11 +1,11 @@
-﻿<!--#include file="inc/inc.asp"-->
-<!--#include file="inc/functions/functions.asp"-->
+﻿<!--#include file="includes/inc.asp"-->
+<!--#include file="includes/functions/functions.asp"-->
 <!DOCTYPE html>
 <html style="height:100%;">
 <head>
 	<title>ארגז חול - משפטים</title>
 	<meta name="Description" content="נסיונות מילון על משפטים" />
-	<!--#include file="inc/header.asp"-->
+	<!--#include file="includes/header.asp"-->
 	<link rel="stylesheet" href="assets/css/arabic_utils.css" />
 	<style>
 		.arb {
@@ -75,13 +75,13 @@
 	</script>
 </head>
 <body>
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/top.asp"-->
 
 
 <div id="bread">
 	<a href=".">מילון</a> / <%
 	if session("userID")=1 then %>
-	<a href="admin.asp">ניהול</a> / <%
+	<a href="admin/">ניהול</a> / <%
 	end if %>
 
 	<h1>משפטים</h1>
@@ -165,4 +165,4 @@
 
 	%>
 </div>
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->

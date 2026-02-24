@@ -1,10 +1,10 @@
-﻿<!--#include file="inc/inc.asp"-->
+﻿<!--#include file="includes/inc.asp"-->
 <!DOCTYPE html>
 <html style="height:100%;">
 <head>
 	<title>מילים עם אודיו</title>
 	<meta name="Description" content="כל המילים שיש להם הקלטת אודיו" />
-	<!--#include file="inc/header.asp"-->
+	<!--#include file="includes/header.asp"-->
     <style>
         .listDiv > span {display:block; line-height: 15px;}
         @media(max-width:600px) {
@@ -20,7 +20,7 @@
     </script>
 </head>
 <body>
-<!--#include file="inc/top.asp"--><%
+<!--#include file="includes/top.asp"--><%
 dim countMe, order
 order = "hebrewTranslation"
 Select case Left(Request("order")&"h",1)
@@ -92,4 +92,4 @@ closeDbLogger "arabicWords","C","list.audio.asp","single",durationMs,""
 
 
 %>
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->

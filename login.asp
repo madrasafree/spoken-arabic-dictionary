@@ -1,11 +1,11 @@
-﻿<!--#include file="inc/inc.asp"-->
-<!--#include file="inc/time.asp"-->
+﻿<!--#include file="includes/inc.asp"-->
+<!--#include file="includes/time.asp"-->
 <!DOCTYPE html>
 <html style="height:100%;">
 <head>
 	<title>כניסה / התחברות</title>
     <meta name="ROBOTS" content="NONE">
-<!--#include file="inc/header.asp"-->
+<!--#include file="includes/header.asp"-->
     <style>
 
         .debug {
@@ -33,7 +33,7 @@
     </style>
 </head>
 <body>
-<!--#include file="inc/top.asp"--><%
+<!--#include file="includes/top.asp"--><%
 
 dim allowEdit,error,returnTo,return2,debugMode
 
@@ -184,6 +184,6 @@ End if %>
 <div class="table" style="max-width:290px; text-align:center; margin-top:40px;">
     <a href="."><u>חזרה למילון</u></a>
 </div>
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->
 </body>
 </html>

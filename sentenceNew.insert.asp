@@ -1,7 +1,7 @@
-﻿<!--#include file="inc/inc.asp"-->
-<!--#include file="inc/time.asp"-->
-<!--#include file="inc/functions/soundex.asp"-->
-<!--#include file="inc/functions/string.asp"-->
+﻿<!--#include file="includes/inc.asp"-->
+<!--#include file="includes/time.asp"-->
+<!--#include file="includes/functions/soundex.asp"-->
+<!--#include file="includes/functions/string.asp"-->
 <!-- Language="VBScript" CodePage="65001"-->
 <!-- Language="VBScript" CodePage="1255"-->
 <!DOCTYPE html>
@@ -9,7 +9,7 @@
 <head>
 	<meta charset='utf-8'>
 </head>
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/top.asp"-->
 <%
 dim q,qFix 'TEMP from inc/top.asp'
 

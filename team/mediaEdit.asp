@@ -1,4 +1,4 @@
-﻿<!--#include file="inc/inc.asp"--><%
+﻿<!--#include virtual="/includes/inc_team.asp"--><%
     '1=ronen ; 73=yaniv ; 77=hadar ; 103 = ran ; 118 = noam ; 129 = sharon'
     if not (session("userID")=1 or session("userID")=73 or session("userID")=77 or session("userID")=103 or session("userID")=118 or session("userID")=129) then Response.Redirect "login.asp" 
 
@@ -27,13 +27,19 @@ res.open mySQL, con %>
 <head>
 	<title>עריכת מדיה קיימת</title>
     <meta name="robots" content="none">
-<!--#include virtual="/inc/header.asp"-->
+<!--#include virtual="/includes/header.asp"-->
     <style>
         .mediaTable > div {margin-bottom: 10px;}
+        .mediaTable input[type="text"],
+        .mediaTable select {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 4px 6px;
+        }
     </style>
 </head>
 <body>
-<!--#include virtual="/inc/top.asp"-->
+<!--#include virtual="/includes/top.asp"-->
 
 <div id="dashboard">
     <div id="pTitle"><h1>עריכת מדיה קיימת</h1></div>
@@ -102,4 +108,4 @@ closeDbLogger "arabicWords","C","mediaEdit.asp","media details",durationMs,""
     </form>
 
 </div>
-<!--#include virtual="/inc/trailer.asp"-->
+<!--#include virtual="/includes/trailer.asp"-->

@@ -2,14 +2,8 @@
 <%
 Option Explicit
 dim res, res2, res3, con, mySQL, cmd
-dim baseA, baseT
-dim startTime, endTime, durationMs, userIP, opTime
-
-'baseA = "http://ronen.rothfarb.info/arabic/"
-'baseA = "http://10.0.0.3:8080/" 'pcWhite'
-'baseA = "http://127.0.0.1:8080/" 'Lenovo x220'
-baseA = "../" 'test to remove bases'
-baseT = baseA + "team/"
+dim startTime, endTime, durationMs, baseA
+baseA="/"
 
 function intToStr (num, length)
 	'NUM to STRING
@@ -37,7 +31,6 @@ end sub
 sub CloseDbLogger(db,opType,afPage,opNum,durationMs,sStr)
 	closeDb
 end sub
-
 
 sub OpenDB(db)
 	set con = Server.CreateObject("adodb.connection")

@@ -1,5 +1,5 @@
-<!--#include file="inc/inc.asp"-->
-<!--#include file="inc/functions/functions.asp"--><%
+<!--#include file="includes/inc.asp"-->
+<!--#include file="includes/functions/functions.asp"--><%
 'FILES TO EDIT WHEN ADDING/REMOVING LABEL FROM DB:
 'edit.update.asp - lblCnt'
 'word.asp - labelNames'
@@ -32,7 +32,7 @@ res.close
     <title><%=LName%></title>
 	<meta name="Description" content="קבוצות מילים לפי נושאים" />
     <meta property="og:image"           content="https://milon.madrasafree.com/img/labels/<%=LID%>.png" />
-    <!--#include file="inc/header.asp"-->
+    <!--#include file="includes/header.asp"-->
     <style>
         #lingolearn button:hover {
             background:yellow;
@@ -85,7 +85,7 @@ res.close
 </head>
 <body>
 
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/top.asp"-->
 <div id="pTitle">קבוצות מילים לפי נושאים</div>
 
 <div id="tagsCloud">
@@ -188,4 +188,4 @@ closeDbLogger "arabicWords","C","label.asp","single",durationMs,LName
 %>
 
 
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->

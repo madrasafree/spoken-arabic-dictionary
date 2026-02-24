@@ -1,4 +1,4 @@
-﻿<!--#include file="inc/inc.asp"--><%
+﻿<!--#include virtual="/includes/inc_team.asp"--><%
 
 '1=ronen ; 73=yaniv
 If (session("userID")<>1) and (session("userID")<>73) and (session("userID")<>90) then 
@@ -11,21 +11,26 @@ end if %>
 <head>
 	<title>דף שליטה במדיה</title>
     <meta name="robots" content="none">
-<!--#include virtual="/inc/header.asp"-->
+<!--#include virtual="/includes/header.asp"-->
     <style>
-        .mediaTable {width:100%; display: table; font-size:small;text-align:center; border:2px solid #ddd; margin:10px auto;}
+        .mediaTableWrap {overflow-x: auto; width: 100%;}
+        .mediaTable {width:100%; display: table; font-size:small;text-align:center; border:2px solid #ddd; margin:10px auto; min-width: 900px;}
         .mTableR {display: table-row;}
-        .mTableR > div {display: table-cell; text-overflow: ellipsis; padding: 3px; border-bottom:1px solid #ccc;}
+        .mTableR > div {display: table-cell; text-overflow: ellipsis; padding: 3px; border-bottom:1px solid #ccc; min-width: 60px; white-space: nowrap;}
+        .mTableR > div:nth-child(3) {max-width: 100px; overflow: hidden;}
+        .mTableR > div:nth-child(4) {min-width: 120px; white-space: normal; text-align: right;}
+        .mTableR > div:nth-child(5) {min-width: 100px; white-space: normal; text-align: right;}
     </style>
 </head>
 <body>
-<!--#include virtual="/inc/top.asp"-->
+<!--#include virtual="/includes/top.asp"-->
 
-<div style="width:95%;margin:10px auto;">
+<div style="width:95%;max-width:100%;margin:10px auto;box-sizing:border-box;">
     <div id="pTitle"><h1>דף שליטה במדיה</h1></div>
 
     <div><a href="mediaNew.asp">הוסף מדיה חדשה</a></div>
 
+    <div class="mediaTableWrap">
     <div dir="" class="mediaTable">
         <div class="mTableR" style="background: #eee;">
             <div>ID</div>
@@ -93,6 +98,7 @@ end if %>
         
         %>
     </div>
+    </div>
 
 </div>
-<!--#include virtual="/inc/trailer.asp"-->
+<!--#include virtual="/includes/trailer.asp"-->

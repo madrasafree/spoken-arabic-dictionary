@@ -1,12 +1,12 @@
-﻿<!--#include file="inc/inc.asp"-->
-<!--#include file="inc/functions/functions.asp"-->
+﻿<!--#include file="includes/inc.asp"-->
+<!--#include file="includes/functions/functions.asp"-->
 <!DOCTYPE html>
 <html style="height:100%;">
 <head>
 	<title>משחק זיכרון</title>
 	<meta name="Description" content="משחק זיכרון המציג כל פעם 20 תמונות אקראיות עם הפירוש שלהן בעברית. לחיצה על התמונה תגלה את המילה הערבית. רעננו את הדף כדי לקבל 20 מילים חדשות." />
     <meta name="Keywords" content="משחק זיכרון, משחקים בערבית מדוברת" />
-	<!--#include file="inc/header.asp"-->
+	<!--#include file="includes/header.asp"-->
     <style>
 				#lingolearn button {
 					background:white;
@@ -99,7 +99,7 @@
 </head>
 <body>
 
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/top.asp"-->
 
 <div id="pTitle">משחק זיכרון
 	<span style="display:block; font-size:medium;">לחצו על תמונה כדי להציג את המילה בערבית</span>
@@ -169,4 +169,4 @@
 
 
 
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->

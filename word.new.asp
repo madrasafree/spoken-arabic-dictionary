@@ -1,4 +1,4 @@
-﻿<!--#include file="inc/inc.asp"-->
+﻿<!--#include file="includes/inc.asp"-->
 
 <!--
 ISSUES
@@ -28,16 +28,16 @@ countme = 0 %>
 	<title>הוספת מילה</title>
     <meta name="ROBOTS" content="NONE">
     <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js"></script>
-<!--#include file="inc/header.asp"-->
+<!--#include file="includes/header.asp"-->
     <link rel="stylesheet" href="assets/css/arabicTeam.css" />
     <link rel="stylesheet" href="assets/css/guide.css" />
     <link rel="stylesheet" href="assets/css/edit.css" />
     <script src="assets/js/jquery.new.edit.js"></script>
 </head>
-<!--#include file="inc/functions/functions.asp"-->
+<!--#include file="includes/functions/functions.asp"-->
 <body>
 
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/top.asp"-->
 
 <h1 style="text-align:center;">הוספת מילה חדשה</h1>
 
@@ -414,7 +414,7 @@ countme = 0 %>
 </div>
 
 
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->
 <script src="js/scripts.js"></script>
 </body> 
 </html>

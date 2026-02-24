@@ -1,5 +1,5 @@
-﻿<!--#include file="inc/inc.asp"-->
-<!--#include file="inc/functions/functions.asp"--><%
+﻿<!--#include file="includes/inc.asp"-->
+<!--#include file="includes/functions/functions.asp"--><%
 
 dim LID,LName,LDesc,imgLink
 
@@ -35,7 +35,7 @@ closeDbLogger "arabicWords","C","games.mem.pics.asp","list details",durationMs,"
     <meta property="og:title"     content="<%=LName%> - תמונות לחיצות" />
     <meta property="og:description"     content="משחק זיכרון תמונות על בסיס רשימות אישיות של משתמשים" />
     <meta property="og:image"           content="https://milon.madrasafree.com/img/lists/<%=LID%>.png" />
-		<!--#include file="inc/header.asp"-->
+		<!--#include file="includes/header.asp"-->
     <style>
 		.viewMenu {
 			list-style:none;
@@ -153,7 +153,7 @@ closeDbLogger "arabicWords","C","games.mem.pics.asp","list details",durationMs,"
 </head>
 <body>
 
-<!--#include file="inc/top.asp"-->
+<!--#include file="includes/top.asp"-->
 
 <div id="pTitle">
 	<a href="lists.all.asp"><span style="font-size:medium;">רשימות אישיות</span></a>
@@ -243,4 +243,4 @@ end if %>
 </script>
 
 
-<!--#include file="inc/trailer.asp"-->
+<!--#include file="includes/trailer.asp"-->

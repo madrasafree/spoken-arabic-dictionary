@@ -1,4 +1,4 @@
-<!--#include file="inc/inc.asp"--><%
+<!--#include file="includes/inc.asp"--><%
 ' word.unlock.asp - Removes the lock from a word when the user cancels editing
 dim wordID
 wordID = request("id")
