@@ -95,6 +95,6 @@ end if %>
     </div>
 
 </div>
-<!--#include file="inc/trailer.asp"-->
+<!--#include virtual="/inc/trailer.asp"-->
 </body>
 </html>

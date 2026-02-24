@@ -34,7 +34,7 @@ h2 {margin:0px 0px 15px 0px; font-size: 1.2em;}
 #page {max-width: 842px; min-width: 320px; margin: 0 auto;}
 .tags > div {display: inline-block;padding:4px 8px; border: 1px dotted; margin-bottom:5px; background: white;}
 .team {background:rgba(225, 226, 144, 0.36);}
-#teamTools {position:fixed; top:41px; z-index:10; width:100%; margin:0; background:#F7F7C8; padding:2px 8px; border-bottom:1px solid rgb(205, 219, 234);}
+#teamTools {position:relative; z-index:10; width:auto; text-align:center; margin:0; background:#F7F7C8; padding:5px 8px; border-bottom:1px solid rgb(205, 219, 234);}
 .trans {text-align: center; width:100%;}
 .trans td {border: 1px solid gray; padding: 3px;}
 .trans td:nth-child(2) {direction: ltr;}

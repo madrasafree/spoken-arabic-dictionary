@@ -58,6 +58,6 @@ if (session("role") and 2) = 0 then Response.Redirect "login.asp" %>
     </ul>
 
 </div>
-<!--#include file="inc/trailer.asp"-->
+<!--#include virtual="/inc/trailer.asp"-->
 </body>
 </html>

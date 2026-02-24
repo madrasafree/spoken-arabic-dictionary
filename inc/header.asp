@@ -12,6 +12,10 @@ Session("msg") = "" %>
     <meta property="og:locale:alternate" content="en" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="<%=baseA%>assets/css/milon_main.css" />
+	<%
+    If ((session("role") and 2) > 0) And (InStr(LCase(Request.ServerVariables("URL")), "/team/") > 0) Then %>
+    <link rel="stylesheet" href="<%=baseA%>assets/css/arabicTeam.css" /><%
+    end if%>
 	<link rel="shortcut icon" href="<%=baseA%>assets/images/site/favicon.ico" />
     <link rel="image_src" href="<%=baseA%>assets/images/site/logo.jpg" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

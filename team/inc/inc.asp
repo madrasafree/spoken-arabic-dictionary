@@ -61,3 +61,5 @@ Sub Go(url)
 	CloseDB
 	Response.Redirect url
 End Sub %>
+<!-- Language="VBScript" CodePage="65001"-->
+<!-- Language="VBScript" CodePage="1255"-->
