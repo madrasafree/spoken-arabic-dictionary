@@ -1,7 +1,7 @@
 # Database Documentation
 
 All databases are MS Access `.mdb` files in `App_Data/` (gitignored, deployed separately).
-Connection is opened via `OpenDbLogger(db, ...)` / `CloseDbLogger(db, ...)` in `inc/inc.asp`.
+Connection is opened via `OpenDbLogger(db, ...)` / `CloseDbLogger(db, ...)` in `includes/inc.asp`.
 
 Cross-database foreign keys are not enforced by the DB engine — they are logical only.
 
@@ -249,7 +249,7 @@ Queried by `dashboard.asp` and `dashboard.lists.asp` (List ID 13 and 14).
 
 ## `arabicUsers`
 
-**Used by:** `login.asp`, `profile.asp`, `inc/trailer.asp`, admin user management pages,
+**Used by:** `login.asp`, `profile.asp`, `includes/trailer.asp`, admin user management pages,
 `team/` pages (session role checks).
 
 ### `users`
@@ -300,8 +300,9 @@ Login audit trail. Written by `login.fixhref.asp` on successful login; read in a
 
 ## `arabicSearch`
 
-**Used by:** `default.asp`, `default.min.asp` (write on every search); `stats.asp`,
-`stats.topSearch.asp`, `admin.searchHistory.*.asp` (read).
+**Used by (active):** `default.asp`, `default.min.asp` (write on every search); `stats.asp`,
+`stats.topSearch.asp` (read).
+**Legacy/deleted readers:** `admin.searchHistory.*.asp` (removed).
 
 ### `wordsSearched` — Live
 
@@ -317,8 +318,8 @@ Aggregate search term statistics. One row per unique search term, updated on eve
 
 ### `latestSearched` — Live
 
-Per-search event log. One row per search event. Written by `default.asp` and `default.min.asp`;
-read by admin search history pages (`admin.searchHistory.*.asp`).
+Per-search event log. One row per search event. Written by `default.asp` and `default.min.asp`.
+The old admin readers (`admin.searchHistory.*.asp`) were deleted.
 
 | Field | Notes |
 |---|---|
@@ -330,8 +331,9 @@ read by admin search history pages (`admin.searchHistory.*.asp`).
 
 ## `arabicManager`
 
-**Used by:** `team.tasks.asp`, `team.task.edit.asp`, `team.task.new.insert.asp`,
-`team.task.edit.update.asp`, `team.task.vote.asp`.
+**Used by (current code):** no active ASP pages.
+**Historical usage:** old `team.tasks.asp`, `team.task.edit.asp`,
+`team.task.new.insert.asp`, `team.task.edit.update.asp`, `team.task.vote.asp` (all deleted).
 
 ### `tasks`
 
@@ -400,7 +402,8 @@ read by admin search history pages (`admin.searchHistory.*.asp`).
 
 ### `tasksVoting` — Live
 
-One row per user per task they voted for. Written by `team.task.vote.asp` (INSERT / DELETE).
+One row per user per task they voted for.
+Historical writer: `team.task.vote.asp` (deleted).
 Max 3 active votes per user enforced in application code.
 
 | Field | Notes |
@@ -413,7 +416,8 @@ Max 3 active votes per user enforced in application code.
 
 ## `arabicLogs`
 
-**Used by:** `admin.monitors.asp` only.
+**Used by (current code):** no active ASP page.
+**Historical usage:** `admin.monitors.asp` (deleted).
 
 ### `monitors`
 

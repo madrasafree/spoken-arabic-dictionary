@@ -22,10 +22,10 @@ Public "About" page with project history, contributors, usage highlights, and co
 ### Includes
 
 ```
-inc/inc.asp      -> shared bootstrap and DB objects
-inc/header.asp   -> shared head assets
-inc/top.asp      -> top navigation
-inc/trailer.asp  -> footer and closing tags
+includes/inc.asp      -> shared bootstrap and DB objects
+includes/header.asp   -> shared head assets
+includes/top.asp      -> top navigation
+includes/trailer.asp  -> footer and closing tags
 ```
 
 ### Behavior
@@ -64,10 +64,10 @@ Renders a labels tag cloud where font size indicates label popularity.
 ### Includes
 
 ```
-inc/inc.asp      -> shared bootstrap and DB objects
-inc/header.asp   -> shared head assets
-inc/top.asp      -> top navigation
-inc/trailer.asp  -> footer and closing tags
+includes/inc.asp      -> shared bootstrap and DB objects
+includes/header.asp   -> shared head assets
+includes/top.asp      -> top navigation
+includes/trailer.asp  -> footer and closing tags
 ```
 
 ### Query behavior
@@ -107,12 +107,12 @@ Wrapper page for the transliteration/pronunciation guide.
 ### Includes
 
 ```
-inc/inc.asp            -> shared bootstrap and DB objects
-inc/header.asp         -> shared head assets
-team/inc/functions.asp -> helper functions used by guide content
-inc/top.asp            -> top navigation
+includes/inc.asp            -> shared bootstrap and DB objects
+includes/header.asp         -> shared head assets
+includes/functions/functions.asp -> helper functions used by guide content
+includes/top.asp            -> top navigation
 team/guide.embed.asp   -> embedded guide body
-inc/trailer.asp        -> footer and closing tags
+includes/trailer.asp        -> footer and closing tags
 ```
 
 ### Behavior
@@ -144,10 +144,10 @@ An interactive clock utility for learning how to read time in spoken Arabic. Dis
 ### Includes
 
 ```
-inc/inc.asp      -> shared bootstrap and DB objects (standard requirement)
-inc/header.asp   -> shared head assets (Google Analytics, base CSS)
-inc/top.asp      -> top navigation and session setup
-inc/trailer.asp  -> footer and closing tags
+includes/inc.asp      -> shared bootstrap and DB objects (standard requirement)
+includes/header.asp   -> shared head assets (Google Analytics, base CSS)
+includes/top.asp      -> top navigation and session setup
+includes/trailer.asp  -> footer and closing tags
 ```
 *Note: No dead includes were found. Standard page wrapper is used.*
 
@@ -176,12 +176,12 @@ Displays a curated word list based on the provided `id` parameter. It supports q
 ### Includes
 
 ```
-inc/inc.asp                   -> DB connection
-inc/functions/functions.asp   -> General utility functions
-inc/time.asp                  -> Date/Time formatting (Str2hebDate)
-inc/header.asp                -> Shared head assets
-inc/top.asp                   -> Top navigation
-inc/trailer.asp               -> Footer and closing tags
+includes/inc.asp                   -> DB connection
+includes/functions/functions.asp   -> General utility functions
+includes/time.asp                  -> Date/Time formatting (Str2hebDate)
+includes/header.asp                -> Shared head assets
+includes/top.asp                   -> Top navigation
+includes/trailer.asp               -> Footer and closing tags
 ```
 
 ### Behavior & Logic
@@ -212,15 +212,15 @@ Functions as both the website's homepage and the main dictionary search engine. 
 ### Includes
 
 ```
-inc/inc.asp                        -> DB connection
-team/inc/functions/string.asp      -> String manipulation (used for search query cleanup)
-inc/functions/functions.asp        -> General utility functions
-inc/time.asp                       -> Time formatting
-inc/header.asp                     -> Shared head assets (CSS/JS)
-inc/top.asp                        -> Top navigation and search bar (HTML form)
-team/inc/functions/soundex.asp     -> Phonetic soundex algorithm (server-side VBScript)
-inc/banner.asp                     -> Promotional banner (conditionally displayed)
-inc/trailer.asp                    -> Footer and closing tags
+includes/inc.asp                        -> DB connection
+includes/functions/string.asp      -> String manipulation (used for search query cleanup)
+includes/functions/functions.asp        -> General utility functions
+includes/time.asp                       -> Time formatting
+includes/header.asp                     -> Shared head assets (CSS/JS)
+includes/top.asp                        -> Top navigation and search bar (HTML form)
+includes/functions/soundex.asp     -> Phonetic soundex algorithm (server-side VBScript)
+includes/banner.asp                     -> Promotional banner (conditionally displayed)
+includes/trailer.asp                    -> Footer and closing tags
 ```
 
 ### Behavior & Logic
@@ -256,13 +256,13 @@ Displays the full dictionary entry for a specific word. Shows word properties (p
 ### Includes
 
 ```
-inc/inc.asp                        -> DB connection
-inc/functions/functions.asp        -> Utility functions
-inc/time.asp                       -> Time functions
-inc/header.asp                     -> Head assets
-inc/top.asp                        -> Top navigation
-inc/banner.asp                     -> Promotional banner
-inc/trailer.asp                    -> Footer
+includes/inc.asp                        -> DB connection
+includes/functions/functions.asp        -> Utility functions
+includes/time.asp                       -> Time functions
+includes/header.asp                     -> Head assets
+includes/top.asp                        -> Top navigation
+includes/banner.asp                     -> Promotional banner
+includes/trailer.asp                    -> Footer
 ```
 
 ### Behavior & Logic
@@ -296,11 +296,11 @@ Displays all dictionary entries associated with a specific topic/label (e.g., "F
 ### Includes
 
 ```
-inc/inc.asp                        -> DB connection
-inc/functions/functions.asp        -> Utility functions
-inc/header.asp                     -> Head assets
-inc/top.asp                        -> Top navigation
-inc/trailer.asp                    -> Footer
+includes/inc.asp                        -> DB connection
+includes/functions/functions.asp        -> Utility functions
+includes/header.asp                     -> Head assets
+includes/top.asp                        -> Top navigation
+includes/trailer.asp                    -> Footer
 ```
 
 ### Behavior & Logic
@@ -327,11 +327,11 @@ Acts as a "sandbox" or experimental area for phrases and sentences. `sentences.a
 ### Includes
 
 ```
-inc/inc.asp                        -> DB connection
-inc/functions/functions.asp        -> Utility functions
-inc/header.asp                     -> Head assets
-inc/top.asp                        -> Top navigation
-inc/trailer.asp                    -> Footer
+includes/inc.asp                        -> DB connection
+includes/functions/functions.asp        -> Utility functions
+includes/header.asp                     -> Head assets
+includes/top.asp                        -> Top navigation
+includes/trailer.asp                    -> Footer
 ```
 
 ### Behavior & Logic
@@ -368,11 +368,11 @@ A suite of simple "memory" (flashcard) games designed to help users learn words.
 ### Includes
 
 ```
-inc/inc.asp                        -> DB connection
-inc/functions/functions.asp        -> Utility functions (shada fix)
-inc/header.asp                     -> Head assets
-inc/top.asp                        -> Top navigation
-inc/trailer.asp                    -> Footer
+includes/inc.asp                        -> DB connection
+includes/functions/functions.asp        -> Utility functions (shada fix)
+includes/header.asp                     -> Head assets
+includes/top.asp                        -> Top navigation
+includes/trailer.asp                    -> Footer
 ```
 
 ### Behavior & Logic
@@ -396,11 +396,11 @@ Displays a unified timeline of recent community contributions to the dictionary:
 ### Includes
 
 ```
-inc/inc.asp                        -> DB connection
-inc/time.asp                       -> Time logic (secPast)
-inc/header.asp                     -> Head assets
-inc/top.asp                        -> Top navigation
-inc/trailer.asp                    -> Footer
+includes/inc.asp                        -> DB connection
+includes/time.asp                       -> Time logic (secPast)
+includes/header.asp                     -> Head assets
+includes/top.asp                        -> Top navigation
+includes/trailer.asp                    -> Footer
 ```
 
 ### Behavior & Logic
@@ -511,14 +511,14 @@ The main control panel for site administrators. Displays server metrics, user lo
 ### Behavior & Logic
 - Validates that the user is an admin; redirects to `team/login.asp` if not.
 - Queries `allowEdit` table to check the current status of maintenance mode (login disable) and Read-Only mode.
-- Renders HTML toggle switches that link to `admin.allowEditToggle.asp` and `admin.readOnlyToggle.asp`.
+- Renders HTML toggle switches that link to `admin/allowEditToggle.asp` and `admin/readOnlyToggle.asp`.
 - Queries `loginLog` to display the most recent login, logging a note that login auditing was disabled in November 2021.
 
 ---
 
-## admin.allowEditToggle.asp & admin.readOnlyToggle.asp
+## admin/allowEditToggle.asp & admin/readOnlyToggle.asp
 
-**URL:** `admin.allowEditToggle.asp` / `admin.readOnlyToggle.asp`
+**URL:** `admin/allowEditToggle.asp` / `admin/readOnlyToggle.asp`
 **Feature area:** admin
 **Auth:** implicit reliance on `inc.asp` / no direct session check implemented inline
 **DB access:** `arabicUsers` (`allowEdit`)
@@ -532,9 +532,9 @@ Action handlers to flip the site-wide boolean flags for allowing logins (`allowE
 
 ---
 
-## admin.locked.asp
+## admin/locked.asp
 
-**URL:** https://milon.madrasafree.com/admin.locked.asp
+**URL:** https://milon.madrasafree.com/admin/locked.asp
 **Feature area:** admin
 **Auth:** Admin (`session("role") < 14` guard)
 **DB access:** `arabicWords` (`words`)
@@ -648,15 +648,18 @@ An AJAX endpoint returning JSON data of existing dictionary words. Utilized by e
 
 ---
 
-## Admin Panel (`admin.*.asp`)
+## Admin Panel (`admin/` + root redirect wrappers)
 
-The administrative panel consists of ~24 distinct `.asp` files, largely split into user management, search history analytics, and system monitors.
+The administrative panel now lives under `admin/` (canonical paths).
+Root-level files such as `admin.userEdit.asp` are compatibility wrappers that issue `301`
+redirects to `admin/userEdit.asp` and preserve query strings.
 
 **Auth:** Most files require Admin privileges (`session("role") = 15`), though some mistakenly use inverse logic or different thresholds.
 **DB access:** Varies, but primarily reads `arabicUsers`, `arabicSearch`, and `arabicWords`.
 
-### User Management (`admin.user*.asp`)
-Includes `admin.userControl.asp`, `admin.userControl.full.asp`, `admin.userEdit.asp`, `admin.userNew.asp`, and their respective `.update`/`.insert` handlers.
+### User Management (`admin/user*.asp`)
+Includes `admin/userControl.asp`, `admin/userControl.full.asp`, `admin/userEdit.asp`,
+`admin/userNew.asp`, and their respective `.update`/`.insert` handlers.
 - Queries `arabicUsers` (`users`).
 - Renders tables of users with status color codes (Active, Frozen, Suspended, Deleted).
 - Allows assigning specific roles (Guest/1, Editor/7, Admin/15) via basic form submissions.
@@ -670,9 +673,9 @@ Includes `admin.searchHistory.asp` (Index) and multiple variants: `.last50.asp`,
 - Uses VBScript `SELECT CASE` logic to assign CSS color classes to results based on whether a search yielded an exact match, a partial match, or no results.
 
 ### Miscellanous Admin Tools
-- **`admin.wordsShort.asp`**: Allows inline creation/editing of shorthand aliases (`sStr`) mapped to a specific `wordID`. 
+- **`admin/wordsShort.asp`**: Allows inline creation/editing of shorthand aliases (`sStr`) mapped to a specific `wordID`. 
 - **`admin.monitors.asp`**: **DELETED.** Iterated through database metrics (e.g., total list views) to calculate averages for system health reporting. Contains a button to send an admin alert email via `admin.monitors.email.php`.
-- **`admin.labelControl.asp`**: Basic UI for adding and editing word categories ("labels").
+- **`admin/labelControl.asp`**: Basic UI for adding and editing word categories ("labels").
 - **`admin.select.asp`**: **DELETED.** Dedicated UI to edit the custom dropdown option lists used throughout the site.
 - **`admin.loginHistory.asp`**: **DELETED.** Displays the active sessions table (`loginLog`).
 - **`admin.listAllWords.asp`**: **DELETED.** Produces a massive, paginated HTML table of the entire dictionary.
@@ -692,7 +695,7 @@ Displays a real-time activity feed of recent word edits, additions, and media up
 ### Behavior & Logic
 - Pre-loads all label names into a VBScript array to decode label IDs in the history stream.
 - Queries the `history` table joined with `words` and `users` to build a timeline of actions.
-- Uses `secPast()` from `inc/time.asp` to render relative timestamps ("5 minutes ago").
+- Uses `secPast()` from `includes/time.asp` to render relative timestamps ("5 minutes ago").
 - Distinguishes action types (new, edit, approve, hide, error report) with color-coded CSS.
 
 ---

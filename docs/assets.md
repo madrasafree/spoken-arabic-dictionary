@@ -4,7 +4,7 @@ This document catalogs the primary JavaScript and CSS files used across the Spok
 
 ## JavaScript (`.js`)
 
-Most JavaScript in the project relies on **jQuery 1.11.3** (loaded via CDN in `inc/header.asp`).
+Most JavaScript in the project relies on **jQuery 1.11.3** (loaded via CDN in `includes/header.asp`).
 
 ### Global / Core Scripts
 
@@ -25,7 +25,7 @@ Most JavaScript in the project relies on **jQuery 1.11.3** (loaded via CDN in `i
 
 ## Stylesheets (`.css`)
 
-All main stylesheets are loaded in `inc/header.asp`. No CSS preprocessors (SASS/LESS) are used.
+All main stylesheets are loaded in `includes/header.asp`. No CSS preprocessors (SASS/LESS) are used.
 
 ### Global Styles & Responsive Breakpoints
 

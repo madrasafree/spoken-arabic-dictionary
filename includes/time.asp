@@ -65,6 +65,39 @@ function AR2UTC (date)
 	AR2UTC = y
 end function
 
+function secPast (date1,date2)
+  dim timePast
+  timePast = dateDiff("s",date1,date2)
+  if timePast < 60 then
+    secPast = "לפני "& Int(timePast) & " שניות"
+  elseIf timePast < 120 then
+    secPast = "לפני דקה"
+  elseIf timePast < 3600 then
+    secPast = "לפני "& Int(timePast/60) &" דקות"
+  elseIf timePast < 7200 then
+    secPast = "לפני שעה"
+  elseIf timePast < 10800 then
+    secPast = "לפני שעתיים"
+  elseIf timePast < 86400 then
+    secPast = "לפני "& Int(timePast/3600) & " שעות"
+  elseIf timePast < 172800 then
+    secPast = "אתמול"
+  elseIf timePast < 259200 then
+    secPast = "שלשום"
+  elseIf timePast < 432000 then
+    secPast = WeekdayName(weekday(date1,1))
+  elseIf timePast < 2764800 then
+    secPast = day(date1) & " ב" & MonthName(Month(date1))
+  elseIf timePast < 8294400 then
+    secPast = MonthName(Month(date1))
+  elseIf timePast < 33177600 then
+    secPast = year(date1)
+  else
+    secPast = "שגיאה בתצוגת זמן שעבר"
+  end if
+  response.write secPast
+end function
+
 
 
 function Str2hebDate(strDate) 

@@ -4,7 +4,7 @@ This document tracks technical debt, dead code, and other codebase issues discov
 
 ## Dead Code & Includes
 
-*   **Cleanup Status:** The `cleanup-dead-code` branch has successfully removed significant technical debt, including orphaned admin pages, unused `inc/` headers, dead `team/` handlers, obsolete `team.task.*` system, and legacy PHP email scripts.
+*   **Cleanup Status:** The `cleanup-dead-code` branch has successfully removed significant technical debt, including orphaned admin pages, unused `includes/` headers, dead `team/` handlers, obsolete `team.task.*` system, and legacy PHP email scripts.
 *   **`clock.asp`:** No dead code or dead includes detected. The `daqiqa` variable toggles dynamically based on grammar rules as expected. (Logged during documentation review).
 
 ## Ongoing Issues
@@ -67,18 +67,18 @@ This document tracks technical debt, dead code, and other codebase issues discov
 
 - **DB / `tasksVotes` (`arabicManager`)**: Stale / Broken. Originally related to the now-deleted team tasks system.
 - **DB / `tasksLabels` (`arabicManager`)**: Write-only orphan. Related to the deleted team tasks system.
-- **DB / `log` (`arabicManager`)**: Disabled. Same performance log schema as arabicSearch's `log` table. The INSERT code in `team/inc/inc.asp` was removed. Never written to; never read.
+- **DB / `log` (`arabicManager`)**: Disabled. Same performance log schema as arabicSearch's `log` table. The INSERT code in `includes/inc_team.asp` was removed. Never written to; never read.
 - **DB / `arabicSchools` & `arabicSandbox`**: Dead databases. References effectively removed.
 
 ## Include Files & Dead Code Issues
 
 - **Cleanup Status:** The `cleanup-dead-code` branch successfully permanently purged almost all dead includes and removed global duration tracking (`durationMs`) that served no purpose.
-- **Duplicates**: `inc/functions/string.asp` and `team/inc/functions/string.asp`, `inc/functions/functions.asp` and `team/inc/functions.asp`, `inc/functions/soundex.asp` and `team/inc/functions/soundex.asp` (different implementations) remain but unused ones will be cleaned.
+- **Include Duplication (updated):** The old `team/inc/*` duplicate include tree was removed. Canonical helpers now live under `includes/functions/`. Keep future changes centralized there to avoid reintroducing drift.
 
 ## Admin Panel (`admin.*`)
 
-- **Security / Missing Auth:** `admin.allowEditToggle.asp`, `admin.readOnlyToggle.asp`, and other inline handler files do not check `session("role")`, potentially allowing unauthorized toggles if accessed directly (though obscured).
-- **SQL Injection:** Administrative unlock queries inside `admin.locked.asp` directly append raw URL parameters to queries (e.g. `WHERE id="&wordID`), creating SQL injection vulnerabilities even in the admin section.
+- **Security / Missing Auth:** `admin/allowEditToggle.asp`, `admin/readOnlyToggle.asp`, and other inline handler files do not check `session("role")`, potentially allowing unauthorized toggles if accessed directly (though obscured).
+- **SQL Injection:** Administrative unlock queries inside `admin/locked.asp` directly append raw URL parameters to queries (e.g. `WHERE id="&wordID`), creating SQL injection vulnerabilities even in the admin section.
 
 ## Dashboard & Users (`dashboard.asp`, `users.asp`)
 
@@ -98,8 +98,8 @@ This document tracks technical debt, dead code, and other codebase issues discov
 ## Admin Panel Tools (`admin.*.asp`)
 
 - **Cleanup Status:** The entire subset of `admin.searchHistory.*.asp` and `admin.monitors.asp` pages has been deleted as obsolete technical debt.
-- **Security / Authorization Logic:** `admin.userControl.asp` explicitly checks `session("role") <> 15`. This indicates fragile and inconsistent RBAC implementation across admin tools.
-- **SQL Injection Risk:** Many admin handlers, such as `admin.wordsShort.asp`, take `request("sStrNew")` and concatenate it directly into `INSERT` queries, violating parameterization standards even for admins.
+- **Security / Authorization Logic:** `admin/userControl.asp` explicitly checks `session("role") <> 15`. This indicates fragile and inconsistent RBAC implementation across admin tools.
+- **SQL Injection Risk:** Many admin handlers, such as `admin/wordsShort.asp`, take `request("sStrNew")` and concatenate it directly into `INSERT` queries, violating parameterization standards even for admins.
 
 ## Dictionary Core Pages (`default.asp`, `word.asp`, `label.asp`, `sentence.asp`, `activity.asp`)
 
