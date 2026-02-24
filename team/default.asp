@@ -41,7 +41,7 @@ if (session("role") and 2) = 0 then Response.Redirect "login.asp" %>
 </head>
 <body>
 <!--#include virtual="/inc/top.asp"-->
-<!--#include file="inc/topTeam.asp"-->
+
 <div id="dashboard">
     <div id="pTitle"><h1>תפריט משתמשים רשומים</h1></div>
 

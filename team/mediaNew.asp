@@ -28,7 +28,7 @@ closeDB
 </head>
 <body>
 <!--#include virtual="/inc/top.asp"-->
-<!--#include file="inc/topTeam.asp"-->
+
 <div id="dashboard">
     <div id="pTitle"><h1>הוספת מדיה חדשה</h1></div>
 

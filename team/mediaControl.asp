@@ -20,7 +20,7 @@ end if %>
 </head>
 <body>
 <!--#include virtual="/inc/top.asp"-->
-<!--#include file="inc/topTeam.asp"-->
+
 <div style="width:95%;margin:10px auto;">
     <div id="pTitle"><h1>דף שליטה במדיה</h1></div>
 
