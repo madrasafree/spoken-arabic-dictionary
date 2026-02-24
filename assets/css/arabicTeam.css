@@ -168,16 +168,7 @@ h2 {
     background: rgba(225, 226, 144, 0.36);
 }
 
-#teamTools {
-    position: relative;
-    z-index: 10;
-    width: auto;
-    text-align: center;
-    margin: 0;
-    background: #F7F7C8;
-    padding: 5px 8px;
-    border-bottom: 1px solid rgb(205, 219, 234);
-}
+
 
 .trans {
     text-align: center;
