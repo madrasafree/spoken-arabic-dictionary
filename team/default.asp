@@ -5,7 +5,7 @@ if (session("role") and 2) = 0 then Response.Redirect "login.asp" %>
 <head>
     <meta name="ROBOTS" content="NONE">
 	<title>דף צוות ראשי (זמני)</title>
-<!--#include file="inc/header.asp"-->
+<!--#include file="../inc/header.asp"-->
     <style>
         h1 {font-size:1em; margin:0;}
         h2 {font-size:1em;}
@@ -40,7 +40,7 @@ if (session("role") and 2) = 0 then Response.Redirect "login.asp" %>
     </style>
 </head>
 <body>
-<!--#include file="inc/top.asp"-->
+<!--#include file="../inc/top.asp"-->
 <!--#include file="inc/topTeam.asp"-->
 <div id="dashboard">
     <div id="pTitle"><h1>תפריט משתמשים רשומים</h1></div>

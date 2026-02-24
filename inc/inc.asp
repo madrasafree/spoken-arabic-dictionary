@@ -2,7 +2,8 @@
 <%
 Option Explicit
 dim res, res2, res3, con, mySQL, cmd
-dim startTime, endTime, durationMs
+dim startTime, endTime, durationMs, baseA
+baseA=""
 
 function intToStr (num, length)
 	'NUM to STRING

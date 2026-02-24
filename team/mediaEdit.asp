@@ -27,13 +27,13 @@ res.open mySQL, con %>
 <head>
 	<title>עריכת מדיה קיימת</title>
     <meta name="robots" content="none">
-<!--#include file="inc/header.asp"-->
+<!--#include file="../inc/header.asp"-->
     <style>
         .mediaTable > div {margin-bottom: 10px;}
     </style>
 </head>
 <body>
-<!--#include file="inc/top.asp"-->
+<!--#include file="../inc/top.asp"-->
 <!--#include file="inc/topTeam.asp"-->
 <div id="dashboard">
     <div id="pTitle"><h1>עריכת מדיה קיימת</h1></div>

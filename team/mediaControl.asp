@@ -11,7 +11,7 @@ end if %>
 <head>
 	<title>דף שליטה במדיה</title>
     <meta name="robots" content="none">
-<!--#include file="inc/header.asp"-->
+<!--#include file="../inc/header.asp"-->
     <style>
         .mediaTable {width:100%; display: table; font-size:small;text-align:center; border:2px solid #ddd; margin:10px auto;}
         .mTableR {display: table-row;}
@@ -19,7 +19,7 @@ end if %>
     </style>
 </head>
 <body>
-<!--#include file="inc/top.asp"-->
+<!--#include file="../inc/top.asp"-->
 <!--#include file="inc/topTeam.asp"-->
 <div style="width:95%;margin:10px auto;">
     <div id="pTitle"><h1>דף שליטה במדיה</h1></div>

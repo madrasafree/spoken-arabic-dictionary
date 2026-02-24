@@ -11,9 +11,9 @@ Session("msg") = "" %>
     <meta property="og:locale:alternate" content="ar_JO" />
     <meta property="og:locale:alternate" content="en" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="assets/css/milon_main.css" />
-	<link rel="shortcut icon" href="assets/images/site/favicon.ico" />
-    <link rel="image_src" href="assets/images/site/logo.jpg" />
+	<link rel="stylesheet" href="<%=baseA%>assets/css/milon_main.css" />
+	<link rel="shortcut icon" href="<%=baseA%>assets/images/site/favicon.ico" />
+    <link rel="image_src" href="<%=baseA%>assets/images/site/logo.jpg" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 

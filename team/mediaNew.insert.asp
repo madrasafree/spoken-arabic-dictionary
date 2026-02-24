@@ -20,7 +20,7 @@ closeDB
 <head>
 	<title>הוספת מדיה חדשה למסד נתונים</title>
     <meta name="robots" content="none">
-<!--#include file="inc/header.asp"-->
+<!--#include file="../inc/header.asp"-->
 </head>
 <body style="text-align:left; direction: ltr;">
 <div style="padding:20px;">

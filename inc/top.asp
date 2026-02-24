@@ -172,7 +172,7 @@ menu li:first-child p, menu li:last-child p{
     border: 1px dotted gray; 
     font-size:1.5em;
     margin:0 auto;
-    background-image:url(assets/images/site/search.png);
+    background-image:url(<%=baseA%>assets/images/site/search.png);
     background-repeat:no-repeat;
     background-position:left;
     background-size:24px;
@@ -283,11 +283,11 @@ menu li:first-child p, menu li:last-child p{
 </style>
 
 <div id="siteTitle">
-<a href=".">
+<a href="<%=baseA%>.">
   מילון ערבית מדוברת
   </a>
 </div>
-<form id="bar-search-container" action="." autocomplete="off">
+<form id="bar-search-container" action="<%=baseA%>." autocomplete="off">
   <div dir="rtl" id="bar">
     <div id="bar-search-flex">
       <div id="bar-menu">
@@ -298,8 +298,8 @@ menu li:first-child p, menu li:last-child p{
         <input id="searchBoxTop" name="searchString" type="search" value="<%=server.HTMLEncode(trim(gereshFix(request("searchString"))))%>" />
       </div>
       <div id="bar-logo">
-        <a href=".">
-          <img style="width:100%;" src="assets/images/site/milon-logo.png" alt="logo" />
+        <a href="<%=baseA%>.">
+          <img style="width:100%;" src="<%=baseA%>assets/images/site/milon-logo.png" alt="logo" />
         </a>
       </div>
     </div>
@@ -339,12 +339,12 @@ menu li:first-child p, menu li:last-child p{
            <span class="material-icons" id="menuClose" style="cursor: pointer;font-size: 50px; color: #5b7a99;">close</span>
 
       <ul>
-        <li><div onclick="window.location.href='default.asp'"><p>דף הבית של המילון</p></div></li>
-        <li><div onclick="window.location.href='labels.asp'"><p>רשימת נושאים</p></div></li>
-        <li><div onclick="window.location.href='lists.all.asp'"><p>רשימות אישיות</p></div></li>
-        <li><div onclick="window.location.href='games.mem.asp'"><p>משחק זיכרון</p></div></li>
-        <li><div onclick="window.location.href='guide.asp'"><p>מדריך שימוש</p></div></li>
-        <li><div onclick="window.location.href='about.asp'"><p>אודות המילון</p></div></li>
+        <li><div onclick="window.location.href='<%=baseA%>default.asp'"><p>דף הבית של המילון</p></div></li>
+        <li><div onclick="window.location.href='<%=baseA%>labels.asp'"><p>רשימת נושאים</p></div></li>
+        <li><div onclick="window.location.href='<%=baseA%>lists.all.asp'"><p>רשימות אישיות</p></div></li>
+        <li><div onclick="window.location.href='<%=baseA%>games.mem.asp'"><p>משחק זיכרון</p></div></li>
+        <li><div onclick="window.location.href='<%=baseA%>guide.asp'"><p>מדריך שימוש</p></div></li>
+        <li><div onclick="window.location.href='<%=baseA%>about.asp'"><p>אודות המילון</p></div></li>
         <li><div onclick="window.location.href='https://madrasafree.com'"><p>לאתר הבית של מדרסה</p></div></li>
       </ul>
     </menu>
@@ -352,13 +352,13 @@ menu li:first-child p, menu li:last-child p{
     <div id="nav" class="navNew" style="visibility:hidden;z-index:3;"><%
 %>
         <ul>
-            <li><a href="default.asp">דף הבית של המילון</a></li>
+            <li><a href="<%=baseA%>default.asp">דף הבית של המילון</a></li>
             <li class="hr"></li>
-            <li><a href="labels.asp">רשימות נושאים<span style="font-size:80%;"></span></a></li>
-            <li><a href="lists.all.asp">רשימות אישיות</a></li>
-            <li><a href="games.mem.asp">משחק זיכרון</a></li>
-            <li><a href="guide.asp">מדריך שימוש <span style="font-size:80%;"></span></a></li>
-            <li><a href="about.asp">אודות המילון</a></li>
+            <li><a href="<%=baseA%>labels.asp">רשימות נושאים<span style="font-size:80%;"></span></a></li>
+            <li><a href="<%=baseA%>lists.all.asp">רשימות אישיות</a></li>
+            <li><a href="<%=baseA%>games.mem.asp">משחק זיכרון</a></li>
+            <li><a href="<%=baseA%>guide.asp">מדריך שימוש <span style="font-size:80%;"></span></a></li>
+            <li><a href="<%=baseA%>about.asp">אודות המילון</a></li>
             <li class="hr"></li>
             <li><a href="https://madrasafree.com">לאתר הבית של מדרסה</a></li>
 

@@ -9,7 +9,7 @@
 <head>
 	<meta charset='utf-8'>
 </head>
-<!--#include file="inc/top.asp"-->
+<!--#include file="../inc/top.asp"-->
 <%
 dim q,qFix 'TEMP from team/inc/top.asp'
 
