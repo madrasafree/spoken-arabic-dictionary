@@ -103,5 +103,3 @@ closeDbLogger "arabicWords","C","mediaEdit.asp","media details",durationMs,""
 
 </div>
 <!--#include virtual="/inc/trailer.asp"-->
-</body>
-</html>

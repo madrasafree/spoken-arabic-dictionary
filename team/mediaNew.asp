@@ -86,5 +86,3 @@ closeDB
 
 </div>
 <!--#include virtual="/inc/trailer.asp"-->
-</body>
-</html>
