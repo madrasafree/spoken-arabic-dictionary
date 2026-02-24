@@ -21,13 +21,13 @@ closeDB
 <head>
 	<title>הוספת מדיה חדשה</title>
     <meta name="robots" content="none">
-<!--#include file="../inc/header.asp"-->
+<!--#include virtual="/inc/header.asp"-->
     <style>
         .mediaTable > div {margin-bottom: 10px;}
     </style>
 </head>
 <body>
-<!--#include file="../inc/top.asp"-->
+<!--#include virtual="/inc/top.asp"-->
 <!--#include file="inc/topTeam.asp"-->
 <div id="dashboard">
     <div id="pTitle"><h1>הוספת מדיה חדשה</h1></div>
