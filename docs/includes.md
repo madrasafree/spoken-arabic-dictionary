@@ -12,15 +12,15 @@ For DB schema see `docs/db.md`. For page behavior see `docs/pages.md`.
 | File | Type | Included by |
 |---|---|---|
 | `inc/inc.asp` | Core bootstrap | Every .asp page |
-| `inc/header.asp` | HTML `<head>` | Every public page |
-| `inc/top.asp` | Navigation + search | Every public page |
-| `inc/trailer.asp` | Footer + `</body>` | Every public page |
+| `inc/header.asp` | HTML `<head>` | Every page (root + team/* via virtual include) |
+| `inc/top.asp` | Navigation + search bar | Every page (root + team/* via virtual include) |
+| `inc/trailer.asp` | Footer + `</body>` | Every page (root + team/* via virtual include) |
 | `inc/time.asp` | Date/time helpers | ~35 pages |
 | `inc/functions/functions.asp` | Android shada fix | ~15 pages |
 | `inc/functions/string.asp` | String utilities | ~10 pages |
 | `inc/functions/soundex.asp` | Phonetic search | 3 pages (buggy — see note) |
 | `inc/banner.asp` | Promotional banner | `default.asp`, `word.asp` |
-| `inc/topTeam.asp` | Team nav bar | `team/default.asp`, `team/media*.asp` |
+| `inc/topTeam.asp` | Team tool bar strip | `team/default.asp`, `team/media*.asp` |
 | `team/inc/functions.asp` | Android shada fix | `guide.asp` |
 | `team/inc/functions/string.asp` | String utilities (duplicate) | `default.asp`, `default.min.asp`, `team/edit.update.asp`, `team/new.insert.asp` |
 | `team/inc/functions/soundex.asp` | Phonetic search (correct version) | `default.asp`, `default.min.asp`, `team/edit.update.asp`, `team/new.insert.asp` |
@@ -110,7 +110,13 @@ and Google Analytics. Also reads and immediately clears the session flash messag
 
 ### Used by
 
-Every public-facing `.asp` page.
+Every `.asp` page in the project — root pages use `<!--#include file="inc/header.asp"-->`,
+team pages use `<!--#include virtual="/inc/header.asp"-->` (virtual path for cross-directory support).
+
+### Conditional logic
+
+`inc/header.asp` also conditionally includes `assets/css/arabicTeam.css` for users with
+team role (role & 2 > 0) visiting a URL under `/team/`.
 
 ---
 
@@ -155,7 +161,8 @@ Queries `arabicWords` (labels for nav), `arabicManager` (tasks count).
 
 ### Used by
 
-Every public-facing `.asp` page.
+Every `.asp` page — root pages via file include, team pages via virtual include
+(`<!--#include virtual="/inc/top.asp"-->`).
 
 ---
 
@@ -187,7 +194,12 @@ Opens `arabicUsers` via `openDbLogger` / `closeDbLogger`.
 
 ### Used by
 
-Every public-facing `.asp` page.
+Every `.asp` page — root pages via file include, team pages via virtual include
+(`<!--#include virtual="/inc/trailer.asp"-->`). All paths within trailer.asp use
+`<%=baseA%>` prefix so images and links resolve correctly from `/team/` subdirectory.
+
+> **Note:** `team/inc/header.asp`, `team/inc/top.asp`, and `team/inc/trailer.asp`
+> were deleted in the `unify-headers` cleanup — the root includes now serve all pages.
 
 ---
 
@@ -480,28 +492,23 @@ Responsive: on mobile (≤768px) the layout collapses to vertical stacking.
 
 ## `inc/topTeam.asp`
 
-**Type:** team navigation bar (for team/* pages accessed from root)
+**Type:** team tool bar strip
 
 ### Purpose
 
-Renders the navigation bar shown on team pages that are served from the root. These pages use `inc/top.asp`
-for the standard public bar and then `inc/topTeam.asp` to add a team-specific
-search bar and breadcrumb.
-
-Includes `inc/functions/string.asp` itself (for `gereshFix()` used in the search input).
+Renders a thin team-specific toolbar shown at the top of team pages (below the main
+navigation bar from `inc/top.asp`). Provides quick links to common team actions.
 
 ### What it outputs
 
-- Profile avatar image for logged-in contributors (role > 2), or a generic menu icon
-- Top search bar with submit button
-- Slide-out navigation menus (user menu + main site links)
-- Breadcrumb showing current page title
-- Site logo linking to `default.asp`
+- Greeting with logged-in user's name (linked to their profile)
+- Logout link
+- "הוסף מילה" (add word) link
+- Link to media bank (`team/mediaControl.asp`)
+- Link to team homepage (`team/`)
+- Server name shown on the right (useful for dev/staging identification)
 
-### DB access
-
-For logged-in users: `SELECT username, picture, gender FROM users WHERE id=<session userID>`
-Opens `arabicUsers` via `openDbLogger` / `closeDbLogger`.
+All links use `<%=baseA%>` so they resolve correctly from any directory.
 
 ### Used by
 
