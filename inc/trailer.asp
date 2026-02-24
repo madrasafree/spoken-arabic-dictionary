@@ -1,6 +1,6 @@
 ﻿</div>
 
-<div id="showTime" onclick="location.href='clock.asp';" style="cursor:pointer;">
+<div id="showTime" onclick="location.href='<%=baseA%>clock.asp';" style="cursor:pointer;">
     <span id="clock" dir="LTR">
         <span id="HH"></span><span id="MM"></span>
     </span>
@@ -15,7 +15,7 @@
             <td>
                 <div style="padding:5px 8px; text-align:left;"><%
                     if session("role")>2 then %>
-                    <a href="profile.asp?id=<%=session("userID")%>">
+                    <a href="<%=baseA%>profile.asp?id=<%=session("userID")%>">
                         <img id="avatar"
                     <%
                     'openDB "arabicUsers"
@@ -25,12 +25,12 @@
                         mySQL = "SELECT username,[picture],gender FROM users WHERE id="&session("userID")
                         res.open mySQL, con 
                             if res("picture") then %>
-                                 src="assets/images/profiles/<%=session("userID")%>.png"<%
+                                 src="<%=baseA%>assets/images/profiles/<%=session("userID")%>.png"<%
                             else 
                                 if res("gender")=1 then %>
-                                     src="assets/images/profiles/male.png"<%
+                                     src="<%=baseA%>assets/images/profiles/male.png"<%
                                 else %>
-                                     src="assets/images/profiles/female.png"<%
+                                     src="<%=baseA%>assets/images/profiles/female.png"<%
                                 end if
                             end if %>
                              style="height:24px; " title="<%=session("username")%>'s avatar" /></a><%
@@ -41,12 +41,12 @@
                     %>
 
                     <div style="display:inline-block;">
-                        <a href="word.new.asp"><img src="assets/images/site/add-square.png" style="width:24px;" alt="הוספת מילה" title="הוספת מילה" /></a>
+                        <a href="<%=baseA%>word.new.asp"><img src="<%=baseA%>assets/images/site/add-square.png" style="width:24px;" alt="הוספת מילה" title="הוספת מילה" /></a>
                     </div><%
                     end if%>
 
                     <div style="display:inline-block;">
-                        <a href="users.landingPage.asp"><img src="assets/images/team/teamLogo.png" style="width:24px;" alt="התחברו למילון" title="התחברו למילון" /></a>
+                        <a href="<%=baseA%>users.landingPage.asp"><img src="<%=baseA%>assets/images/team/teamLogo.png" style="width:24px;" alt="התחברו למילון" title="התחברו למילון" /></a>
                     </div>
                 </div>
             </td>
@@ -61,7 +61,7 @@
 
     </script>
 
-    <script src="assets/js/saa3a.js?v=3"></script>
+    <script src="<%=baseA%>assets/js/saa3a.js?v=3"></script>
 
 </body>
 </html>
