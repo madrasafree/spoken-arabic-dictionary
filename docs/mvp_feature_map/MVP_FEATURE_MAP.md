@@ -1,172 +1,165 @@
-# מילון ערבית מדוברת - מיפוי פיצ'רים לקראת MVP חדש
+﻿<div dir="rtl" align="right">
 
-תאריך מיפוי: 2026-02-25
+<h1>מיפוי פיצ'רים ל-MVP של המילון</h1>
+<p>מטרה: להמחיש בצורה פרקטית מה קיים היום, עם קישורים אמיתיים וצילומי מסך, כדי לקבל החלטות תיעדוף ברורות להמרה.</p>
 
-מסמך זה מרכז מיפוי פיצ'רים לא טכני מדי, עם צילומי מסך, קישורי Production אמיתיים, ומה המשתמש יכול לעשות בכל אזור במוצר.
-המטרה היא תיעדוף לגרסה החדשה: מה חשוב, מה פחות חשוב, ומה אפשר לדחות לשלב מאוחר יותר.
+<h2>פרמטרי URL מרכזיים והחלטות המרה/SEO</h2>
+<table dir="rtl" style="direction: rtl; text-align: right;">
+<thead><tr><th>פרמטר</th><th>דוגמת URL</th><th>החלטת המרה/SEO</th></tr></thead>
+<tbody>
+<tr><td><code dir="ltr">id</code></td><td><code dir="ltr">http://localhost:8081/label.asp?id=1</code></td><td>להמיר לנתיב קריא (למשל slug/id), לשמור 301 מה-ASP ולהגדיר canonical לכתובת החדשה.</td></tr>
+<tr><td><code dir="ltr">sID</code></td><td><code dir="ltr">http://localhost:8081/sentence.asp?sID=109</code></td><td>לשמור מזהה משפט יציב ולהעביר ל-path parameter אם מתאפשר, עם 301 מהכתובת הישנה.</td></tr>
+<tr><td><code dir="ltr">LID</code></td><td><code dir="ltr">http://localhost:8081/games.mem.list.asp?LID=556</code></td><td>לאחד שמות פרמטרים לרשימות (LID/listID/id) לפרמטר יחיד בגרסה החדשה.</td></tr>
+<tr><td><code dir="ltr">listID</code></td><td><code dir="ltr">http://localhost:8081/dashboard.lists.asp?listID=1</code></td><td>לאחד ל-id אחיד במסכי dashboard/list כדי למנוע כפילויות URL.</td></tr>
+<tr><td><code dir="ltr">relData</code></td><td><code dir="ltr">http://localhost:8081/json.asp?relData=1,abc</code></td><td>להגדיר חוזה API ברור, ולבדוק אם מעבירים ל-endpoint REST עם פרמטרים מפורקים.</td></tr>
+</tbody></table>
 
-גרסה חדשה מוצעת: **Django + Supabase + Vercel**
-עיצוב קיים: [Lovable Modern Canvas](https://madrasa-modern-canvas.lovable.app/)
+<h2>מיפוי פרקטי לפי מסכים (Local)</h2>
+<p>בכל שורה מופיעים: מה יש בדף, מה הפיצ'ר, פרמטרים ב-URL, החלטת המרה/SEO, קישורים וצילום מסך.</p>
+<details>
+<summary><strong>ציבורי (29)</strong></summary>
+<table dir="rtl" style="direction: rtl; text-align: right;">
+<thead><tr><th>#</th><th>מסך</th><th>מה יש בדף</th><th>פיצ'ר מרכזי</th><th>פרמטרים ב-URL</th><th>החלטת המרה/SEO</th><th>קישורים</th><th>צילום</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Home</td><td>עמוד הבית: ניווט ראשי, כניסה לחיפוש וגישה למסכים מרכזיים.</td><td>פיצ׳ר מערכת פעיל</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="http://localhost:8081/">Local</a> | <a href="https://milon.madrasafree.com/">Production</a> | <a href="https://dev-milon.madrasafree.com/">Staging</a></td><td><a href="screenshots/01_public_home.png">צילום מסך</a></td></tr>
+<tr><td>2</td><td>Default ASP</td><td>עמוד בית/חיפוש בגרסת ASP הקלאסית.</td><td>פיצ׳ר מערכת פעיל</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="http://localhost:8081/default.asp">Local</a> | <a href="https://milon.madrasafree.com/default.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/default.asp">Staging</a></td><td><a href="screenshots/02_public_default-asp.png">צילום מסך</a></td></tr>
+<tr><td>3</td><td>Default Min</td><td>עמוד בית קל ומהיר עם משקל נמוך.</td><td>פיצ׳ר מערכת פעיל</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="http://localhost:8081/default.min.asp">Local</a> | <a href="https://milon.madrasafree.com/default.min.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/default.min.asp">Staging</a></td><td><a href="screenshots/03_public_default-min.png">צילום מסך</a></td></tr>
+<tr><td>4</td><td>About</td><td>עמוד מידע על הפרויקט והמילון.</td><td>פיצ׳ר מערכת פעיל</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="http://localhost:8081/about.asp">Local</a> | <a href="https://milon.madrasafree.com/about.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/about.asp">Staging</a></td><td><a href="screenshots/04_public_about.png">צילום מסך</a></td></tr>
+<tr><td>5</td><td>Guide</td><td>עמוד הסבר והדרכה לשימוש במערכת.</td><td>פיצ׳ר מערכת פעיל</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="http://localhost:8081/guide.asp">Local</a> | <a href="https://milon.madrasafree.com/guide.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/guide.asp">Staging</a></td><td><a href="screenshots/05_public_guide.png">צילום מסך</a></td></tr>
+<tr><td>6</td><td>Clock</td><td>מסך פעיל במערכת: Clock</td><td>פיצ׳ר מערכת פעיל</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="http://localhost:8081/clock.asp">Local</a> | <a href="https://milon.madrasafree.com/clock.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/clock.asp">Staging</a></td><td><a href="screenshots/06_public_clock.png">צילום מסך</a></td></tr>
+<tr><td>7</td><td>Stats</td><td>מסך פעיל במערכת: Stats</td><td>פיצ׳ר מערכת פעיל</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="http://localhost:8081/stats.asp">Local</a> | <a href="https://milon.madrasafree.com/stats.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/stats.asp">Staging</a></td><td><a href="screenshots/07_public_stats.png">צילום מסך</a></td></tr>
+<tr><td>8</td><td>Labels</td><td>אינדקס נושאים (Labels) לניווט לפי קטגוריות.</td><td>מילון: נושאים ותיוגים</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="http://localhost:8081/labels.asp">Local</a> | <a href="https://milon.madrasafree.com/labels.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/labels.asp">Staging</a></td><td><a href="screenshots/08_public_labels.png">צילום מסך</a></td></tr>
+<tr><td>9</td><td>Label Detail</td><td>מסך פעיל במערכת: Label Detail</td><td>מילון: נושאים ותיוגים</td><td><code dir="ltr">id</code></td><td>להמיר מזהה query לנתיב קריא (slug/id), להגדיר canonical, ולהוסיף 301 מה-URL הישן.</td><td><a href="http://localhost:8081/label.asp?id=1">Local</a> | <a href="https://milon.madrasafree.com/label.asp?id=1">Production</a> | <a href="https://dev-milon.madrasafree.com/label.asp?id=1">Staging</a></td><td><a href="screenshots/09_public_label-detail.png">צילום מסך</a></td></tr>
+<tr><td>10</td><td>Word Detail</td><td>מסך פעיל במערכת: Word Detail</td><td>מילון: מילים ועריכות</td><td><code dir="ltr">id</code></td><td>להמיר מזהה query לנתיב קריא (slug/id), להגדיר canonical, ולהוסיף 301 מה-URL הישן.</td><td><a href="http://localhost:8081/word.asp?id=2939">Local</a> | <a href="https://milon.madrasafree.com/word.asp?id=2939">Production</a> | <a href="https://dev-milon.madrasafree.com/word.asp?id=2939">Staging</a></td><td><a href="screenshots/10_public_word-detail.png">צילום מסך</a></td></tr>
+<tr><td>11</td><td>Sentences</td><td>אינדקס משפטים לדפדוף ולמידה.</td><td>משפטים ודוגמאות</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="http://localhost:8081/sentences.asp">Local</a> | <a href="https://milon.madrasafree.com/sentences.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/sentences.asp">Staging</a></td><td><a href="screenshots/11_public_sentences.png">צילום מסך</a></td></tr>
+<tr><td>12</td><td>Sentence Detail</td><td>מסך פעיל במערכת: Sentence Detail</td><td>משפטים ודוגמאות</td><td><code dir="ltr">sID</code></td><td>להמיר מזהה query לנתיב קריא (slug/id), להגדיר canonical, ולהוסיף 301 מה-URL הישן.</td><td><a href="http://localhost:8081/sentence.asp?sID=109">Local</a> | <a href="https://milon.madrasafree.com/sentence.asp?sID=109">Production</a> | <a href="https://dev-milon.madrasafree.com/sentence.asp?sID=109">Staging</a></td><td><a href="screenshots/12_public_sentence-detail.png">צילום מסך</a></td></tr>
+<tr><td>13</td><td>Lists Index</td><td>אינדקס רשימות לימוד.</td><td>רשימות לימוד</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="http://localhost:8081/lists.all.asp">Local</a> | <a href="https://milon.madrasafree.com/lists.all.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/lists.all.asp">Staging</a></td><td><a href="screenshots/13_public_lists-index.png">צילום מסך</a></td></tr>
+<tr><td>14</td><td>List Detail</td><td>מסך פעיל במערכת: List Detail</td><td>רשימות לימוד</td><td><code dir="ltr">id</code></td><td>להמיר מזהה query לנתיב קריא (slug/id), להגדיר canonical, ולהוסיף 301 מה-URL הישן.</td><td><a href="http://localhost:8081/lists.asp?id=556">Local</a> | <a href="https://milon.madrasafree.com/lists.asp?id=556">Production</a> | <a href="https://dev-milon.madrasafree.com/lists.asp?id=556">Staging</a></td><td><a href="screenshots/14_public_list-detail.png">צילום מסך</a></td></tr>
+<tr><td>15</td><td>List Audio</td><td>מסך פעיל במערכת: List Audio</td><td>רשימות לימוד</td><td><code dir="ltr">id</code></td><td>להמיר מזהה query לנתיב קריא (slug/id), להגדיר canonical, ולהוסיף 301 מה-URL הישן.</td><td><a href="http://localhost:8081/list.audio.asp?id=556">Local</a> | <a href="https://milon.madrasafree.com/list.audio.asp?id=556">Production</a> | <a href="https://dev-milon.madrasafree.com/list.audio.asp?id=556">Staging</a></td><td><a href="screenshots/15_public_list-audio.png">צילום מסך</a></td></tr>
+<tr><td>16</td><td>List Pics</td><td>מסך פעיל במערכת: List Pics</td><td>רשימות לימוד</td><td><code dir="ltr">id</code></td><td>להמיר מזהה query לנתיב קריא (slug/id), להגדיר canonical, ולהוסיף 301 מה-URL הישן.</td><td><a href="http://localhost:8081/list.pics.asp?id=556">Local</a> | <a href="https://milon.madrasafree.com/list.pics.asp?id=556">Production</a> | <a href="https://dev-milon.madrasafree.com/list.pics.asp?id=556">Staging</a></td><td><a href="screenshots/16_public_list-pics.png">צילום מסך</a></td></tr>
+<tr><td>17</td><td>List Vids</td><td>מסך פעיל במערכת: List Vids</td><td>רשימות לימוד</td><td><code dir="ltr">id</code></td><td>להמיר מזהה query לנתיב קריא (slug/id), להגדיר canonical, ולהוסיף 301 מה-URL הישן.</td><td><a href="http://localhost:8081/list.vids.asp?id=556">Local</a> | <a href="https://milon.madrasafree.com/list.vids.asp?id=556">Production</a> | <a href="https://dev-milon.madrasafree.com/list.vids.asp?id=556">Staging</a></td><td><a href="screenshots/17_public_list-vids.png">צילום מסך</a></td></tr>
+<tr><td>18</td><td>Games Memory</td><td>משחק זיכרון כללי על אוצר מילים.</td><td>משחקי זיכרון</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="http://localhost:8081/games.mem.asp">Local</a> | <a href="https://milon.madrasafree.com/games.mem.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/games.mem.asp">Staging</a></td><td><a href="screenshots/18_public_games-memory.png">צילום מסך</a></td></tr>
+<tr><td>19</td><td>Games List</td><td>מסך פעיל במערכת: Games List</td><td>רשימות לימוד</td><td><code dir="ltr">LID</code></td><td>להמיר מזהה query לנתיב קריא (slug/id), להגדיר canonical, ולהוסיף 301 מה-URL הישן.</td><td><a href="http://localhost:8081/games.mem.list.asp?LID=556">Local</a> | <a href="https://milon.madrasafree.com/games.mem.list.asp?LID=556">Production</a> | <a href="https://dev-milon.madrasafree.com/games.mem.list.asp?LID=556">Staging</a></td><td><a href="screenshots/19_public_games-list.png">צילום מסך</a></td></tr>
+<tr><td>20</td><td>Games Pics</td><td>מסך פעיל במערכת: Games Pics</td><td>משחקי זיכרון</td><td><code dir="ltr">LID</code></td><td>להמיר מזהה query לנתיב קריא (slug/id), להגדיר canonical, ולהוסיף 301 מה-URL הישן.</td><td><a href="http://localhost:8081/games.mem.pics.asp?LID=556">Local</a> | <a href="https://milon.madrasafree.com/games.mem.pics.asp?LID=556">Production</a> | <a href="https://dev-milon.madrasafree.com/games.mem.pics.asp?LID=556">Staging</a></td><td><a href="screenshots/20_public_games-pics.png">צילום מסך</a></td></tr>
+<tr><td>21</td><td>Activity</td><td>מסך פעיל במערכת: Activity</td><td>פיצ׳ר מערכת פעיל</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="http://localhost:8081/activity.asp">Local</a> | <a href="https://milon.madrasafree.com/activity.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/activity.asp">Staging</a></td><td><a href="screenshots/21_public_activity.png">צילום מסך</a></td></tr>
+<tr><td>22</td><td>Welcome</td><td>מסך פעיל במערכת: Welcome</td><td>פיצ׳ר מערכת פעיל</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="http://localhost:8081/welcome.asp">Local</a> | <a href="https://milon.madrasafree.com/welcome.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/welcome.asp">Staging</a></td><td><a href="screenshots/22_public_welcome.png">צילום מסך</a></td></tr>
+<tr><td>23</td><td>Profile</td><td>דף פרופיל משתמש ותרומות.</td><td>משתמשים ופרופיל</td><td><code dir="ltr">id</code></td><td>להמיר מזהה query לנתיב קריא (slug/id), להגדיר canonical, ולהוסיף 301 מה-URL הישן.</td><td><a href="http://localhost:8081/profile.asp?id=1">Local</a> | <a href="https://milon.madrasafree.com/profile.asp?id=1">Production</a> | <a href="https://dev-milon.madrasafree.com/profile.asp?id=1">Staging</a></td><td><a href="screenshots/23_public_profile.png">צילום מסך</a></td></tr>
+<tr><td>24</td><td>Profile All Words</td><td>דף פרופיל משתמש ותרומות.</td><td>משתמשים ופרופיל</td><td><code dir="ltr">id</code></td><td>להמיר מזהה query לנתיב קריא (slug/id), להגדיר canonical, ולהוסיף 301 מה-URL הישן.</td><td><a href="http://localhost:8081/profile.allwords.asp?id=1">Local</a> | <a href="https://milon.madrasafree.com/profile.allwords.asp?id=1">Production</a> | <a href="https://dev-milon.madrasafree.com/profile.allwords.asp?id=1">Staging</a></td><td><a href="screenshots/24_public_profile-all-words.png">צילום מסך</a></td></tr>
+<tr><td>25</td><td>Login</td><td>מסך התחברות למשתמשים.</td><td>משתמשים ופרופיל</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="http://localhost:8081/login.asp">Local</a> | <a href="https://milon.madrasafree.com/login.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/login.asp">Staging</a></td><td><a href="screenshots/25_public_login.png">צילום מסך</a></td></tr>
+<tr><td>26</td><td>Guide Team</td><td>עמוד הסבר והדרכה לשימוש במערכת.</td><td>פיצ׳ר מערכת פעיל</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="http://localhost:8081/guideTeam.asp">Local</a> | <a href="https://milon.madrasafree.com/guideTeam.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/guideTeam.asp">Staging</a></td><td><a href="screenshots/26_public_guide-team.png">צילום מסך</a></td></tr>
+<tr><td>27</td><td>Dashboard Snapshot</td><td>מסך ניהול מרכזי למעקב ותפעול.</td><td>דשבורד וניהול</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="http://localhost:8081/dashboard.asp">Local</a> | <a href="https://milon.madrasafree.com/dashboard.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/dashboard.asp">Staging</a></td><td><a href="screenshots/27_public_dashboard-snapshot.png">צילום מסך</a></td></tr>
+<tr><td>56</td><td>JSON Endpoint</td><td>מסך פעיל במערכת: JSON Endpoint</td><td>פיצ׳ר מערכת פעיל</td><td><code dir="ltr">relData</code></td><td>לשמר רק פרמטרים פונקציונליים, ולמנוע אינדוקס של וריאציות query לא נדרשות.</td><td><a href="http://localhost:8081/json.asp?relData=1,abc">Local</a> | <a href="https://milon.madrasafree.com/json.asp?relData=1,abc">Production</a> | <a href="https://dev-milon.madrasafree.com/json.asp?relData=1,abc">Staging</a></td><td><a href="screenshots/56_public_json-endpoint.png">צילום מסך</a></td></tr>
+<tr><td>57</td><td>Lists All JSON</td><td>Endpoint נתונים בפורמט JSON.</td><td>API וצריכת נתונים</td><td>ללא פרמטרים</td><td>לשמר Endpoint יציב, לתעד סכימה, ולהחליט מראש אילו שדות הם חוזה API.</td><td><a href="http://localhost:8081/lists.all.json.asp">Local</a> | <a href="https://milon.madrasafree.com/lists.all.json.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/lists.all.json.asp">Staging</a></td><td><a href="screenshots/57_public_lists-all-json.png">צילום מסך</a></td></tr>
+</tbody></table>
+</details>
+<details>
+<summary><strong>צוות (17)</strong></summary>
+<table dir="rtl" style="direction: rtl; text-align: right;">
+<thead><tr><th>#</th><th>מסך</th><th>מה יש בדף</th><th>פיצ'ר מרכזי</th><th>פרמטרים ב-URL</th><th>החלטת המרה/SEO</th><th>קישורים</th><th>צילום</th></tr></thead>
+<tbody>
+<tr><td>31</td><td>User Landing</td><td>מסך פעיל במערכת: User Landing</td><td>משתמשים ופרופיל</td><td>ללא פרמטרים</td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/users.landingPage.asp">Local</a> | <a href="https://milon.madrasafree.com/users.landingPage.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/users.landingPage.asp">Staging</a></td><td><a href="screenshots/31_team_user-landing.png">צילום מסך</a></td></tr>
+<tr><td>32</td><td>Word New</td><td>טופס הוספת מילה חדשה בממשק צוות.</td><td>מילון: מילים ועריכות</td><td>ללא פרמטרים</td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/word.new.asp">Local</a> | <a href="https://milon.madrasafree.com/word.new.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/word.new.asp">Staging</a></td><td><a href="screenshots/32_team_word-new.png">צילום מסך</a></td></tr>
+<tr><td>33</td><td>Word Edit</td><td>מסך פעיל במערכת: Word Edit</td><td>מילון: מילים ועריכות</td><td><code dir="ltr">id</code></td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/word.edit.asp?id=2939">Local</a> | <a href="https://milon.madrasafree.com/word.edit.asp?id=2939">Production</a> | <a href="https://dev-milon.madrasafree.com/word.edit.asp?id=2939">Staging</a></td><td><a href="screenshots/33_team_word-edit.png">צילום מסך</a></td></tr>
+<tr><td>34</td><td>Word History</td><td>מסך פעיל במערכת: Word History</td><td>מילון: מילים ועריכות</td><td><code dir="ltr">id</code></td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/word.history.asp?id=2939">Local</a> | <a href="https://milon.madrasafree.com/word.history.asp?id=2939">Production</a> | <a href="https://dev-milon.madrasafree.com/word.history.asp?id=2939">Staging</a></td><td><a href="screenshots/34_team_word-history.png">צילום מסך</a></td></tr>
+<tr><td>35</td><td>Sentence New</td><td>הוספה/עריכה של משפטי דוגמה.</td><td>משפטים ודוגמאות</td><td>ללא פרמטרים</td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/sentenceNew.asp">Local</a> | <a href="https://milon.madrasafree.com/sentenceNew.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/sentenceNew.asp">Staging</a></td><td><a href="screenshots/35_team_sentence-new.png">צילום מסך</a></td></tr>
+<tr><td>36</td><td>Sentence Edit</td><td>מסך פעיל במערכת: Sentence Edit</td><td>משפטים ודוגמאות</td><td><code dir="ltr">sID</code></td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/sentenceEdit.asp?sID=109">Local</a> | <a href="https://milon.madrasafree.com/sentenceEdit.asp?sID=109">Production</a> | <a href="https://dev-milon.madrasafree.com/sentenceEdit.asp?sID=109">Staging</a></td><td><a href="screenshots/36_team_sentence-edit.png">צילום מסך</a></td></tr>
+<tr><td>37</td><td>Lists New</td><td>יצירה/עריכה של רשימות לימוד.</td><td>רשימות לימוד</td><td>ללא פרמטרים</td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/listsNew.asp">Local</a> | <a href="https://milon.madrasafree.com/listsNew.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/listsNew.asp">Staging</a></td><td><a href="screenshots/37_team_lists-new.png">צילום מסך</a></td></tr>
+<tr><td>38</td><td>Lists Edit</td><td>מסך פעיל במערכת: Lists Edit</td><td>רשימות לימוד</td><td><code dir="ltr">id</code></td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/listsEdit.asp?id=556">Local</a> | <a href="https://milon.madrasafree.com/listsEdit.asp?id=556">Production</a> | <a href="https://dev-milon.madrasafree.com/listsEdit.asp?id=556">Staging</a></td><td><a href="screenshots/38_team_lists-edit.png">צילום מסך</a></td></tr>
+<tr><td>39</td><td>Dashboard</td><td>מסך ניהול מרכזי למעקב ותפעול.</td><td>דשבורד וניהול</td><td>ללא פרמטרים</td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/dashboard.asp">Local</a> | <a href="https://milon.madrasafree.com/dashboard.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/dashboard.asp">Staging</a></td><td><a href="screenshots/39_team_dashboard.png">צילום מסך</a></td></tr>
+<tr><td>40</td><td>Dashboard Lists</td><td>מסך ניהול מרכזי למעקב ותפעול.</td><td>רשימות לימוד</td><td><code dir="ltr">listID</code></td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/dashboard.lists.asp?listID=1">Local</a> | <a href="https://milon.madrasafree.com/dashboard.lists.asp?listID=1">Production</a> | <a href="https://dev-milon.madrasafree.com/dashboard.lists.asp?listID=1">Staging</a></td><td><a href="screenshots/40_team_dashboard-lists.png">צילום מסך</a></td></tr>
+<tr><td>41</td><td>Team Home</td><td>עמוד בית/חיפוש בגרסת ASP הקלאסית.</td><td>כלי עבודה לצוות</td><td>ללא פרמטרים</td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/team/default.asp">Local</a> | <a href="https://milon.madrasafree.com/team/default.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/team/default.asp">Staging</a></td><td><a href="screenshots/41_team_team-home.png">צילום מסך</a></td></tr>
+<tr><td>42</td><td>Team Media Control</td><td>מסך עבודה פנימי של צוות המילון.</td><td>כלי עבודה לצוות</td><td>ללא פרמטרים</td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/team/mediaControl.asp">Local</a> | <a href="https://milon.madrasafree.com/team/mediaControl.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/team/mediaControl.asp">Staging</a></td><td><a href="screenshots/42_team_team-media-control.png">צילום מסך</a></td></tr>
+<tr><td>43</td><td>Team Media New</td><td>מסך עבודה פנימי של צוות המילון.</td><td>כלי עבודה לצוות</td><td>ללא פרמטרים</td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/team/mediaNew.asp">Local</a> | <a href="https://milon.madrasafree.com/team/mediaNew.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/team/mediaNew.asp">Staging</a></td><td><a href="screenshots/43_team_team-media-new.png">צילום מסך</a></td></tr>
+<tr><td>44</td><td>Team Media Edit</td><td>מסך עבודה פנימי של צוות המילון.</td><td>כלי עבודה לצוות</td><td><code dir="ltr">id</code></td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/team/mediaEdit.asp?id=1283">Local</a> | <a href="https://milon.madrasafree.com/team/mediaEdit.asp?id=1283">Production</a> | <a href="https://dev-milon.madrasafree.com/team/mediaEdit.asp?id=1283">Staging</a></td><td><a href="screenshots/44_team_team-media-edit.png">צילום מסך</a></td></tr>
+<tr><td>58</td><td>Team Login Redirect</td><td>מסך התחברות למשתמשים.</td><td>משתמשים ופרופיל</td><td>ללא פרמטרים</td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/team/login.asp">Local</a> | <a href="https://milon.madrasafree.com/team/login.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/team/login.asp">Staging</a></td><td><a href="screenshots/58_team_team-login-redirect.png">צילום מסך</a></td></tr>
+<tr><td>59</td><td>Guide Embed</td><td>מסך עבודה פנימי של צוות המילון.</td><td>כלי עבודה לצוות</td><td>ללא פרמטרים</td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/team/guide.embed.asp">Local</a> | <a href="https://milon.madrasafree.com/team/guide.embed.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/team/guide.embed.asp">Staging</a></td><td><a href="screenshots/59_team_guide-embed.png">צילום מסך</a></td></tr>
+<tr><td>60</td><td>Guide Embed Nikud</td><td>מסך עבודה פנימי של צוות המילון.</td><td>כלי עבודה לצוות</td><td>ללא פרמטרים</td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/team/guide.embed.nikud.asp">Local</a> | <a href="https://milon.madrasafree.com/team/guide.embed.nikud.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/team/guide.embed.nikud.asp">Staging</a></td><td><a href="screenshots/60_team_guide-embed-nikud.png">צילום מסך</a></td></tr>
+</tbody></table>
+</details>
+<details>
+<summary><strong>אדמין (18)</strong></summary>
+<table dir="rtl" style="direction: rtl; text-align: right;">
+<thead><tr><th>#</th><th>מסך</th><th>מה יש בדף</th><th>פיצ'ר מרכזי</th><th>פרמטרים ב-URL</th><th>החלטת המרה/SEO</th><th>קישורים</th><th>צילום</th></tr></thead>
+<tbody>
+<tr><td>45</td><td>Admin Root</td><td>מסך אדמין לניהול משתמשים/תוכן/הגדרות.</td><td>כלי ניהול ואדמין</td><td>ללא פרמטרים</td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/admin/">Local</a> | <a href="https://milon.madrasafree.com/admin/">Production</a> | <a href="https://dev-milon.madrasafree.com/admin/">Staging</a></td><td><a href="screenshots/45_admin_admin-root.png">צילום מסך</a></td></tr>
+<tr><td>46</td><td>Admin Index</td><td>מסך אדמין לניהול משתמשים/תוכן/הגדרות.</td><td>כלי ניהול ואדמין</td><td>ללא פרמטרים</td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/admin/index.asp">Local</a> | <a href="https://milon.madrasafree.com/admin/index.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/admin/index.asp">Staging</a></td><td><a href="screenshots/46_admin_admin-index.png">צילום מסך</a></td></tr>
+<tr><td>47</td><td>Admin Default</td><td>עמוד בית/חיפוש בגרסת ASP הקלאסית.</td><td>כלי ניהול ואדמין</td><td>ללא פרמטרים</td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/admin/default.asp">Local</a> | <a href="https://milon.madrasafree.com/admin/default.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/admin/default.asp">Staging</a></td><td><a href="screenshots/47_admin_admin-default.png">צילום מסך</a></td></tr>
+<tr><td>48</td><td>Admin User Control</td><td>מסך אדמין לניהול משתמשים/תוכן/הגדרות.</td><td>כלי ניהול ואדמין</td><td>ללא פרמטרים</td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/admin/userControl.asp">Local</a> | <a href="https://milon.madrasafree.com/admin/userControl.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/admin/userControl.asp">Staging</a></td><td><a href="screenshots/48_admin_admin-user-control.png">צילום מסך</a></td></tr>
+<tr><td>49</td><td>Admin User Control Full</td><td>מסך אדמין לניהול משתמשים/תוכן/הגדרות.</td><td>כלי ניהול ואדמין</td><td>ללא פרמטרים</td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/admin/userControl.full.asp">Local</a> | <a href="https://milon.madrasafree.com/admin/userControl.full.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/admin/userControl.full.asp">Staging</a></td><td><a href="screenshots/49_admin_admin-user-control-full.png">צילום מסך</a></td></tr>
+<tr><td>50</td><td>Admin User New</td><td>מסך אדמין לניהול משתמשים/תוכן/הגדרות.</td><td>כלי ניהול ואדמין</td><td>ללא פרמטרים</td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/admin/userNew.asp">Local</a> | <a href="https://milon.madrasafree.com/admin/userNew.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/admin/userNew.asp">Staging</a></td><td><a href="screenshots/50_admin_admin-user-new.png">צילום מסך</a></td></tr>
+<tr><td>51</td><td>Admin User Edit</td><td>מסך אדמין לניהול משתמשים/תוכן/הגדרות.</td><td>כלי ניהול ואדמין</td><td><code dir="ltr">id</code></td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/admin/userEdit.asp?id=1">Local</a> | <a href="https://milon.madrasafree.com/admin/userEdit.asp?id=1">Production</a> | <a href="https://dev-milon.madrasafree.com/admin/userEdit.asp?id=1">Staging</a></td><td><a href="screenshots/51_admin_admin-user-edit.png">צילום מסך</a></td></tr>
+<tr><td>52</td><td>Admin Label Control</td><td>מסך אדמין לניהול משתמשים/תוכן/הגדרות.</td><td>מילון: נושאים ותיוגים</td><td>ללא פרמטרים</td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/admin/labelControl.asp">Local</a> | <a href="https://milon.madrasafree.com/admin/labelControl.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/admin/labelControl.asp">Staging</a></td><td><a href="screenshots/52_admin_admin-label-control.png">צילום מסך</a></td></tr>
+<tr><td>53</td><td>Admin Words Short</td><td>מסך אדמין לניהול משתמשים/תוכן/הגדרות.</td><td>כלי ניהול ואדמין</td><td>ללא פרמטרים</td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/admin/wordsShort.asp">Local</a> | <a href="https://milon.madrasafree.com/admin/wordsShort.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/admin/wordsShort.asp">Staging</a></td><td><a href="screenshots/53_admin_admin-words-short.png">צילום מסך</a></td></tr>
+<tr><td>54</td><td>Admin Locked</td><td>מסך אדמין לניהול משתמשים/תוכן/הגדרות.</td><td>כלי ניהול ואדמין</td><td>ללא פרמטרים</td><td>עמוד פנימי: לשמר הרשאות, להגדיר <code dir="ltr">noindex,nofollow</code>, ולא לכלול בסייטמאפ ציבורי.</td><td><a href="http://localhost:8081/admin/locked.asp">Local</a> | <a href="https://milon.madrasafree.com/admin/locked.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/admin/locked.asp">Staging</a></td><td><a href="screenshots/54_admin_admin-locked.png">צילום מסך</a></td></tr>
+<tr><td>55</td><td>Legacy Admin Redirect</td><td>נתיב legacy שמפנה למסך אדמין קנוני.</td><td>כלי ניהול ואדמין</td><td>ללא פרמטרים</td><td>זהו נתיב wrapper ישן: לבצע 301 לנתיב אדמין הקנוני, ולהגדיר <code dir="ltr">noindex</code>.</td><td><a href="http://localhost:8081/admin.asp">Local</a> | <a href="https://milon.madrasafree.com/admin.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/admin.asp">Staging</a></td><td><a href="screenshots/55_admin_legacy-admin-redirect.png">צילום מסך</a></td></tr>
+<tr><td>61</td><td>Legacy Admin LabelControl Redirect</td><td>נתיב legacy שמפנה למסך אדמין קנוני.</td><td>מילון: נושאים ותיוגים</td><td>ללא פרמטרים</td><td>זהו נתיב wrapper ישן: לבצע 301 לנתיב אדמין הקנוני, ולהגדיר <code dir="ltr">noindex</code>.</td><td><a href="http://localhost:8081/admin.labelControl.asp">Local</a> | <a href="https://milon.madrasafree.com/admin.labelControl.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/admin.labelControl.asp">Staging</a></td><td><a href="screenshots/61_admin_legacy-admin-labelcontrol-redirect.png">צילום מסך</a></td></tr>
+<tr><td>62</td><td>Legacy Admin Locked Redirect</td><td>נתיב legacy שמפנה למסך אדמין קנוני.</td><td>כלי ניהול ואדמין</td><td>ללא פרמטרים</td><td>זהו נתיב wrapper ישן: לבצע 301 לנתיב אדמין הקנוני, ולהגדיר <code dir="ltr">noindex</code>.</td><td><a href="http://localhost:8081/admin.locked.asp">Local</a> | <a href="https://milon.madrasafree.com/admin.locked.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/admin.locked.asp">Staging</a></td><td><a href="screenshots/62_admin_legacy-admin-locked-redirect.png">צילום מסך</a></td></tr>
+<tr><td>63</td><td>Legacy Admin UserControl Redirect</td><td>נתיב legacy שמפנה למסך אדמין קנוני.</td><td>כלי ניהול ואדמין</td><td>ללא פרמטרים</td><td>זהו נתיב wrapper ישן: לבצע 301 לנתיב אדמין הקנוני, ולהגדיר <code dir="ltr">noindex</code>.</td><td><a href="http://localhost:8081/admin.userControl.asp">Local</a> | <a href="https://milon.madrasafree.com/admin.userControl.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/admin.userControl.asp">Staging</a></td><td><a href="screenshots/63_admin_legacy-admin-usercontrol-redirect.png">צילום מסך</a></td></tr>
+<tr><td>64</td><td>Legacy Admin UserControlFull Redirect</td><td>נתיב legacy שמפנה למסך אדמין קנוני.</td><td>כלי ניהול ואדמין</td><td>ללא פרמטרים</td><td>זהו נתיב wrapper ישן: לבצע 301 לנתיב אדמין הקנוני, ולהגדיר <code dir="ltr">noindex</code>.</td><td><a href="http://localhost:8081/admin.userControl.full.asp">Local</a> | <a href="https://milon.madrasafree.com/admin.userControl.full.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/admin.userControl.full.asp">Staging</a></td><td><a href="screenshots/64_admin_legacy-admin-usercontrolfull-redirect.png">צילום מסך</a></td></tr>
+<tr><td>65</td><td>Legacy Admin UserEdit Redirect</td><td>נתיב legacy שמפנה למסך אדמין קנוני.</td><td>כלי ניהול ואדמין</td><td><code dir="ltr">id</code></td><td>זהו נתיב wrapper ישן: לבצע 301 לנתיב אדמין הקנוני, ולהגדיר <code dir="ltr">noindex</code>.</td><td><a href="http://localhost:8081/admin.userEdit.asp?id=1">Local</a> | <a href="https://milon.madrasafree.com/admin.userEdit.asp?id=1">Production</a> | <a href="https://dev-milon.madrasafree.com/admin.userEdit.asp?id=1">Staging</a></td><td><a href="screenshots/65_admin_legacy-admin-useredit-redirect.png">צילום מסך</a></td></tr>
+<tr><td>66</td><td>Legacy Admin UserNew Redirect</td><td>נתיב legacy שמפנה למסך אדמין קנוני.</td><td>כלי ניהול ואדמין</td><td>ללא פרמטרים</td><td>זהו נתיב wrapper ישן: לבצע 301 לנתיב אדמין הקנוני, ולהגדיר <code dir="ltr">noindex</code>.</td><td><a href="http://localhost:8081/admin.userNew.asp">Local</a> | <a href="https://milon.madrasafree.com/admin.userNew.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/admin.userNew.asp">Staging</a></td><td><a href="screenshots/66_admin_legacy-admin-usernew-redirect.png">צילום מסך</a></td></tr>
+<tr><td>67</td><td>Legacy Admin WordsShort Redirect</td><td>נתיב legacy שמפנה למסך אדמין קנוני.</td><td>כלי ניהול ואדמין</td><td>ללא פרמטרים</td><td>זהו נתיב wrapper ישן: לבצע 301 לנתיב אדמין הקנוני, ולהגדיר <code dir="ltr">noindex</code>.</td><td><a href="http://localhost:8081/admin.wordsShort.asp">Local</a> | <a href="https://milon.madrasafree.com/admin.wordsShort.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/admin.wordsShort.asp">Staging</a></td><td><a href="screenshots/67_admin_legacy-admin-wordsshort-redirect.png">צילום מסך</a></td></tr>
+</tbody></table>
+</details>
+<details>
+<summary><strong>מסלולי מערכת (3)</strong></summary>
+<table dir="rtl" style="direction: rtl; text-align: right;">
+<thead><tr><th>#</th><th>מסך</th><th>מה יש בדף</th><th>פיצ'ר מרכזי</th><th>פרמטרים ב-URL</th><th>החלטת המרה/SEO</th><th>קישורים</th><th>צילום</th></tr></thead>
+<tbody>
+<tr><td>28</td><td>Custom 404 1</td><td>בדיקת טיפול בנתיב לא קיים (404 מותאם).</td><td>פלטפורמה, אבטחה וניתוב</td><td>ללא פרמטרים</td><td>לשמר בדיוק את התנהגות 404 וחסימת <code dir="ltr">/docs/</code> גם בגרסה החדשה.</td><td><a href="http://localhost:8081/1.asp">Local</a> | <a href="https://milon.madrasafree.com/1.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/1.asp">Staging</a></td><td><a href="screenshots/28_routes_custom-404-1.png">צילום מסך</a></td></tr>
+<tr><td>29</td><td>Custom 404 Missing</td><td>בדיקת טיפול בנתיב לא קיים (404 מותאם).</td><td>פלטפורמה, אבטחה וניתוב</td><td>ללא פרמטרים</td><td>לשמר בדיוק את התנהגות 404 וחסימת <code dir="ltr">/docs/</code> גם בגרסה החדשה.</td><td><a href="http://localhost:8081/does-not-exist.asp">Local</a> | <a href="https://milon.madrasafree.com/does-not-exist.asp">Production</a> | <a href="https://dev-milon.madrasafree.com/does-not-exist.asp">Staging</a></td><td><a href="screenshots/29_routes_custom-404-missing.png">צילום מסך</a></td></tr>
+<tr><td>30</td><td>Docs Blocked</td><td>בדיקת חסימת גישה לנתיבי תיעוד.</td><td>פלטפורמה, אבטחה וניתוב</td><td>ללא פרמטרים</td><td>לשמר בדיוק את התנהגות 404 וחסימת <code dir="ltr">/docs/</code> גם בגרסה החדשה.</td><td><a href="http://localhost:8081/docs/">Local</a> | <a href="https://milon.madrasafree.com/docs/">Production</a> | <a href="https://dev-milon.madrasafree.com/docs/">Staging</a></td><td><a href="screenshots/30_routes_docs-blocked.png">צילום מסך</a></td></tr>
+</tbody></table>
+</details>
 
-## סביבות
+<h2>מיפוי פרודקשן לצפייה מהירה</h2>
+<p>לעיון ציבורי ישיר במסכי Production וצילומי מסך תואמים:</p>
+<details>
+<summary><strong>ציבורי (27)</strong></summary>
+<table dir="rtl" style="direction: rtl; text-align: right;">
+<thead><tr><th>#</th><th>מסך</th><th>מה יש בדף</th><th>פרמטרים ב-URL</th><th>החלטת המרה/SEO</th><th>קישורים</th><th>צילום</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Home</td><td>עמוד הבית: ניווט ראשי, כניסה לחיפוש וגישה למסכים מרכזיים.</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="https://milon.madrasafree.com/">Production</a> | <a href="https://milon.madrasafree.com/">כתובת סופית</a></td><td><a href="screenshots_prod/01_public_home.png">צילום מסך</a></td></tr>
+<tr><td>2</td><td>Default ASP</td><td>עמוד בית/חיפוש בגרסת ASP הקלאסית.</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="https://milon.madrasafree.com/default.asp">Production</a> | <a href="https://milon.madrasafree.com/default.asp">כתובת סופית</a></td><td><a href="screenshots_prod/02_public_default-asp.png">צילום מסך</a></td></tr>
+<tr><td>3</td><td>Default Min</td><td>עמוד בית קל ומהיר עם משקל נמוך.</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="https://milon.madrasafree.com/default.min.asp">Production</a> | <a href="https://milon.madrasafree.com/default.min.asp">כתובת סופית</a></td><td><a href="screenshots_prod/03_public_default-min.png">צילום מסך</a></td></tr>
+<tr><td>4</td><td>About</td><td>עמוד מידע על הפרויקט והמילון.</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="https://milon.madrasafree.com/about.asp">Production</a> | <a href="https://milon.madrasafree.com/about.asp">כתובת סופית</a></td><td><a href="screenshots_prod/04_public_about.png">צילום מסך</a></td></tr>
+<tr><td>5</td><td>Guide</td><td>עמוד הסבר והדרכה לשימוש במערכת.</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="https://milon.madrasafree.com/guide.asp">Production</a> | <a href="https://milon.madrasafree.com/guide.asp">כתובת סופית</a></td><td><a href="screenshots_prod/05_public_guide.png">צילום מסך</a></td></tr>
+<tr><td>6</td><td>Clock</td><td>מסך פעיל במערכת: Clock</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="https://milon.madrasafree.com/clock.asp">Production</a> | <a href="https://milon.madrasafree.com/clock.asp">כתובת סופית</a></td><td><a href="screenshots_prod/06_public_clock.png">צילום מסך</a></td></tr>
+<tr><td>7</td><td>Stats</td><td>מסך פעיל במערכת: Stats</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="https://milon.madrasafree.com/stats.asp">Production</a> | <a href="https://milon.madrasafree.com/stats.asp">כתובת סופית</a></td><td><a href="screenshots_prod/07_public_stats.png">צילום מסך</a></td></tr>
+<tr><td>8</td><td>Labels</td><td>אינדקס נושאים (Labels) לניווט לפי קטגוריות.</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="https://milon.madrasafree.com/labels.asp">Production</a> | <a href="https://milon.madrasafree.com/labels.asp">כתובת סופית</a></td><td><a href="screenshots_prod/08_public_labels.png">צילום מסך</a></td></tr>
+<tr><td>9</td><td>Label Detail</td><td>מסך פעיל במערכת: Label Detail</td><td><code dir="ltr">id</code></td><td>להמיר מזהה query לנתיב קריא (slug/id), להגדיר canonical, ולהוסיף 301 מה-URL הישן.</td><td><a href="https://milon.madrasafree.com/label.asp?id=1">Production</a> | <a href="https://milon.madrasafree.com/label.asp?id=1">כתובת סופית</a></td><td><a href="screenshots_prod/09_public_label-detail.png">צילום מסך</a></td></tr>
+<tr><td>10</td><td>Word Detail</td><td>מסך פעיל במערכת: Word Detail</td><td><code dir="ltr">id</code></td><td>להמיר מזהה query לנתיב קריא (slug/id), להגדיר canonical, ולהוסיף 301 מה-URL הישן.</td><td><a href="https://milon.madrasafree.com/word.asp?id=2939">Production</a> | <a href="https://milon.madrasafree.com/word.asp?id=2939">כתובת סופית</a></td><td><a href="screenshots_prod/10_public_word-detail.png">צילום מסך</a></td></tr>
+<tr><td>11</td><td>Sentences</td><td>אינדקס משפטים לדפדוף ולמידה.</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="https://milon.madrasafree.com/sentences.asp">Production</a> | <a href="https://milon.madrasafree.com/sentences.asp">כתובת סופית</a></td><td><a href="screenshots_prod/11_public_sentences.png">צילום מסך</a></td></tr>
+<tr><td>12</td><td>Sentence Detail</td><td>מסך פעיל במערכת: Sentence Detail</td><td><code dir="ltr">sID</code></td><td>להמיר מזהה query לנתיב קריא (slug/id), להגדיר canonical, ולהוסיף 301 מה-URL הישן.</td><td><a href="https://milon.madrasafree.com/sentence.asp?sID=109">Production</a> | <a href="https://milon.madrasafree.com/sentence.asp?sID=109">כתובת סופית</a></td><td><a href="screenshots_prod/12_public_sentence-detail.png">צילום מסך</a></td></tr>
+<tr><td>13</td><td>Lists Index</td><td>אינדקס רשימות לימוד.</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="https://milon.madrasafree.com/lists.all.asp">Production</a> | <a href="https://milon.madrasafree.com/lists.all.asp">כתובת סופית</a></td><td><a href="screenshots_prod/13_public_lists-index.png">צילום מסך</a></td></tr>
+<tr><td>14</td><td>List Detail</td><td>מסך פעיל במערכת: List Detail</td><td><code dir="ltr">id</code></td><td>להמיר מזהה query לנתיב קריא (slug/id), להגדיר canonical, ולהוסיף 301 מה-URL הישן.</td><td><a href="https://milon.madrasafree.com/lists.asp?id=556">Production</a> | <a href="https://milon.madrasafree.com/lists.asp?id=556">כתובת סופית</a></td><td><a href="screenshots_prod/14_public_list-detail.png">צילום מסך</a></td></tr>
+<tr><td>15</td><td>List Audio</td><td>מסך פעיל במערכת: List Audio</td><td><code dir="ltr">id</code></td><td>להמיר מזהה query לנתיב קריא (slug/id), להגדיר canonical, ולהוסיף 301 מה-URL הישן.</td><td><a href="https://milon.madrasafree.com/list.audio.asp?id=556">Production</a> | <a href="https://milon.madrasafree.com/list.audio.asp?id=556">כתובת סופית</a></td><td><a href="screenshots_prod/15_public_list-audio.png">צילום מסך</a></td></tr>
+<tr><td>16</td><td>List Pics</td><td>מסך פעיל במערכת: List Pics</td><td><code dir="ltr">id</code></td><td>להמיר מזהה query לנתיב קריא (slug/id), להגדיר canonical, ולהוסיף 301 מה-URL הישן.</td><td><a href="https://milon.madrasafree.com/list.pics.asp?id=556">Production</a> | <a href="https://milon.madrasafree.com/list.pics.asp?id=556">כתובת סופית</a></td><td><a href="screenshots_prod/16_public_list-pics.png">צילום מסך</a></td></tr>
+<tr><td>17</td><td>List Vids</td><td>מסך פעיל במערכת: List Vids</td><td><code dir="ltr">id</code></td><td>להמיר מזהה query לנתיב קריא (slug/id), להגדיר canonical, ולהוסיף 301 מה-URL הישן.</td><td><a href="https://milon.madrasafree.com/list.vids.asp?id=556">Production</a> | <a href="https://milon.madrasafree.com/list.vids.asp?id=556">כתובת סופית</a></td><td><a href="screenshots_prod/17_public_list-vids.png">צילום מסך</a></td></tr>
+<tr><td>18</td><td>Games Memory</td><td>משחק זיכרון כללי על אוצר מילים.</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="https://milon.madrasafree.com/games.mem.asp">Production</a> | <a href="https://milon.madrasafree.com/games.mem.asp">כתובת סופית</a></td><td><a href="screenshots_prod/18_public_games-memory.png">צילום מסך</a></td></tr>
+<tr><td>19</td><td>Games List</td><td>מסך פעיל במערכת: Games List</td><td><code dir="ltr">LID</code></td><td>להמיר מזהה query לנתיב קריא (slug/id), להגדיר canonical, ולהוסיף 301 מה-URL הישן.</td><td><a href="https://milon.madrasafree.com/games.mem.list.asp?LID=556">Production</a> | <a href="https://milon.madrasafree.com/games.mem.list.asp?LID=556">כתובת סופית</a></td><td><a href="screenshots_prod/19_public_games-list.png">צילום מסך</a></td></tr>
+<tr><td>20</td><td>Games Pics</td><td>מסך פעיל במערכת: Games Pics</td><td><code dir="ltr">LID</code></td><td>להמיר מזהה query לנתיב קריא (slug/id), להגדיר canonical, ולהוסיף 301 מה-URL הישן.</td><td><a href="https://milon.madrasafree.com/games.mem.pics.asp?LID=556">Production</a> | <a href="https://milon.madrasafree.com/games.mem.pics.asp?LID=556">כתובת סופית</a></td><td><a href="screenshots_prod/20_public_games-pics.png">צילום מסך</a></td></tr>
+<tr><td>21</td><td>Activity</td><td>מסך פעיל במערכת: Activity</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="https://milon.madrasafree.com/activity.asp">Production</a> | <a href="https://milon.madrasafree.com/activity.asp">כתובת סופית</a></td><td><a href="screenshots_prod/21_public_activity.png">צילום מסך</a></td></tr>
+<tr><td>22</td><td>Welcome</td><td>מסך פעיל במערכת: Welcome</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="https://milon.madrasafree.com/welcome.asp">Production</a> | <a href="https://milon.madrasafree.com/welcome.asp">כתובת סופית</a></td><td><a href="screenshots_prod/22_public_welcome.png">צילום מסך</a></td></tr>
+<tr><td>23</td><td>Profile</td><td>דף פרופיל משתמש ותרומות.</td><td><code dir="ltr">id</code></td><td>להמיר מזהה query לנתיב קריא (slug/id), להגדיר canonical, ולהוסיף 301 מה-URL הישן.</td><td><a href="https://milon.madrasafree.com/profile.asp?id=1">Production</a> | <a href="https://milon.madrasafree.com/profile.asp?id=1">כתובת סופית</a></td><td><a href="screenshots_prod/23_public_profile.png">צילום מסך</a></td></tr>
+<tr><td>24</td><td>Profile All Words</td><td>דף פרופיל משתמש ותרומות.</td><td><code dir="ltr">id</code></td><td>להמיר מזהה query לנתיב קריא (slug/id), להגדיר canonical, ולהוסיף 301 מה-URL הישן.</td><td><a href="https://milon.madrasafree.com/profile.allwords.asp?id=1">Production</a> | <a href="https://milon.madrasafree.com/profile.allwords.asp?id=1">כתובת סופית</a></td><td><a href="screenshots_prod/24_public_profile-all-words.png">צילום מסך</a></td></tr>
+<tr><td>25</td><td>Login</td><td>מסך התחברות למשתמשים.</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="https://milon.madrasafree.com/login.asp">Production</a> | <a href="https://milon.madrasafree.com/login.asp">כתובת סופית</a></td><td><a href="screenshots_prod/25_public_login.png">צילום מסך</a></td></tr>
+<tr><td>26</td><td>Guide Team</td><td>עמוד הסבר והדרכה לשימוש במערכת.</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="https://milon.madrasafree.com/guideTeam.asp">Production</a> | <a href="https://milon.madrasafree.com/guideTeam.asp">כתובת סופית</a></td><td><a href="screenshots_prod/26_public_guide-team.png">צילום מסך</a></td></tr>
+<tr><td>27</td><td>Dashboard Snapshot</td><td>מסך ניהול מרכזי למעקב ותפעול.</td><td>ללא פרמטרים</td><td>לשמר כתובת קבועה, canonical עצמי, ומיפוי Redirect 301 אם הנתיב ישתנה בהמרה.</td><td><a href="https://milon.madrasafree.com/dashboard.asp">Production</a> | <a href="https://milon.madrasafree.com/dashboard.asp">כתובת סופית</a></td><td><a href="screenshots_prod/27_public_dashboard-snapshot.png">צילום מסך</a></td></tr>
+</tbody></table>
+</details>
+<details>
+<summary><strong>מסלולי מערכת (3)</strong></summary>
+<table dir="rtl" style="direction: rtl; text-align: right;">
+<thead><tr><th>#</th><th>מסך</th><th>מה יש בדף</th><th>פרמטרים ב-URL</th><th>החלטת המרה/SEO</th><th>קישורים</th><th>צילום</th></tr></thead>
+<tbody>
+<tr><td>28</td><td>Custom 404 1</td><td>בדיקת טיפול בנתיב לא קיים (404 מותאם).</td><td>ללא פרמטרים</td><td>לשמר בדיוק את התנהגות 404 וחסימת <code dir="ltr">/docs/</code> גם בגרסה החדשה.</td><td><a href="https://milon.madrasafree.com/1.asp">Production</a> | <a href="https://milon.madrasafree.com/1.asp">כתובת סופית</a></td><td><a href="screenshots_prod/28_routes_custom-404-1.png">צילום מסך</a></td></tr>
+<tr><td>29</td><td>Custom 404 Missing</td><td>בדיקת טיפול בנתיב לא קיים (404 מותאם).</td><td>ללא פרמטרים</td><td>לשמר בדיוק את התנהגות 404 וחסימת <code dir="ltr">/docs/</code> גם בגרסה החדשה.</td><td><a href="https://milon.madrasafree.com/does-not-exist.asp">Production</a> | <a href="https://milon.madrasafree.com/does-not-exist.asp">כתובת סופית</a></td><td><a href="screenshots_prod/29_routes_custom-404-missing.png">צילום מסך</a></td></tr>
+<tr><td>30</td><td>Docs Blocked</td><td>בדיקת חסימת גישה לנתיבי תיעוד.</td><td>ללא פרמטרים</td><td>לשמר בדיוק את התנהגות 404 וחסימת <code dir="ltr">/docs/</code> גם בגרסה החדשה.</td><td><a href="https://milon.madrasafree.com/docs/">Production</a> | <a href="https://milon.madrasafree.com/docs/">כתובת סופית</a></td><td><a href="screenshots_prod/30_routes_docs-blocked.png">צילום מסך</a></td></tr>
+</tbody></table>
+</details>
 
-- Production: [https://milon.madrasafree.com/](https://milon.madrasafree.com/)
-- Staging: [https://dev-milon.madrasafree.com/](https://dev-milon.madrasafree.com/)
-- Local: [http://localhost:8081/](http://localhost:8081/)
+<h2>קישור למסמך הצילומים המלא</h2>
+<p><a href="ALL_PAGES_SCREENSHOTS.md">ALL_PAGES_SCREENSHOTS.md</a></p>
 
-## מה נסקר בפועל
-
-- נקראו קבצי התיעוד המרכזיים: `AGENTS.md`, `docs/pages.md`, `docs/includes.md`, `docs/db.md`, `docs/handlers.md`, `docs/issues.md`, `docs/plan.md`, `docs/file-inventory.csv`.
-- בוצע מעבר בדפדפן וצילום מסך עבור:
-  - 67 מסכים ב־Localhost (כולל Team/Admin/Edit, wrappers, JSON/embed).
-  - 30 מסכים ב־Production (ציבורי + בדיקות 404/חסימות).
-- נוצר אינדקס מלא לכל הצילומים עם קישורים ישירים:
-  - [ALL_PAGES_SCREENSHOTS.md](ALL_PAGES_SCREENSHOTS.md)
-  - [screenshot_index.csv](screenshot_index.csv)
-  - [screenshot_index_prod.csv](screenshot_index_prod.csv)
-
-## היקף הסקירה
-
-- Localhost: נסקרו `67` מסכים (ציבורי + Team + Admin + מסכי wrapper/embed/json).
-- Production: נסקרו `30` מסכים ציבוריים ומסלולי מערכת.
-- מתוך `67` עמודי `page` ב־inventory: תועדו `61` עמודי תצוגה שאינם משני־מצב.
-- `6` עמודים משני־מצב הושארו מחוץ לניווט/צילום פעיל כדי לשמור על יציבות הנתונים בזמן התיעוד.
-
-## מפת פיצ'רים לפי משתמש
-
-### 1) משתמש ציבורי (ללא התחברות)
-
-מה אפשר לעשות:
-
-- לחפש מילה בעברית/ערבית/תעתיק.
-- לצפות בדף מילה מלא (פירושים, מדיה, משפטים, קשרים).
-- לגלוש לפי נושאים (Labels).
-- לצפות במשפטים, רשימות, משחקי זיכרון, סטטיסטיקה ופעילות קהילה.
-
-קישורי Production מרכזיים:
-
-- בית וחיפוש: [https://milon.madrasafree.com/](https://milon.madrasafree.com/)
-- דף מילה: [https://milon.madrasafree.com/word.asp?id=2939](https://milon.madrasafree.com/word.asp?id=2939)
-- אינדקס נושאים: [https://milon.madrasafree.com/labels.asp](https://milon.madrasafree.com/labels.asp)
-- דף נושא: [https://milon.madrasafree.com/label.asp?id=1](https://milon.madrasafree.com/label.asp?id=1)
-- משפטים: [https://milon.madrasafree.com/sentences.asp](https://milon.madrasafree.com/sentences.asp)
-- רשימות: [https://milon.madrasafree.com/lists.all.asp](https://milon.madrasafree.com/lists.all.asp)
-- משחקים: [https://milon.madrasafree.com/games.mem.asp](https://milon.madrasafree.com/games.mem.asp)
-
-צילומי מסך לדוגמה:
-
-| מסך | צילום |
-|---|---|
-| בית / חיפוש | ![home](screenshots_prod/01_public_home.png) |
-| דף מילה | ![word](screenshots_prod/10_public_word-detail.png) |
-| אינדקס נושאים | ![labels](screenshots_prod/08_public_labels.png) |
-| משפטים | ![sentences](screenshots_prod/11_public_sentences.png) |
-| רשימות | ![lists](screenshots_prod/13_public_lists-index.png) |
-| משחק זיכרון | ![game](screenshots_prod/18_public_games-memory.png) |
-
-### 2) משתמש תורם / צוות (אחרי Login)
-
-מה אפשר לעשות:
-
-- להוסיף מילה חדשה.
-- לערוך מילה קיימת ולצפות בהיסטוריית שינויים.
-- להוסיף/לערוך משפטים.
-- ליצור/לערוך רשימות.
-- לנהל מדיה (אודיו/וידאו) דרך ממשקי צוות.
-
-קישורי Production מרכזיים (דורשים הרשאה):
-
-- כניסה: [https://milon.madrasafree.com/login.asp](https://milon.madrasafree.com/login.asp)
-- הוספת מילה: [https://milon.madrasafree.com/word.new.asp](https://milon.madrasafree.com/word.new.asp)
-- עריכת מילה: [https://milon.madrasafree.com/word.edit.asp?id=2939](https://milon.madrasafree.com/word.edit.asp?id=2939)
-- היסטוריית מילה: [https://milon.madrasafree.com/word.history.asp?id=2939](https://milon.madrasafree.com/word.history.asp?id=2939)
-- הוספת משפט: [https://milon.madrasafree.com/sentenceNew.asp](https://milon.madrasafree.com/sentenceNew.asp)
-- עריכת משפט: [https://milon.madrasafree.com/sentenceEdit.asp?sID=109](https://milon.madrasafree.com/sentenceEdit.asp?sID=109)
-- מדיה צוות: [https://milon.madrasafree.com/team/mediaControl.asp](https://milon.madrasafree.com/team/mediaControl.asp)
-
-צילומי מסך לדוגמה (משתמש מחובר בלוקאל):
-
-| מסך | צילום |
-|---|---|
-| דף נחיתה למשתמש מחובר | ![landing](screenshots/31_team_user-landing.png) |
-| הוספת מילה | ![word-new](screenshots/32_team_word-new.png) |
-| עריכת מילה | ![word-edit](screenshots/33_team_word-edit.png) |
-| היסטוריית מילה | ![word-history](screenshots/34_team_word-history.png) |
-| הוספת משפט | ![sentence-new](screenshots/35_team_sentence-new.png) |
-| ניהול מדיה | ![media-control](screenshots/42_team_team-media-control.png) |
-
-### 3) מנהל מערכת (Admin)
-
-מה אפשר לעשות:
-
-- גישה ללוח אדמין.
-- ניהול משתמשים (רשימות/עריכה/יצירה).
-- ניהול תוויות.
-- ניהול aliases לחיפוש קצר.
-- ניהול נעילות עריכה.
-
-קישורי Production מרכזיים (דורשים הרשאת Admin):
-
-- אדמין ראשי: [https://milon.madrasafree.com/admin/](https://milon.madrasafree.com/admin/)
-- ניהול משתמשים (מלא): [https://milon.madrasafree.com/admin/userControl.full.asp](https://milon.madrasafree.com/admin/userControl.full.asp)
-- משתמש חדש: [https://milon.madrasafree.com/admin/userNew.asp](https://milon.madrasafree.com/admin/userNew.asp)
-- עריכת משתמש: [https://milon.madrasafree.com/admin/userEdit.asp?id=1](https://milon.madrasafree.com/admin/userEdit.asp?id=1)
-- ניהול תוויות: [https://milon.madrasafree.com/admin/labelControl.asp](https://milon.madrasafree.com/admin/labelControl.asp)
-- נעילות: [https://milon.madrasafree.com/admin/locked.asp](https://milon.madrasafree.com/admin/locked.asp)
-
-צילומי מסך לדוגמה (Local authenticated):
-
-| מסך | צילום |
-|---|---|
-| דף אדמין ראשי | ![admin-default](screenshots/47_admin_admin-default.png) |
-| ניהול משתמשים (Full) | ![admin-users-full](screenshots/49_admin_admin-user-control-full.png) |
-| משתמש חדש | ![admin-user-new](screenshots/50_admin_admin-user-new.png) |
-| ניהול תוויות | ![admin-labels](screenshots/52_admin_admin-label-control.png) |
-| נעילות | ![admin-locked](screenshots/54_admin_admin-locked.png) |
-
-הערת סקופ:
-
-- דפי toggle (`allowEditToggle` / `readOnlyToggle`) לא הופעלו בסקירה כדי לא לשנות מצב מערכת.
-- עמודים משני־מצב (handlers) הושארו מחוץ לסקירה אינטראקטיבית, ומופיעים באינדקס תחת רשימת excluded.
-
-## מסלולי מערכת חשובים (404 / חסימות)
-
-מה אומת:
-
-- מסך 404 מותאם אישית.
-- חסימת גישה ל־`/docs/` מהחוץ.
-
-צילומי מסך:
-
-| מסך | צילום |
-|---|---|
-| 404 מותאם | ![404](screenshots_prod/28_routes_custom-404-1.png) |
-| חסימת docs | ![docs-blocked](screenshots_prod/30_routes_docs-blocked.png) |
-
-## תרגום ראשוני ל-MVP (גרסה חדשה)
-
-מומלץ להתחיל ב־MVP עם פיצ'רים שמייצרים ערך מיידי ללומד:
-
-- חיפוש + תוצאות + דף מילה מלא.
-- Labels + דפי נושא.
-- משפטים (צפייה) + רשימות (צפייה).
-- פרופיל ציבורי בסיסי.
-- התחברות צוות + הוספה/עריכת מילה.
-
-פיצ'רים שכדאי לשלב בגל שני (מיד אחרי MVP):
-
-- עריכת משפטים/רשימות מתקדמת.
-- ניהול מדיה מלא.
-- לוחות אדמין מורחבים.
-
-פיצ'רים שניתן לדחות לגל שלישי:
-
-- כלי אדמין legacy ספציפיים.
-- מסכים תפעוליים עם מורכבות גבוהה ורווח משתמש נמוך.
-
-## קבצים נלווים
-
-- מיפוי מלא של כל המסכים: [ALL_PAGES_SCREENSHOTS.md](ALL_PAGES_SCREENSHOTS.md)
-- אינדקס צילום לוקאל: [screenshot_index.csv](screenshot_index.csv)
-- אינדקס צילום פרודקשן: [screenshot_index_prod.csv](screenshot_index_prod.csv)
-- תבנית רמזור להחלטות MVP: [MVP_TRAFFIC_LIGHT_TEMPLATE.md](MVP_TRAFFIC_LIGHT_TEMPLATE.md)
+</div>

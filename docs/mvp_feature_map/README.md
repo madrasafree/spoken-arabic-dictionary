@@ -1,14 +1,20 @@
-# חבילת מיפוי פיצ'רים ל-MVP
+<div dir="rtl" align="right">
 
-## קבצים מרכזיים
+<h1>חבילת מיפוי פיצ'רים ל-MVP</h1>
 
-- [MVP_FEATURE_MAP.md](MVP_FEATURE_MAP.md) - מסמך המיפוי הראשי, קריא ולא טכני מדי, עם חלוקה לפי סוג משתמש.
-- [ALL_PAGES_SCREENSHOTS.md](ALL_PAGES_SCREENSHOTS.md) - אינדקס מלא של המסכים שנסקרו, עם קישורים וצילומי מסך.
-- [MVP_TRAFFIC_LIGHT_TEMPLATE.md](MVP_TRAFFIC_LIGHT_TEMPLATE.md) - תבנית רמזור למילוי (ירוק/צהוב/אדום) לתעדוף פיצ'רים.
-- [screenshot_index.csv](screenshot_index.csv) - אינדקס לוקאל בפורמט CSV.
-- [screenshot_index_prod.csv](screenshot_index_prod.csv) - אינדקס פרודקשן בפורמט CSV.
+<h2>קבצים מרכזיים</h2>
+<ul>
+  <li><a href="MVP_FEATURE_MAP.md">MVP_FEATURE_MAP.md</a> - מסמך המיפוי הראשי, קריא ולא טכני מדי, עם חלוקה לפי סוג משתמש.</li>
+  <li><a href="ALL_PAGES_SCREENSHOTS.md">ALL_PAGES_SCREENSHOTS.md</a> - אינדקס מלא של המסכים שנסקרו, עם קישורים וצילומי מסך.</li>
+  <li><a href="MVP_TRAFFIC_LIGHT_TEMPLATE.md">MVP_TRAFFIC_LIGHT_TEMPLATE.md</a> - תבנית רמזור (ירוק/צהוב/אדום) לתעדוף פיצ'רים.</li>
+  <li><a href="screenshot_index.csv">screenshot_index.csv</a> - אינדקס לוקאל בפורמט CSV.</li>
+  <li><a href="screenshot_index_prod.csv">screenshot_index_prod.csv</a> - אינדקס פרודקשן בפורמט CSV.</li>
+</ul>
 
-## תיקיות צילומים
+<h2>תיקיות צילומים</h2>
+<ul>
+  <li><code dir="ltr">screenshots/</code> - צילומי לוקאל, כולל מסכי צוות/אדמין/עריכה.</li>
+  <li><code dir="ltr">screenshots_prod/</code> - צילומי פרודקשן למסכים ציבוריים ומסלולי מערכת.</li>
+</ul>
 
-- `screenshots/` - צילומי לוקאל, כולל מסכי צוות/אדמין/עריכה.
-- `screenshots_prod/` - צילומי פרודקשן למסכים ציבוריים ומסלולי מערכת.
+</div>
