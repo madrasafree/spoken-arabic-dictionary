@@ -1,3 +1,6 @@
+> [!WARNING]
+> **FROZEN: retired (2026-10-21).** This is the legacy Classic-ASP / Access version of the Madrasa spoken-Arabic dictionary. milon.madrasafree.com is now served by [spoken-arabic-dictionary-django](https://github.com/madrasafree/spoken-arabic-dictionary-django). This repository is kept for URL-parity reference and data history only; the text below describes how the old site used to be built and hosted, not production.
+
 <img src="https://github.com/madrasafree.png" alt="Madrasa Logo" width="150"/>
 
 # 📘 Spoken Arabic Dictionary 
@@ -6,7 +9,7 @@
 
 [![Website](https://img.shields.io/badge/Website-milon.madrasafree.com-00a2e8?style=for-the-badge&logo=google-chrome)](https://milon.madrasafree.com/)
 
-Welcome to the **Spoken Arabic Dictionary** repository! This project powers the active dictionary at [milon.madrasafree.com](https://milon.madrasafree.com/), bridging languages and communities through collaborative learning.
+Welcome to the **Spoken Arabic Dictionary** repository! This project powered the dictionary at [milon.madrasafree.com](https://milon.madrasafree.com/) until it was replaced by the Django application, bridging languages and communities through collaborative learning.
 
 ---
 The *Spoken Arabic Dictionary* project was founded in 2005 by Ronen Rothfarb and managed by him until 2022, when it was adopted by the non-profit organization **Madrasa**.
