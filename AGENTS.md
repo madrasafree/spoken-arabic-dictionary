@@ -1,3 +1,6 @@
+> [!WARNING]
+> **FROZEN (2026-10-21): do not follow the deployment rules below.** The site this file describes (Classic ASP on IIS / GoDaddy) is retired. milon.madrasafree.com runs the Django application [spoken-arabic-dictionary-django](https://github.com/madrasafree/spoken-arabic-dictionary-django). Nothing below, including "push to `main` = auto-deploy to production", describes the live site. Make no changes in this repository unless the owner asks.
+
 # AGENTS.md — Spoken Arabic Dictionary
 
 Agent instructions for working on this codebase. Read this file before making any changes.
